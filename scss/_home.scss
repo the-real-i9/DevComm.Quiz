@@ -1,0 +1,18 @@
+div.home {
+    & > p#greet {
+        margin-top: 25px;
+        font: {
+            weight: weight(bold);
+            size: 27px;
+        }
+        span {
+            color: $green;
+        }
+    }
+
+    & > p {
+        margin-top: 10px;
+        font-weight: weight(semibold);
+    }
+
+}

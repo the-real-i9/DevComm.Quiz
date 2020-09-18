@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    // width: (800px * (75/100));
+    height: 100%;
+    @include laptop {
+        width: 900px;
+        margin: 0 auto;
+        @include flex();
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+
+
+    .main-pane {
+        width: 70%;
+        height: 100%;
+        background: #fff;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        & > div {
+            width: 100%;
+            height: 100%;
+            padding: 0 10%;
+            @include flex(null, null, column);
+        }
+
+
+        & > :not(.modules):not(.question) {
+            background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px,
+            url(../img/cream.svg) no-repeat 150% 155%/350px,
+            url(../img/orange.svg) no-repeat -50px 125%/350px;
+
+            @include mobile {
+                background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px,
+            url(../img/cream.svg) no-repeat 250% 155%/250px,
+            url(../img/orange.svg) no-repeat -80px 130%/250px; 
+            }
+        }
+    }
+
+    .quote-pane {
+        @include laptop {
+            width: 35%;
+            height: 100%;
+            background: $quotePaneBg;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+
+}

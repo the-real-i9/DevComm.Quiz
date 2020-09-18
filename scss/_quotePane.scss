@@ -1,0 +1,66 @@
+div.quote-pane {
+    @include flex(space-evenly, center, column);
+    & > div {
+        position: relative;
+        width: 95%;
+        background-color: $quoteBlockBg;
+        padding: 5px 10px 15px;
+        border-radius: 5px;
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: $deep-orange;
+            top: 0;
+            left: 0;
+        }
+
+        &:last-child:before {
+            left: 99%;
+        }
+
+        & > p {
+            font: {
+                style: italic;
+                size: 21px;
+                weight: weight(light);
+            }
+        }
+        &:last-child > p {
+            text-align: right;
+        }
+        
+        & > p + div {
+            margin-top: 15px;
+            @include flex(null, center);
+
+            i {
+                font-size: 23px;
+            }
+            div {
+                margin-left: 5px;
+                font: {
+                    weight: weight(semibold);
+                    size: 13px;
+                }
+                & > p {
+                    span:first-child {
+                        color: $green;
+                    }
+
+                    span:last-child {
+                        color: $deep-orange;
+                    }
+                }
+                & > p + a:visited {
+                    color: black;
+                }
+            }
+        }
+        &:first-child > p + div {
+            justify-content: flex-end;
+        }
+    }
+}
