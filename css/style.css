@@ -95,17 +95,136 @@ div.home {
 }
 
 div.home .top {
-  margin-top: 40px;
   width: 100%;
+  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 650px) {
   div.home .top {
     margin-top: 20px;
   }
+}
+
+div.home .top .clickables {
+  font-size: 27px;
+  width: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e1543c;
+}
+
+div.home .top .clickables i {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.home .top .clickables i:first-child {
+  position: relative;
+  background: rgba(235, 136, 68, 0.3);
+  -webkit-animation: glow 1s linear infinite;
+          animation: glow 1s linear infinite;
+}
+
+div.home .top .clickables i:first-child::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(235, 136, 68, 0.1);
+  border-radius: 50%;
+  z-index: -0.1;
+  -webkit-animation: spread 1s linear infinite;
+          animation: spread 1s linear infinite;
+}
+
+@-webkit-keyframes spread {
+  0%, 100% {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+  }
+  50% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes spread {
+  0%, 100% {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+  }
+  50% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes glow {
+  0%, 100% {
+    background: rgba(235, 136, 68, 0.3);
+  }
+  50% {
+    background: rgba(235, 136, 68, 0.2);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    background: rgba(235, 136, 68, 0.3);
+  }
+  50% {
+    background: rgba(235, 136, 68, 0.2);
+  }
+}
+
+div.home .top .clickables i:last-child {
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: background .3s ease, color .3s ease;
+  transition: background .3s ease, color .3s ease;
+}
+
+div.home .top .clickables i:last-child:hover {
+  background: #e1543c;
+  color: #fff;
 }
 
 div.home .top .logo {

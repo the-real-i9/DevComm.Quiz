@@ -1,13 +1,76 @@
 div.home {
     width: 100%;
     .top {
+        width: 100%;
         margin-top: 40px;
         @include mobile {
             margin-top: 20px;
         }
-        width: 100%;
-        @include flex();
+        @include flex(space-between, center);
 
+        .clickables {
+            font-size: 27px;
+            width: 140px;
+            @include flex(space-between, center);
+            color: $deep-orange;
+            i {
+                cursor: pointer;
+                border-radius: 50%;
+                width: 55px;
+                height: 55px;
+                @include flex(center, center);
+            }
+            i:first-child {
+                position: relative;
+                background: rgba($orange, .3);
+                animation: glow 1s linear infinite;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba($orange, .1);
+                    border-radius: 50%;
+                    z-index: -0.1;
+                    animation: spread 1s linear infinite;
+
+                    @keyframes spread {
+                        0%, 100% {
+                            top: -15px;
+                            left: -15px;
+                            right: -15px;
+                            bottom: -15px;
+                        } 50% {
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+                }
+
+                @keyframes glow {
+                    0%, 100% {
+                        background: rgba($orange, .3);
+                    } 50% {
+                        background: rgba($orange, .2);
+                    }
+                }
+            }
+
+            i:last-child {
+                background: #fff;
+                box-shadow: 0 0 10px rgba(black, .15);
+                transition: background .3s ease,
+                            color .3s ease;
+                &:hover {
+                    background: $deep-orange;
+                    color: #fff;
+                }
+            }
+        }
         .logo {
             font: {
                 size: 50px;
