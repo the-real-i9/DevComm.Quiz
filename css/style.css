@@ -94,13 +94,67 @@ div.home {
   width: 100%;
 }
 
-div.home > p#greet {
+div.home .top {
+  margin-top: 40px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 650px) {
+  div.home .top {
+    margin-top: 20px;
+  }
+}
+
+div.home .top .logo {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+@media (max-width: 650px) {
+  div.home .top .logo {
+    font-size: 33px;
+  }
+}
+
+div.home .top .logo span {
+  text-shadow: 0 2px 0 black;
+}
+
+div.home .top .logo span:first-child {
+  color: #e1543c;
+}
+
+div.home .top .logo span:last-child {
+  color: #2e996d;
+}
+
+div.home #greet {
   margin-top: 25px;
   font-weight: 700;
   font-size: 27px;
 }
 
-div.home > p#greet span {
+@media (max-width: 650px) {
+  div.home #greet {
+    line-height: 21px;
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 650px) {
+  div.home #greet {
+    font-size: 23px;
+  }
+}
+
+div.home #greet span:first-child {
+  font-weight: 500;
+}
+
+div.home #greet span:last-child {
   color: #2e996d;
 }
 
@@ -109,8 +163,15 @@ div.home > p {
   font-weight: 600;
 }
 
+@media (max-width: 650px) {
+  div.home > p {
+    font-size: 13px;
+  }
+}
+
 div.home div.langs-section {
   margin-top: 90px;
+  padding: 10px 0;
   width: 100%;
   height: 500px;
   display: -ms-grid;
@@ -120,6 +181,14 @@ div.home div.langs-section {
       grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 20px;
   overflow-y: auto;
+}
+
+@media (max-width: 650px) {
+  div.home div.langs-section {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    margin-top: 40px;
+  }
 }
 
 div.home div.langs-section .lang-box {
@@ -141,6 +210,17 @@ div.home div.langs-section .lang-box {
   cursor: pointer;
   -webkit-transition: background .5s ease;
   transition: background .5s ease;
+}
+
+@media (max-width: 650px) {
+  div.home div.langs-section .lang-box {
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+  }
 }
 
 div.home div.langs-section .lang-box:nth-child(even) {
