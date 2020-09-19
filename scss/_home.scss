@@ -11,6 +11,10 @@ div.home {
         .clickables {
             font-size: 27px;
             width: 140px;
+            @include mobile {
+                width: 100px;
+                font-size: 17px;
+            }
             @include flex(space-between, center);
             color: $deep-orange;
             i {
@@ -19,6 +23,11 @@ div.home {
                 width: 55px;
                 height: 55px;
                 @include flex(center, center);
+
+                @include mobile {
+                    width: 40px;
+                    height: 40px;
+                }
             }
             i:first-child {
                 position: relative;

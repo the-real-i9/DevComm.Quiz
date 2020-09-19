@@ -129,6 +129,13 @@ div.home .top .clickables {
   color: #e1543c;
 }
 
+@media (max-width: 650px) {
+  div.home .top .clickables {
+    width: 100px;
+    font-size: 17px;
+  }
+}
+
 div.home .top .clickables i {
   cursor: pointer;
   border-radius: 50%;
@@ -143,6 +150,13 @@ div.home .top .clickables i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 650px) {
+  div.home .top .clickables i {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 div.home .top .clickables i:first-child {
