@@ -4,6 +4,7 @@ $orange: #eb8844;
 $deep-orange: #e1543c;
 $cream: #f5d3ac;
 $green: #2e996d;
+$colBoxFontColor: #faf4ed;
 @mixin laptop {
     @media (min-width: 650px) {
         @content;

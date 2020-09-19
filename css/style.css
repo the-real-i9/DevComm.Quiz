@@ -27,7 +27,7 @@ a:link:hover {
 
 @media (min-width: 650px) {
   .container {
-    width: 900px;
+    width: 940px;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -56,7 +56,7 @@ a:link:hover {
 .container .main-pane > div {
   width: 100%;
   height: 100%;
-  padding: 0 10%;
+  padding: 0 9%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,7 +78,7 @@ a:link:hover {
 
 @media (min-width: 650px) {
   .container .quote-pane {
-    width: 35%;
+    width: 40%;
     height: 100%;
     background: #faf4ed;
   }
@@ -88,6 +88,10 @@ a:link:hover {
   .container .quote-pane {
     display: none;
   }
+}
+
+div.home {
+  width: 100%;
 }
 
 div.home > p#greet {
@@ -103,6 +107,76 @@ div.home > p#greet span {
 div.home > p {
   margin-top: 10px;
   font-weight: 600;
+}
+
+div.home div.langs-section {
+  margin-top: 90px;
+  width: 100%;
+  height: 500px;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 20px;
+  overflow-y: auto;
+}
+
+div.home div.langs-section .lang-box {
+  width: 225px;
+  height: 140px;
+  border-radius: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+  cursor: pointer;
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
+}
+
+div.home div.langs-section .lang-box:nth-child(even) {
+  background: #2e996d url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+}
+
+div.home div.langs-section .lang-box:nth-child(odd) {
+  background: #e1543c url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
+}
+
+div.home div.langs-section .lang-box:hover {
+  background-size: 200px;
+}
+
+div.home div.langs-section .lang-box i {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 13px;
+  margin-top: 13px;
+  color: #fff;
+  font-size: 30px;
+  -webkit-transition: font-size .25s linear;
+  transition: font-size .25s linear;
+}
+
+div.home div.langs-section .lang-box p {
+  margin-bottom: 13px;
+  margin-left: 17px;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: .5px;
+  color: #fff;
+}
+
+div.home div.langs-section .lang-box:nth-child(even) {
+  margin-left: auto;
 }
 
 div.quote-pane {
@@ -121,40 +195,40 @@ div.quote-pane {
           flex-direction: column;
 }
 
-div.quote-pane > div {
+div.quote-pane > div.quote-block {
   position: relative;
-  width: 95%;
+  width: 90%;
   background-color: #f7ebdd;
   padding: 5px 10px 15px;
   border-radius: 5px;
   overflow: hidden;
 }
 
-div.quote-pane > div:before {
+div.quote-pane > div.quote-block:before {
   content: '';
   position: absolute;
   width: 3px;
   height: 100%;
   background-color: #e1543c;
   top: 0;
-  left: 0;
+  left: 1px;
 }
 
-div.quote-pane > div:last-child:before {
+div.quote-pane > div.quote-block:last-child:before {
   left: 99%;
 }
 
-div.quote-pane > div > p {
+div.quote-pane > div.quote-block > p.quote {
   font-style: italic;
   font-size: 21px;
   font-weight: 300;
 }
 
-div.quote-pane > div:last-child > p {
+div.quote-pane > div.quote-block:last-child > p.quote {
   text-align: right;
 }
 
-div.quote-pane > div > p + div {
+div.quote-pane > div.quote-block > p + div.owner-info {
   margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,29 +238,29 @@ div.quote-pane > div > p + div {
           align-items: center;
 }
 
-div.quote-pane > div > p + div i {
+div.quote-pane > div.quote-block > p + div.owner-info i {
   font-size: 23px;
 }
 
-div.quote-pane > div > p + div div {
+div.quote-pane > div.quote-block > p + div.owner-info div.info {
   margin-left: 5px;
   font-weight: 600;
   font-size: 13px;
 }
 
-div.quote-pane > div > p + div div > p span:first-child {
+div.quote-pane > div.quote-block > p + div.owner-info div.info > p.name span:first-child {
   color: #2e996d;
 }
 
-div.quote-pane > div > p + div div > p span:last-child {
+div.quote-pane > div.quote-block > p + div.owner-info div.info > p.name span:last-child {
   color: #e1543c;
 }
 
-div.quote-pane > div > p + div div > p + a:visited {
+div.quote-pane > div.quote-block > p + div.owner-info div.info a:link {
   color: black;
 }
 
-div.quote-pane > div:first-child > p + div {
+div.quote-pane > div.quote-block:first-child div.owner-info {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;

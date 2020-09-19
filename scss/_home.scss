@@ -1,4 +1,5 @@
 div.home {
+    width: 100%;
     & > p#greet {
         margin-top: 25px;
         font: {
@@ -13,6 +14,62 @@ div.home {
     & > p {
         margin-top: 10px;
         font-weight: weight(semibold);
+    }
+
+    div.langs-section {
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+        overflow-y: auto;
+
+
+        .lang-box {
+            width: 225px;
+            height: 140px;
+            border-radius: 17px;
+            @include flex(space-between, null, column);
+            box-shadow: 0 2px 4px rgba(#000, 0.17);
+            cursor: pointer;
+            transition: background .5s ease;
+            
+            &:nth-child(even) {
+                background: $green url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+            }
+            &:nth-child(odd) {
+                background: $deep-orange url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
+            }
+            &:hover {
+                background-size: 200px;
+            }
+            
+            i {
+                align-self: flex-end;
+                margin-right: 13px;
+                margin-top: 13px;
+                color: #fff;
+                font-size: 30px;
+                transition: font-size .25s linear;
+            }
+            p {
+                margin-bottom: 13px;
+                margin-left: 17px;
+                font: {
+                    weight: weight(bold);
+                    size: 17px;
+                }
+                letter-spacing: .5px;
+                // color: $colBoxFontColor;
+                color: #fff;
+            }
+
+            &:nth-child(even) {
+                margin-left: auto;
+            }
+        }
     }
 
 }

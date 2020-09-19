@@ -20,10 +20,9 @@ a:link:hover {
 }
 
 .container {
-    // width: (800px * (75/100));
     height: 100%;
     @include laptop {
-        width: 900px;
+        width: 940px;
         margin: 0 auto;
         @include flex();
     }
@@ -45,7 +44,7 @@ a:link:hover {
         & > div {
             width: 100%;
             height: 100%;
-            padding: 0 10%;
+            padding: 0 9%;
             @include flex(null, null, column);
         }
 
@@ -65,7 +64,7 @@ a:link:hover {
 
     .quote-pane {
         @include laptop {
-            width: 35%;
+            width: 40%;
             height: 100%;
             background: $quotePaneBg;
         }

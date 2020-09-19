@@ -1,8 +1,8 @@
 div.quote-pane {
     @include flex(space-evenly, center, column);
-    & > div {
+    & > div.quote-block {
         position: relative;
-        width: 95%;
+        width: 90%;
         background-color: $quoteBlockBg;
         padding: 5px 10px 15px;
         border-radius: 5px;
@@ -14,38 +14,38 @@ div.quote-pane {
             height: 100%;
             background-color: $deep-orange;
             top: 0;
-            left: 0;
+            left: 1px;
         }
 
         &:last-child:before {
             left: 99%;
         }
 
-        & > p {
+        & > p.quote {
             font: {
                 style: italic;
                 size: 21px;
                 weight: weight(light);
             }
         }
-        &:last-child > p {
+        &:last-child > p.quote {
             text-align: right;
         }
         
-        & > p + div {
+        & > p + div.owner-info {
             margin-top: 15px;
             @include flex(null, center);
 
             i {
                 font-size: 23px;
             }
-            div {
+            div.info {
                 margin-left: 5px;
                 font: {
                     weight: weight(semibold);
                     size: 13px;
                 }
-                & > p {
+                & > p.name {
                     span:first-child {
                         color: $green;
                     }
@@ -54,12 +54,12 @@ div.quote-pane {
                         color: $deep-orange;
                     }
                 }
-                & > p + a:visited {
+                a:link {
                     color: black;
                 }
             }
         }
-        &:first-child > p + div {
+        &:first-child div.owner-info {
             justify-content: flex-end;
         }
     }
