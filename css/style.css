@@ -71,6 +71,12 @@ a:link:hover {
           flex-direction: column;
 }
 
+@media (max-width: 650px) {
+  .container .main-pane > div {
+    padding: 0 5%;
+  }
+}
+
 .container .main-pane > :not(.question-page) {
   background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px, url(../img/cream.svg) no-repeat 150% 155%/350px, url(../img/orange.svg) no-repeat -50px 125%/350px;
 }
@@ -121,7 +127,6 @@ a:link:hover {
 @media (max-width: 650px) {
   .container .main-pane #sound {
     top: 19px;
-    left: 78%;
   }
 }
 
@@ -264,7 +269,8 @@ div.home > p {
 }
 
 div.home div.langs-section {
-  margin: 40px 0 10px;
+  margin-top: 40px;
+  padding-bottom: 10px;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -277,8 +283,14 @@ div.home div.langs-section {
 
 @media (max-width: 650px) {
   div.home div.langs-section {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  div.home div.langs-section {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
     margin-top: 40px;
   }
 }
@@ -302,16 +314,14 @@ div.home div.langs-section .lang-box {
   cursor: pointer;
   -webkit-transition: background .5s ease;
   transition: background .5s ease;
+  margin: 0 auto;
 }
 
 @media (max-width: 650px) {
   div.home div.langs-section .lang-box {
-    width: 230px;
-    height: 125px;
-    border-radius: 20px;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    margin: 0 auto;
+    width: 135px;
+    height: 160px;
+    border-radius: 14px;
   }
 }
 
@@ -321,6 +331,13 @@ div.home div.langs-section .lang-box:nth-child(even) {
 
 div.home div.langs-section .lang-box:nth-child(odd) {
   background: #e1543c url(../img/green.svg) no-repeat top -30px right -30px/100px;
+}
+
+@media (max-width: 650px) {
+  div.home div.langs-section .lang-box:nth-child(n) {
+    background-position: center -50px;
+    background-size: 150px;
+  }
 }
 
 @media (min-width: 650px) {
@@ -336,8 +353,16 @@ div.home div.langs-section .lang-box i {
   margin-top: 13px;
   color: #fff;
   font-size: 35px;
-  -webkit-transition: font-size .25s linear;
-  transition: font-size .25s linear;
+}
+
+@media (max-width: 650px) {
+  div.home div.langs-section .lang-box i {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 0;
+    margin-top: 20px;
+  }
 }
 
 div.home div.langs-section .lang-box p {
@@ -349,8 +374,15 @@ div.home div.langs-section .lang-box p {
   color: #fff;
 }
 
-div.home div.langs-section .lang-box:nth-child(even) {
-  margin-left: auto;
+@media (max-width: 650px) {
+  div.home div.langs-section .lang-box p {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-left: 0;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
 }
 
 div.home div.langs-section .lang-box:last-child {

@@ -53,16 +53,20 @@ div.home {
     }
 
     div.langs-section {
-        margin: 40px 0 10px;
+        margin-top: 40px;
+        padding-bottom: 10px;
         width: 100%;
         display: grid;
         position: relative;
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 20px;
+        @include mobile {
+            grid-row-gap: 10px;
+        }
         overflow-y: auto;
         
         @include mobile {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             margin-top: 40px;
         }
 
@@ -75,13 +79,14 @@ div.home {
             box-shadow: 0 2px 4px rgba(#000, 0.17);
             cursor: pointer;
             transition: background .5s ease;
+            margin: 0 auto;
 
             @include mobile {
-                width: 230px;
-                height: 125px;
-                border-radius: 20px;
-                box-shadow: 0 0 5px rgba(#000, 0.4);
-                margin: 0 auto;
+                width: 135px;
+                height: 160px;
+                border-radius: 14px;
+                // box-shadow: 0 0 3px rgba(#000, 0.4);
+                // margin: 0 auto;
             }
             
             &:nth-child(even) {
@@ -89,6 +94,13 @@ div.home {
             }
             &:nth-child(odd) {
                 background: $deep-orange url(../img/green.svg) no-repeat top -30px right -30px/100px;
+            }
+            
+            @include mobile {
+                &:nth-child(n) {
+                    background-position: center -50px;
+                    background-size: 150px;
+                }
             }
             @include laptop {
                 &:hover {
@@ -102,7 +114,12 @@ div.home {
                 margin-top: 13px;
                 color: #fff;
                 font-size: 35px;
-                transition: font-size .25s linear;
+
+                @include mobile {
+                    align-self: center;
+                    margin-right: 0;
+                    margin-top: 20px;
+                }
             }
             p {
                 margin-bottom: 13px;
@@ -112,12 +129,14 @@ div.home {
                     size: 17px;
                 }
                 letter-spacing: .5px;
-                // color: $colBoxFontColor;
                 color: #fff;
-            }
 
-            &:nth-child(even) {
-                margin-left: auto;
+                @include mobile {
+                    align-self: center;
+                    margin-left: 0;
+                    font-size: 15px;
+                    margin-bottom: 15px;
+                }
             }
 
             &:last-child {
