@@ -1,92 +1,14 @@
 div.home {
     width: 100%;
-    .top {
-        width: 100%;
-        margin-top: 40px;
-        @include mobile {
-            margin-top: 20px;
-        }
-        @include flex(space-between, center);
-
-        .clickables {
-            font-size: 27px;
-            width: 140px;
-            @include mobile {
-                width: 100px;
-                font-size: 17px;
-            }
-            @include flex(space-between, center);
-            color: $deep-orange;
-            i {
-                cursor: pointer;
-                border-radius: 50%;
-                width: 55px;
-                height: 55px;
-                @include flex(center, center);
-
-                @include mobile {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-            i:first-child {
-                position: relative;
-                background: rgba($orange, .3);
-                animation: glow 1s linear infinite;
-                &::after {
-                    position: absolute;
-                    content: '';
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba($orange, .1);
-                    border-radius: 50%;
-                    z-index: -0.1;
-                    animation: spread 1s linear infinite;
-
-                    @keyframes spread {
-                        0%, 100% {
-                            top: -15px;
-                            left: -15px;
-                            right: -15px;
-                            bottom: -15px;
-                        } 50% {
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                        }
-                    }
-                }
-
-                @keyframes glow {
-                    0%, 100% {
-                        background: rgba($orange, .3);
-                    } 50% {
-                        background: rgba($orange, .2);
-                    }
-                }
-            }
-
-            i:last-child {
-                background: #fff;
-                box-shadow: 0 0 10px rgba(black, .15);
-                transition: background .3s ease,
-                            color .3s ease;
-                &:hover {
-                    background: $deep-orange;
-                    color: #fff;
-                }
-            }
-        }
         .logo {
+            margin-top: 37px;
             font: {
                 size: 50px;
                 weight: weight(bold);
             }
             @include mobile {
                 font-size: 33px;
+                margin-top: 17px;
             }
             span {
                 text-shadow: 0 2px 0 black;
@@ -98,7 +20,6 @@ div.home {
                 color: $green;
             }
         }
-    }
     #greet {
         margin-top: 25px;
         line-height: 34px;
@@ -132,10 +53,8 @@ div.home {
     }
 
     div.langs-section {
-        margin-top: 90px;
-        padding: 10px 0;
+        margin: 40px 0 10px;
         width: 100%;
-        height: 375px;
         display: grid;
         position: relative;
         grid-template-columns: repeat(2, 1fr);
@@ -162,7 +81,6 @@ div.home {
                 height: 125px;
                 border-radius: 20px;
                 box-shadow: 0 0 5px rgba(#000, 0.4);
-
                 margin: 0 auto;
             }
             
@@ -170,7 +88,7 @@ div.home {
                 background: $green url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
             }
             &:nth-child(odd) {
-                background: $deep-orange url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
+                background: $deep-orange url(../img/green.svg) no-repeat top -30px right -30px/100px;
             }
             @include laptop {
                 &:hover {
@@ -200,6 +118,37 @@ div.home {
 
             &:nth-child(even) {
                 margin-left: auto;
+            }
+
+            &:last-child {
+                background: #fff;
+                box-shadow: none;
+                border: 1px solid $deep-orange;
+                @include flex(center, center, column);
+
+                @include laptop{
+                    &:hover {
+                        span {
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+                }
+
+                span {
+                    color: #fff;
+                    font: {
+                        size: 60px;
+                        weight: weight(light);
+                    }
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    @include flex(center, center);
+                    background: $green;
+                    transition: width .15s linear,
+                                height .15s linear;
+                }
             }
         }
     }

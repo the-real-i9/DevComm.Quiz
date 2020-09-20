@@ -21,6 +21,10 @@ a:link:hover {
   text-decoration: underline;
 }
 
+*:not(a) {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .container {
   height: 100%;
 }
@@ -45,6 +49,7 @@ a:link:hover {
   width: 100%;
   height: 100%;
   background: #fff;
+  position: relative;
 }
 
 @media (max-width: 650px) {
@@ -66,71 +71,19 @@ a:link:hover {
           flex-direction: column;
 }
 
-.container .main-pane > :not(.modules):not(.question) {
+.container .main-pane > :not(.question-page) {
   background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px, url(../img/cream.svg) no-repeat 150% 155%/350px, url(../img/orange.svg) no-repeat -50px 125%/350px;
 }
 
 @media (max-width: 650px) {
-  .container .main-pane > :not(.modules):not(.question) {
+  .container .main-pane > :not(.question-page) {
     background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px, url(../img/cream.svg) no-repeat 250% 155%/250px, url(../img/orange.svg) no-repeat -80px 130%/250px;
   }
 }
 
-@media (min-width: 650px) {
-  .container .quote-pane {
-    width: 40%;
-    height: 100%;
-    background: #faf4ed;
-  }
-}
-
-div.home {
-  width: 100%;
-}
-
-div.home .top {
-  width: 100%;
-  margin-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 650px) {
-  div.home .top {
-    margin-top: 20px;
-  }
-}
-
-div.home .top .clickables {
-  font-size: 27px;
-  width: 140px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.container .main-pane #sound {
   color: #e1543c;
-}
-
-@media (max-width: 650px) {
-  div.home .top .clickables {
-    width: 100px;
-    font-size: 17px;
-  }
-}
-
-div.home .top .clickables i {
+  font-size: 27px;
   cursor: pointer;
   border-radius: 50%;
   width: 55px;
@@ -144,23 +97,35 @@ div.home .top .clickables i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media (max-width: 650px) {
-  div.home .top .clickables i {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-div.home .top .clickables i:first-child {
-  position: relative;
+  position: absolute;
+  top: 42px;
+  left: 82%;
   background: rgba(235, 136, 68, 0.3);
   -webkit-animation: glow 1s linear infinite;
           animation: glow 1s linear infinite;
 }
 
-div.home .top .clickables i:first-child::after {
+@media (max-width: 650px) {
+  .container .main-pane #sound {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container .main-pane #sound {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container .main-pane #sound {
+    top: 19px;
+    left: 78%;
+  }
+}
+
+.container .main-pane #sound::after {
   position: absolute;
   content: '';
   top: 0;
@@ -222,39 +187,40 @@ div.home .top .clickables i:first-child::after {
   }
 }
 
-div.home .top .clickables i:last-child {
-  background: #fff;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -webkit-transition: background .3s ease, color .3s ease;
-  transition: background .3s ease, color .3s ease;
+@media (min-width: 650px) {
+  .container .quote-pane {
+    width: 40%;
+    height: 100%;
+    background: #faf4ed;
+  }
 }
 
-div.home .top .clickables i:last-child:hover {
-  background: #e1543c;
-  color: #fff;
+div.home {
+  width: 100%;
 }
 
-div.home .top .logo {
+div.home .logo {
+  margin-top: 37px;
   font-size: 50px;
   font-weight: 700;
 }
 
 @media (max-width: 650px) {
-  div.home .top .logo {
+  div.home .logo {
     font-size: 33px;
+    margin-top: 17px;
   }
 }
 
-div.home .top .logo span {
+div.home .logo span {
   text-shadow: 0 2px 0 black;
 }
 
-div.home .top .logo span:first-child {
+div.home .logo span:first-child {
   color: #e1543c;
 }
 
-div.home .top .logo span:last-child {
+div.home .logo span:last-child {
   color: #2e996d;
 }
 
@@ -298,10 +264,8 @@ div.home > p {
 }
 
 div.home div.langs-section {
-  margin-top: 90px;
-  padding: 10px 0;
+  margin: 40px 0 10px;
   width: 100%;
-  height: 375px;
   display: -ms-grid;
   display: grid;
   position: relative;
@@ -356,7 +320,7 @@ div.home div.langs-section .lang-box:nth-child(even) {
 }
 
 div.home div.langs-section .lang-box:nth-child(odd) {
-  background: #e1543c url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
+  background: #e1543c url(../img/green.svg) no-repeat top -30px right -30px/100px;
 }
 
 @media (min-width: 650px) {
@@ -387,6 +351,54 @@ div.home div.langs-section .lang-box p {
 
 div.home div.langs-section .lang-box:nth-child(even) {
   margin-left: auto;
+}
+
+div.home div.langs-section .lang-box:last-child {
+  background: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #e1543c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 650px) {
+  div.home div.langs-section .lang-box:last-child:hover span {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+div.home div.langs-section .lang-box:last-child span {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 300;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2e996d;
+  -webkit-transition: width .15s linear, height .15s linear;
+  transition: width .15s linear, height .15s linear;
 }
 
 div.quote-pane {
