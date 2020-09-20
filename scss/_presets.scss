@@ -22,7 +22,7 @@ a:link:hover {
 .container {
     height: 100%;
     @include laptop {
-        width: 940px;
+        width: 600px;
         margin: 0 auto;
         @include flex();
     }
@@ -33,7 +33,7 @@ a:link:hover {
 
 
     .main-pane {
-        width: 70%;
+        width: 100%;
         height: 100%;
         background: #fff;
 
@@ -69,7 +69,6 @@ a:link:hover {
             background: $quotePaneBg;
         }
         @include mobile {
-            display: none;
         }
     }
 

@@ -101,13 +101,14 @@ div.home {
     }
     #greet {
         margin-top: 25px;
+        line-height: 34px;
         @include mobile {
-            line-height: 21px;
+            line-height: 23px;
             margin-top: 13px;
         }
         font: {
-            weight: weight(bold);
-            size: 27px;
+            weight: weight(extrabold);
+            size: 36px;
 
         }
         @include mobile {
@@ -134,7 +135,7 @@ div.home {
         margin-top: 90px;
         padding: 10px 0;
         width: 100%;
-        height: 500px;
+        height: 375px;
         display: grid;
         position: relative;
         grid-template-columns: repeat(2, 1fr);
@@ -150,16 +151,16 @@ div.home {
         .lang-box {
             width: 225px;
             height: 140px;
-            border-radius: 17px;
+            border-radius: 27px;
             @include flex(space-between, null, column);
             box-shadow: 0 2px 4px rgba(#000, 0.17);
             cursor: pointer;
             transition: background .5s ease;
 
             @include mobile {
-                width: 250px;
-                height: 150px;
-                border-radius: 15px;
+                width: 230px;
+                height: 125px;
+                border-radius: 20px;
                 box-shadow: 0 0 5px rgba(#000, 0.4);
 
                 margin: 0 auto;
@@ -171,8 +172,10 @@ div.home {
             &:nth-child(odd) {
                 background: $deep-orange url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
             }
-            &:hover {
-                background-size: 200px;
+            @include laptop {
+                &:hover {
+                    background-size: 200px;
+                }
             }
             
             i {
@@ -180,7 +183,7 @@ div.home {
                 margin-right: 13px;
                 margin-top: 13px;
                 color: #fff;
-                font-size: 30px;
+                font-size: 35px;
                 transition: font-size .25s linear;
             }
             p {

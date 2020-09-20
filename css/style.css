@@ -27,7 +27,7 @@ a:link:hover {
 
 @media (min-width: 650px) {
   .container {
-    width: 940px;
+    width: 600px;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -42,7 +42,7 @@ a:link:hover {
 }
 
 .container .main-pane {
-  width: 70%;
+  width: 100%;
   height: 100%;
   background: #fff;
 }
@@ -81,12 +81,6 @@ a:link:hover {
     width: 40%;
     height: 100%;
     background: #faf4ed;
-  }
-}
-
-@media (max-width: 650px) {
-  .container .quote-pane {
-    display: none;
   }
 }
 
@@ -266,13 +260,14 @@ div.home .top .logo span:last-child {
 
 div.home #greet {
   margin-top: 25px;
-  font-weight: 700;
-  font-size: 27px;
+  line-height: 34px;
+  font-weight: 800;
+  font-size: 36px;
 }
 
 @media (max-width: 650px) {
   div.home #greet {
-    line-height: 21px;
+    line-height: 23px;
     margin-top: 13px;
   }
 }
@@ -306,7 +301,7 @@ div.home div.langs-section {
   margin-top: 90px;
   padding: 10px 0;
   width: 100%;
-  height: 500px;
+  height: 375px;
   display: -ms-grid;
   display: grid;
   position: relative;
@@ -327,7 +322,7 @@ div.home div.langs-section {
 div.home div.langs-section .lang-box {
   width: 225px;
   height: 140px;
-  border-radius: 17px;
+  border-radius: 27px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,9 +342,9 @@ div.home div.langs-section .lang-box {
 
 @media (max-width: 650px) {
   div.home div.langs-section .lang-box {
-    width: 250px;
-    height: 150px;
-    border-radius: 15px;
+    width: 230px;
+    height: 125px;
+    border-radius: 20px;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     margin: 0 auto;
@@ -364,8 +359,10 @@ div.home div.langs-section .lang-box:nth-child(odd) {
   background: #e1543c url(../img/green.svg) no-repeat bottom -30px left -30px/100px;
 }
 
-div.home div.langs-section .lang-box:hover {
-  background-size: 200px;
+@media (min-width: 650px) {
+  div.home div.langs-section .lang-box:hover {
+    background-size: 200px;
+  }
 }
 
 div.home div.langs-section .lang-box i {
@@ -374,7 +371,7 @@ div.home div.langs-section .lang-box i {
   margin-right: 13px;
   margin-top: 13px;
   color: #fff;
-  font-size: 30px;
+  font-size: 35px;
   -webkit-transition: font-size .25s linear;
   transition: font-size .25s linear;
 }
@@ -406,6 +403,7 @@ div.quote-pane {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: none;
 }
 
 div.quote-pane > div.quote-block {

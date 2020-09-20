@@ -1,5 +1,6 @@
 div.quote-pane {
     @include flex(space-evenly, center, column);
+    display: none;
     & > div.quote-block {
         position: relative;
         width: 90%;
