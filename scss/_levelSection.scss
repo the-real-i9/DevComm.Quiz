@@ -1,0 +1,27 @@
+div[class|='quiz-levels'] {
+    
+    @include mobile {
+        .top {
+            padding: 0 7%;
+            width: 100%;
+            height: 70px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 2px rgba(#000, .25);
+    
+            & > p:first-child {
+                font: {
+                    size: 21px;
+                    weight: weight(semibold);
+                }
+                margin-top: 15px;
+            }
+            & > p:last-child {
+                font: {
+                    size: 13px;
+                    weight: weight(semibold);
+                }
+                margin-top: 3px;
+            }
+        }
+    }
+}

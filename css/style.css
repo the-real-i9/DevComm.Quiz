@@ -61,7 +61,6 @@ a:link:hover {
 .container .main-pane > div {
   width: 100%;
   height: 100%;
-  padding: 0 9%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,8 +70,14 @@ a:link:hover {
           flex-direction: column;
 }
 
-@media (max-width: 650px) {
+@media (min-width: 650px) {
   .container .main-pane > div {
+    padding: 0 9%;
+  }
+}
+
+@media (max-width: 650px) {
+  .container .main-pane > div.home, .container .main-pane > div.question-page {
     padding: 0 5%;
   }
 }
@@ -524,5 +529,26 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+@media (max-width: 650px) {
+  div[class|='quiz-levels'] .top {
+    padding: 0 7%;
+    width: 100%;
+    height: 70px;
+    border-radius: 0 0 15px 15px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  div[class|='quiz-levels'] .top > p:first-child {
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+  div[class|='quiz-levels'] .top > p:last-child {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 3px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

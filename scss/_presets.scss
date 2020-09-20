@@ -49,10 +49,14 @@ a:link:hover {
         & > div {
             width: 100%;
             height: 100%;
-            padding: 0 9%;
+            @include laptop {
+                padding: 0 9%;
+            }
 
             @include mobile {
-                padding: 0 5%;
+                &.home, &.question-page {
+                    padding: 0 5%;
+                }
             }
             @include flex(null, null, column);
         }
