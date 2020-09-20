@@ -253,8 +253,13 @@ div.home #greet span:first-child {
   font-weight: 500;
 }
 
-div.home #greet span:last-child {
+div.home #greet span#name {
   color: #2e996d;
+}
+
+div.home #greet i#edit-nickname {
+  color: #eb8844;
+  cursor: pointer;
 }
 
 div.home > p {

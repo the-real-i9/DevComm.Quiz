@@ -38,8 +38,12 @@ div.home {
         span:first-child {
             font-weight: weight(medium);
         }
-        span:last-child {
+        span#name {
             color: $green;
+        }
+        i#edit-nickname {
+            color: $orange;
+            cursor: pointer;
         }
     }
 
