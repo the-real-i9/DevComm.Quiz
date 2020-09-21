@@ -101,10 +101,16 @@ div.home {
             }
             
             &:nth-child(even) {
-                background: $green url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+                background: $green url(../img/deep-orange.svg);
             }
             &:nth-child(odd) {
-                background: $deep-orange url(../img/green.svg) no-repeat top -30px right -30px/100px;
+                background: $deep-orange url(../img/green.svg) ;
+            }
+
+            &:nth-child(n) {
+                background-position: top -30px right -30px;
+                background-size: 100px;
+                background-repeat: no-repeat;
             }
             
             @include mobile {
