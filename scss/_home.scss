@@ -78,7 +78,6 @@ div.home {
         overflow-y: auto;
         
         @include mobile {
-            grid-template-columns: repeat(2, 1fr);
             margin-top: 40px;
         }
 
