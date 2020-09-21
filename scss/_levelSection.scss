@@ -1,4 +1,34 @@
 div[class|='quiz-levels'] {
+    .levels-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .level-box {
+            box-shadow: 0 2px 4px rgba(#000, 0.17);
+            cursor: pointer;
+            margin: 0 auto;
+
+            &:nth-child(even) {
+                background: $deep-orange url(../img/cream.svg) center -50px;
+            }
+            &:nth-child(odd) {
+                background: $cream url(../img/deep-orange.svg) center -50px;
+            }
+    
+            &:nth-child(n) {
+                background-repeat: no-repeat;
+            }
+
+            .level-bottom-text {
+                p:first-child {
+                    border-top: 1px solid #000;
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+    }
+
+
     @include laptop {
         .top {
             margin-top: 48px;
@@ -21,8 +51,6 @@ div[class|='quiz-levels'] {
         .levels-section {
             margin-top: 80px;
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
             grid-row-gap: 20px;
             position: relative;
 
@@ -31,22 +59,11 @@ div[class|='quiz-levels'] {
                 height: 140px;
                 border-radius: 27px;
                 @include flex(space-between, null, column);
-                box-shadow: 0 2px 4px rgba(#000, 0.17);
-                cursor: pointer;
                 transition: background .5s ease;
-                margin: 0 auto;
-
-                &:nth-child(even) {
-                    background: $deep-orange url(../img/cream.svg) center -50px;
-                }
-                &:nth-child(odd) {
-                    background: $cream url(../img/deep-orange.svg) center -50px;
-                }
 
                 &:nth-child(n) {
                     background-position: top -30px right -30px;
                     background-size: 100px;
-                    background-repeat: no-repeat;
                 }
 
                 &:hover {
@@ -75,8 +92,6 @@ div[class|='quiz-levels'] {
                     p:first-child {
                         display: inline;
                         font-size: 23px;
-                        border-top: 1px solid #000;
-                        border-bottom: 1px solid #000;
                     }
                 }
             }
@@ -112,8 +127,6 @@ div[class|='quiz-levels'] {
         .levels-section {
             padding: 0 5%;
             margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
             grid-row-gap: 10px;
 
             .level-box {
@@ -121,18 +134,11 @@ div[class|='quiz-levels'] {
                 height: 160px;
                 border-radius: 14px;
                 @include flex(space-between, center, column);
-                margin: 0 auto;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+                transition: background .5s ease;
 
-                &:nth-child(even) {
-                    background: $deep-orange url(../img/cream.svg) center -50px;
-                }
-                &:nth-child(odd) {
-                    background: $cream url(../img/deep-orange.svg) center -50px;
-                }
+
                 &:nth-child(n) {
                     background-size: 150px;
-                    background-repeat: no-repeat;
                 }
 
                 i {
@@ -156,8 +162,6 @@ div[class|='quiz-levels'] {
 
                     p:first-child {
                         font-size: 18px;
-                        border-top: 1px solid #000;
-                        border-bottom: 1px solid #000;
                     }
                 }
                 

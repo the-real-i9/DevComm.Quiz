@@ -547,6 +547,37 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
           justify-content: flex-end;
 }
 
+div[class|='quiz-levels'] .levels-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+div[class|='quiz-levels'] .levels-section .level-box {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+div[class|='quiz-levels'] .levels-section .level-box:nth-child(even) {
+  background: #e1543c url(../img/cream.svg) center -50px;
+}
+
+div[class|='quiz-levels'] .levels-section .level-box:nth-child(odd) {
+  background: #f5d3ac url(../img/deep-orange.svg) center -50px;
+}
+
+div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
+  background-repeat: no-repeat;
+}
+
+div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-child {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
 @media (min-width: 650px) {
   div[class|='quiz-levels'] .top {
     margin-top: 48px;
@@ -563,10 +594,6 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
   div[class|='quiz-levels'] .levels-section {
     margin-top: 80px;
     width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 20px;
     position: relative;
   }
@@ -584,23 +611,12 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
-    cursor: pointer;
     -webkit-transition: background .5s ease;
     transition: background .5s ease;
-    margin: 0 auto;
-  }
-  div[class|='quiz-levels'] .levels-section .level-box:nth-child(even) {
-    background: #e1543c url(../img/cream.svg) center -50px;
-  }
-  div[class|='quiz-levels'] .levels-section .level-box:nth-child(odd) {
-    background: #f5d3ac url(../img/deep-orange.svg) center -50px;
   }
   div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
     background-position: top -30px right -30px;
     background-size: 100px;
-    background-repeat: no-repeat;
   }
   div[class|='quiz-levels'] .levels-section .level-box:hover {
     background-size: 200px;
@@ -624,8 +640,6 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
   div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-child {
     display: inline;
     font-size: 23px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
   }
 }
 
@@ -651,10 +665,6 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
   div[class|='quiz-levels'] .levels-section {
     padding: 0 5%;
     margin-top: 50px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 10px;
   }
   div[class|='quiz-levels'] .levels-section .level-box {
@@ -674,19 +684,11 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 auto;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
-  }
-  div[class|='quiz-levels'] .levels-section .level-box:nth-child(even) {
-    background: #e1543c url(../img/cream.svg) center -50px;
-  }
-  div[class|='quiz-levels'] .levels-section .level-box:nth-child(odd) {
-    background: #f5d3ac url(../img/deep-orange.svg) center -50px;
+    -webkit-transition: background .5s ease;
+    transition: background .5s ease;
   }
   div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
     background-size: 150px;
-    background-repeat: no-repeat;
   }
   div[class|='quiz-levels'] .levels-section .level-box i {
     margin-top: 20px;
@@ -705,8 +707,6 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
   }
   div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-child {
     font-size: 18px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
   }
 }
 /*# sourceMappingURL=style.css.map */
