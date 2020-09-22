@@ -355,8 +355,8 @@ div.home div.langs-section .lang-box:nth-child(n) {
 }
 
 div.home div.langs-section .lang-box:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 @media (max-width: 650px) {
@@ -567,7 +567,6 @@ div[class|='quiz-levels'] .levels-section .level-box {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
   cursor: pointer;
-  margin: 0 auto;
   -webkit-transition: background .5s ease, -webkit-transform .15s linear;
   transition: background .5s ease, -webkit-transform .15s linear;
   transition: background .5s ease, transform .15s linear;
