@@ -291,19 +291,15 @@ div.home div.langs-section {
   margin-top: 40px;
   padding-bottom: 10px;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  position: relative;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   overflow-y: auto;
-}
-
-@media (max-width: 650px) {
-  div.home div.langs-section {
-    grid-row-gap: 10px;
-  }
 }
 
 @media (max-width: 650px) {
@@ -331,7 +327,7 @@ div.home div.langs-section .lang-box {
   cursor: pointer;
   -webkit-transition: background .5s ease;
   transition: background .5s ease;
-  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 650px) {
@@ -343,11 +339,11 @@ div.home div.langs-section .lang-box {
 }
 
 div.home div.langs-section .lang-box:nth-child(even) {
-  background: #2e996d url(../img/deep-orange.svg);
+  background: #f5d3ac url(../img/deep-orange.svg);
 }
 
 div.home div.langs-section .lang-box:nth-child(odd) {
-  background: #e1543c url(../img/green.svg);
+  background: #e1543c url(../img/cream.svg);
 }
 
 div.home div.langs-section .lang-box:nth-child(n) {
@@ -374,7 +370,7 @@ div.home div.langs-section .lang-box i {
       align-self: flex-end;
   margin-right: 13px;
   margin-top: 13px;
-  color: #fff;
+  color: #000;
   font-size: 35px;
 }
 
@@ -385,7 +381,7 @@ div.home div.langs-section .lang-box i {
         align-self: center;
     margin-right: 0;
     margin-top: 20px;
-    border: 2px solid #fff;
+    border: 2px solid #000;
     padding: 10px;
     border-radius: 50%;
   }
@@ -397,7 +393,7 @@ div.home div.langs-section .lang-box p {
   font-weight: 700;
   font-size: 17px;
   letter-spacing: .5px;
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 650px) {
@@ -433,8 +429,8 @@ div.home div.langs-section .lang-box:last-child {
 
 @media (min-width: 650px) {
   div.home div.langs-section .lang-box:last-child:hover span {
-    width: 70px;
-    height: 70px;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -454,9 +450,11 @@ div.home div.langs-section .lang-box:last-child span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #2e996d;
-  -webkit-transition: width .15s linear, height .15s linear;
-  transition: width .15s linear, height .15s linear;
+  background: #000;
+  -webkit-transition: -webkit-transform .15s linear;
+  transition: -webkit-transform .15s linear;
+  transition: transform .15s linear;
+  transition: transform .15s linear, -webkit-transform .15s linear;
 }
 
 div.quote-pane {
