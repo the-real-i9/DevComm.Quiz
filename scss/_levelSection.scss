@@ -1,22 +1,30 @@
 div[class|='quiz-levels'] {
     .levels-section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        @include flex(space-evenly);
+        flex-wrap: wrap;
 
         .level-box {
             box-shadow: 0 2px 4px rgba(#000, 0.17);
             cursor: pointer;
             margin: 0 auto;
+            transition: background .5s ease,
+                        transform .15s linear;
 
             &:nth-child(even) {
-                background: $deep-orange url(../img/cream.svg) center -50px;
+                background: $deep-orange url(../img/cream.svg);
             }
             &:nth-child(odd) {
-                background: $cream url(../img/deep-orange.svg) center -50px;
+                background: $cream url(../img/deep-orange.svg);
             }
     
             &:nth-child(n) {
                 background-repeat: no-repeat;
+                background-position: center -50px;
+            }
+
+            &:active {
+                transform: scale(0.95);
+                transform-origin: center;
             }
 
             .level-bottom-text {
@@ -59,7 +67,6 @@ div[class|='quiz-levels'] {
                 height: 140px;
                 border-radius: 27px;
                 @include flex(space-between, null, column);
-                transition: background .5s ease;
 
                 &:nth-child(n) {
                     background-position: top -30px right -30px;
@@ -134,7 +141,6 @@ div[class|='quiz-levels'] {
                 height: 160px;
                 border-radius: 14px;
                 @include flex(space-between, center, column);
-                transition: background .5s ease;
 
 
                 &:nth-child(n) {

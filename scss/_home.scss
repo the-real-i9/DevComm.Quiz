@@ -84,7 +84,8 @@ div.home {
             @include flex(space-between, null, column);
             box-shadow: 0 2px 4px rgba(#000, 0.17);
             cursor: pointer;
-            transition: background .5s ease;
+            transition: background .5s ease,
+                        transform .15s linear;
             margin-bottom: 10px;
 
             @include mobile {
@@ -104,6 +105,10 @@ div.home {
                 background-position: top -30px right -30px;
                 background-size: 100px;
                 background-repeat: no-repeat;
+            }
+
+            &:active {
+                transform: scale(0.9);
             }
             
             @include mobile {

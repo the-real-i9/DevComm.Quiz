@@ -325,8 +325,10 @@ div.home div.langs-section .lang-box {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
   cursor: pointer;
-  -webkit-transition: background .5s ease;
-  transition: background .5s ease;
+  -webkit-transition: background .5s ease, -webkit-transform .15s linear;
+  transition: background .5s ease, -webkit-transform .15s linear;
+  transition: background .5s ease, transform .15s linear;
+  transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
   margin-bottom: 10px;
 }
 
@@ -350,6 +352,11 @@ div.home div.langs-section .lang-box:nth-child(n) {
   background-position: top -30px right -30px;
   background-size: 100px;
   background-repeat: no-repeat;
+}
+
+div.home div.langs-section .lang-box:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 @media (max-width: 650px) {
@@ -546,10 +553,14 @@ div.quote-pane > div.quote-block:first-child div.owner-info {
 }
 
 div[class|='quiz-levels'] .levels-section {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 div[class|='quiz-levels'] .levels-section .level-box {
@@ -557,18 +568,30 @@ div[class|='quiz-levels'] .levels-section .level-box {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
   cursor: pointer;
   margin: 0 auto;
+  -webkit-transition: background .5s ease, -webkit-transform .15s linear;
+  transition: background .5s ease, -webkit-transform .15s linear;
+  transition: background .5s ease, transform .15s linear;
+  transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
 }
 
 div[class|='quiz-levels'] .levels-section .level-box:nth-child(even) {
-  background: #e1543c url(../img/cream.svg) center -50px;
+  background: #e1543c url(../img/cream.svg);
 }
 
 div[class|='quiz-levels'] .levels-section .level-box:nth-child(odd) {
-  background: #f5d3ac url(../img/deep-orange.svg) center -50px;
+  background: #f5d3ac url(../img/deep-orange.svg);
 }
 
 div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
   background-repeat: no-repeat;
+  background-position: center -50px;
+}
+
+div[class|='quiz-levels'] .levels-section .level-box:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-child {
@@ -609,8 +632,6 @@ div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: background .5s ease;
-    transition: background .5s ease;
   }
   div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
     background-position: top -30px right -30px;
@@ -682,8 +703,6 @@ div[class|='quiz-levels'] .levels-section .level-box .level-bottom-text p:first-
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: background .5s ease;
-    transition: background .5s ease;
   }
   div[class|='quiz-levels'] .levels-section .level-box:nth-child(n) {
     background-size: 150px;
