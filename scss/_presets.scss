@@ -11,6 +11,10 @@ html, body {
     background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
 }
 
+button {
+    outline: none;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -89,11 +93,12 @@ a:link:hover {
                 height: 40px;
             }
             position: absolute;
+            z-index: 1;
             top: 42px;
             left: 82%;
             @include mobile {
                 top: 19px;
-                // left: 80%;
+                // left: 82%;
             }
             background: rgba($orange, .3);
             animation: glow 1s linear infinite;

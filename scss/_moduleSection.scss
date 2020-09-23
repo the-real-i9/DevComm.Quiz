@@ -1,0 +1,79 @@
+div.quiz-modules-page {
+    @include laptop {
+        
+    }
+    
+    @include mobile {
+        overflow-y: auto;
+        .top {
+            position: fixed;
+            top: 0;
+            background: #fff;
+            padding: 0 7%;
+            width: 100%;
+            height: 70px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 2px rgba(#000, .25);
+    
+            & > p:first-child {
+                font: {
+                    size: 21px;
+                    weight: weight(semibold);
+                }
+                margin-top: 15px;
+            }
+            & > p:last-child {
+                font: {
+                    size: 13px;
+                    weight: weight(semibold);
+                }
+                margin-top: 3px;
+            }
+        }
+
+        .modules-section {
+            padding: 0 6%;
+            width: 100%;
+            margin-top: 90px;
+            @include flex(space-between);
+            flex-wrap: wrap;
+
+            .module-box {
+                @include flex(center, null, column);
+                width: 135px;
+                margin-bottom: 10px;
+                background: #fff;
+                border-radius: 17px;
+                box-shadow: 0px 0px 4px rgba(#000, 0.17);
+                padding: 10px 0 12px 15px;
+
+                .module-num {
+                    font: {
+                        size: 18px;
+                        weight: weight(bold);
+                    }
+                }
+
+                .module-score {
+                    font: {
+                        size: 17px;
+                        weight: weight(medium);
+                    }
+                    margin-bottom: 5px;
+                }
+
+                .start-module-btn {
+                    @include flex(center, center);
+                    width: 65px;
+                    height: 30px;
+                    background: $deep-orange;
+                    border: none;
+                    border-radius: 3px;
+                    color: #fff;
+                    font-weight: weight(semibold);
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

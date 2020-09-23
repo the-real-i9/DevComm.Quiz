@@ -1,4 +1,9 @@
-div[class|='quiz-levels'] {
+div.quiz-levels-page {
+    .top {
+        & > p:first-child {
+            text-transform: capitalize;
+        }
+    }
     .levels-section {
         @include flex(space-evenly);
         flex-wrap: wrap;
