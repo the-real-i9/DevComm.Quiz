@@ -17,7 +17,7 @@ div.home {
                 color: $deep-orange;
             }
             span:last-child {
-                color: $green;
+                color: $cream;
             }
         }
     #greet {
@@ -39,15 +39,15 @@ div.home {
             font-weight: weight(medium);
         }
         span#name {
-            color: $green;
+            color: $deep-orange;
         }
         i#edit-nickname {
             cursor: pointer;
-            color: $orange;
+            color: $cream;
             @include laptop {
                 color: silver;
                 &:hover {
-                    color: $orange;
+                    color: $cream;
                 }
 
             }
@@ -65,10 +65,11 @@ div.home {
     }
 
     div.langs-section {
+        padding: 0 1%;
         margin-top: 40px;
         padding-bottom: 10px;
         width: 100%;
-        @include flex(space-evenly);
+        @include flex(space-between);
         flex-wrap: wrap;
         overflow-y: auto;
         
@@ -86,7 +87,7 @@ div.home {
             cursor: pointer;
             transition: background .5s ease,
                         transform .15s linear;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
 
             @include mobile {
                 width: 135px;
@@ -95,10 +96,10 @@ div.home {
             }
             
             &:nth-child(even) {
-                background: $cream url(../img/deep-orange.svg);
+                background: $deep-orange url(../img/cream.svg);
             }
             &:nth-child(odd) {
-                background: $deep-orange url(../img/cream.svg) ;
+                background: $cream url(../img/deep-orange.svg) ;
             }
 
             &:nth-child(n) {

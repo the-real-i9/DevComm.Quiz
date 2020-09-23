@@ -13,6 +13,7 @@ html, body {
 
 button {
     outline: none;
+    cursor: pointer;
 }
 
 a:link {
@@ -87,7 +88,6 @@ a:link:hover {
             width: 55px;
             height: 55px;
             @include flex(center, center);
-
             @include mobile {
                 width: 40px;
                 height: 40px;
@@ -98,28 +98,21 @@ a:link:hover {
             left: 82%;
             @include mobile {
                 top: 19px;
-                // left: 82%;
             }
-            background: rgba($orange, .3);
-            animation: glow 1s linear infinite;
             &::after {
-                position: absolute;
                 content: '';
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba($orange, .1);
-                border-radius: 50%;
-                z-index: -0.1;
-                animation: spread 1s linear infinite;
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background: #000;
+                transform: rotate(-45deg);
 
                 @keyframes spread {
                     0%, 100% {
-                        top: -15px;
-                        left: -15px;
-                        right: -15px;
-                        bottom: -15px;
+                        top: -13px;
+                        left: -13px;
+                        right: -13px;
+                        bottom: -13px;
                     } 50% {
                         top: 0;
                         left: 0;
@@ -128,13 +121,30 @@ a:link:hover {
                     }
                 }
             }
+            background: rgba($orange, .2);
 
             @keyframes glow {
                 0%, 100% {
-                    background: rgba($orange, .3);
-                } 50% {
                     background: rgba($orange, .2);
+                } 50% {
+                    background: rgba($orange, .1);
                 }
+            }
+        }
+        #sound.music-on {
+            animation: glow 1s linear infinite;
+            &::after {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: auto;
+                height: auto;
+                background: rgba($orange, .1);
+                border-radius: 50%;
+                z-index: -1;
+                transform: none;
+                animation: spread 1s linear infinite;
             }
         }
     }

@@ -15,6 +15,7 @@ html, body {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 a:link {
@@ -116,9 +117,7 @@ a:link:hover {
   z-index: 1;
   top: 42px;
   left: 82%;
-  background: rgba(235, 136, 68, 0.3);
-  -webkit-animation: glow 1s linear infinite;
-          animation: glow 1s linear infinite;
+  background: rgba(235, 136, 68, 0.2);
 }
 
 @media (max-width: 650px) {
@@ -141,25 +140,21 @@ a:link:hover {
 }
 
 .container .main-pane #sound::after {
-  position: absolute;
   content: '';
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(235, 136, 68, 0.1);
-  border-radius: 50%;
-  z-index: -0.1;
-  -webkit-animation: spread 1s linear infinite;
-          animation: spread 1s linear infinite;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #000;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 @-webkit-keyframes spread {
   0%, 100% {
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
+    top: -13px;
+    left: -13px;
+    right: -13px;
+    bottom: -13px;
   }
   50% {
     top: 0;
@@ -171,10 +166,10 @@ a:link:hover {
 
 @keyframes spread {
   0%, 100% {
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
+    top: -13px;
+    left: -13px;
+    right: -13px;
+    bottom: -13px;
   }
   50% {
     top: 0;
@@ -186,20 +181,41 @@ a:link:hover {
 
 @-webkit-keyframes glow {
   0%, 100% {
-    background: rgba(235, 136, 68, 0.3);
+    background: rgba(235, 136, 68, 0.2);
   }
   50% {
-    background: rgba(235, 136, 68, 0.2);
+    background: rgba(235, 136, 68, 0.1);
   }
 }
 
 @keyframes glow {
   0%, 100% {
-    background: rgba(235, 136, 68, 0.3);
-  }
-  50% {
     background: rgba(235, 136, 68, 0.2);
   }
+  50% {
+    background: rgba(235, 136, 68, 0.1);
+  }
+}
+
+.container .main-pane #sound.music-on {
+  -webkit-animation: glow 1s linear infinite;
+          animation: glow 1s linear infinite;
+}
+
+.container .main-pane #sound.music-on::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  background: rgba(235, 136, 68, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-animation: spread 1s linear infinite;
+          animation: spread 1s linear infinite;
 }
 
 @media (min-width: 650px) {
@@ -236,7 +252,7 @@ div.home .logo span:first-child {
 }
 
 div.home .logo span:last-child {
-  color: #2e996d;
+  color: #f5d3ac;
 }
 
 div.home #greet {
@@ -264,12 +280,12 @@ div.home #greet span:first-child {
 }
 
 div.home #greet span#name {
-  color: #2e996d;
+  color: #e1543c;
 }
 
 div.home #greet i#edit-nickname {
   cursor: pointer;
-  color: #eb8844;
+  color: #f5d3ac;
 }
 
 @media (min-width: 650px) {
@@ -277,7 +293,7 @@ div.home #greet i#edit-nickname {
     color: silver;
   }
   div.home #greet i#edit-nickname:hover {
-    color: #eb8844;
+    color: #f5d3ac;
   }
 }
 
@@ -293,15 +309,16 @@ div.home > p {
 }
 
 div.home div.langs-section {
+  padding: 0 1%;
   margin-top: 40px;
   padding-bottom: 10px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-y: auto;
@@ -334,7 +351,7 @@ div.home div.langs-section .lang-box {
   transition: background .5s ease, -webkit-transform .15s linear;
   transition: background .5s ease, transform .15s linear;
   transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 650px) {
@@ -346,11 +363,11 @@ div.home div.langs-section .lang-box {
 }
 
 div.home div.langs-section .lang-box:nth-child(even) {
-  background: #f5d3ac url(../img/deep-orange.svg);
+  background: #e1543c url(../img/cream.svg);
 }
 
 div.home div.langs-section .lang-box:nth-child(odd) {
-  background: #e1543c url(../img/cream.svg);
+  background: #f5d3ac url(../img/deep-orange.svg);
 }
 
 div.home div.langs-section .lang-box:nth-child(n) {
@@ -565,9 +582,9 @@ div.quiz-levels-page .levels-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -621,15 +638,15 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     margin-top: 5px;
   }
   div.quiz-levels-page .levels-section {
+    padding: 0 2%;
     margin-top: 80px;
     width: 100%;
-    grid-row-gap: 20px;
-    position: relative;
   }
   div.quiz-levels-page .levels-section .level-box {
     width: 225px;
     height: 140px;
     border-radius: 27px;
+    margin-bottom: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -690,14 +707,14 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     margin-top: 3px;
   }
   div.quiz-levels-page .levels-section {
-    padding: 0 5%;
+    padding: 0 6%;
     margin-top: 50px;
-    grid-row-gap: 10px;
   }
   div.quiz-levels-page .levels-section .level-box {
     width: 135px;
     height: 160px;
     border-radius: 14px;
+    margin-bottom: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -732,6 +749,84 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   }
   div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 650px) {
+  div.quiz-modules-page .top {
+    margin-top: 48px;
+  }
+  div.quiz-modules-page .top > p:first-child {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  div.quiz-modules-page .top > p:last-child {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+  div.quiz-modules-page .modules-section {
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 1%;
+    padding-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  div.quiz-modules-page .modules-section .module-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 150px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 17px;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+    padding: 15px 0 17px 20px;
+  }
+  div.quiz-modules-page .modules-section .module-box:nth-child(3n - 1) {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  div.quiz-modules-page .modules-section .module-box .module-num {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  div.quiz-modules-page .modules-section .module-box .module-score {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  div.quiz-modules-page .modules-section .module-box .start-module-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 70px;
+    height: 35px;
+    background: #e1543c;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
   }
 }
 
@@ -819,6 +914,15 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     color: #fff;
     font-weight: 600;
     font-size: 11px;
+  }
+  div.quiz-modules-page .modules-section .module-box.pass .module-score {
+    color: #d3a507;
+  }
+  div.quiz-modules-page .modules-section .module-box.fail .module-score {
+    color: #f11010;
+  }
+  div.quiz-modules-page .modules-section .module-box.excel .module-score {
+    color: #2e996d;
   }
 }
 /*# sourceMappingURL=style.css.map */

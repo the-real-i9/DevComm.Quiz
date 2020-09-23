@@ -5,7 +5,7 @@ div.quiz-levels-page {
         }
     }
     .levels-section {
-        @include flex(space-evenly);
+        @include flex(space-between);
         flex-wrap: wrap;
 
         .level-box {
@@ -61,15 +61,15 @@ div.quiz-levels-page {
         }
 
         .levels-section {
+            padding: 0 2%;
             margin-top: 80px;
             width: 100%;
-            grid-row-gap: 20px;
-            position: relative;
 
             .level-box {
                 width: 225px;
                 height: 140px;
                 border-radius: 27px;
+                margin-bottom: 20px;
                 @include flex(space-between, null, column);
 
                 &:nth-child(n) {
@@ -134,14 +134,14 @@ div.quiz-levels-page {
             }
         }
         .levels-section {
-            padding: 0 5%;
+            padding: 0 6%;
             margin-top: 50px;
-            grid-row-gap: 10px;
 
             .level-box {
                 width: 135px;
                 height: 160px;
                 border-radius: 14px;
+                margin-bottom: 10px;
                 @include flex(space-between, center, column);
 
 

@@ -1,6 +1,75 @@
 div.quiz-modules-page {
     @include laptop {
+        .top {
+            margin-top: 48px;
+
+            & > p:first-child {
+                font: {
+                    size: 36px;
+                    weight: weight(bold);
+                }
+            }
+            & > p:last-child {
+                font: {
+                    size: 17px;
+                    weight: weight(semibold);
+                }
+                margin-top: 5px;
+            }
+        }
+
         
+        .modules-section {
+            overflow-y: auto;
+            width: 100%;
+            margin-top: 50px;
+            padding: 0 1%;
+            padding-top: 10px;
+            @include flex();
+            flex-wrap: wrap;
+
+            .module-box {
+                @include flex(center, null, column);
+                width: 150px;
+                margin-bottom: 10px;
+                background: #fff;
+                border-radius: 17px;
+                box-shadow: 0px 0px 4px rgba(#000, 0.17);
+                padding: 15px 0 17px 20px;
+                
+                &:nth-child(3n - 1) {
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                }
+
+                .module-num {
+                    font: {
+                        size: 20px;
+                        weight: weight(bold);
+                    }
+                }
+
+                .module-score {
+                    font: {
+                        size: 19px;
+                        weight: weight(medium);
+                    }
+                    margin-bottom: 5px;
+                }
+
+                .start-module-btn {
+                    @include flex(center, center);
+                    width: 70px;
+                    height: 35px;
+                    background: $deep-orange;
+                    border: none;
+                    border-radius: 3px;
+                    color: #fff;
+                    font-weight: weight(semibold);
+                    font-size: 13px;
+                }
+            }
+        }
     }
     
     @include mobile {
@@ -72,6 +141,21 @@ div.quiz-modules-page {
                     color: #fff;
                     font-weight: weight(semibold);
                     font-size: 11px;
+                }
+            }
+            .module-box.pass {
+                .module-score {
+                    color: #d3a507;
+                }
+            }
+            .module-box.fail {
+                .module-score {
+                    color: #f11010;
+                }
+            }
+            .module-box.excel {
+                .module-score {
+                    color: $green;
                 }
             }
         }
