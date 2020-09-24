@@ -73,7 +73,7 @@ a:link:hover {
             @include mobile {
                 background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px,
                 url(../img/cream.svg) no-repeat 250% 155%/250px,
-                url(../img/orange.svg) no-repeat -80px 130%/250px;
+                url(../img/orange.svg) no-repeat -80px 140%/250px;
             }
         }
         
@@ -97,7 +97,7 @@ a:link:hover {
             top: 42px;
             left: 82%;
             @include mobile {
-                top: 19px;
+                top: 15px;
             }
             &::after {
                 content: '';

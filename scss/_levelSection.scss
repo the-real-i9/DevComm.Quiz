@@ -1,7 +1,19 @@
 div.quiz-levels-page {
     .top {
-        & > p:first-child {
-            text-transform: capitalize;
+        @include flex(space-evenly, center);
+
+        #back-to-home {
+            background: rgba($orange, .3);
+            @include flex(center, center);
+            color: $deep-orange;
+            font-weight: weight(semibold);
+            margin-right: 15px;
+        }
+        .center-text {
+            text-align: center;
+            p:first-child {
+                text-transform: capitalize;
+            }
         }
     }
     .levels-section {
@@ -43,26 +55,39 @@ div.quiz-levels-page {
 
     @include laptop {
         .top {
-            margin-top: 48px;
+            height: 150px;
 
-            & > p:first-child {
-                font: {
-                    size: 36px;
-                    weight: weight(bold);
-                }
+            #back-to-home {
+                width: 17%;
+                height: 50px;
+                border-radius: 32px;
+    
             }
-            & > p:last-child {
-                font: {
-                    size: 17px;
-                    weight: weight(semibold);
+            div:empty {
+                width: 17%;
+            }
+            
+            .center-text {
+                width: 67%;
+                p:first-child {
+                    font: {
+                        size: 36px;
+                        weight: weight(bold);
+                    }
                 }
-                margin-top: 5px;
+                p:last-child {
+                    font: {
+                        size: 17px;
+                        weight: weight(semibold);
+                    }
+                    margin-top: 5px;
+                }
             }
         }
 
         .levels-section {
             padding: 0 2%;
-            margin-top: 80px;
+            margin-top: 50px;
             width: 100%;
 
             .level-box {
@@ -117,20 +142,34 @@ div.quiz-levels-page {
             height: 70px;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 2px 2px rgba(#000, .25);
+
+            #back-to-home {
+                width: 23%;
+                height: 40px;
+                border-radius: 32px;
+                font-size: 13px;
     
-            & > p:first-child {
-                font: {
-                    size: 21px;
-                    weight: weight(bold);
-                }
-                margin-top: 15px;
             }
-            & > p:last-child {
-                font: {
-                    size: 13px;
-                    weight: weight(semibold);
+            div:empty {
+                width: 23%;
+            }
+            
+            .center-text {
+                width: 54%;
+                p:first-child {
+                    font: {
+                        size: 20px;
+                        weight: weight(bold);
+                    }
                 }
-                margin-top: 3px;
+
+                p:last-child {
+                    font: {
+                        size: 13px;
+                        weight: weight(semibold);
+                    }
+                    margin-top: 3px;
+                }
             }
         }
         .levels-section {

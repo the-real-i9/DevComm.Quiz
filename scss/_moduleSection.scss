@@ -1,5 +1,26 @@
 div.quiz-modules-page {
+    .top {
+        @include flex(space-between, center);
 
+        #back-to-levels {
+            background: rgba($orange, .3);
+            @include flex(center, center);
+            color: $deep-orange;
+            font-weight: weight(semibold);
+            margin-right: 17px;
+        }
+        .center-text {
+            text-align: center;
+            p:first-child {
+                text-transform: capitalize;
+            }
+            p:last-child {
+                border-top: 1px dotted #000;
+                border-bottom: 1px dotted #000;
+                display: inline-block;
+            }
+        }
+    }
     .modules-section {
         flex-wrap: wrap;
         
@@ -43,20 +64,33 @@ div.quiz-modules-page {
 
     @include laptop {
         .top {
-            margin-top: 48px;
+            height: 150px;
 
-            & > p:first-child {
-                font: {
-                    size: 36px;
-                    weight: weight(bold);
-                }
+            #back-to-levels {
+                width: 17%;
+                height: 50px;
+                border-radius: 32px;
+    
             }
-            & > p:last-child {
-                font: {
-                    size: 20px;
-                    weight: weight(semibold);
+            div:empty {
+                width: 17%;
+            }
+
+            .center-text {
+                width: 67%;
+                p:first-child {
+                    font: {
+                        size: 36px;
+                        weight: weight(bold);
+                    }
                 }
-                margin-top: 5px;
+                p:last-child {
+                    font: {
+                        size: 20px;
+                        weight: weight(semibold);
+                    }
+                    margin-top: 5px;
+                }
             }
         }
 
@@ -112,25 +146,37 @@ div.quiz-modules-page {
             height: 70px;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 2px 2px rgba(#000, .25);
+
+            #back-to-levels {
+                width: 23%;
+                height: 40px;
+                border-radius: 32px;
+                font-size: 13px;
     
-            & > p:first-child {
-                font: {
-                    size: 21px;
-                    weight: weight(bold);
-                }
-                margin-top: 15px;
             }
-            & > p:last-child {
-                font: {
-                    size: 15px;
-                    weight: weight(semibold);
+            div:empty {
+                width: 23%;
+            }
+            .center-text {
+                width: 54%;
+                p:first-child {
+                    font: {
+                        size: 21px;
+                        weight: weight(bold);
+                    }
                 }
-                margin-top: 3px;
+                p:last-child {
+                    font: {
+                        size: 15px;
+                        weight: weight(semibold);
+                    }
+                    margin-top: 3px;
+                }
             }
         }
 
         .modules-section {
-            padding: 0 6%;
+            padding: 0 5%;
             width: 100%;
             margin-top: 90px;
             @include flex(space-between);
@@ -138,6 +184,8 @@ div.quiz-modules-page {
             .module-box {
                 width: 135px;
                 padding: 10px 0 12px 15px;
+                margin: 0 auto;
+                margin-bottom: 15px;
 
                 .module-num {
                     font: {
