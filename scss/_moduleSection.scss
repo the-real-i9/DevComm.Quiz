@@ -1,4 +1,46 @@
 div.quiz-modules-page {
+
+    .modules-section {
+        flex-wrap: wrap;
+        
+        .module-box {
+            @include flex(center, null, column);
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 17px;
+            box-shadow: 0px 0px 4px rgba(#000, 0.17);
+
+            .module-score {
+                margin-bottom: 5px;
+            }
+
+
+            .start-module-btn {
+                @include flex(center, center);
+                    background: $deep-orange;
+                    border: none;
+                    border-radius: 3px;
+                    color: #fff;
+                    font-weight: weight(semibold);
+            }
+        }
+        .module-box.pass {
+            .module-score {
+                color: #d3a507;
+            }
+        }
+        .module-box.fail {
+            .module-score {
+                color: #f11010;
+            }
+        }
+        .module-box.excel {
+            .module-score {
+                color: $green;
+            }
+        }
+    }
+
     @include laptop {
         .top {
             margin-top: 48px;
@@ -11,7 +53,7 @@ div.quiz-modules-page {
             }
             & > p:last-child {
                 font: {
-                    size: 17px;
+                    size: 20px;
                     weight: weight(semibold);
                 }
                 margin-top: 5px;
@@ -26,15 +68,9 @@ div.quiz-modules-page {
             padding: 0 1%;
             padding-top: 10px;
             @include flex();
-            flex-wrap: wrap;
 
             .module-box {
-                @include flex(center, null, column);
                 width: 150px;
-                margin-bottom: 10px;
-                background: #fff;
-                border-radius: 17px;
-                box-shadow: 0px 0px 4px rgba(#000, 0.17);
                 padding: 15px 0 17px 20px;
                 
                 &:nth-child(3n - 1) {
@@ -54,18 +90,11 @@ div.quiz-modules-page {
                         size: 19px;
                         weight: weight(medium);
                     }
-                    margin-bottom: 5px;
                 }
 
                 .start-module-btn {
-                    @include flex(center, center);
                     width: 70px;
                     height: 35px;
-                    background: $deep-orange;
-                    border: none;
-                    border-radius: 3px;
-                    color: #fff;
-                    font-weight: weight(semibold);
                     font-size: 13px;
                 }
             }
@@ -87,13 +116,13 @@ div.quiz-modules-page {
             & > p:first-child {
                 font: {
                     size: 21px;
-                    weight: weight(semibold);
+                    weight: weight(bold);
                 }
                 margin-top: 15px;
             }
             & > p:last-child {
                 font: {
-                    size: 13px;
+                    size: 15px;
                     weight: weight(semibold);
                 }
                 margin-top: 3px;
@@ -105,15 +134,9 @@ div.quiz-modules-page {
             width: 100%;
             margin-top: 90px;
             @include flex(space-between);
-            flex-wrap: wrap;
 
             .module-box {
-                @include flex(center, null, column);
                 width: 135px;
-                margin-bottom: 10px;
-                background: #fff;
-                border-radius: 17px;
-                box-shadow: 0px 0px 4px rgba(#000, 0.17);
                 padding: 10px 0 12px 15px;
 
                 .module-num {
@@ -128,34 +151,12 @@ div.quiz-modules-page {
                         size: 17px;
                         weight: weight(medium);
                     }
-                    margin-bottom: 5px;
                 }
 
                 .start-module-btn {
-                    @include flex(center, center);
                     width: 65px;
                     height: 30px;
-                    background: $deep-orange;
-                    border: none;
-                    border-radius: 3px;
-                    color: #fff;
-                    font-weight: weight(semibold);
                     font-size: 11px;
-                }
-            }
-            .module-box.pass {
-                .module-score {
-                    color: #d3a507;
-                }
-            }
-            .module-box.fail {
-                .module-score {
-                    color: #f11010;
-                }
-            }
-            .module-box.excel {
-                .module-score {
-                    color: $green;
                 }
             }
         }

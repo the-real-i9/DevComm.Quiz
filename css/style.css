@@ -698,7 +698,7 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   }
   div.quiz-levels-page .top > p:first-child {
     font-size: 21px;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 15px;
   }
   div.quiz-levels-page .top > p:last-child {
@@ -752,6 +752,62 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   }
 }
 
+div.quiz-modules-page .modules-section {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.quiz-modules-page .modules-section .module-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 17px;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+}
+
+div.quiz-modules-page .modules-section .module-box .module-score {
+  margin-bottom: 5px;
+}
+
+div.quiz-modules-page .modules-section .module-box .start-module-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #e1543c;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 600;
+}
+
+div.quiz-modules-page .modules-section .module-box.pass .module-score {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-box.fail .module-score {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-box.excel .module-score {
+  color: #2e996d;
+}
+
 @media (min-width: 650px) {
   div.quiz-modules-page .top {
     margin-top: 48px;
@@ -761,7 +817,7 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     font-weight: 700;
   }
   div.quiz-modules-page .top > p:last-child {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 5px;
   }
@@ -774,26 +830,9 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
   div.quiz-modules-page .modules-section .module-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     width: 150px;
-    margin-bottom: 10px;
-    background: #fff;
-    border-radius: 17px;
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
     padding: 15px 0 17px 20px;
   }
   div.quiz-modules-page .modules-section .module-box:nth-child(3n - 1) {
@@ -807,25 +846,10 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   div.quiz-modules-page .modules-section .module-box .module-score {
     font-size: 19px;
     font-weight: 500;
-    margin-bottom: 5px;
   }
   div.quiz-modules-page .modules-section .module-box .start-module-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 70px;
     height: 35px;
-    background: #e1543c;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: 600;
     font-size: 13px;
   }
 }
@@ -847,11 +871,11 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   }
   div.quiz-modules-page .top > p:first-child {
     font-size: 21px;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 15px;
   }
   div.quiz-modules-page .top > p:last-child {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     margin-top: 3px;
   }
@@ -865,26 +889,9 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
   div.quiz-modules-page .modules-section .module-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     width: 135px;
-    margin-bottom: 10px;
-    background: #fff;
-    border-radius: 17px;
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
     padding: 10px 0 12px 15px;
   }
   div.quiz-modules-page .modules-section .module-box .module-num {
@@ -894,35 +901,11 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   div.quiz-modules-page .modules-section .module-box .module-score {
     font-size: 17px;
     font-weight: 500;
-    margin-bottom: 5px;
   }
   div.quiz-modules-page .modules-section .module-box .start-module-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 65px;
     height: 30px;
-    background: #e1543c;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: 600;
     font-size: 11px;
-  }
-  div.quiz-modules-page .modules-section .module-box.pass .module-score {
-    color: #d3a507;
-  }
-  div.quiz-modules-page .modules-section .module-box.fail .module-score {
-    color: #f11010;
-  }
-  div.quiz-modules-page .modules-section .module-box.excel .module-score {
-    color: #2e996d;
   }
 }
 /*# sourceMappingURL=style.css.map */
