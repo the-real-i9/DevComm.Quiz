@@ -168,6 +168,21 @@ div.quiz-question-page {
                         // weight: weight(medium);
                         size: 17px;
                     }
+
+                    border-bottom: 1px dotted silver;
+                    margin-bottom: 4px;
+                    padding-bottom: 3px;
+                }
+
+                #code-block {
+                    font-family: monospace;
+                    
+                    code {
+                        // height: 90px;
+                        border-radius: 5px;
+                    }
+                    padding-bottom: 4px;
+                    border-bottom: 1px dotted silver;
                 }
             }
         }
