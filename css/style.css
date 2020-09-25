@@ -1214,5 +1214,12 @@ div.quiz-question-page .top .center-text p:last-child {
     font-weight: 600;
     color: #e1543c;
   }
+  div.quiz-question-page #question-section {
+    padding: 0 7%;
+    width: 100%;
+  }
+  div.quiz-question-page #question-section .question-with-code > p {
+    font-size: 17px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

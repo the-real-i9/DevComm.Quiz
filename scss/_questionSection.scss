@@ -157,5 +157,19 @@ div.quiz-question-page {
 
             }
         }
+
+        #question-section {
+            padding: 0 7%;
+            width: 100%;
+
+            .question-with-code {
+                & > p {
+                    font: {
+                        // weight: weight(medium);
+                        size: 17px;
+                    }
+                }
+            }
+        }
     }
 }
