@@ -166,7 +166,7 @@ div.quiz-question-page {
                 & > p {
                     font: {
                         // weight: weight(medium);
-                        size: 17px;
+                        size: 15px;
                     }
 
                     border-bottom: 1px dotted silver;
@@ -176,10 +176,12 @@ div.quiz-question-page {
 
                 #code-block {
                     font-family: monospace;
+                    font-size: 15px;
                     
                     code {
-                        // height: 90px;
+                        height: 100px;
                         border-radius: 5px;
+                        overscroll-behavior: none;
                     }
                     padding-bottom: 4px;
                     border-bottom: 1px dotted silver;

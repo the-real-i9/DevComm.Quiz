@@ -1219,18 +1219,21 @@ div.quiz-question-page .top .center-text p:last-child {
     width: 100%;
   }
   div.quiz-question-page #question-section .question-with-code > p {
-    font-size: 17px;
+    font-size: 15px;
     border-bottom: 1px dotted silver;
     margin-bottom: 4px;
     padding-bottom: 3px;
   }
   div.quiz-question-page #question-section .question-with-code #code-block {
     font-family: monospace;
+    font-size: 15px;
     padding-bottom: 4px;
     border-bottom: 1px dotted silver;
   }
   div.quiz-question-page #question-section .question-with-code #code-block code {
+    height: 100px;
     border-radius: 5px;
+    overscroll-behavior: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
