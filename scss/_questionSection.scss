@@ -93,7 +93,7 @@ div.quiz-question-page {
                         left: 0;
                         bottom: 0;
                         // this will be changed by jS
-                        right: 70%;
+                        right: 50%;
                         background: $deep-orange;
                         transition: right .5s ease;
                     }
@@ -169,11 +169,9 @@ div.quiz-question-page {
                         size: 15px;
                     }
 
-                    border-bottom: 1px dotted silver;
                     margin-bottom: 4px;
-                    padding-bottom: 3px;
                 }
-
+                
                 #code-block {
                     font-family: monospace;
                     font-size: 15px;
@@ -183,8 +181,52 @@ div.quiz-question-page {
                         border-radius: 5px;
                         overscroll-behavior: none;
                     }
-                    padding-bottom: 4px;
-                    border-bottom: 1px dotted silver;
+                    border-top: 1px dotted rgb(173, 173, 173);;
+                    padding: 4px 0;
+                    border-bottom: 1px dotted rgb(173, 173, 173);;
+                }
+
+                #what-to-do {
+                    font-size: 13px;
+                    color: rgb(173, 173, 173);
+                    margin: 3px 0;
+                }
+
+                .options {
+                    width: 97%;
+                    margin: 0 auto;
+                    .option {
+                        @include flex(null, center);
+                        height: 40px;
+                        border: 3px solid $cream;
+                        border-radius: 32px;
+                        position: relative;
+                        &:not(:last-child) {
+                            margin: 7px 0;
+                        }
+
+                        p {
+                            margin-left: 20px;
+                            font: {
+                                size: 17px;
+                                weight: weight(semibold);
+                            }
+                            line-height:20px;
+                        }
+
+
+                        div {
+                            position: absolute;
+                            top: 5px;
+                            bottom: 5px;
+                            right: 3%;
+                            left: 88%;
+                            border-radius:50%;
+                            margin: auto 0;
+                            border: 3px solid $cream;
+                        }
+
+                    }
                 }
             }
         }
