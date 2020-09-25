@@ -279,7 +279,7 @@ div.home #greet span:first-child {
   font-weight: 500;
 }
 
-div.home #greet span#name {
+div.home #greet span#nickname {
   color: #e1543c;
 }
 
@@ -1218,32 +1218,36 @@ div.quiz-question-page .top .center-text p:last-child {
     padding: 0 7%;
     width: 100%;
   }
-  div.quiz-question-page #question-section .question-with-code > p {
+  div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
     font-size: 15px;
     margin-bottom: 4px;
   }
-  div.quiz-question-page #question-section .question-with-code #code-block {
+  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+    font-size: 17px;
+    margin-bottom: 13px;
+  }
+  div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
     font-family: monospace;
     font-size: 15px;
     border-top: 1px dotted #adadad;
     padding: 4px 0;
     border-bottom: 1px dotted #adadad;
   }
-  div.quiz-question-page #question-section .question-with-code #code-block code {
+  div.quiz-question-page #question-section .question-with-code #code-block code, div.quiz-question-page #question-section .question-without-code #code-block code {
     height: 100px;
     border-radius: 5px;
     overscroll-behavior: none;
   }
-  div.quiz-question-page #question-section .question-with-code #what-to-do {
+  div.quiz-question-page #question-section .question-with-code #what-to-do, div.quiz-question-page #question-section .question-without-code #what-to-do {
     font-size: 13px;
     color: #adadad;
     margin: 3px 0;
   }
-  div.quiz-question-page #question-section .question-with-code .options {
+  div.quiz-question-page #question-section .question-with-code .options, div.quiz-question-page #question-section .question-without-code .options {
     width: 97%;
     margin: 0 auto;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option {
+  div.quiz-question-page #question-section .question-with-code .options .option, div.quiz-question-page #question-section .question-without-code .options .option {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1255,16 +1259,16 @@ div.quiz-question-page .top .center-text p:last-child {
     border-radius: 32px;
     position: relative;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option:not(:last-child) {
-    margin: 7px 0;
+  div.quiz-question-page #question-section .question-with-code .options .option:not(:last-child), div.quiz-question-page #question-section .question-without-code .options .option:not(:last-child) {
+    margin: 5px 0;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option p {
+  div.quiz-question-page #question-section .question-with-code .options .option p, div.quiz-question-page #question-section .question-without-code .options .option p {
     margin-left: 20px;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 20px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div {
+  div.quiz-question-page #question-section .question-with-code .options .option div, div.quiz-question-page #question-section .question-without-code .options .option div {
     position: absolute;
     top: 5px;
     bottom: 5px;
@@ -1273,6 +1277,45 @@ div.quiz-question-page .top .center-text p:last-child {
     border-radius: 50%;
     margin: auto 0;
     border: 3px solid #f5d3ac;
+  }
+  div.quiz-question-page .bottom {
+    margin-top: 10px;
+    padding: 0 7%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  div.quiz-question-page .bottom p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.quiz-question-page .bottom p:not(:nth-child(2)) i {
+    color: #e1543c;
+  }
+  div.quiz-question-page .bottom p:not(:nth-child(2)) a {
+    text-decoration: underline;
+    margin-left: 2px;
+    font-size: 10px;
+    color: #adadad;
+    font-weight: 500;
+  }
+  div.quiz-question-page .bottom p:nth-child(2) {
+    width: 100px;
+    height: 50px;
+    background: url(../img/deep-orange.svg) no-repeat 5px -40px/50px, #f5d3ac url(../img/deep-orange.svg) no-repeat right 5px bottom -40px/50px;
+    border-radius: 32px;
+    font-weight: 700;
+    color: #000;
   }
 }
 /*# sourceMappingURL=style.css.map */

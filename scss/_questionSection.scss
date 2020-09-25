@@ -162,8 +162,8 @@ div.quiz-question-page {
             padding: 0 7%;
             width: 100%;
 
-            .question-with-code {
-                & > p {
+            .question-with-code, .question-without-code {
+                .question-statement-with-code {
                     font: {
                         // weight: weight(medium);
                         size: 15px;
@@ -171,6 +171,17 @@ div.quiz-question-page {
 
                     margin-bottom: 4px;
                 }
+
+                .question-statement-without-code {
+                    font: {
+                        // weight: weight(medium);
+                        size: 17px;
+                    }
+
+                    margin-bottom: 13px;
+                }
+
+
                 
                 #code-block {
                     font-family: monospace;
@@ -202,14 +213,14 @@ div.quiz-question-page {
                         border-radius: 32px;
                         position: relative;
                         &:not(:last-child) {
-                            margin: 7px 0;
+                            margin: 5px 0;
                         }
 
                         p {
                             margin-left: 20px;
                             font: {
                                 size: 17px;
-                                weight: weight(semibold);
+                                weight: weight(medium);
                             }
                             line-height:20px;
                         }
@@ -228,6 +239,38 @@ div.quiz-question-page {
 
                     }
                 }
+            }
+        }
+
+        .bottom {
+            margin-top: 10px;
+            padding: 0 7%;
+            @include flex(space-between);
+            p {
+                @include flex(center, center);
+            }
+
+            p:not(:nth-child(2)) {
+                i {
+                    color: $deep-orange;
+                }
+                a {
+                    text-decoration: underline;
+                    margin-left: 2px;
+                    font-size: 10px;
+                    color: rgb(173, 173, 173);
+                    font-weight: weight(medium);
+                }
+            }
+
+            p:nth-child(2) {
+                width: 100px;
+                height: 50px;
+                background: url(../img/deep-orange.svg) no-repeat 5px -40px/50px,
+                            $cream url(../img/deep-orange.svg) no-repeat right 5px bottom -40px/50px;
+                border-radius: 32px;
+                font-weight: weight(bold);
+                color: #000;
             }
         }
     }

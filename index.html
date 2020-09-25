@@ -18,7 +18,7 @@
             <i id='sound' class="fas fa-music music-on"></i>
             <div style="display: none;" class="home">
                 <p class="logo"><span><</span>?<span>></span></p>
-                <p id='greet'><span id="greeting">Hi,</span><br><span id="name">Dev</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
+                <p id='greet'><span id="greeting">Hi,</span><br><span id="nickname">Dev</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
                 <p>Select Language</p>
 
                 <div class='langs-section'>
@@ -151,9 +151,9 @@
                         <p id='time-elspsed'>50s</p>
                     </div>
                 </div>
-                <div id="question-section">
-                    <div class="question-with-code">
-                        <p class='question-statement'>What is the value of <b>result</b>?</p>
+                <div id="question-section"> <!-- where your question html will go into -->
+                    <div style="display: nne;"class="question-with-code">
+                        <p class='question-statement-with-code'>What is the value of <b>result</b>?</p>
                         <div id="code-block">
                             <pre><code class='python'>def add(a, b):&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;result = a + b;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;return result;&NewLine;add(5, 6);</code></pre>
                         </div>
@@ -177,6 +177,35 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Question without code -->
+                    <div style="display: none;"class="question-without-code">
+                        <p class='question-statement-without-code'>Which of the following is <b>not</b> a <b>Sequence Type</b> in Python?</p>
+                        <p id='what-to-do'>Choose the correct answer</p>
+                        <div class="options">
+                            <div class='option' id="option-1">
+                                <p class='ans-text' id='ans-text-opt1'>String</p>
+                                <div class='ans-check-circle' id="ans-check-circle-opt1"></div>
+                            </div>
+                            <div class='option' id="option-2">
+                                <p class='ans-text' id='ans-text-opt2'>Dictionary</p>
+                                <div class='ans-check-circle' id="ans-check-circle-opt2"></div>
+                            </div>
+                            <div class='option' id="option-3">
+                                <p class='ans-text' id='ans-text-opt3'>List</p>
+                                <div class='ans-check-circle' id="ans-check-circle-opt3"></div>
+                            </div>
+                            <div class='option' id="option-4">
+                                <p class='ans-text' id='ans-text-opt4'>Tuple</p>
+                                <div class='ans-check-circle' id="ans-check-circle-opt4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p><i class='fab fa-twitter'></i><a href="https://twitter.com/Oluwarinolasam2" target="_blank">by <span id="twitter-link-nick">Mckenney</span></a></p>
+                    <p id="submit-button">Submit</p>
+                    <p><i class="fab fa-github"></i><a href="https://github.com/Mckenney17" target='_blank'>by <span id="github-link-nick">Mckenney</span></a></p>
                 </div>
             </div>
         </div>
