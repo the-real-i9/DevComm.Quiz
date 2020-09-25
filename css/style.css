@@ -1107,5 +1107,77 @@ div.quiz-question-page .top .center-text p:first-child {
     font-weight: 600;
     margin-top: 3px;
   }
+  div.quiz-question-page .question-top {
+    padding: 0 7%;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div.quiz-question-page .question-top .progress {
+    width: 85%;
+  }
+  div.quiz-question-page .question-top .progress .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #f5d3ac;
+    border-radius: 15px;
+    position: relative;
+  }
+  div.quiz-question-page .question-top .progress .progress-bar .progress-tracker-bar {
+    position: absolute;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 70%;
+    background: #e1543c;
+    -webkit-transition: right .5s ease;
+    transition: right .5s ease;
+  }
+  div.quiz-question-page .question-top .progress .progress-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: -2px;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:first-child {
+    font-weight: 600;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:first-child span {
+    display: inline-block;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(1) {
+    font-size: 23px;
+    color: #e1543c;
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(2) {
+    font-size: 21px;
+    -webkit-transform: translateX(-2px) rotate(-12deg);
+            transform: translateX(-2px) rotate(-12deg);
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(3) {
+    font-size: 17px;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:last-child {
+    font-weight: 600;
+    font-size: 12px;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:last-child span:first-child {
+    color: #e1543c;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:last-child span:first-child + span {
+    color: #e1543c;
+  }
+  div.quiz-question-page .question-top .progress .progress-details div:last-child .count {
+    font-size: 16px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

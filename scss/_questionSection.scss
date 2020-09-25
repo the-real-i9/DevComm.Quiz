@@ -65,5 +65,77 @@ div.quiz-question-page {
                 }
             }
         }
+
+        .question-top {
+            padding: 0 7%;
+            margin-top: 10px;
+            @include flex();
+            .progress {
+                width: 85%;
+
+                .progress-bar {
+                    width: 100%;
+                    height: 6px;
+                    background: $cream;
+                    border-radius: 15px;
+                    position: relative;
+                    // overflow: hidden;
+
+                    .progress-tracker-bar {
+                        position: absolute;
+                        border-radius: 15px;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        // this will be changed by jS
+                        right: 70%;
+                        background: $deep-orange;
+                        transition: right .5s ease;
+                    }
+                }
+
+                .progress-details {
+                    @include flex(space-between);
+                    margin-top: -2px;
+
+                    div:first-child {
+                        font-weight: weight(semibold);
+                        span {
+                            display: inline-block;
+                        }
+                        span:nth-child(1) {
+                            font-size: 23px;
+                            color: $deep-orange;
+                            transform: translateY(-2px);
+                        }
+                        span:nth-child(2) {
+                            font-size: 21px;
+                            transform: translateX(-2px) rotate(-12deg);
+                        }
+                        span:nth-child(3) {
+                            font-size: 17px;
+                            transform: translateX(-5px);
+                        }
+                    }
+
+                    div:last-child {
+                        font-weight: weight(semibold);
+                        font-size: 12px;
+
+                        span:first-child {
+                            color: $deep-orange;
+
+                            & + span {
+                                color: $deep-orange;
+                            }
+                        }
+
+                        .count {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
