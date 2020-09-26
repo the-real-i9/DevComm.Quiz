@@ -16,6 +16,7 @@ div.quiz-question-page {
             color: $deep-orange;
             font-weight: weight(semibold);
             margin-right: 15px;
+            cursor: pointer;
         }
         .center-text {
             text-align: center;
@@ -29,11 +30,211 @@ div.quiz-question-page {
             }
         }
     }
+
+    .question-top {
+        @include flex(space-between, center);
+
+        .progress {
+            width: 85%;
+
+            .progress-bar {
+                width: 100%;
+                background: $cream;
+                border-radius: 15px;
+                position: relative;
+                overflow: hidden;
+
+                .progress-tracker-bar {
+                    position: absolute;
+                    border-radius: 15px;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    // this will be changed by jS
+                    right: 50%;
+                    background: $deep-orange;
+                    transition: right .5s ease;
+                }
+            }
+
+            .progress-details {
+                @include flex(space-between);
+                margin-top: -2px;
+
+                div:first-child {
+                    font-weight: weight(semibold);
+                    span {
+                        display: inline-block;
+                    }
+
+                    span:nth-child(1) {
+                        color: $deep-orange;
+                    }
+                    span:nth-child(2) {
+                        transform: translateX(2px) rotate(15deg);
+                    }
+                    span:nth-child(3) {
+                        transform: translateX(2px);
+                    }
+                }
+
+                div:last-child {
+                    font-weight: weight(semibold);
+
+                    span:first-child {
+                        color: $deep-orange;
+
+                        & + span {
+                            color: $deep-orange;
+                        }
+                    }
+                }
+            }
+        }
+
+        .timer {
+            @include flex(center, center, column);
+
+            p {
+                font-weight: weight(semibold);
+                color: $deep-orange;
+            }
+        }
+    }
+
+    #question-section {
+        width: 100%;
+
+        .question-with-code, .question-without-code {
+            .question-statement-with-code {
+                margin-bottom: 4px;
+            }
+
+            .question-statement-without-code {
+                margin-bottom: 13px;
+            }
+
+            #code-block {
+                font-family: monospace;
+
+                code {
+                    border-radius: 5px;
+                    overscroll-behavior: none;
+                }
+                border-top: 1px dotted rgb(173, 173, 173);
+                padding: 4px 0;
+                border-bottom: 1px dotted rgb(173, 173, 173);
+            }
+
+            #what-to-do {
+                color: rgb(173, 173, 173);
+                margin: 3px 0;
+            }
+
+            .options {
+                .option {
+                    cursor: pointer;
+                    @include flex(null, center);
+                    border: 3px solid $cream;
+                    border-radius: 32px;
+                    position: relative;
+
+                    p {
+                        font-weight: weight(medium);
+                        line-height:20px;
+                    }
+
+                    div {
+                        position: absolute;
+                        border-radius:50%;
+                        margin: auto 0;
+                        border: 3px solid $cream;
+                    }
+                    div.selected {
+                        &::after {
+                            position: absolute;
+                            font-family: 'Font Awesome 5 Free';
+                            content: '\f00c';
+                            font-weight: 900;
+                            color: #fff;
+                            @include flex(center, center);
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: $deep-orange;
+                            border-radius: 50%;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: rgba($orange, .5);
+                            border-radius: 50%;
+
+                            @keyframes checkAnim {
+                                0% {
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                } 50% {
+                                    top: -7px;
+                                    left: -7px;
+                                    right: -7px;
+                                    bottom: -7px;
+                                } 100% {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        padding: 0 7%;
+        @include flex(space-between);
+        p {
+            @include flex(center, center);
+        }
+
+        p:not(:nth-child(2)) {
+            i {
+                color: $deep-orange;
+            }
+            a {
+                text-decoration: underline;
+                color: rgb(173, 173, 173);
+                font-weight: weight(medium);
+            }
+        }
+
+        p:nth-child(2) {
+            background: url(../img/deep-orange.svg) no-repeat 5px -40px/50px,
+                        $cream url(../img/deep-orange.svg) no-repeat right 5px bottom -40px/50px;
+            font-weight: weight(bold);
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+
+
+
+
+
     @include laptop {
         #big-lang-icon {
-            right: 0;
-            top: 75px;
-            font-size: 125px;
+            right: 4%;
+            top: 150px;
+            font-size: 155px;
         }
 
         .top {
@@ -69,66 +270,27 @@ div.quiz-question-page {
 
         .question-top {
             height: 30px;
-            @include flex(space-between, center);
 
             .progress {
-                width: 85%;
-
                 .progress-bar {
-                    width: 100%;
                     height: 7px;
-                    background: $cream;
-                    border-radius: 15px;
-                    position: relative;
-                    overflow: hidden;
-
-                    .progress-tracker-bar {
-                        position: absolute;
-                        border-radius: 15px;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        // this will be changed by jS
-                        right: 50%;
-                        background: $deep-orange;
-                        transition: right .5s ease;
-                    }
                 }
 
                 .progress-details {
-                    @include flex(space-between);
-                    margin-top: -2px;
-    
                     div:first-child {
-                        font-weight: weight(semibold);
-                        span {
-                            display: inline-block;
-                        }
                         span:nth-child(1) {
                             font-size: 27px;
-                            color: $deep-orange;
                         }
                         span:nth-child(2) {
                             font-size: 25px;
-                            transform: translateX(2px) rotate(15deg);
                         }
                         span:nth-child(3) {
                             font-size: 21px;
-                            transform: translateX(2px);
                         }
                     }
     
                     div:last-child {
-                        font-weight: weight(semibold);
                         font-size: 13px;
-    
-                        span:first-child {
-                            color: $deep-orange;
-    
-                            & + span {
-                                color: $deep-orange;
-                            }
-                        }
     
                         .count {
                             font-size: 18px;
@@ -138,147 +300,92 @@ div.quiz-question-page {
             }
 
             .timer {
-                @include flex(center, center, column);
                 i {
                     font-size: 37px;
                 }
 
                 p {
                     font-size: 17px;
-                    font-weight: weight(semibold);
-                    color: $deep-orange;
                 }
             }
         }
 
         #question-section {
-            // padding: 0 7%;
             margin-top: 20px;
-            width: 100%;
 
             .question-with-code, .question-without-code {
-                .question-statement-with-code {
+                .question-statement-with-code, .question-statement-without-code {
                     font: {
-                        // weight: weight(medium);
                         size: 19px;
                     }
-
-                    margin-bottom: 4px;
                 }
-
-                .question-statement-without-code {
-                    font: {
-                        // weight: weight(medium);
-                        size: 19px;
-                    }
-
-                    margin-bottom: 13px;
-                }
-
-
                 
                 #code-block {
-                    font-family: monospace;
                     font-size: 19px;
                     
                     code {
                         height: 125px;
-                        border-radius: 5px;
-                        overscroll-behavior: none;
                     }
-                    border-top: 1px dotted rgb(173, 173, 173);;
-                    padding: 4px 0;
-                    border-bottom: 1px dotted rgb(173, 173, 173);;
                 }
 
                 #what-to-do {
                     font-size: 15px;
-                    color: rgb(173, 173, 173);
-                    margin: 3px 0;
                 }
 
                 .options {
                     @include flex(space-between, center);
                     flex-wrap: wrap;
                     .option {
-                        cursor: pointer;
-                        @include flex(null, center);
                         width: 240px;
                         height: 45px;
-                        border: 3px solid $cream;
-                        border-radius: 32px;
-                        position: relative;
                         margin: 5px 0;
 
                         p {
                             margin-left: 23px;
-                            font: {
-                                size: 20px;
-                                weight: weight(medium);
-                            }
-                            line-height:20px;
+                            font-size: 20px;
                         }
 
-
                         div {
-                            position: absolute;
                             top: 15%;
                             bottom: 15%;
                             right: 3%;
                             height: 28px;
                             width: 28px;
-                            border-radius:50%;
-                            margin: auto 0;
-                            border: 3px solid $cream;
                         }
                         div.selected {
                             &::after {
-                                position: absolute;
-                                font-family: 'Font Awesome 5 Free';
-                                content: '\f00c';
                                 font-size: 12px;
-                                font-weight: 900;
-                                color: #fff;
-                                @include flex(center, center);
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background: $deep-orange;
-                                border-radius: 50%;
                             }
 
                             &::before {
-                                position: absolute;
-                                content: '';
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background: rgba($orange, .5);
-                                border-radius: 50%;
                                 animation: checkAnim .7s ease 1;
-
-                                @keyframes checkAnim {
-                                    0% {
-                                        top: 0;
-                                        left: 0;
-                                        right: 0;
-                                        bottom: 0;
-                                    } 50% {
-                                        top: -7px;
-                                        left: -7px;
-                                        right: -7px;
-                                        bottom: -7px;
-                                    } 100% {
-                                        opacity: 0;
-                                    }
-                                }
                             }
                         }
 
                     }
                 }
+            }
+        }
+
+        .bottom {
+            margin-top: 20px;
+            
+
+            p:not(:nth-child(2)) {
+                i {
+                    font-size: 23px;
+                }
+                a {
+                    margin-left: 5px;
+                    font-size: 13px;
+                }
+            }
+
+            p:nth-child(2) {
+                width: 110px;
+                height: 60px;
+                border-radius: 50px;
+                font-size: 17px;
             }
         }
     }
@@ -349,65 +456,32 @@ div.quiz-question-page {
         .question-top {
             padding: 0 7%;
             height: 50px;
-            @include flex(space-between, center);
             .progress {
-                width: 85%;
 
                 .progress-bar {
-                    width: 100%;
                     height: 6px;
-                    background: $cream;
-                    border-radius: 15px;
-                    position: relative;
-                    overflow: hidden;
-
-                    .progress-tracker-bar {
-                        position: absolute;
-                        border-radius: 15px;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        // this will be changed by jS
-                        right: 50%;
-                        background: $deep-orange;
-                        transition: right .5s ease;
-                    }
                 }
 
                 .progress-details {
-                    @include flex(space-between);
-                    margin-top: -2px;
+                    
 
                     div:first-child {
-                        font-weight: weight(semibold);
-                        span {
-                            display: inline-block;
-                        }
+                        
                         span:nth-child(1) {
                             font-size: 23px;
-                            color: $deep-orange;
                         }
                         span:nth-child(2) {
                             font-size: 21px;
-                            transform: translateX(2px) rotate(15deg);
                         }
                         span:nth-child(3) {
                             font-size: 17px;
-                            transform: translateX(2px);
                         }
                     }
 
                     div:last-child {
-                        font-weight: weight(semibold);
                         font-size: 12px;
 
-                        span:first-child {
-                            color: $deep-orange;
-
-                            & + span {
-                                color: $deep-orange;
-                            }
-                        }
+                        
 
                         .count {
                             font-size: 16px;
@@ -417,16 +491,12 @@ div.quiz-question-page {
             }
 
             .timer {
-                // margin-top: -7px;
-                @include flex(center, center, column);
                 i {
                     font-size: 25px;
                 }
 
                 p {
                     font-size: 13px;
-                    font-weight: weight(semibold);
-                    color: $deep-orange;
                 }
 
             }
@@ -434,7 +504,6 @@ div.quiz-question-page {
 
         #question-section {
             padding: 0 7%;
-            width: 100%;
 
             .question-with-code, .question-without-code {
                 .question-statement-with-code {
@@ -443,7 +512,6 @@ div.quiz-question-page {
                         size: 15px;
                     }
 
-                    margin-bottom: 4px;
                 }
 
                 .question-statement-without-code {
@@ -452,107 +520,50 @@ div.quiz-question-page {
                         size: 17px;
                     }
 
-                    margin-bottom: 13px;
                 }
 
 
                 
                 #code-block {
-                    font-family: monospace;
                     font-size: 15px;
                     
                     code {
                         height: 100px;
-                        border-radius: 5px;
-                        overscroll-behavior: none;
                     }
-                    border-top: 1px dotted rgb(173, 173, 173);;
-                    padding: 4px 0;
-                    border-bottom: 1px dotted rgb(173, 173, 173);;
                 }
 
                 #what-to-do {
                     font-size: 13px;
-                    color: rgb(173, 173, 173);
-                    margin: 3px 0;
                 }
 
                 .options {
                     width: 97%;
                     margin: 0 auto;
                     .option {
-                        @include flex(null, center);
                         height: 40px;
-                        border: 3px solid $cream;
-                        border-radius: 32px;
-                        position: relative;
                         &:not(:last-child) {
                             margin: 5px 0;
                         }
 
                         p {
                             margin-left: 20px;
-                            font: {
-                                size: 17px;
-                                weight: weight(medium);
-                            }
-                            line-height:20px;
+                            font-size: 17px;
                         }
 
 
                         div {
-                            position: absolute;
                             top: 5px;
                             bottom: 5px;
                             right: 7px;
                             width: 24px;
-                            border-radius:50%;
-                            margin: auto 0;
-                            border: 3px solid $cream;
                         }
                         div.selected {
                             &::after {
-                                position: absolute;
-                                font-family: 'Font Awesome 5 Free';
-                                content: '\f00c';
                                 font-size: 10px;
-                                font-weight: 900;
-                                color: #fff;
-                                @include flex(center, center);
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background: $deep-orange;
-                                border-radius: 50%;
                             }
 
                             &::before {
-                                position: absolute;
-                                content: '';
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background: rgba($orange, .5);
-                                border-radius: 50%;
                                 animation: checkAnim .5s ease 1;
-
-                                @keyframes checkAnim {
-                                    0% {
-                                        top: 0;
-                                        left: 0;
-                                        right: 0;
-                                        bottom: 0;
-                                    } 50% {
-                                        top: -7px;
-                                        left: -7px;
-                                        right: -7px;
-                                        bottom: -7px;
-                                    } 100% {
-                                        opacity: 0;
-                                    }
-                                }
                             }
                         }
 
@@ -563,34 +574,18 @@ div.quiz-question-page {
 
         .bottom {
             margin-top: 10px;
-            padding: 0 7%;
-            @include flex(space-between);
-            p {
-                @include flex(center, center);
-            }
 
             p:not(:nth-child(2)) {
-                i {
-                    color: $deep-orange;
-                }
                 a {
-                    text-decoration: underline;
                     margin-left: 2px;
                     font-size: 10px;
-                    color: rgb(173, 173, 173);
-                    font-weight: weight(medium);
                 }
             }
 
             p:nth-child(2) {
                 width: 100px;
                 height: 50px;
-                background: url(../img/deep-orange.svg) no-repeat 5px -40px/50px,
-                            $cream url(../img/deep-orange.svg) no-repeat right 5px bottom -40px/50px;
                 border-radius: 32px;
-                font-weight: weight(bold);
-                color: #000;
-                cursor: pointer;
             }
         }
     }
