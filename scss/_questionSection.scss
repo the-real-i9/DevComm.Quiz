@@ -230,11 +230,28 @@ div.quiz-question-page {
                             position: absolute;
                             top: 5px;
                             bottom: 5px;
-                            right: 3%;
-                            left: 88%;
+                            right: 7px;
+                            width: 24px;
                             border-radius:50%;
                             margin: auto 0;
                             border: 3px solid $cream;
+                        }
+                        div.selected {
+                            &::after {
+                                position: absolute;
+                                font-family: 'Font Awesome 5 Free';
+                                content: '\f00c';
+                                font-size: 10px;
+                                font-weight: 900;
+                                color: #fff;
+                                @include flex(center, center);
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: $deep-orange;
+                                border-radius: 50%;
+                            }
                         }
 
                     }
