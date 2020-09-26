@@ -137,7 +137,7 @@
                             <div class="progress-tracker-bar"></div>
                         </div>
                         <div class="progress-details">
-                            <div class="question-number-traker"><span id=qn>5</span><span>/</span><span id="tqs">10</span></div>
+                            <div class="question-number-traker"><span id=qn>8</span><span>|</span><span id="tqs">10</span></div>
                             <div class="answered-questions-tracker">
                                 <span id='ans-count' class='count'>5</span>
                                 <span>answered</span>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div id="question-section"> <!-- where your question html will go into -->
-                    <div style="display: nne;"class="question-with-code">
+                    <div style="display: none;"class="question-with-code">
                         <p class='question-statement-with-code'>What is the value of <b>result</b>?</p>
                         <div id="code-block">
                             <pre><code class='python'>def add(a, b):&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;result = a + b;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;return result;&NewLine;add(5, 6);</code></pre>
@@ -179,7 +179,7 @@
                     </div>
 
                     <!-- Question without code -->
-                    <div style="display: none;"class="question-without-code">
+                    <div style="display: nne;"class="question-without-code">
                         <p class='question-statement-without-code'>Which of the following is <b>not</b> a <b>Sequence Type</b> in Python?</p>
                         <p id='what-to-do'>Choose the correct answer</p>
                         <div class="options">
@@ -189,7 +189,7 @@
                             </div>
                             <div class='option' id="option-2">
                                 <p class='ans-text' id='ans-text-opt2'>Dictionary</p>
-                                <div class='ans-check-circle' id="ans-check-circle-opt2"></div>
+                                <div class='ans-check-circle selected' id="ans-check-circle-opt2"></div>
                             </div>
                             <div class='option' id="option-3">
                                 <p class='ans-text' id='ans-text-opt3'>List</p>

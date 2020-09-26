@@ -30,10 +30,285 @@ div.quiz-question-page {
         }
     }
     @include laptop {
+        #big-lang-icon {
+            right: 0;
+            top: 75px;
+            font-size: 125px;
+        }
 
+        .top {
+            height: 150px;
+
+            #back-to-modules {
+                width: 17%;
+                height: 50px;
+                border-radius: 32px;
+    
+            }
+            div:empty {
+                width: 17%;
+            }
+            
+            .center-text {
+                width: 67%;
+                p:first-child {
+                    font: {
+                        size: 36px;
+                        weight: weight(bold);
+                    }
+                }
+                p:last-child {
+                    font: {
+                        size: 17px;
+                        weight: weight(semibold);
+                    }
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .question-top {
+            height: 30px;
+            @include flex(space-between, center);
+
+            .progress {
+                width: 85%;
+
+                .progress-bar {
+                    width: 100%;
+                    height: 7px;
+                    background: $cream;
+                    border-radius: 15px;
+                    position: relative;
+                    overflow: hidden;
+
+                    .progress-tracker-bar {
+                        position: absolute;
+                        border-radius: 15px;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        // this will be changed by jS
+                        right: 50%;
+                        background: $deep-orange;
+                        transition: right .5s ease;
+                    }
+                }
+
+                .progress-details {
+                    @include flex(space-between);
+                    margin-top: -2px;
+    
+                    div:first-child {
+                        font-weight: weight(semibold);
+                        span {
+                            display: inline-block;
+                        }
+                        span:nth-child(1) {
+                            font-size: 27px;
+                            color: $deep-orange;
+                        }
+                        span:nth-child(2) {
+                            font-size: 25px;
+                            transform: translateX(2px) rotate(15deg);
+                        }
+                        span:nth-child(3) {
+                            font-size: 21px;
+                            transform: translateX(2px);
+                        }
+                    }
+    
+                    div:last-child {
+                        font-weight: weight(semibold);
+                        font-size: 13px;
+    
+                        span:first-child {
+                            color: $deep-orange;
+    
+                            & + span {
+                                color: $deep-orange;
+                            }
+                        }
+    
+                        .count {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            .timer {
+                @include flex(center, center, column);
+                i {
+                    font-size: 37px;
+                }
+
+                p {
+                    font-size: 17px;
+                    font-weight: weight(semibold);
+                    color: $deep-orange;
+                }
+            }
+        }
+
+        #question-section {
+            // padding: 0 7%;
+            margin-top: 20px;
+            width: 100%;
+
+            .question-with-code, .question-without-code {
+                .question-statement-with-code {
+                    font: {
+                        // weight: weight(medium);
+                        size: 19px;
+                    }
+
+                    margin-bottom: 4px;
+                }
+
+                .question-statement-without-code {
+                    font: {
+                        // weight: weight(medium);
+                        size: 19px;
+                    }
+
+                    margin-bottom: 13px;
+                }
+
+
+                
+                #code-block {
+                    font-family: monospace;
+                    font-size: 19px;
+                    
+                    code {
+                        height: 125px;
+                        border-radius: 5px;
+                        overscroll-behavior: none;
+                    }
+                    border-top: 1px dotted rgb(173, 173, 173);;
+                    padding: 4px 0;
+                    border-bottom: 1px dotted rgb(173, 173, 173);;
+                }
+
+                #what-to-do {
+                    font-size: 15px;
+                    color: rgb(173, 173, 173);
+                    margin: 3px 0;
+                }
+
+                .options {
+                    @include flex(space-between, center);
+                    flex-wrap: wrap;
+                    .option {
+                        cursor: pointer;
+                        @include flex(null, center);
+                        width: 240px;
+                        height: 45px;
+                        border: 3px solid $cream;
+                        border-radius: 32px;
+                        position: relative;
+                        margin: 5px 0;
+
+                        p {
+                            margin-left: 23px;
+                            font: {
+                                size: 20px;
+                                weight: weight(medium);
+                            }
+                            line-height:20px;
+                        }
+
+
+                        div {
+                            position: absolute;
+                            top: 15%;
+                            bottom: 15%;
+                            right: 3%;
+                            height: 28px;
+                            width: 28px;
+                            border-radius:50%;
+                            margin: auto 0;
+                            border: 3px solid $cream;
+                        }
+                        div.selected {
+                            &::after {
+                                position: absolute;
+                                font-family: 'Font Awesome 5 Free';
+                                content: '\f00c';
+                                font-size: 12px;
+                                font-weight: 900;
+                                color: #fff;
+                                @include flex(center, center);
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: $deep-orange;
+                                border-radius: 50%;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: rgba($orange, .5);
+                                border-radius: 50%;
+                                animation: checkAnim .7s ease 1;
+
+                                @keyframes checkAnim {
+                                    0% {
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                    } 50% {
+                                        top: -7px;
+                                        left: -7px;
+                                        right: -7px;
+                                        bottom: -7px;
+                                    } 100% {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @include mobile {
+        #big-lang-icon {
+            right: 0;
+            top: 75px;
+            font-size: 125px;
+        }
+
         .top {
             padding: 0 7%;
             width: 100%;
@@ -84,7 +359,7 @@ div.quiz-question-page {
                     background: $cream;
                     border-radius: 15px;
                     position: relative;
-                    // overflow: hidden;
+                    overflow: hidden;
 
                     .progress-tracker-bar {
                         position: absolute;
@@ -111,15 +386,14 @@ div.quiz-question-page {
                         span:nth-child(1) {
                             font-size: 23px;
                             color: $deep-orange;
-                            transform: translateY(-2px);
                         }
                         span:nth-child(2) {
                             font-size: 21px;
-                            transform: translateX(-2px) rotate(-12deg);
+                            transform: translateX(2px) rotate(15deg);
                         }
                         span:nth-child(3) {
                             font-size: 17px;
-                            transform: translateX(-5px);
+                            transform: translateX(2px);
                         }
                     }
 
@@ -252,6 +526,34 @@ div.quiz-question-page {
                                 background: $deep-orange;
                                 border-radius: 50%;
                             }
+
+                            &::before {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: rgba($orange, .5);
+                                border-radius: 50%;
+                                animation: checkAnim .5s ease 1;
+
+                                @keyframes checkAnim {
+                                    0% {
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                    } 50% {
+                                        top: -7px;
+                                        left: -7px;
+                                        right: -7px;
+                                        bottom: -7px;
+                                    } 100% {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
                         }
 
                     }
@@ -288,6 +590,7 @@ div.quiz-question-page {
                 border-radius: 32px;
                 font-weight: weight(bold);
                 color: #000;
+                cursor: pointer;
             }
         }
     }
