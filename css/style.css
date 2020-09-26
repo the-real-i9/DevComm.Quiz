@@ -115,7 +115,7 @@ a:link:hover {
           align-items: center;
   position: absolute;
   z-index: 1;
-  top: 42px;
+  top: 45px;
   left: 82%;
   background: rgba(235, 136, 68, 0.2);
 }
@@ -239,7 +239,7 @@ div.home .logo {
 @media (max-width: 600px) {
   div.home .logo {
     font-size: 33px;
-    margin-top: 17px;
+    margin-top: 13px;
   }
 }
 
@@ -352,6 +352,7 @@ div.home div.langs-section .lang-box {
   transition: background .5s ease, transform .15s linear;
   transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
   margin-bottom: 15px;
+  background: #f5d3ac url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
 }
 
 @media (max-width: 600px) {
@@ -362,27 +363,13 @@ div.home div.langs-section .lang-box {
   }
 }
 
-div.home div.langs-section .lang-box:nth-child(even) {
-  background: #e1543c url(../img/cream.svg);
-}
-
-div.home div.langs-section .lang-box:nth-child(odd) {
-  background: #f5d3ac url(../img/deep-orange.svg);
-}
-
-div.home div.langs-section .lang-box:nth-child(n) {
-  background-position: top -30px right -30px;
-  background-size: 100px;
-  background-repeat: no-repeat;
-}
-
 div.home div.langs-section .lang-box:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
 @media (max-width: 600px) {
-  div.home div.langs-section .lang-box:nth-child(n) {
+  div.home div.langs-section .lang-box {
     background-position: center -50px;
     background-size: 150px;
   }
@@ -484,6 +471,26 @@ div.home div.langs-section .lang-box:last-child span {
   transition: -webkit-transform .15s linear;
   transition: transform .15s linear;
   transition: transform .15s linear, -webkit-transform .15s linear;
+}
+
+@media (max-width: 600px) {
+  div.home div.langs-section .lang-box:last-child span {
+    font-size: 50px;
+    font-weight: 300;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+div.home div.langs-section .lang-box:last-child p {
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  div.home div.langs-section .lang-box:last-child p {
+    font-size: 13px;
+  }
 }
 
 div.quote-pane {
@@ -600,6 +607,7 @@ div.quiz-levels-page .top #back-to-home {
   color: #e1543c;
   font-weight: 600;
   margin-right: 15px;
+  cursor: pointer;
 }
 
 div.quiz-levels-page .top .center-text {
@@ -629,19 +637,7 @@ div.quiz-levels-page .levels-section .level-box {
   transition: background .5s ease, -webkit-transform .15s linear;
   transition: background .5s ease, transform .15s linear;
   transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
-}
-
-div.quiz-levels-page .levels-section .level-box:nth-child(even) {
-  background: #e1543c url(../img/cream.svg);
-}
-
-div.quiz-levels-page .levels-section .level-box:nth-child(odd) {
-  background: #f5d3ac url(../img/deep-orange.svg);
-}
-
-div.quiz-levels-page .levels-section .level-box:nth-child(n) {
-  background-repeat: no-repeat;
-  background-position: center -50px;
+  background: #f5d3ac url(../img/deep-orange.svg) no-repeat center -55px;
 }
 
 div.quiz-levels-page .levels-section .level-box:active {
@@ -819,6 +815,7 @@ div.quiz-modules-page .top {
 }
 
 div.quiz-modules-page .top #back-to-levels {
+  cursor: pointer;
   background: rgba(235, 136, 68, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;

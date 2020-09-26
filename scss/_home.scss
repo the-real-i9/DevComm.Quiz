@@ -8,7 +8,7 @@ div.home {
             }
             @include mobile {
                 font-size: 33px;
-                margin-top: 17px;
+                margin-top: 13px;
             }
             span {
                 text-shadow: 0 2px 0 black;
@@ -95,28 +95,16 @@ div.home {
                 border-radius: 14px;
             }
             
-            &:nth-child(even) {
-                background: $deep-orange url(../img/cream.svg);
-            }
-            &:nth-child(odd) {
-                background: $cream url(../img/deep-orange.svg) ;
-            }
-
-            &:nth-child(n) {
-                background-position: top -30px right -30px;
-                background-size: 100px;
-                background-repeat: no-repeat;
-            }
+            
+            background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
 
             &:active {
                 transform: scale(0.95);
             }
             
             @include mobile {
-                &:nth-child(n) {
-                    background-position: center -50px;
-                    background-size: 150px;
-                }
+                background-position: center -50px;
+                background-size: 150px;
             }
             @include laptop {
                 &:hover {
@@ -180,10 +168,27 @@ div.home {
                     }
                     width: 60px;
                     height: 60px;
+                    @include mobile {
+                        font: {
+                            size: 50px;
+                            weight: weight(light);
+                        }
+                        width: 50px;
+                        height: 50px;
+                    }
                     border-radius: 50%;
                     @include flex(center, center);
                     background: #000;
                     transition: transform .15s linear;
+                }
+
+                p {
+                    margin: 0 auto;
+                    font-weight: weight(medium);
+
+                    @include mobile {
+                        font-size: 13px;
+                    }
                 }
             }
         }

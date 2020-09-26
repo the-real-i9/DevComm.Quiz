@@ -3,6 +3,7 @@ div.quiz-modules-page {
         @include flex(space-between, center);
 
         #back-to-levels {
+            cursor: pointer;
             background: rgba($orange, .3);
             @include flex(center, center);
             color: $deep-orange;

@@ -8,6 +8,7 @@ div.quiz-levels-page {
             color: $deep-orange;
             font-weight: weight(semibold);
             margin-right: 15px;
+            cursor: pointer;
         }
         .center-text {
             text-align: center;
@@ -26,17 +27,8 @@ div.quiz-levels-page {
             transition: background .5s ease,
                         transform .15s linear;
 
-            &:nth-child(even) {
-                background: $deep-orange url(../img/cream.svg);
-            }
-            &:nth-child(odd) {
-                background: $cream url(../img/deep-orange.svg);
-            }
-    
-            &:nth-child(n) {
-                background-repeat: no-repeat;
-                background-position: center -50px;
-            }
+            
+            background: $cream url(../img/deep-orange.svg) no-repeat center -55px;
 
             &:active {
                 transform: scale(0.95);
