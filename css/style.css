@@ -114,7 +114,7 @@ a:link:hover {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 45px;
   left: 82%;
   background: rgba(235, 136, 68, 0.2);
@@ -1692,6 +1692,7 @@ div.quiz-solution-page .top .center-text p:last-child {
   div.quiz-solution-page .top {
     position: fixed;
     top: 0;
+    z-index: 1;
     background: #fff;
     padding: 0 7%;
     width: 100%;
@@ -1720,6 +1721,99 @@ div.quiz-solution-page .top .center-text p:last-child {
     font-size: 13px;
     font-weight: 600;
     margin-top: 3px;
+  }
+  div.quiz-solution-page .solution-section {
+    padding: 0 4%;
+    margin-top: 80px;
+  }
+  div.quiz-solution-page .solution-section .filter-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options {
+    border: 1px solid #e1543c;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #e1543c;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span {
+    padding: 2px 10px;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span:nth-child(2) {
+    position: relative;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span:nth-child(2)::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    background: #e1543c;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span:nth-child(2)::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: #e1543c;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span.selected {
+    background: #e1543c;
+    color: #fff;
+  }
+  div.quiz-solution-page .solution-section .overview {
+    margin-top: 20px;
+  }
+  div.quiz-solution-page .solution-section .overview > p {
+    font-weight: 600;
+  }
+  div.quiz-solution-page .solution-section .overview .overview-box {
+    margin-top: 10px;
+    width: 100%;
+    background: #f5d3ac;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+  }
+  div.quiz-solution-page .solution-section .overview .overview-box div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions {
+    margin-top: 15px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions > p {
+    font-weight: 600;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box {
+    margin: 10px 0;
+    width: 100%;
+    background: #f5d3ac;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
   }
 }
 /*# sourceMappingURL=style.css.map */

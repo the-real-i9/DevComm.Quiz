@@ -32,6 +32,7 @@ div.quiz-solution-page {
         .top {
             position: fixed;
             top: 0;
+            z-index: 1;
             background: #fff;
             padding: 0 7%;
             width: 100%;
@@ -63,6 +64,106 @@ div.quiz-solution-page {
                         weight: weight(semibold);
                     }
                     margin-top: 3px;
+                }
+            }
+        }
+
+        .solution-section {
+            padding: 0 4%;
+            margin-top: 80px;
+            .filter-div {
+                @include flex(flex-end);
+    
+                .filter-options {
+                    border: 1px solid $deep-orange;
+                    border-radius: 5px;
+                    font-size: 13px;
+                    color: $deep-orange;
+                    font-weight: weight(medium);
+                    @include flex();
+    
+                    span {
+                        padding: 2px 10px;
+    
+                        &:nth-child(2) {
+                            position: relative;
+                            // z-index: -1;
+                            &::before {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                width: 1px;
+                                background: $deep-orange;
+                            }
+                            &::after {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                width: 1px;
+                                background: $deep-orange;
+                            }
+                        }
+                    }
+                    span.selected {
+                        background: $deep-orange;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .overview {
+                margin-top: 20px;
+                & > p {
+                    font: {
+                        weight: weight(semibold);
+                    }
+                }
+                .overview-box {
+                    margin-top: 10px;
+                    width: 100%;
+                    background: $cream;
+                    padding: 0 15px;
+                    border: 1px solid transparent;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+                    
+                    div {
+                        @include flex(space-between);
+                        margin: 10px 0;
+                        
+                        font: {
+                            size: 15px;
+                            weight: weight(medium);
+                        }
+                    }
+                }
+            }
+
+            .answer-solutions {
+                margin-top: 15px;
+                & > p {
+                    font: {
+                        weight: weight(semibold);
+                    }
+                }
+                .solution-box {
+                    margin: 10px 0;
+                    width: 100%;
+                    background: $cream;
+                    padding: 10px 15px;
+                    border: 1px solid transparent;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+
+                    & > div:only-child {
+                        .question-statement-with-code, {
+
+                        }
+                    }
                 }
             }
         }
