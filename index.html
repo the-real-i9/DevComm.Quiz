@@ -10,14 +10,29 @@
     <script src="./highlight/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
 <body>
     <div class="container">
+        <i id='sound' class="fas fa-music"></i>
+        <div class="name-set-modal">
+            <p>Name</p>
+            <input type="text" id="name-input">
+            <button id='set-name'>OK</button>
+        </div>
+        <div class="languages-modal">
+            <p>Select Language(s)</p>
+            <div class="avail-langs">
+                <span class="lang-choice" id='lang-choice-html5'>HTML5</span>
+                <span class="lang-choice" id='lang-choice-css3'>Css3</span>
+                <span class="lang-choice lang-chosen" id='lang-choice-javascript'>JavaScript</span>
+                <span class="lang-choice lang-chosen" id='lang-choice-python'>Python</span>
+                <span class="lang-choice" id='lang-choice-java'>Java</span>
+            </div>
+            <button class="langs-chosen-save">Save</button>
+        </div>
         <div class="main-pane">
-            <i id='sound' class="fas fa-music music-on"></i>
             <!-- Home -->
-            <div style="display: none;" class="home">
+            <div style="display: nne;" class="home">
                 <p class="logo"><span><</span>?<span>></span></p>
                 <p id='greet'><span id="greeting">Hi,</span><br><span id="firstname">Angie</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
                 <p>Choose a Language</p>
@@ -236,8 +251,7 @@
             </div>
 
             <!-- Solution Page -->
-            <div style="display: nne;" class="quiz-solution-page" id='lang-python-beginner-module-01-solution'>
-                <i id='big-lang-icon' class='devicon-python-plain'></i>
+            <div style="display: none;" class="quiz-solution-page" id='lang-python-beginner-module-01-solution'>
                 <div class="top">
                     <div id="back-to-modules">Back</div>
                     <div class="center-text">

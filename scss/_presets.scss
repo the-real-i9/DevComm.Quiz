@@ -5,7 +5,7 @@
 }
 
 html, body {
-    font-family: 'Raleway';
+    font-family: Raleway;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
@@ -30,6 +30,7 @@ a:link:hover {
 
 .container {
     height: 100%;
+    position: relative;
     @include laptop {
         width: 600px;
         margin: 0 auto;
@@ -40,12 +41,216 @@ a:link:hover {
         width: 100%;
     }
 
+    #sound {
+        color: $deep-orange;
+        font-size: 27px;
+        @include mobile {
+            font-size: 17px;
+        }
+        cursor: pointer;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        @include flex(center, center);
+        @include mobile {
+            width: 40px;
+            height: 40px;
+        }
+        position: fixed;
+        z-index: 5;
+        top: 45px;
+        left: 600px;
+        @include mobile {
+            top: 15px;
+            left: 82%;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #000;
+            transform: rotate(-45deg);
+
+            @keyframes spread {
+                0%, 100% {
+                    top: -13px;
+                    left: -13px;
+                    right: -13px;
+                    bottom: -13px;
+                } 50% {
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        background: rgba($orange, .2);
+
+        @keyframes glow {
+            0%, 100% {
+                background: rgba($orange, .2);
+            } 50% {
+                background: rgba($orange, .1);
+            }
+        }
+    }
+    #sound.music-on {
+        animation: glow 1s linear infinite;
+        &::after {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            background: rgba($orange, .1);
+            border-radius: 50%;
+            z-index: -1;
+            transform: none;
+            animation: spread 1s linear infinite;
+        }
+    }
+
+    .name-set-modal {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 15%;
+        margin: 0 auto;
+        width: 200px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px rgba(#000, 0.17);
+        padding: 7px 10px 10px;
+        @include flex(null, null, column);
+        display: none;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 4px;
+            height: 150px;
+            background: #fff;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            bottom: 100.5%;
+            left: 25px;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 4px;
+            height: 150px;
+            background: #fff;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            bottom: 100.5%;
+            right: 25px;
+        }
+
+        p {
+            font-weight: weight(semibold);
+            color: rgb(209, 209, 209);
+            margin-bottom: 5px;
+        }
+
+        input {
+            font-family: inherit;
+            width: 100%;
+            outline: none;
+            border: 1px solid rgb(209, 209, 209);
+            border-radius: 3px;
+            height: 25px;
+            font-size: 16px;
+            color: #000;
+            padding-left: 7px;
+
+            &:focus {
+                border-color: $deep-orange;
+            }
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background: $deep-orange;
+            width: 50px;
+            height: 25px;
+            margin: 5px auto 0;
+            font-weight: weight(medium);
+            color: #fff;
+            border-radius: 3px;
+        }
+    }
+
+    .languages-modal {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10%;
+        overflow-y: auto;
+        margin: 0 auto;
+        width: 250px;
+        height: 350px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px rgba(#000, 0.17);
+        padding: 7px 10px 10px;
+
+        p {
+            font-weight: weight(medium);
+            font-size: 15px;
+            color: rgb(209, 209, 209);
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+            border-bottom: 1px dotted;
+        }
+
+        .avail-langs {
+            overflow-y: auto;
+            @include flex();
+            flex-wrap: wrap;
+
+            span {
+                margin: 2px 1px;
+                padding: 5px 7px;
+                border-radius: 32px;
+                font-size: 13px;
+                font-weight: weight(semibold);
+                border: 1px solid $deep-orange;
+            }
+            .lang-chosen {
+                background: $deep-orange;
+                color: #fff;
+            }
+        }
+
+        button {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            outline: none;
+            border: none;
+            background: $deep-orange;
+            width: 75px;
+            height: 40px;
+            margin: 5px auto 0;
+            font-size: 16px;
+            box-shadow: 0px 0px 4px rgba(#000, 0.17);
+            font-weight: weight(medium);
+            color: #fff;
+            border-radius: 4px;
+        }
+    }
+
 
     .main-pane {
         width: 100%;
         height: 100%;
         background: #fff;
-        position: relative;
+        // position: relative;
 
         @include mobile {
             width: 100%;
@@ -74,77 +279,6 @@ a:link:hover {
                 background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px,
                 url(../img/cream.svg) no-repeat 250% 155%/250px,
                 url(../img/orange.svg) no-repeat -80px 140%/250px;
-            }
-        }
-        
-        #sound {
-            color: $deep-orange;
-            font-size: 27px;
-            @include mobile {
-                font-size: 17px;
-            }
-            cursor: pointer;
-            border-radius: 50%;
-            width: 55px;
-            height: 55px;
-            @include flex(center, center);
-            @include mobile {
-                width: 40px;
-                height: 40px;
-            }
-            position: absolute;
-            z-index: 5;
-            top: 45px;
-            left: 82%;
-            @include mobile {
-                top: 15px;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                width: 2px;
-                height: 100%;
-                background: #000;
-                transform: rotate(-45deg);
-
-                @keyframes spread {
-                    0%, 100% {
-                        top: -13px;
-                        left: -13px;
-                        right: -13px;
-                        bottom: -13px;
-                    } 50% {
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                    }
-                }
-            }
-            background: rgba($orange, .2);
-
-            @keyframes glow {
-                0%, 100% {
-                    background: rgba($orange, .2);
-                } 50% {
-                    background: rgba($orange, .1);
-                }
-            }
-        }
-        #sound.music-on {
-            animation: glow 1s linear infinite;
-            &::after {
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: auto;
-                height: auto;
-                background: rgba($orange, .1);
-                border-radius: 50%;
-                z-index: -1;
-                transform: none;
-                animation: spread 1s linear infinite;
             }
         }
     }
