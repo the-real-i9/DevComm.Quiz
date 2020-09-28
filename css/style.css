@@ -87,12 +87,12 @@ a:link:hover {
   }
 }
 
-.container .main-pane > :not(.quiz-question-page) {
+.container .main-pane > :not(.quiz-question-page):not(.quiz-solution-page) {
   background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px, url(../img/cream.svg) no-repeat 150% 155%/350px, url(../img/orange.svg) no-repeat -50px 125%/350px;
 }
 
 @media (max-width: 599px) {
-  .container .main-pane > :not(.quiz-question-page) {
+  .container .main-pane > :not(.quiz-question-page):not(.quiz-solution-page) {
     background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px, url(../img/cream.svg) no-repeat 250% 155%/250px, url(../img/orange.svg) no-repeat -80px 140%/250px;
   }
 }
@@ -1082,9 +1082,6 @@ div.quiz-question-page {
 
 div.quiz-question-page #big-lang-icon {
   position: absolute;
-  right: 0;
-  top: 75px;
-  font-size: 125px;
   color: rgba(225, 84, 60, 0.1);
 }
 
@@ -1178,11 +1175,9 @@ div.quiz-question-page .question-top .progress .progress-details {
 }
 
 div.quiz-question-page .question-top .progress .progress-details div:first-child {
+  -webkit-font-feature-settings: "lnum" 1;
+          font-feature-settings: "lnum" 1;
   font-weight: 600;
-}
-
-div.quiz-question-page .question-top .progress .progress-details div:first-child span {
-  display: inline-block;
 }
 
 div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(1) {
@@ -1190,13 +1185,9 @@ div.quiz-question-page .question-top .progress .progress-details div:first-child
 }
 
 div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(2) {
-  -webkit-transform: translateX(2px) rotate(15deg);
-          transform: translateX(2px) rotate(15deg);
-}
-
-div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(3) {
-  -webkit-transform: translateX(2px);
-          transform: translateX(2px);
+  display: inline-block;
+  -webkit-transform: translate(1px, -2px) rotate(15deg);
+          transform: translate(1px, -2px) rotate(15deg);
 }
 
 div.quiz-question-page .question-top .progress .progress-details div:last-child {
@@ -1378,14 +1369,33 @@ div.quiz-question-page .bottom p {
           align-items: center;
 }
 
+div.quiz-question-page .bottom p:not(:nth-child(2)) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 div.quiz-question-page .bottom p:not(:nth-child(2)) i {
   color: #e1543c;
 }
 
 div.quiz-question-page .bottom p:not(:nth-child(2)) a {
   text-decoration: underline;
-  color: #adadad;
   font-weight: 500;
+}
+
+div.quiz-question-page .bottom p:not(:nth-child(2)) a:link {
+  color: #adadad;
 }
 
 div.quiz-question-page .bottom p:nth-child(2) {
@@ -1396,6 +1406,9 @@ div.quiz-question-page .bottom p:nth-child(2) {
 }
 
 @media (min-width: 600px) {
+  div.quiz-question-page {
+    overflow-y: auto;
+  }
   div.quiz-question-page #big-lang-icon {
     right: 4%;
     top: 150px;
@@ -1437,7 +1450,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
     font-size: 25px;
   }
   div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(3) {
-    font-size: 21px;
+    font-size: 18px;
   }
   div.quiz-question-page .question-top .progress .progress-details div:last-child {
     font-size: 13px;
@@ -1521,12 +1534,19 @@ div.quiz-question-page .bottom p:nth-child(2) {
 }
 
 @media (max-width: 599px) {
+  div.quiz-question-page {
+    overflow-y: auto;
+  }
   div.quiz-question-page #big-lang-icon {
     right: 0;
     top: 75px;
     font-size: 125px;
   }
   div.quiz-question-page .top {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: #fff;
     padding: 0 7%;
     width: 100%;
     height: 70px;
@@ -1558,6 +1578,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page .question-top {
     padding: 0 7%;
     height: 50px;
+    margin-top: 75px;
   }
   div.quiz-question-page .question-top .progress .progress-bar {
     height: 6px;
@@ -1569,7 +1590,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
     font-size: 21px;
   }
   div.quiz-question-page .question-top .progress .progress-details div:first-child span:nth-child(3) {
-    font-size: 17px;
+    font-size: 15px;
   }
   div.quiz-question-page .question-top .progress .progress-details div:last-child {
     font-size: 12px;
@@ -1629,7 +1650,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
             animation: checkAnim .5s ease 1;
   }
   div.quiz-question-page .bottom {
-    margin-top: 10px;
+    margin: 10px 0;
   }
   div.quiz-question-page .bottom p:not(:nth-child(2)) a {
     margin-left: 2px;
@@ -1654,7 +1675,7 @@ div.quiz-solution-page .top {
           align-items: center;
 }
 
-div.quiz-solution-page .top #back-to-levels {
+div.quiz-solution-page .top #back-to-modules {
   cursor: pointer;
   background: rgba(235, 136, 68, 0.3);
   display: -webkit-box;
@@ -1701,7 +1722,7 @@ div.quiz-solution-page .top .center-text p:last-child {
     -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   }
-  div.quiz-solution-page .top #back-to-levels {
+  div.quiz-solution-page .top #back-to-modules {
     width: 23%;
     height: 40px;
     border-radius: 32px;
@@ -1714,8 +1735,12 @@ div.quiz-solution-page .top .center-text p:last-child {
     width: 54%;
   }
   div.quiz-solution-page .top .center-text p:first-child {
-    font-size: 21px;
+    font-size: 17px;
     font-weight: 700;
+  }
+  div.quiz-solution-page .top .center-text p:first-child span {
+    font-size: 13px;
+    font-weight: 600;
   }
   div.quiz-solution-page .top .center-text p:last-child {
     font-size: 13px;
@@ -1724,15 +1749,15 @@ div.quiz-solution-page .top .center-text p:last-child {
   }
   div.quiz-solution-page .solution-section {
     padding: 0 4%;
-    margin-top: 80px;
+    margin-top: 65px;
   }
   div.quiz-solution-page .solution-section .filter-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   div.quiz-solution-page .solution-section .filter-div .filter-options {
     border: 1px solid #e1543c;
@@ -1846,7 +1871,7 @@ div.quiz-solution-page .top .center-text p:last-child {
     height: 97px;
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p[class*=answer] {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 17px;
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p[class*=answer] .correct-mark {
@@ -1868,6 +1893,66 @@ div.quiz-solution-page .top .center-text p:last-child {
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p.links a {
     text-decoration: underline;
+  }
+  div.quiz-solution-page .quote-section > p:first-child {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  div.quiz-solution-page .quote-section div.quote-block {
+    position: relative;
+    width: 100%;
+    background-color: #f5d3ac;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+    padding: 5px 10px 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  div.quiz-solution-page .quote-section div.quote-block:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #e1543c;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  div.quiz-solution-page .quote-section div.quote-block > p.quote {
+    font-style: italic;
+    font-size: 21px;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info {
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info i {
+    font-size: 23px;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info div.info {
+    margin-left: 5px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info div.info > p.name span:first-child {
+    color: #000;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info div.info > p.name span:last-child {
+    color: #e1543c;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info div.info a:link {
+    color: black;
+    text-decoration: underline;
+  }
+  div.quiz-solution-page .quote-section div.quote-block div.owner-info {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 /*# sourceMappingURL=style.css.map */

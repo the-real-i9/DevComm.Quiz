@@ -2,7 +2,7 @@ div.quiz-solution-page {
     .top {
         @include flex(space-between, center);
 
-        #back-to-levels {
+        #back-to-modules {
             cursor: pointer;
             background: rgba($orange, .3);
             @include flex(center, center);
@@ -29,6 +29,7 @@ div.quiz-solution-page {
 
     @include mobile {
         overflow-y: auto;
+        // background: element(#big-lang-icon) no-repeat center/150px;
         .top {
             position: fixed;
             top: 0;
@@ -40,7 +41,7 @@ div.quiz-solution-page {
             border-radius: 0 0 15px 15px;
             box-shadow: 0 2px 2px rgba(#000, .25);
 
-            #back-to-levels {
+            #back-to-modules {
                 width: 23%;
                 height: 40px;
                 border-radius: 32px;
@@ -54,8 +55,14 @@ div.quiz-solution-page {
                 width: 54%;
                 p:first-child {
                     font: {
-                        size: 21px;
+                        size: 17px;
                         weight: weight(bold);
+                    }
+                    span {
+                        font: {
+                            size: 13px;
+                            weight: weight(semibold);
+                        }
                     }
                 }
                 p:last-child {
@@ -70,9 +77,9 @@ div.quiz-solution-page {
 
         .solution-section {
             padding: 0 4%;
-            margin-top: 80px;
+            margin-top: 65px;
             .filter-div {
-                @include flex(flex-end);
+                @include flex(center);
     
                 .filter-options {
                     border: 1px solid $deep-orange;
@@ -158,9 +165,7 @@ div.quiz-solution-page {
             .answer-solutions {
                 margin-top: 15px;
                 & > p {
-                    font: {
-                        weight: weight(semibold);
-                    }
+                    font-weight: weight(semibold);
                 }
                 .solution-box {
                     b {
@@ -195,7 +200,7 @@ div.quiz-solution-page {
 
                         p[class*=answer] {
                             font: {
-                                weight: weight(medium);
+                                weight: weight(regular);
                                 size: 17px;
                             }
                             .correct-mark {
@@ -223,6 +228,73 @@ div.quiz-solution-page {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        .quote-section {
+            & > p:first-child {
+                font-weight: weight(semibold);
+                margin-bottom: 5px;
+            }
+            div.quote-block {
+                position: relative;
+                width: 100%;
+                background-color: $cream;
+                box-shadow: 0px 0px 4px rgba(#000, 0.17);
+                padding: 5px 10px 15px;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 4px;
+                    // height: 100%;
+                    background-color: $deep-orange;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+        
+                & > p.quote {
+                    font: {
+                        style: italic;
+                        size: 21px;
+                        // weight: weight(medium);
+                    }
+                }
+                
+                div.owner-info {
+                    margin-top: 15px;
+                    @include flex(null, center);
+        
+                    i {
+                        font-size: 23px;
+                    }
+                    div.info {
+                        margin-left: 5px;
+                        font: {
+                            weight: weight(semibold);
+                            size: 13px;
+                        }
+                        & > p.name {
+                            span:first-child {
+                                color: #000;
+                            }
+        
+                            span:last-child {
+                                color: $deep-orange;
+                            }
+                        }
+                        a:link {
+                            color: black;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                div.owner-info {
+                    justify-content: flex-end;
                 }
             }
         }

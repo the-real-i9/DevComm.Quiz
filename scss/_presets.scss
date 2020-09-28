@@ -65,7 +65,7 @@ a:link:hover {
             }
             @include flex(null, null, column);
         }
-        & > :not(.quiz-question-page) {
+        & > :not(.quiz-question-page):not(.quiz-solution-page) {
             background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px,
             url(../img/cream.svg) no-repeat 150% 155%/350px,
             url(../img/orange.svg) no-repeat -50px 125%/350px;

@@ -163,7 +163,7 @@
                             <div class="progress-tracker-bar"></div>
                         </div>
                         <div class="progress-details">
-                            <div class="question-number-traker"><span id=qn>8</span><span>|</span><span id="tqs">10</span></div>
+                            <div class="question-number-traker"><span id=qn>5</span><span>|</span><span id="tqs">10</span></div>
                             <div class="answered-questions-tracker">
                                 <span id='ans-count' class='count'>5</span>
                                 <span>answered</span>
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 <div id="question-section"> <!-- where your question html will go into -->
-                    <div style="display: none;"class="question-with-code">
+                    <div style="display: nne;"class="question-with-code">
                         <p class='question-statement-with-code'>What is the value of <b>result</b>?</p>
                         <div id="code-block">
                             <pre><code class='python'>def add(a, b):&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;result = a + b;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;return result;&NewLine;add(5, 6);</code></pre>
@@ -236,11 +236,12 @@
             </div>
 
             <!-- Solution Page -->
-            <div style="display: nne;" class="quiz-solution-page" id='lang-python-beginner-module-01-solution'>
+            <div style="display: none;" class="quiz-solution-page" id='lang-python-beginner-module-01-solution'>
+                <i id='big-lang-icon' class='devicon-python-plain'></i>
                 <div class="top">
-                    <div id="back-to-levels">Back</div>
+                    <div id="back-to-modules">Back</div>
                     <div class="center-text">
-                        <p>Solution</p>
+                        <p id='lang-solution-title'>Solution <span>(Python)</span></p>
                         <p id='level-module'>Beginner: Module 01</p>
                     </div>
                     <div></div>
@@ -259,22 +260,23 @@
                         <div class="overview-box">
                             <div>
                                 <p>Total Question</p>
-                                <p id="total-ques">20</p>                          </div>
+                                <p id="total-ques">20</p>
+                            </div>
                             <div>
                                 <p>Time Spent</p>
                                 <p id="time-spent">50s</p>
                             </div>
                             <div>
-                                <p>Correct Answer</p>
-                                <p id="correct-ans-count">15</p>
+                                <p>Correct</p>
+                                <p id="correct-count">15</p>
                             </div>
                             <div>
-                                <p>Incorrect Answer</p>
-                                <p id="incorrect-ans-count">2</p>
+                                <p>Incorrect</p>
+                                <p id="incorrect-count">2</p>
                             </div>
                             <div>
-                                <p>Skipped Answers</p>
-                                <p id="skipped-ans-count">3</p>
+                                <p>Skipped</p>
+                                <p id="skipped-count">3</p>
                             </div>
                         </div>
                     </div>
@@ -286,8 +288,8 @@
                                 <div id="code-block">
                                     <pre><code class='python'>def add(a, b):&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;result = a + b;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;return result;&NewLine;add(5, 6);</code></pre>
                                 </div>
-                                <p class='user-answer'>Answer: <span>11</span> <i class='fas fa-check fa-fw correct-mark'></i></p>
-                                <p class='correct-answer'>Correct Answer: <span>11</span></p>
+                                <p class='user-answer'><b>Answer:</b> <span>11</span> <i class='fas fa-check fa-fw correct-mark'></i></p>
+                                <p class='correct-answer'><b>Correct Answer:</b> <span>11</span></p>
                                 <div class='explanation'><b><em>Explanation</em>:</b> The function parameters which serves as local variables are assigned its arguments in order <b>a = 5</b>, <b>b = 6</b> the sum of <b>a</b> and <b>b</b> is computed and its result is assigned to the <b>result</b> variable, the <b>return statement</b> returns the value of the expression on its RHS back to the caller.</div>
                                 <p class='links'><em>See:</em> <a href="#" target="_blank">Learning Python</a></p>
                             </div>
@@ -295,45 +297,28 @@
                         <div class="solution-box" id='incorrect-answer'>
                             <div class="question-without-code-solution">
                                 <p class='question-statement-without-code'><b>Q2: </b>Which of the following is <b>not</b> a <b>Sequence Type</b> in Python?</p>
-                                <p class='user-answer'>Answer: <span>Tuple</span> <i class='fas fa-times fa-fw incorrect-mark'></i></p>
-                                <p class='correct-answer'>Correct Answer: <span>Dictionary</span></p>
+                                <p class='user-answer'><b>Answer:</b> <span>Tuple</span> <i class='fas fa-times fa-fw incorrect-mark'></i></p>
+                                <p class='correct-answer'><b>Correct Answer:</b> <span>Dictionary</span></p>
                                 <div class='explanation'><b><em>Explanation</em>:</b> Sequence Types in Python are: <b>String, List and Tuple</b></div>
                                 <p class='links'><em>See:</em> <a href="#" target="_blank">Learning Python</a></p>
                             </div>
                         </div>
-                        <div class="solution-box" id='skipped-answer'>
-                            <div class="question-without-code-solution">
-                                
+                    </div>
+                    <div class="quote-section">
+                        <p>Quote for you</p>
+                        <div class="quote-block">
+                            <p class='quote'>
+                                Average habits, Average life.
+                                Great habits, Great life.
+                                It’s that simple.</p>
+                            <div class="owner-info">
+                                <i class='devicon-twitter-plain'></i>
+                                <div class='info'>
+                                    <p class='name'>- <span>Amelia</span> <span>Warner</span></p>
+                                    <a class="twitter-handle" href="#">@facetimeJS</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quote-pane">
-            <div class="quote-block">
-                <p class='quote'>
-                    Average habits, Average life.
-                    Great habits, Great life.
-                    It’s that simple.</p>
-                <div class="owner-info">
-                    <i class='devicon-twitter-plain'></i>
-                    <div class='info'>
-                        <p class='name'>- <span>Amelia</span> <span>Warner</span></p>
-                        <a class="twitter-handle" href="#">@facetimeJS</a>
-                    </div>
-                </div>
-            </div>
-            <div class="quote-block">
-                <p class='quote'>
-                    You naturally work harder,
-                    when you understand
-                    what you’re living for.</p>
-                <div class="owner-info">
-                    <i class='devicon-twitter-plain'></i>
-                    <div class='info'>
-                        <p class='name'>- <span>Palash</span> <span>Mondal</span></p>
-                        <a class="twitter-handle" href="#">@palashv2</a>
                     </div>
                 </div>
             </div>
