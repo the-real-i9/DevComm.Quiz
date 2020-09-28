@@ -91,7 +91,7 @@ div.home {
 
             @include mobile {
                 width: 135px;
-                height: 160px;
+                height: 170px;
                 border-radius: 14px;
             }
             
@@ -99,7 +99,8 @@ div.home {
             background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
 
             &:active {
-                transform: scale(0.95);
+                transform: translateY(4px);
+                box-shadow: 0 0px 4px rgba(#000, 0.17);
             }
             
             @include mobile {

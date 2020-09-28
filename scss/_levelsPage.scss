@@ -23,10 +23,11 @@ div.quiz-levels-page {
         --advancedComp: 70;
         --ninjaComp: 80;
 
-        @include flex(space-between);
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
 
         .level-box {
+            margin: 0 auto;
             box-shadow: 0 2px 4px rgba(#000, 0.17);
             cursor: pointer;
             transition: background .5s ease,
@@ -36,8 +37,8 @@ div.quiz-levels-page {
             background: $cream url(../img/deep-orange.svg) no-repeat center -55px;
 
             &:active {
-                transform: scale(0.95);
-                transform-origin: center;
+                transform: translateY(4px);
+                box-shadow: 0 0px 4px rgba(#000, 0.17);
             }
 
             .level-bottom-text {
@@ -175,7 +176,7 @@ div.quiz-levels-page {
 
             .level-box {
                 width: 135px;
-                height: 160px;
+                height: 170px;
                 border-radius: 14px;
                 margin-bottom: 10px;
                 @include flex(space-between, center, column);

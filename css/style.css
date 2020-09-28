@@ -358,14 +358,16 @@ div.home div.langs-section .lang-box {
 @media (max-width: 599px) {
   div.home div.langs-section .lang-box {
     width: 135px;
-    height: 160px;
+    height: 170px;
     border-radius: 14px;
   }
 }
 
 div.home div.langs-section .lang-box:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 0px 4px rgba(0, 0, 0, 0.17);
 }
 
 @media (max-width: 599px) {
@@ -623,17 +625,14 @@ div.quiz-levels-page .levels-section {
   --intermediateComp: 60;
   --advancedComp: 70;
   --ninjaComp: 80;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 div.quiz-levels-page .levels-section .level-box {
+  margin: 0 auto;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
   cursor: pointer;
@@ -645,10 +644,10 @@ div.quiz-levels-page .levels-section .level-box {
 }
 
 div.quiz-levels-page .levels-section .level-box:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 0px 4px rgba(0, 0, 0, 0.17);
 }
 
 div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child {
@@ -766,7 +765,7 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
   }
   div.quiz-levels-page .levels-section .level-box {
     width: 135px;
-    height: 160px;
+    height: 170px;
     border-radius: 14px;
     margin-bottom: 10px;
     display: -webkit-box;
@@ -1608,14 +1607,41 @@ div.quiz-question-page .bottom p:nth-child(2) {
     padding: 0 7%;
   }
   div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
-    font-size: 15px;
+    font-size: 16px;
   }
-  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+}
+
+@media (max-width: 599px) and (min-height: 534px) {
+  div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
     font-size: 17px;
   }
+}
+
+@media (max-width: 599px) {
+  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 599px) and (min-height: 534px) {
+  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 599px) {
   div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
     font-size: 15px;
   }
+}
+
+@media (max-width: 599px) and (min-height: 534px) {
+  div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 599px) {
   div.quiz-question-page #question-section .question-with-code #code-block code, div.quiz-question-page #question-section .question-without-code #code-block code {
     height: 100px;
   }
