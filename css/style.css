@@ -258,13 +258,13 @@ div.home .logo span:last-child {
 div.home #greet {
   margin-top: 25px;
   line-height: 34px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 36px;
 }
 
 @media (max-width: 599px) {
   div.home #greet {
-    line-height: 23px;
+    line-height: 27px;
     margin-top: 13px;
   }
 }
@@ -276,11 +276,15 @@ div.home #greet {
 }
 
 div.home #greet span:first-child {
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 30px;
 }
 
-div.home #greet span#nickname {
+div.home #greet span#firstname {
   color: #e1543c;
+  -webkit-text-stroke: 1.5px;
+  -webkit-text-stroke-color: #000;
+  font-size: 32px;
 }
 
 div.home #greet i#edit-nickname {
