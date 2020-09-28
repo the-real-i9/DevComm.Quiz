@@ -1768,6 +1768,18 @@ div.quiz-solution-page .top .center-text p:last-child {
     width: 1px;
     background: #e1543c;
   }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span:nth-child(3) {
+    position: relative;
+  }
+  div.quiz-solution-page .solution-section .filter-div .filter-options span:nth-child(3)::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: #e1543c;
+  }
   div.quiz-solution-page .solution-section .filter-div .filter-options span.selected {
     background: #e1543c;
     color: #fff;
@@ -1814,6 +1826,48 @@ div.quiz-solution-page .top .center-text p:last-child {
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box b {
+    font-weight: 600;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child .question-statement-with-code {
+    font-size: 17px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child .question-statement-without-code {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child #code-block {
+    margin: 10px 0;
+    font-size: 17px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child #code-block code {
+    border-radius: 7px;
+    height: 97px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p[class*=answer] {
+    font-weight: 500;
+    font-size: 17px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p[class*=answer] .correct-mark {
+    color: green;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p[class*=answer] .incorrect-mark {
+    color: red;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child div.explanation {
+    background: #f0bb7e;
+    margin: 5px 0;
+    padding: 5px 0 5px 7px;
+    border-radius: 3px;
+    font-size: 17px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p.links {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  div.quiz-solution-page .solution-section .answer-solutions .solution-box > div:only-child p.links a {
+    text-decoration: underline;
   }
 }
 /*# sourceMappingURL=style.css.map */

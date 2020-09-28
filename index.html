@@ -251,6 +251,7 @@
                             <span class="selected" id='all-solution'>All</span>
                             <span id='correct-solution'>Correct</span>
                             <span id='wrong-solution'>Incorrect</span>
+                            <span id='skipped-solution'>Skipped</span>
                         </div>
                     </div>
                     <div class="overview">
@@ -281,19 +282,23 @@
                         <p>Solutions</p>
                         <div class="solution-box" id='correct-answer'>
                             <div class="question-with-code-solution">
-                                <p class='question-statement-with-code'>What is the value of <b>result</b>?</p>
+                                <p class='question-statement-with-code'><b>Q1: </b>What is the value of <b>result</b>?</p>
                                 <div id="code-block">
                                     <pre><code class='python'>def add(a, b):&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;result = a + b;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;return result;&NewLine;add(5, 6);</code></pre>
                                 </div>
-                                <p class='user-answer'>Answer: <span>11</span></p>
+                                <p class='user-answer'>Answer: <span>11</span> <i class='fas fa-check fa-fw correct-mark'></i></p>
                                 <p class='correct-answer'>Correct Answer: <span>11</span></p>
-                                <div class='explanation'></div>
-                                <p class='links'>See: <a href="#">JavaScript: The Definitive Guide</a></p>
+                                <div class='explanation'><b><em>Explanation</em>:</b> The function parameters which serves as local variables are assigned its arguments in order <b>a = 5</b>, <b>b = 6</b> the sum of <b>a</b> and <b>b</b> is computed and its result is assigned to the <b>result</b> variable, the <b>return statement</b> returns the value of the expression on its RHS back to the caller.</div>
+                                <p class='links'><em>See:</em> <a href="#" target="_blank">Learning Python</a></p>
                             </div>
                         </div>
                         <div class="solution-box" id='incorrect-answer'>
                             <div class="question-without-code-solution">
-
+                                <p class='question-statement-without-code'><b>Q2: </b>Which of the following is <b>not</b> a <b>Sequence Type</b> in Python?</p>
+                                <p class='user-answer'>Answer: <span>Tuple</span> <i class='fas fa-times fa-fw incorrect-mark'></i></p>
+                                <p class='correct-answer'>Correct Answer: <span>Dictionary</span></p>
+                                <div class='explanation'><b><em>Explanation</em>:</b> Sequence Types in Python are: <b>String, List and Tuple</b></div>
+                                <p class='links'><em>See:</em> <a href="#" target="_blank">Learning Python</a></p>
                             </div>
                         </div>
                         <div class="solution-box" id='skipped-answer'>

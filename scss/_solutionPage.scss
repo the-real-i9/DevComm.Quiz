@@ -107,6 +107,18 @@ div.quiz-solution-page {
                                 background: $deep-orange;
                             }
                         }
+                        &:nth-child(3) {
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                width: 1px;
+                                background: $deep-orange;
+                            }
+                        }
                     }
                     span.selected {
                         background: $deep-orange;
@@ -151,6 +163,9 @@ div.quiz-solution-page {
                     }
                 }
                 .solution-box {
+                    b {
+                        font-weight: weight(semibold);
+                    }
                     margin: 10px 0;
                     width: 100%;
                     background: $cream;
@@ -160,8 +175,52 @@ div.quiz-solution-page {
                     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
 
                     & > div:only-child {
-                        .question-statement-with-code, {
+                        .question-statement-with-code {
+                            font-size: 17px;
+                        }
+                        .question-statement-without-code {
+                            font-size: 19px;
+                            margin-bottom: 10px;
+                        }
 
+                        #code-block {
+                            margin: 10px 0;
+                            font-size: 17px;
+
+                            code {
+                                border-radius: 7px;
+                                height: 97px;
+                            }
+                        }
+
+                        p[class*=answer] {
+                            font: {
+                                weight: weight(medium);
+                                size: 17px;
+                            }
+                            .correct-mark {
+                                color: green;
+                            }
+                            .incorrect-mark {
+                                color: red;
+                            }
+
+                        }
+
+                        div.explanation {
+                            background: darken($cream, 10);
+                            margin: 5px 0;
+                            padding: 5px 0 5px 7px;
+                            border-radius: 3px;
+                            font-size: 17px;
+                        }
+
+                        p.links {
+                            font-weight: weight(medium);
+                            font-size: 15px;
+                            a {
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
