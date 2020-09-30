@@ -1,3 +1,15 @@
-const organizedQuestions = new Map();
+const organizedQuestionsMap = new Map();
+let previousLangChoices = [];
 
-export default organizedQuestions;
+const setPreviousLangChoices = (choices) => {
+    previousLangChoices = choices;
+};
+
+const getPreviousLangChoices = () => previousLangChoices;
+
+
+export {
+    organizedQuestionsMap,
+    setPreviousLangChoices,
+    getPreviousLangChoices,
+};

@@ -1,6 +1,11 @@
 import { organizeQuestions } from './appEngineFuncs.js';
 import { renderHomePage } from './appUIFuncs.js';
+import { getCurrentLangChoices } from './localStorage.js';
+
 const startApp = () => {
-    organizeQuestions();
+    organizeQuestions(getCurrentLangChoices());
+
     renderHomePage();
 };
+
+startApp();

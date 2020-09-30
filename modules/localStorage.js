@@ -1,7 +1,7 @@
 let languageChoices = [];
 let username = 'Dev';
 
-const setLanguageChoices = (langChoices) => {
+const setCurrentLangChoices = (langChoices) => {
     languageChoices = langChoices;
     // local Storage here
 };
@@ -11,13 +11,13 @@ const setUsername = (name) => {
     // local Storage here
 };
 
-const getLanguageChoices = () => languageChoices;
+const getCurrentLangChoices = () => languageChoices;
 
 const getUsername = () => username;
 
 export {
-    setLanguageChoices,
-    getLanguageChoices,
+    setCurrentLangChoices,
+    getCurrentLangChoices,
     setUsername,
     getUsername,
 };
