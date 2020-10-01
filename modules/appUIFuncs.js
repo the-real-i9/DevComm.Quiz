@@ -19,6 +19,7 @@ import {
 import {
     homePageHtml,
     langBoxHtml,
+    availLangsHtml,
 } from './htmlBoilerplates.js';
 import {
     grabLangPartFromString,
@@ -29,18 +30,22 @@ const {
     pagesContainer,
     langBoxContainer,
     langChoicesModal,
+    availableLangsContainer,
 } = DOMElems;
 
-const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
-    if (!currentLangChoices.length) return;
+const renderAvailableLangs = (availLangsArray) => {
+    let htmlString = '';
+    for (const availLang of availLangsArray) {
+        htmlString += availLangsHtml(availLang);
+    }
+    setProp(availableLangsContainer, 'innerHTML', htmlString);
+};
 
-    // if previousLangChoices is not empty:
+const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
     // if some lang choices in the PLC is not in the CLC, remove them from the UI
-    if (previousLangChoices.length) {
-        for (const langPrev of previousLangChoices) {
-            if (!currentLangChoices.includes(langPrev)) {
-                setProp(select(`#lang-box-${langPrev}`), 'outerHTML', '');
-            }
+    for (const langPrev of previousLangChoices) {
+        if (!currentLangChoices.includes(langPrev)) {
+            setProp(select(`#lang-box-${langPrev}`), 'outerHTML', '');
         }
     }
 
@@ -81,4 +86,5 @@ export {
     langsChosenOnSave,
     displayLangChoicesModal,
     toggleSelectLangChoice,
+    renderAvailableLangs,
 };

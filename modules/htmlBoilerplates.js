@@ -16,6 +16,10 @@ const homePageHtml = (name) => `
 </div>
 `;
 
+const availLangsHtml = (language) => `
+    <span class="lang-choice" id='lang-choice-${language}'>${formatLangTextDevFriendly(language)}</span>
+`;
+
 const langBoxHtml = (language) => `
 <div class="lang-box" id='lang-box-${language}'>
     <i class='devicon-${language}-plain'></i>
@@ -94,4 +98,5 @@ const levelsPageHtml = () => `
 export {
     homePageHtml,
     langBoxHtml,
+    availLangsHtml,
 };

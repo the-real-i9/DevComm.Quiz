@@ -41,7 +41,17 @@ const organizeQuestions = (langChoices) => {
         }
     }
 
-    console.log([...organizedQuestionsMap]);
+    // console.log([...organizedQuestionsMap]);
+};
+
+const getAvailableLangs = () => {
+    const availLangs = [];
+    for (const level of Object.keys(questions)) {
+        for (const questionObj of questions[level]) {
+            availLangs.push(questionObj.language);
+        }
+    }
+    return [...new Set(availLangs)];
 };
 
 const formatLangTextDevFriendly = (langText) => {
@@ -59,4 +69,5 @@ export {
     organizeQuestions,
     formatLangTextDevFriendly,
     grabLangPartFromString,
+    getAvailableLangs,
 };

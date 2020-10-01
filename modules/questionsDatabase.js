@@ -2,18 +2,22 @@ const questions = {
     beginner: [
         {
             language: 'javascript',
-            questionStateMent: 'A javascript beginner question',
+            questionStatement: 'A javascript beginner question',
 
         },
         {
             language: 'java',
-            questionStateMent: 'A java beginner question',
+            questionStatement: 'A java beginner question',
 
         },
         {
             language: 'python',
-            questionStateMent: 'A python beginner question',
+            questionStatement: 'A python beginner question',
 
+        },
+        {
+            language: 'cplusplus',
+            questionStatement: 'A cplusplus beginner question',
         },
     ],
 
@@ -21,17 +25,17 @@ const questions = {
     intermediate: [
         {
             language: 'javascript',
-            questionStateMent: 'A javascript intermediate question',
+            questionStatement: 'A javascript intermediate question',
 
         },
         {
             language: 'java',
-            questionStateMent: 'A java intermediate question',
+            questionStatement: 'A java intermediate question',
 
         },
         {
             language: 'python',
-            questionStateMent: 'A python intermediate question',
+            questionStatement: 'A python intermediate question',
 
         },
     ],
@@ -40,17 +44,17 @@ const questions = {
     advanced: [
         {
             language: 'javascript',
-            questionStateMent: 'A javascript advanced question',
+            questionStatement: 'A javascript advanced question',
 
         },
         {
             language: 'java',
-            questionStateMent: 'A java advanced question',
+            questionStatement: 'A java advanced question',
 
         },
         {
             language: 'python',
-            questionStateMent: 'A python advanced question',
+            questionStatement: 'A python advanced question',
 
         },
     ],
@@ -59,17 +63,22 @@ const questions = {
     ninja: [
         {
             language: 'javascript',
-            questionStateMent: 'A javascript ninja question',
+            questionStatement: 'A javascript ninja question',
 
         },
         {
             language: 'java',
-            questionStateMent: 'A java ninja question',
+            questionStatement: 'A java ninja question',
 
         },
         {
             language: 'python',
-            questionStateMent: 'A python ninja question',
+            questionStatement: 'A python ninja question',
+
+        },
+        {
+            language: 'ruby',
+            questionStatement: 'A ruby ninja question',
 
         },
     ],
