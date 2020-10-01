@@ -6,6 +6,8 @@ import {
     classAction,
     insertHtml,
     select,
+    stringify,
+    parse,
 } from './DOMFuncs.js';
 import {
     getCurrentLangChoices,
@@ -28,17 +30,21 @@ import {
 
 const {
     pagesContainer,
-    langBoxContainer,
     langChoicesModal,
     availableLangsContainer,
 } = DOMElems;
 
-const renderAvailableLangs = (availLangsArray) => {
+const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
     for (const availLang of availLangsArray) {
         htmlString += availLangsHtml(availLang);
     }
-    setProp(availableLangsContainer, 'innerHTML', htmlString);
+    await setProp(availableLangsContainer, 'innerHTML', htmlString);
+
+    for (const elem of selectAll('div[id|="lang-box"]')) {
+        const lang = grabLangPartFromString(elem.id);
+        classAction(select(`#lang-choice-${lang}`), 'add', 'lang-chosen');
+    }
 };
 
 const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
@@ -76,6 +82,8 @@ const langsChosenOnSave = () => {
     organizeQuestions(getCurrentLangChoices());
     renderLanguageChoices(getCurrentLangChoices(), getPreviousLangChoices());
 };
+
+// const re
 
 const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
 

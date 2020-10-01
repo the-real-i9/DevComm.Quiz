@@ -4,7 +4,6 @@ const DOMElems = {
     langChoicesModal: select('.languages-modal'),
     availableLangsContainer: select('.avail-langs'),
     saveChoicesBtn: select('.langs-chosen-save'),
-    langChoicesCheckBox: selectAll('.lang-choice'),
 };
 
 export default DOMElems;

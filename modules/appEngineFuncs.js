@@ -64,10 +64,18 @@ const formatLangTextDevFriendly = (langText) => {
 
 const grabLangPartFromString = (string) => string.slice(string.lastIndexOf('-') + 1);
 
+const isArrayEqual = (arr1, arr2) => {
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+};
 
 export {
     organizeQuestions,
     formatLangTextDevFriendly,
     grabLangPartFromString,
     getAvailableLangs,
+    isArrayEqual,
 };

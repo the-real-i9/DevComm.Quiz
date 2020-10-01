@@ -24,6 +24,9 @@ const event = (elem, type, callback) => {
     elem.addEventListener(type, callback);
 };
 
+const stringify = (obj) => JSON.stringify(obj);
+const parse = (objStr) => JSON.parse(objStr);
+
 export {
     select,
     selectAll,
@@ -32,4 +35,6 @@ export {
     classAction,
     insertHtml,
     event,
+    stringify,
+    parse,
 };
