@@ -1,4 +1,4 @@
-import { select, selectAll } from './DOMFuncs.js';
+import { select } from './DOMFuncs.js';
 const DOMElems = {
     pagesContainer: select('.main-pane'),
     langChoicesModal: select('.languages-modal'),
