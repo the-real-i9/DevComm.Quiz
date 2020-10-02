@@ -36,7 +36,7 @@ const levelBoxHtml = ({
     questionsCount,
 }) => `
     <div class="level-box" id="${levelTitle}-level-${language}">
-        <div class='comp-div'>
+        <div class='comp-div' id='comp-div-${levelTitle}'>
             <div id='${levelTitle}-level-${language}-completion'>${completion}%</div>
             <svg>
                 <circle cx='30' cy='30' r='25'></circle>
@@ -45,7 +45,7 @@ const levelBoxHtml = ({
         </div>
         <div class="level-bottom-text">
             <p>${formatLangTextDevFriendly(levelTitle)}</p>
-            <p id='total-questions-count'>${questionsCount.toLocaleString()} questions</p>
+            <p id='total-questions-count'>${questionsCount === 0 ? 'coming soon' : `${questionsCount.toLocaleString()} question${questionsCount > 1 ? 's' : ''}`}</p>
         </div>
     </div>
 `;

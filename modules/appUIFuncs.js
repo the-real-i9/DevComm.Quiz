@@ -107,8 +107,11 @@ const renderLevelsPage = (language) => {
     setPreviousLangChoices([]);
 };
 // language, levelTitle, completion, questionsCount === details format
-const renderLevelBoxes = (detailsObject) => {
-
+const renderLevelBoxes = async (detailsObject) => {
+    const { completion, levelTitle } = detailsObject;
+    insertHtml(select('.levels-section'), 'beforeend', levelBoxHtml(detailsObject));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    setStyle(select(`#comp-div-${levelTitle} circle:last-child`), 'stroke-dashoffset', `calc(160 - (160 * ${completion}) / 100)`);
 };
 
 export {

@@ -213,39 +213,42 @@ div.quiz-levels-page {
                                 stroke: $cream;
                                 stroke-dasharray: 160;
                                 stroke-dashoffset: 160;
-                                transition: stroke-dashoffset 1s linear;
+                                transition: stroke-dashoffset 1s cubic-bezier(0.23, 1, 0.320, 1);
                             }
                         }
                     }
                 }
-
+                
                 &:nth-child(1) {
                     .comp-div circle:last-child {
                         // Javascript will work hehe
-                        stroke-dashoffset: calc(160 - (160 * var(--beginnerComp)) / 100);
-                        // stroke-dashoffset: calc(160 - (160 * 0) / 100);
+                        // stroke-dashoffset: calc(160 - (160 * var(--beginnerComp)) / 100);
+                        stroke-dashoffset: calc(160 - (160 * 0) / 100);
                         
                     }
                 }
-
+                
                 &:nth-child(2) {
                     .comp-div circle:last-child {
-                        stroke-dashoffset: calc(160 - (160 * var(--intermediateComp)) / 100);
+                        // stroke-dashoffset: calc(160 - (160 * var(--intermediateComp)) / 100);
+                        stroke-dashoffset: calc(160 - (160 * 0) / 100);
                     }
                 }
-
+                
                 &:nth-child(3) {
                     .comp-div circle:last-child {
-                        stroke-dashoffset: calc(160 - (160 * var(--advancedComp)) / 100);
+                        // stroke-dashoffset: calc(160 - (160 * var(--advancedComp)) / 100);
+                        stroke-dashoffset: calc(160 - (160 * 0) / 100);
                     }
                 }
 
                 &:nth-child(4) {
                     .comp-div circle:last-child {
-                        stroke-dashoffset: calc(160 - (160 * 70) / 100);
+                        // stroke-dashoffset: calc(160 - (160 * 70) / 100);
+                        stroke-dashoffset: calc(160 - (160 * 0) / 100);
                     }
                 }
-
+                
 
 
                 .level-bottom-text {

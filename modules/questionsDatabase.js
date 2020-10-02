@@ -19,6 +19,25 @@ const questions = {
             language: 'cplusplus',
             questionStatement: 'A cplusplus beginner question',
         },
+        {
+            language: 'javascript',
+            questionStatement: 'A javascript beginner question 2',
+
+        },
+        {
+            language: 'java',
+            questionStatement: 'A java beginner question 2',
+
+        },
+        {
+            language: 'python',
+            questionStatement: 'A python beginner question 2',
+
+        },
+        {
+            language: 'cplusplus',
+            questionStatement: 'A cplusplus beginner question 2',
+        },
     ],
 
 

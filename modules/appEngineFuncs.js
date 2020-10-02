@@ -1,47 +1,48 @@
 import questions from './questionsDatabase.js';
 import { organizedQuestionsMap } from './sessionStrorage.js';
 
-const chunkToTens = (array) => {
+const chunkToTens = (array, langChoice) => {
     let i = 0;
-    const chunksOfTen = [];
-    chunksOfTen[i] = [];
-    for (const elem of array) {
-        chunksOfTen[i].push(elem);
-        if (chunksOfTen[i].length === 10) {
+    const chunksOfTen = array.reduce((acc, v) => {
+        if (acc[i].length === 10) {
             i++;
-            chunksOfTen[i] = [];
+            acc.push([]);
         }
-    }
+        if (v.language === langChoice) {
+            acc[i].push(v);
+        }
+        return acc;
+    }, [[]]);
     return chunksOfTen;
 };
 
 const organizeQuestions = (langChoices) => {
     if (!langChoices.length) return;
+    organizedQuestionsMap.clear();
     for (const langChoice of langChoices) {
         organizedQuestionsMap.set(langChoice, new Map());
-
 
         for (const level of Object.keys(questions)) {
             organizedQuestionsMap
             .get(langChoice)
             .set(level, new Map());
-            const questionsInTens = chunkToTens(questions[level]);
+            const questionsInTens = chunkToTens(questions[level], langChoice);
 
             for (let i = 0; i < questionsInTens.length; i++) {
-                const module = organizedQuestionsMap
+                const modules = organizedQuestionsMap
                 .get(langChoice)
                 .get(level);
-                if (module
-                    .has(`module-${i < 9 ? '0' : ''}${i + 1}`) && module
+                if (modules
+                    .has(`module-${i < 9 ? '0' : ''}${i + 1}`) && modules
                     // eslint-disable-next-line no-continue
                     .get(`module-${i < 9 ? '0' : ''}${i + 1}`).length > 9) continue;
 
-                module.set(`module-${i < 9 ? '0' : ''}${i + 1}`, questionsInTens[i]);
+                modules.set(`module-${i < 9 ? '0' : ''}${i + 1}`, questionsInTens[i]);
             }
         }
     }
 
-    // console.log([...organizedQuestionsMap]);
+    console.log(organizedQuestionsMap);
 };
 
 const getAvailableLangs = () => {
