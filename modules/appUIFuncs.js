@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import DOMElems from './DOMElems.js';
 import {
     setProp,
@@ -6,6 +7,7 @@ import {
     classAction,
     insertHtml,
     select,
+    event,
 } from './DOMFuncs.js';
 import {
     getCurrentLangChoices,
@@ -20,21 +22,30 @@ import {
     homePageHtml,
     langBoxHtml,
     availLangsHtml,
+    levelBoxHtml,
+    levelsPageHtml,
 } from './htmlBoilerplates.js';
 import {
     grabLangPartFromString,
     organizeQuestions,
 } from './appEngineFuncs.js';
 import {
-    userLanguageChoices,
-    UserLangChoice,
-} from './langsObject.js';
+    createLangObject,
+    deleteLangObject,
+    getLangObject,
+} from './langsObjectManager.js';
 
 const {
     pagesContainer,
     langChoicesModal,
     availableLangsContainer,
 } = DOMElems;
+
+const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
+
+const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
+
+const emptyPagesContainer = () => setProp(pagesContainer, 'innerHTML', '');
 
 const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
@@ -49,11 +60,11 @@ const renderAvailableLangs = async (availLangsArray) => {
     }
 };
 
-const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
+const renderLanguageChoices = async (currentLangChoices, previousLangChoices) => {
     // if some lang choices in the PLC is not in the CLC, remove them from the UI
     for (const langPrev of previousLangChoices) {
         if (!currentLangChoices.includes(langPrev)) {
-            userLanguageChoices.delete(langPrev);
+            deleteLangObject(langPrev);
             setProp(select(`#lang-box-${langPrev}`), 'outerHTML', '');
         }
     }
@@ -62,11 +73,14 @@ const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
     // if each LC has common lang choices, don't skip rendering to save memory
     for (const langCurr of currentLangChoices) {
         if (!previousLangChoices.includes(langCurr)) {
-            userLanguageChoices.set(langCurr, new UserLangChoice(langCurr));
+            createLangObject(langCurr);
             insertHtml(select('.langs-section'), 'afterbegin', langBoxHtml(langCurr));
         }
     }
-    console.log(userLanguageChoices);
+
+    [...selectAll('div[id|="lang-box"]')].map((el) => event(el, 'click', (ev) => {
+        getLangObject(grabLangPartFromString(el.id)).levelsPage();
+    }));
 
     // after rendering, set the previous LC to currentLC
     setPreviousLangChoices(getCurrentLangChoices());
@@ -85,12 +99,9 @@ const langsChosenOnSave = () => {
     renderLanguageChoices(getCurrentLangChoices(), getPreviousLangChoices());
 };
 
-const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
-
-const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
-
 const renderLevelsPage = (language) => {
-
+    emptyPagesContainer();
+    setProp(pagesContainer, 'innerHTML', levelsPageHtml(language));
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = (detailsObject) => {
@@ -103,4 +114,6 @@ export {
     displayLangChoicesModal,
     toggleSelectLangChoice,
     renderAvailableLangs,
+    renderLevelsPage,
+    renderLevelBoxes,
 };
