@@ -135,7 +135,7 @@ div.quiz-levels-page {
 
     @include mobile {
         .top {
-            padding: 0 7%;
+            padding: 0 6%;
             width: 100%;
             height: 70px;
             border-radius: 0 0 15px 15px;
@@ -156,7 +156,7 @@ div.quiz-levels-page {
                 width: 54%;
                 p:first-child {
                     font: {
-                        size: 20px;
+                        size: 18px;
                         weight: weight(bold);
                     }
                 }

@@ -55,7 +55,7 @@ const levelsPageHtml = (language) => `
     <div class="top">
         <div id="back-to-home">Back</div>
         <div class="center-text">
-            <p id='quiz-title'>${formatLangTextDevFriendly(language)}</p>
+            <p id='quiz-title'>${formatLangTextDevFriendly(language)} Quiz</p>
             <p>Select Level</p>
         </div>
         <div></div>

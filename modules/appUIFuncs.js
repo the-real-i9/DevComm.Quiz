@@ -60,7 +60,7 @@ const renderAvailableLangs = async (availLangsArray) => {
     }
 };
 
-const renderLanguageChoices = async (currentLangChoices, previousLangChoices) => {
+const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
     // if some lang choices in the PLC is not in the CLC, remove them from the UI
     for (const langPrev of previousLangChoices) {
         if (!currentLangChoices.includes(langPrev)) {
@@ -77,18 +77,19 @@ const renderLanguageChoices = async (currentLangChoices, previousLangChoices) =>
             insertHtml(select('.langs-section'), 'afterbegin', langBoxHtml(langCurr));
         }
     }
+    setPreviousLangChoices(getCurrentLangChoices());
 
     [...selectAll('div[id|="lang-box"]')].map((el) => event(el, 'click', (ev) => {
         getLangObject(grabLangPartFromString(el.id)).levelsPage();
     }));
 
     // after rendering, set the previous LC to currentLC
-    setPreviousLangChoices(getCurrentLangChoices());
 };
 
 const renderHomePage = () => {
     setProp(pagesContainer, 'innerHTML', homePageHtml(getUsername()));
     renderLanguageChoices(getCurrentLangChoices(), getPreviousLangChoices());
+    event(select('#add-lang-btn'), 'click', displayLangChoicesModal);
 };
 
 const langsChosenOnSave = () => {
@@ -102,6 +103,8 @@ const langsChosenOnSave = () => {
 const renderLevelsPage = (language) => {
     emptyPagesContainer();
     setProp(pagesContainer, 'innerHTML', levelsPageHtml(language));
+    event(select('#back-to-home'), 'click', renderHomePage);
+    setPreviousLangChoices([]);
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = (detailsObject) => {

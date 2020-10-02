@@ -1,9 +1,20 @@
 import startApp from '../modules/startApp.js';
-import { langsChosenOnSave, displayLangChoicesModal, toggleSelectLangChoice } from '../modules/appUIFuncs.js';
-import { event, select, selectAll } from '../modules/DOMFuncs.js';
+import {
+    langsChosenOnSave,
+    displayLangChoicesModal,
+    toggleSelectLangChoice,
+    renderHomePage,
+} from '../modules/appUIFuncs.js';
+import {
+    event,
+    select,
+    selectAll,
+} from '../modules/DOMFuncs.js';
 import DOMElems from '../modules/DOMElems.js';
 
-const { saveChoicesBtn, addLangBtn } = DOMElems;
+const {
+    saveChoicesBtn,
+} = DOMElems;
 
 startApp();
 
