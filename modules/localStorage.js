@@ -1,6 +1,7 @@
 let languageChoices = [];
 let username = 'Dev';
 const levelCompletion = new Map();
+const moduleScore = new Map();
 
 const setCurrentLangChoices = (langChoices) => {
 	languageChoices = langChoices;
@@ -10,11 +11,14 @@ const setCurrentLangChoices = (langChoices) => {
 
 const setUsername = (name) => {
 	username = name;
-	// local Storage here
 	localStorage.setItem('dev-name', name);
 };
 
-const setLevelCompletion = (language, level, compValue) => {
+const setLevelCompletion = ({
+	language,
+	level,
+	compValue,
+}) => {
 	if (!levelCompletion.has(language)) levelCompletion.set(language, new Map());
 	levelCompletion.get(language).set(level, compValue);
 
@@ -29,8 +33,36 @@ const setLevelCompletion = (language, level, compValue) => {
 };
 
 const getLevelCompletion = (language, level) => (levelCompletion.get(language)
-                                                && levelCompletion.get(language).get(level))
-                                                || 0;
+		&& levelCompletion.get(language).get(level))
+	|| 0;
+
+const setModuleScore = ({
+	language,
+	level,
+	module,
+	moduleScoreValue,
+}) => {
+	if (!moduleScore.has(language)) moduleScore.set(language, new Map());
+	moduleScore.get(language).set(level, new Map());
+	moduleScore.get(language).get(level).set(module, moduleScoreValue);
+
+	const serialized = JSON.stringify(
+		[...moduleScore],
+		(key, value) => {
+			if ({}.toString.call(value) === '[object Map]') return [...value];
+			return value;
+		},
+	);
+	localStorage.setItem('module-scores', serialized);
+};
+
+const getModuleScore = ({
+		language,
+		level,
+		module,
+	}) => (moduleScore.get(language)
+		&& moduleScore.get(language).get(level).get(module))
+	|| 0;
 
 const getCurrentLangChoices = () => languageChoices;
 
@@ -43,4 +75,6 @@ export {
 	getUsername,
 	setLevelCompletion,
 	getLevelCompletion,
+	setModuleScore,
+	getModuleScore,
 };

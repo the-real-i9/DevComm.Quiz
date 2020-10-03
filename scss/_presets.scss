@@ -278,9 +278,9 @@ a:link:hover {
             url(../img/orange.svg) no-repeat -50px 125%/350px;
             
             @include mobile {
-                background: url(../img/deep-orange.svg) no-repeat 60% 90vh/230px,
-                url(../img/cream.svg) no-repeat 200% 92vh/250px,
-                url(../img/orange.svg) no-repeat -80px 80vh/250px;
+                background: url(../img/deep-orange.svg) no-repeat 15vw 90vh/230px,
+                url(../img/cream.svg) no-repeat 50vw 92vh/250px,
+                url(../img/orange.svg) no-repeat -30vw 80vh/250px;
             }
         }
     }

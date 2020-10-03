@@ -142,7 +142,7 @@ div.quiz-modules-page {
             position: fixed;
             top: 0;
             background: #fff;
-            padding: 0 7%;
+            padding: 0 6%;
             width: 100%;
             height: 70px;
             border-radius: 0 0 15px 15px;
@@ -162,13 +162,13 @@ div.quiz-modules-page {
                 width: 54%;
                 p:first-child {
                     font: {
-                        size: 21px;
+                        size: 18px;
                         weight: weight(bold);
                     }
                 }
                 p:last-child {
                     font: {
-                        size: 15px;
+                        size: 14px;
                         weight: weight(semibold);
                     }
                     margin-top: 3px;
@@ -180,13 +180,12 @@ div.quiz-modules-page {
             padding: 0 5%;
             width: 100%;
             margin-top: 90px;
-            @include flex(space-between);
+            @include flex();
 
             .module-box {
                 width: 135px;
                 padding: 10px 0 12px 15px;
-                margin: 0 auto;
-                margin-bottom: 15px;
+                margin: 0 10px 15px 0;
 
                 .module-num {
                     font: {

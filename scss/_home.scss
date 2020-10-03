@@ -94,13 +94,15 @@ div.home {
             transition: background .5s ease,
                         transform .15s linear;
             margin-bottom: 10px;
-
+                        
             @include mobile {
-                width: 90%;
+                width: 92%;
                 height: 175px;
                 border-radius: 14px;
-                margin: initial auto;
+                margin: 0 auto;
+                margin-bottom: 10px;
             }
+            
             
             
             background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;

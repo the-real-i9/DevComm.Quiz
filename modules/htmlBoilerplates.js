@@ -31,20 +31,20 @@ const langBoxHtml = (language) => `
 
 const levelBoxHtml = ({
     language,
-    levelTitle,
+    level,
     completion,
     questionsCount,
 }) => `
-    <div class="level-box" id="${levelTitle}-level-${language}">
-        <div class='comp-div' id='comp-div-${levelTitle}'>
-            <div id='${levelTitle}-level-${language}-completion'>${completion}%</div>
+    <div class="level-box" id="${level}-level-${language}">
+        <div class='comp-div' id='comp-div-${level}'>
+            <div id='${level}-level-${language}-completion'>${completion}%</div>
             <svg>
                 <circle cx='30' cy='30' r='25'></circle>
                 <circle cx='30' cy='30' r='25'></circle>
             </svg>
         </div>
         <div class="level-bottom-text">
-            <p>${formatLangTextDevFriendly(levelTitle)}</p>
+            <p>${formatLangTextDevFriendly(level)}</p>
             <p id='total-questions-count'>${questionsCount === 0 ? 'coming soon' : `${questionsCount.toLocaleString()} question${questionsCount > 1 ? 's' : ''}`}</p>
         </div>
     </div>
@@ -66,6 +66,34 @@ const levelsPageHtml = (language) => `
 </div>
 `;
 
+const modulesPageHtml = (language, level) => `
+<div class='quiz-modules-page' id='lang-${language}-${level}'>
+    <div class="top">
+        <div id="back-to-levels">Back</div>
+        <div class="center-text">
+            <p id='quiz-title'>${formatLangTextDevFriendly(language)} Quiz</p>
+            <p id='level'>${formatLangTextDevFriendly(level)}</p>
+        </div>
+        <div></div>
+    </div>
+    <div class="modules-section">
+        
+    </div>
+</div>
+`;
+
+const moduleBoxHtml = ({
+    language,
+    level,
+    moduleNumber,
+    moduleScore,
+}) => `
+<div class="module-box" id='module-${moduleNumber}-box'>
+    <p class='module-num'>Module ${moduleNumber}</p>
+    <p class='module-score' id='module-${moduleNumber}-score'>Score: ${moduleScore}%</p>
+    <button class='start-module-btn' id='module-${moduleNumber}-start'>START</button>
+</div>
+`;
 
 export {
     homePageHtml,
@@ -73,4 +101,6 @@ export {
     availLangsHtml,
     levelsPageHtml,
     levelBoxHtml,
+    modulesPageHtml,
+    moduleBoxHtml,
 };

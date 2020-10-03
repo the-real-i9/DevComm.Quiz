@@ -63,20 +63,12 @@ const formatLangTextDevFriendly = (langText) => {
     return langText[0].toUpperCase() + langText.slice(1);
 };
 
-const grabLangPartFromString = (string) => string.slice(string.lastIndexOf('-') + 1);
+const grabEndPartFromText = (text) => text.slice(text.lastIndexOf('-') + 1);
 
-const isArrayEqual = (arr1, arr2) => {
-    if (arr1.length !== arr2.length) return false;
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] !== arr2[i]) return false;
-    }
-    return true;
-};
 
 export {
     organizeQuestions,
     formatLangTextDevFriendly,
-    grabLangPartFromString,
+    grabEndPartFromText,
     getAvailableLangs,
-    isArrayEqual,
 };

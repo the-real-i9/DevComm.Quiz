@@ -24,9 +24,11 @@ import {
     availLangsHtml,
     levelBoxHtml,
     levelsPageHtml,
+    modulesPageHtml,
+    moduleBoxHtml,
 } from './htmlBoilerplates.js';
 import {
-    grabLangPartFromString,
+    grabEndPartFromText,
     organizeQuestions,
 } from './appEngineFuncs.js';
 import {
@@ -55,7 +57,7 @@ const renderAvailableLangs = async (availLangsArray) => {
     await setProp(availableLangsContainer, 'innerHTML', htmlString);
 
     for (const elem of selectAll('div[id|="lang-box"]')) {
-        const lang = grabLangPartFromString(elem.id);
+        const lang = grabEndPartFromText(elem.id);
         classAction(select(`#lang-choice-${lang}`), 'add', 'lang-chosen');
     }
 };
@@ -94,7 +96,7 @@ const renderHomePage = () => {
 
 const langsChosenOnSave = () => {
     setStyle(langChoicesModal, 'display', 'none');
-    const selectedLangs = [...selectAll('.lang-chosen')].map((el) => grabLangPartFromString(el.id));
+    const selectedLangs = [...selectAll('.lang-chosen')].map((el) => grabEndPartFromText(el.id));
     setCurrentLangChoices(selectedLangs);
     organizeQuestions(getCurrentLangChoices());
     renderLanguageChoices(getCurrentLangChoices(), getPreviousLangChoices());
@@ -108,14 +110,27 @@ const renderLevelsPage = (language) => {
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = async (detailsObject) => {
-    const { completion, levelTitle, language } = detailsObject;
+    const { completion, level, language } = detailsObject;
     insertHtml(select('.levels-section'), 'beforeend', levelBoxHtml(detailsObject));
     await new Promise((resolve) => setTimeout(resolve, 0));
-    setStyle(select(`#comp-div-${levelTitle} circle:last-child`), 'stroke-dashoffset', `calc(160 - (160 * ${completion}) / 100)`);
+    setStyle(select(`#comp-div-${level} circle:last-child`), 'stroke-dashoffset', `calc(160 - (160 * ${completion}) / 100)`);
 
-    event(select(`#${levelTitle}-level-${language}`), 'click', () => {
-        getLangObject(language).modulesPage();
+    event(select(`#${level}-level-${language}`), 'click', () => {
+        getLangObject(language).modulesPage(level);
     });
+};
+
+const renderModulesPage = (language, level) => {
+    emptyPagesContainer();
+    setProp(pagesContainer, 'innerHTML', modulesPageHtml(language, level));
+    event(select('#back-to-levels'), 'click', () => {
+        getLangObject(language).levelsPage();
+    });
+};
+
+const renderModuleBoxes = (detailsObject) => {
+    const { language, level } = detailsObject;
+    insertHtml(select('.modules-section'), 'beforeend', moduleBoxHtml(detailsObject));
 };
 
 export {
@@ -126,4 +141,6 @@ export {
     renderAvailableLangs,
     renderLevelsPage,
     renderLevelBoxes,
+    renderModulesPage,
+    renderModuleBoxes,
 };

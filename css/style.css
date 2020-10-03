@@ -365,7 +365,7 @@ a:link:hover {
 
 @media (max-width: 599px) {
   .container .main-pane > :not(.quiz-question-page):not(.quiz-solution-page) {
-    background: url(../img/deep-orange.svg) no-repeat 60% 90vh/230px, url(../img/cream.svg) no-repeat 200% 92vh/250px, url(../img/orange.svg) no-repeat -80px 80vh/250px;
+    background: url(../img/deep-orange.svg) no-repeat 15vw 90vh/230px, url(../img/cream.svg) no-repeat 50vw 92vh/250px, url(../img/orange.svg) no-repeat -30vw 80vh/250px;
   }
 }
 
@@ -516,10 +516,11 @@ div.home div.langs-section .lang-box {
 
 @media (max-width: 599px) {
   div.home div.langs-section .lang-box {
-    width: 90%;
+    width: 92%;
     height: 175px;
     border-radius: 14px;
-    margin: initial auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
 }
 
@@ -938,7 +939,7 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     margin-top: 50px;
   }
   div.quiz-levels-page .levels-section .level-box {
-    width: 90%;
+    width: 92%;
     height: 180px;
     border-radius: 14px;
     margin: 0 auto;
@@ -1188,7 +1189,7 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
     position: fixed;
     top: 0;
     background: #fff;
-    padding: 0 7%;
+    padding: 0 6%;
     width: 100%;
     height: 70px;
     border-radius: 0 0 15px 15px;
@@ -1208,11 +1209,11 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
     width: 54%;
   }
   div.quiz-modules-page .top .center-text p:first-child {
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
   }
   div.quiz-modules-page .top .center-text p:last-child {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     margin-top: 3px;
   }
@@ -1223,15 +1224,11 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   div.quiz-modules-page .modules-section .module-box {
     width: 135px;
     padding: 10px 0 12px 15px;
-    margin: 0 auto;
-    margin-bottom: 15px;
+    margin: 0 10px 15px 0;
   }
   div.quiz-modules-page .modules-section .module-box .module-num {
     font-size: 18px;
