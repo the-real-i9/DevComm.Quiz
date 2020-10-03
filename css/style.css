@@ -365,7 +365,7 @@ a:link:hover {
 
 @media (max-width: 599px) {
   .container .main-pane > :not(.quiz-question-page):not(.quiz-solution-page) {
-    background: url(../img/deep-orange.svg) no-repeat 60% 145%/230px, url(../img/cream.svg) no-repeat 250% 155%/250px, url(../img/orange.svg) no-repeat -80px 140%/250px;
+    background: url(../img/deep-orange.svg) no-repeat 60% 90vh/230px, url(../img/cream.svg) no-repeat 200% 92vh/250px, url(../img/orange.svg) no-repeat -80px 80vh/250px;
   }
 }
 
@@ -482,6 +482,10 @@ div.home div.langs-section {
 @media (max-width: 599px) {
   div.home div.langs-section {
     margin-top: 40px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -506,15 +510,16 @@ div.home div.langs-section .lang-box {
   transition: background .5s ease, -webkit-transform .15s linear;
   transition: background .5s ease, transform .15s linear;
   transition: background .5s ease, transform .15s linear, -webkit-transform .15s linear;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   background: #f5d3ac url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
 }
 
 @media (max-width: 599px) {
   div.home div.langs-section .lang-box {
-    width: 135px;
-    height: 170px;
+    width: 90%;
+    height: 175px;
     border-radius: 14px;
+    margin: initial auto;
   }
 }
 
@@ -885,9 +890,23 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
 }
 
 @media (max-width: 599px) {
+  div.quiz-levels-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   div.quiz-levels-page .top {
     padding: 0 6%;
     width: 100%;
+    position: fixed;
+    top: 0;
     height: 70px;
     border-radius: 0 0 15px 15px;
     -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -919,9 +938,10 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     margin-top: 50px;
   }
   div.quiz-levels-page .levels-section .level-box {
-    width: 135px;
-    height: 170px;
+    width: 90%;
+    height: 180px;
     border-radius: 14px;
+    margin: 0 auto;
     margin-bottom: 10px;
     display: -webkit-box;
     display: -ms-flexbox;

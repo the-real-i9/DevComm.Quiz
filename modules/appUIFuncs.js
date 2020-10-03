@@ -75,13 +75,13 @@ const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
         if (!previousLangChoices.includes(langCurr)) {
             createLangObject(langCurr);
             insertHtml(select('.langs-section'), 'afterbegin', langBoxHtml(langCurr));
+
+            event(select(`#lang-box-${langCurr}`), 'click', () => {
+                getLangObject(langCurr).levelsPage();
+            });
         }
     }
     setPreviousLangChoices(getCurrentLangChoices());
-
-    [...selectAll('div[id|="lang-box"]')].map((el) => event(el, 'click', (ev) => {
-        getLangObject(grabLangPartFromString(el.id)).levelsPage();
-    }));
 
     // after rendering, set the previous LC to currentLC
 };
@@ -108,10 +108,14 @@ const renderLevelsPage = (language) => {
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = async (detailsObject) => {
-    const { completion, levelTitle } = detailsObject;
+    const { completion, levelTitle, language } = detailsObject;
     insertHtml(select('.levels-section'), 'beforeend', levelBoxHtml(detailsObject));
     await new Promise((resolve) => setTimeout(resolve, 0));
     setStyle(select(`#comp-div-${levelTitle} circle:last-child`), 'stroke-dashoffset', `calc(160 - (160 * ${completion}) / 100)`);
+
+    event(select(`#${levelTitle}-level-${language}`), 'click', () => {
+        getLangObject(language).modulesPage();
+    });
 };
 
 export {

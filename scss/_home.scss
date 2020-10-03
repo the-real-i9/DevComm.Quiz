@@ -79,6 +79,8 @@ div.home {
         
         @include mobile {
             margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
 
@@ -91,16 +93,18 @@ div.home {
             cursor: pointer;
             transition: background .5s ease,
                         transform .15s linear;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
 
             @include mobile {
-                width: 135px;
-                height: 170px;
+                width: 90%;
+                height: 175px;
                 border-radius: 14px;
+                margin: initial auto;
             }
             
             
             background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+
 
             &:active {
                 transform: translateY(4px);

@@ -9,8 +9,8 @@ class UserLangChoice {
         this.language = language;
     }
 
-    async levelsPage() {
-        await renderLevelsPage(this.language);
+    levelsPage() {
+        renderLevelsPage(this.language);
 
         for (const [levelKey, levelValue] of organizedQuestionsMap.get(this.language)) {
             let questionsCount = 0;
@@ -26,6 +26,10 @@ class UserLangChoice {
                 questionsCount,
             });
         }
+    }
+
+    modulesPage() {
+        
     }
 }
 
