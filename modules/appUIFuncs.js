@@ -26,6 +26,7 @@ import {
     levelsPageHtml,
     modulesPageHtml,
     moduleBoxHtml,
+    questionPageHtml,
 } from './htmlBoilerplates.js';
 import {
     grabEndPartFromText,
@@ -129,8 +130,38 @@ const renderModulesPage = (language, level) => {
 };
 
 const renderModuleBoxes = (detailsObject) => {
-    const { language, level } = detailsObject;
+    const { language, level, moduleNumber } = detailsObject;
     insertHtml(select('.modules-section'), 'beforeend', moduleBoxHtml(detailsObject));
+    event(select(`#module-${moduleNumber}-start`), 'click', () => {
+        getLangObject(language).questionPage(moduleNumber, level);
+    });
+};
+
+const renderQuestionPage = (detailsObject) => {
+    const { language, level } = detailsObject;
+    emptyPagesContainer();
+    setProp(pagesContainer, 'innerHTML', questionPageHtml(detailsObject));
+    event(select('#back-to-modules'), 'click', () => {
+        getLangObject(language).modulesPage(level);
+    });
+};
+
+const startTimer = () => {
+    let min = 0;
+    let sec = 1;
+
+    const timer = () => {
+        if (Math.trunc(sec / 60) === 1) {
+            min++;
+            if (sec > 59) {
+                sec = 0;
+            }
+        }
+        setProp(select('#time-elapsed'), 'textContent', `${min}m ${sec}s`);
+        sec++;
+    };
+
+    const timeCount = setInterval(timer, 1000);
 };
 
 export {
@@ -143,4 +174,6 @@ export {
     renderLevelBoxes,
     renderModulesPage,
     renderModuleBoxes,
+    renderQuestionPage,
+    startTimer,
 };

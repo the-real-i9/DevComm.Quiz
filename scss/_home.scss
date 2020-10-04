@@ -96,8 +96,8 @@ div.home {
             margin-bottom: 10px;
                         
             @include mobile {
-                width: 92%;
-                height: 175px;
+                width: 94%;
+                height: 170px;
                 border-radius: 14px;
                 margin: 0 auto;
                 margin-bottom: 10px;
@@ -115,7 +115,7 @@ div.home {
             
             @include mobile {
                 background-position: center -50px;
-                background-size: 150px;
+                background-size: 155px;
             }
             @include laptop {
                 &:hover {

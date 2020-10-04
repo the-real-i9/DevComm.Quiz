@@ -95,6 +95,81 @@ const moduleBoxHtml = ({
 </div>
 `;
 
+
+const questionPageHtml = ({
+    language,
+    level,
+    moduleNumber,
+    totalQuestion,
+}) => `
+<div class="quiz-question-page" id='lang-${language}-${level}-module-${moduleNumber}'>
+    <i id='big-lang-icon' class='devicon-${language}-plain'></i>
+    <div class="top">
+        <div id="back-to-modules">Back</div>
+        <div class="center-text">
+            <p id='level'>${formatLangTextDevFriendly(level)}</p>
+            <p id='module'>Module ${moduleNumber}</p>
+        </div>
+        <div></div>
+    </div>
+    <div class="question-top">
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-tracker-bar"></div>
+            </div>
+            <div class="progress-details">
+                <div class="question-number-traker"><span id=qn>1</span><span>|</span><span id="tqs">${totalQuestion}</span></div>
+                <div class="answered-questions-tracker">
+                    <span id='ans-count' class='count'>0</span>
+                    <span>answered</span>
+                    <span id="rem-count" class='count'>${totalQuestion}</span>
+                    <span>left</span>
+                </div>
+            </div>
+        </div>
+        <div class="timer">
+            <i class='fas fa-clock'></i>
+            <p id='time-elapsed'>0m 0s</p>
+        </div>
+    </div>
+    <div id="question-section">
+        
+    </div>
+    <div class="bottom">
+        <p><i class='fab fa-twitter'></i><a href="https://twitter.com/Oluwarinolasam2" target="_blank">by <span id="twitter-link-nick">Mckenney</span></a></p>
+        <p id="submit-button">Submit</p>
+        <p><i class="fab fa-github"></i><a href="https://github.com/Mckenney17" target='_blank'>by <span id="github-link-nick">Mckenney</span></a></p>
+    </div>
+</div>
+`;
+
+const questionStatementHtml = (questionIdentity, questionStatement) => `
+<p class='question-statement-${questionIdentity}'>${questionStatement}</p>
+`;
+
+const codeBlockHtml = (language, code) => `
+<div id="code-block">
+    <pre><code class='${language}'>${code}</code></pre>
+</div>
+`;
+
+const actionHtml = (questionAction) => `
+<p id='what-to-do'>${questionAction}</p>
+<div class="options">
+
+</div>
+`;
+
+const optionHtml = ({
+    optionNumber,
+    optionValue,
+}) => `
+<div class='option' id="option-${optionNumber}">
+    <p class='ans-text' id='ans-text-opt${optionNumber}'>${optionValue}</p>
+    <div class='ans-check-circle' id="ans-check-circle-opt${optionNumber}"></div>
+</div>
+`;
+
 export {
     homePageHtml,
     langBoxHtml,
@@ -103,4 +178,9 @@ export {
     levelBoxHtml,
     modulesPageHtml,
     moduleBoxHtml,
+    questionPageHtml,
+    questionStatementHtml,
+    codeBlockHtml,
+    actionHtml,
+    optionHtml,
 };

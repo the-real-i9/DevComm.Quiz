@@ -8,9 +8,13 @@ import {
     renderLevelBoxes,
     renderModulesPage,
     renderModuleBoxes,
+    renderQuestionPage,
+    startTimer,
 } from './appUIFuncs.js';
 import {
     organizedQuestionsMap,
+    setTotalQuestion,
+    setCurrentQuestion,
 } from './sessionStrorage.js';
 import {
     grabEndPartFromText,
@@ -59,6 +63,27 @@ class UserLangChoice {
                 });
             }
         }
+    }
+
+    questionPage(moduleNumber, level) {
+        const questionCount = organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`);
+        setTotalQuestion(questionCount.length);
+        renderQuestionPage({
+            language: this.language,
+            level,
+            moduleNumber,
+            totalQuestion: questionCount.length,
+        });
+        startTimer();
+        this.level = level;
+        this.moduleNumber = moduleNumber;
+        this.question(1);
+    }
+
+    question(questionNumber) {
+        setCurrentQuestion(questionNumber);
+        const questions = organizedQuestionsMap.get(this.language).get(this.level).get(`module-${this.moduleNumber}`);
+        const currentQuestionObject = questions[questionNumber - 1];
     }
 }
 

@@ -516,8 +516,8 @@ div.home div.langs-section .lang-box {
 
 @media (max-width: 599px) {
   div.home div.langs-section .lang-box {
-    width: 92%;
-    height: 175px;
+    width: 94%;
+    height: 170px;
     border-radius: 14px;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -534,7 +534,7 @@ div.home div.langs-section .lang-box:active {
 @media (max-width: 599px) {
   div.home div.langs-section .lang-box {
     background-position: center -50px;
-    background-size: 150px;
+    background-size: 155px;
   }
 }
 
@@ -939,8 +939,8 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     margin-top: 50px;
   }
   div.quiz-levels-page .levels-section .level-box {
-    width: 92%;
-    height: 180px;
+    width: 94%;
+    height: 185px;
     border-radius: 14px;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -957,7 +957,7 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-size: 150px;
+    background-size: 155px;
   }
   div.quiz-levels-page .levels-section .level-box .comp-div {
     width: 60px;
@@ -1312,7 +1312,7 @@ div.quiz-question-page .question-top {
 }
 
 div.quiz-question-page .question-top .progress {
-  width: 85%;
+  width: 80%;
 }
 
 div.quiz-question-page .question-top .progress .progress-bar {
@@ -1329,7 +1329,7 @@ div.quiz-question-page .question-top .progress .progress-bar .progress-tracker-b
   top: 0;
   left: 0;
   bottom: 0;
-  right: 50%;
+  right: var(--progress);
   background: #e1543c;
   -webkit-transition: right .5s ease;
   transition: right .5s ease;
@@ -1374,6 +1374,7 @@ div.quiz-question-page .question-top .progress .progress-details div:last-child 
 }
 
 div.quiz-question-page .question-top .timer {
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1398,32 +1399,32 @@ div.quiz-question-page #question-section {
   width: 100%;
 }
 
-div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
+div.quiz-question-page #question-section .question-statement-with-code {
   margin-bottom: 4px;
 }
 
-div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+div.quiz-question-page #question-section .question-statement-without-code {
   margin-bottom: 13px;
 }
 
-div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
+div.quiz-question-page #question-section #code-block {
   font-family: monospace;
   border-top: 1px dotted #adadad;
   padding: 4px 0;
   border-bottom: 1px dotted #adadad;
 }
 
-div.quiz-question-page #question-section .question-with-code #code-block code, div.quiz-question-page #question-section .question-without-code #code-block code {
+div.quiz-question-page #question-section #code-block code {
   border-radius: 5px;
   overscroll-behavior: none;
 }
 
-div.quiz-question-page #question-section .question-with-code #what-to-do, div.quiz-question-page #question-section .question-without-code #what-to-do {
+div.quiz-question-page #question-section #what-to-do {
   color: #adadad;
   margin: 3px 0;
 }
 
-div.quiz-question-page #question-section .question-with-code .options .option, div.quiz-question-page #question-section .question-without-code .options .option {
+div.quiz-question-page #question-section .options .option {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1436,19 +1437,19 @@ div.quiz-question-page #question-section .question-with-code .options .option, d
   position: relative;
 }
 
-div.quiz-question-page #question-section .question-with-code .options .option p, div.quiz-question-page #question-section .question-without-code .options .option p {
+div.quiz-question-page #question-section .options .option p {
   font-weight: 500;
   line-height: 20px;
 }
 
-div.quiz-question-page #question-section .question-with-code .options .option div, div.quiz-question-page #question-section .question-without-code .options .option div {
+div.quiz-question-page #question-section .options .option div {
   position: absolute;
   border-radius: 50%;
   margin: auto 0;
   border: 3px solid #f5d3ac;
 }
 
-div.quiz-question-page #question-section .question-with-code .options .option div.selected::after, div.quiz-question-page #question-section .question-without-code .options .option div.selected::after {
+div.quiz-question-page #question-section .options .option div.selected::after {
   position: absolute;
   font-family: 'Font Awesome 5 Free';
   content: '\f00c';
@@ -1471,7 +1472,7 @@ div.quiz-question-page #question-section .question-with-code .options .option di
   border-radius: 50%;
 }
 
-div.quiz-question-page #question-section .question-with-code .options .option div.selected::before, div.quiz-question-page #question-section .question-without-code .options .option div.selected::before {
+div.quiz-question-page #question-section .options .option div.selected::before {
   position: absolute;
   content: '';
   top: 0;
@@ -1638,19 +1639,19 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page #question-section {
     margin-top: 20px;
   }
-  div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+  div.quiz-question-page #question-section .question-statement-with-code, div.quiz-question-page #question-section .question-statement-without-code {
     font-size: 19px;
   }
-  div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
+  div.quiz-question-page #question-section #code-block {
     font-size: 19px;
   }
-  div.quiz-question-page #question-section .question-with-code #code-block code, div.quiz-question-page #question-section .question-without-code #code-block code {
+  div.quiz-question-page #question-section #code-block code {
     height: 125px;
   }
-  div.quiz-question-page #question-section .question-with-code #what-to-do, div.quiz-question-page #question-section .question-without-code #what-to-do {
+  div.quiz-question-page #question-section #what-to-do {
     font-size: 15px;
   }
-  div.quiz-question-page #question-section .question-with-code .options, div.quiz-question-page #question-section .question-without-code .options {
+  div.quiz-question-page #question-section .options {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1663,26 +1664,26 @@ div.quiz-question-page .bottom p:nth-child(2) {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option, div.quiz-question-page #question-section .question-without-code .options .option {
+  div.quiz-question-page #question-section .options .option {
     width: 240px;
     height: 45px;
     margin: 5px 0;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option p, div.quiz-question-page #question-section .question-without-code .options .option p {
+  div.quiz-question-page #question-section .options .option p {
     margin-left: 23px;
     font-size: 20px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div, div.quiz-question-page #question-section .question-without-code .options .option div {
+  div.quiz-question-page #question-section .options .option div {
     top: 15%;
     bottom: 15%;
     right: 3%;
     height: 28px;
     width: 28px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div.selected::after, div.quiz-question-page #question-section .question-without-code .options .option div.selected::after {
+  div.quiz-question-page #question-section .options .option div.selected::after {
     font-size: 12px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div.selected::before, div.quiz-question-page #question-section .question-without-code .options .option div.selected::before {
+  div.quiz-question-page #question-section .options .option div.selected::before {
     -webkit-animation: checkAnim .7s ease 1;
             animation: checkAnim .7s ease 1;
   }
@@ -1718,7 +1719,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
     top: 0;
     z-index: 1;
     background: #fff;
-    padding: 0 7%;
+    padding: 0 6%;
     width: 100%;
     height: 70px;
     border-radius: 0 0 15px 15px;
@@ -1747,7 +1748,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
     margin-top: 3px;
   }
   div.quiz-question-page .question-top {
-    padding: 0 7%;
+    padding: 0 6%;
     height: 50px;
     margin-top: 75px;
   }
@@ -1778,72 +1779,72 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page #question-section {
     padding: 0 7%;
   }
-  div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
+  div.quiz-question-page #question-section .question-statement-with-code {
     font-size: 16px;
   }
 }
 
 @media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section .question-with-code .question-statement-with-code, div.quiz-question-page #question-section .question-without-code .question-statement-with-code {
+  div.quiz-question-page #question-section .question-statement-with-code {
     font-size: 17px;
   }
 }
 
 @media (max-width: 599px) {
-  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+  div.quiz-question-page #question-section .question-statement-without-code {
     font-size: 18px;
   }
 }
 
 @media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section .question-with-code .question-statement-without-code, div.quiz-question-page #question-section .question-without-code .question-statement-without-code {
+  div.quiz-question-page #question-section .question-statement-without-code {
     font-size: 21px;
   }
 }
 
 @media (max-width: 599px) {
-  div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
+  div.quiz-question-page #question-section #code-block {
     font-size: 15px;
   }
 }
 
 @media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section .question-with-code #code-block, div.quiz-question-page #question-section .question-without-code #code-block {
+  div.quiz-question-page #question-section #code-block {
     font-size: 17px;
   }
 }
 
 @media (max-width: 599px) {
-  div.quiz-question-page #question-section .question-with-code #code-block code, div.quiz-question-page #question-section .question-without-code #code-block code {
+  div.quiz-question-page #question-section #code-block code {
     height: 100px;
   }
-  div.quiz-question-page #question-section .question-with-code #what-to-do, div.quiz-question-page #question-section .question-without-code #what-to-do {
+  div.quiz-question-page #question-section #what-to-do {
     font-size: 13px;
   }
-  div.quiz-question-page #question-section .question-with-code .options, div.quiz-question-page #question-section .question-without-code .options {
+  div.quiz-question-page #question-section .options {
     width: 97%;
     margin: 0 auto;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option, div.quiz-question-page #question-section .question-without-code .options .option {
+  div.quiz-question-page #question-section .options .option {
     height: 40px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option:not(:last-child), div.quiz-question-page #question-section .question-without-code .options .option:not(:last-child) {
+  div.quiz-question-page #question-section .options .option:not(:last-child) {
     margin: 5px 0;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option p, div.quiz-question-page #question-section .question-without-code .options .option p {
+  div.quiz-question-page #question-section .options .option p {
     margin-left: 20px;
     font-size: 17px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div, div.quiz-question-page #question-section .question-without-code .options .option div {
+  div.quiz-question-page #question-section .options .option div {
     top: 5px;
     bottom: 5px;
     right: 7px;
     width: 24px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div.selected::after, div.quiz-question-page #question-section .question-without-code .options .option div.selected::after {
+  div.quiz-question-page #question-section .options .option div.selected::after {
     font-size: 10px;
   }
-  div.quiz-question-page #question-section .question-with-code .options .option div.selected::before, div.quiz-question-page #question-section .question-without-code .options .option div.selected::before {
+  div.quiz-question-page #question-section .options .option div.selected::before {
     -webkit-animation: checkAnim .5s ease 1;
             animation: checkAnim .5s ease 1;
   }

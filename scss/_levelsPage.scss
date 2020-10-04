@@ -178,13 +178,13 @@ div.quiz-levels-page {
             margin-top: 50px;
 
             .level-box {
-                width: 92%;
-                height: 180px;
+                width: 94%;
+                height: 185px;
                 border-radius: 14px;
                 margin: 0 auto;
                 margin-bottom: 10px;
                 @include flex(space-between, center, column);
-                background-size: 150px;
+                background-size: 155px;
 
 
                 .comp-div {
