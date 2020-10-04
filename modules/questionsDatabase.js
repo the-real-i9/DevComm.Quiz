@@ -16,10 +16,6 @@ const questions = {
 
         },
         {
-            language: 'cplusplus',
-            questionStatement: 'A cplusplus beginner question',
-        },
-        {
             language: 'javascript',
             questionStatement: 'A javascript beginner question 2',
 
@@ -33,10 +29,6 @@ const questions = {
             language: 'python',
             questionStatement: 'A python beginner question 2',
 
-        },
-        {
-            language: 'cplusplus',
-            questionStatement: 'A cplusplus beginner question 2',
         },
     ],
 
@@ -93,11 +85,6 @@ const questions = {
         {
             language: 'python',
             questionStatement: 'A python ninja question',
-
-        },
-        {
-            language: 'ruby',
-            questionStatement: 'A ruby ninja question',
 
         },
     ],
