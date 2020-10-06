@@ -1,11 +1,19 @@
-import { setCurrentQuestionNumber } from './questionUIFuncs.js';
-import { getCurrentQuestion, getTotalQuestion } from './sessionStrorage.js';
+import {
+    setCurrentQuestionNumber,
+    setQuestionStatement,
+    setQuestionCodeBlock,
+} from './questionUIFuncs.js';
+import {
+    getCurrentQuestion,
+    getTotalQuestion,
+} from './sessionStrorage.js';
 
 const createQuestion = ({
     language,
     code,
     questionNumber,
     questionType,
+    questionStatement,
     options,
     correctAnswer,
     explanation,
@@ -14,6 +22,11 @@ const createQuestion = ({
     twitterProfile,
 }) => {
     setCurrentQuestionNumber(getCurrentQuestion(), getTotalQuestion());
+    setQuestionStatement(code ? 'with-code' : 'without-code', questionStatement);
+
+    if (code) {
+        setQuestionCodeBlock(language, code);
+    }
 };
 
 export default createQuestion;

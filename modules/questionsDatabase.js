@@ -3,7 +3,7 @@ const questions = {
         {
             language: 'javascript',
             questionType: 'single-answer',
-            questionStatement: 'What is the result of the *test* **NaN === NaN** ?',
+            questionStatement: 'What is the result of the expression `NaN === NaN`?',
             code: '',
             options: ['true', 'false', "I don't know", 'None of the Above'],
             correctAnswer: 'true',

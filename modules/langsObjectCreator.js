@@ -78,8 +78,8 @@ class UserLangChoice {
         startTimer();
         this.level = level;
         this.moduleNumber = moduleNumber;
-        organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
-        this.question(1);
+        // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
+        this.question(2);
     }
 
     question(questionNumber) {

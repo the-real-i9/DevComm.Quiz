@@ -135,6 +135,11 @@ const questionPageHtml = ({
     <div id="question-section">
         
     </div>
+    <div class="bottom">
+        <p><i class='fab fa-twitter'></i><a href="" target="_blank">by <span id="twitter-link-nick"></span></a></p>
+        <p id="submit-button">Submit</p>
+        <p><i class="fab fa-github"></i><a href="" target='_blank'>by <span id="github-link-nick"></span></a></p>
+    </div>
 </div>
 `;
 
@@ -165,13 +170,6 @@ const optionHtml = ({
 </div>
 `;
 
-const bottomSectionHtml = (githubLink, githubName, twitterLink, twitterName) => `
-<div class="bottom">
-    <p><i class='fab fa-twitter'></i><a href="${twitterLink}" target="_blank">by <span id="twitter-link-nick">${twitterName}</span></a></p>
-    <p id="submit-button">Submit</p>
-    <p><i class="fab fa-github"></i><a href="${githubLink}" target='_blank'>by <span id="github-link-nick">${githubName}</span></a></p>
-</div>
-`;
 
 export {
     homePageHtml,
@@ -186,5 +184,4 @@ export {
     codeBlockHtml,
     actionHtml,
     optionHtml,
-    bottomSectionHtml,
 };
