@@ -109,9 +109,9 @@ div.quiz-question-page {
             }
 
             #code-block {
-                font-family: monospace;
-
+                
                 code {
+                    font-family: 'Ubuntu Mono', monospace;
                     border-radius: 5px;
                     overscroll-behavior: none;
                 }
@@ -316,7 +316,7 @@ div.quiz-question-page {
                     font-size: 19px;
                     
                     code {
-                        height: 125px;
+                        max-height: 125px;
                     }
                 }
 

@@ -18,6 +18,10 @@ button {
   cursor: pointer;
 }
 
+code {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
 a:link {
   text-decoration: none;
 }
@@ -1408,13 +1412,13 @@ div.quiz-question-page #question-section .question-statement-without-code {
 }
 
 div.quiz-question-page #question-section #code-block {
-  font-family: monospace;
   border-top: 1px dotted #adadad;
   padding: 4px 0;
   border-bottom: 1px dotted #adadad;
 }
 
 div.quiz-question-page #question-section #code-block code {
+  font-family: 'Ubuntu Mono', monospace;
   border-radius: 5px;
   overscroll-behavior: none;
 }
@@ -1646,7 +1650,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
     font-size: 19px;
   }
   div.quiz-question-page #question-section #code-block code {
-    height: 125px;
+    max-height: 125px;
   }
   div.quiz-question-page #question-section #what-to-do {
     font-size: 15px;
