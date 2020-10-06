@@ -22,6 +22,10 @@ code {
   font-family: 'Ubuntu Mono', monospace;
 }
 
+b {
+  font-weight: 600;
+}
+
 a:link {
   text-decoration: none;
 }
@@ -1428,6 +1432,10 @@ div.quiz-question-page #question-section #what-to-do {
   margin: 3px 0;
 }
 
+div.quiz-question-page #question-section .options {
+  --boxStyle: 50%;
+}
+
 div.quiz-question-page #question-section .options .option {
   cursor: pointer;
   display: -webkit-box;
@@ -1448,7 +1456,7 @@ div.quiz-question-page #question-section .options .option p {
 
 div.quiz-question-page #question-section .options .option div {
   position: absolute;
-  border-radius: 50%;
+  border-radius: var(--boxStyle);
   margin: auto 0;
   border: 3px solid #f5d3ac;
 }
@@ -1473,7 +1481,7 @@ div.quiz-question-page #question-section .options .option div.selected::after {
   right: 0;
   bottom: 0;
   background: #e1543c;
-  border-radius: 50%;
+  border-radius: var(--boxStyle);
 }
 
 div.quiz-question-page #question-section .options .option div.selected::before {
@@ -1484,7 +1492,7 @@ div.quiz-question-page #question-section .options .option div.selected::before {
   right: 0;
   bottom: 0;
   background: rgba(235, 136, 68, 0.5);
-  border-radius: 50%;
+  border-radius: var(--boxStyle);
 }
 
 @-webkit-keyframes checkAnim {

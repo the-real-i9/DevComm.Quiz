@@ -160,10 +160,7 @@ const actionHtml = (questionAction) => `
 </div>
 `;
 
-const optionHtml = ({
-    optionNumber,
-    optionValue,
-}) => `
+const optionHtml = (optionNumber, optionValue) => `
 <div class='option' id="option-${optionNumber}">
     <p class='ans-text' id='ans-text-opt${optionNumber}'>${optionValue}</p>
     <div class='ans-check-circle' id="ans-check-circle-opt${optionNumber}"></div>

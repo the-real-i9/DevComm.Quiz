@@ -2,6 +2,7 @@ import {
     setCurrentQuestionNumber,
     setQuestionStatement,
     setQuestionCodeBlock,
+    setQuestionAction,
 } from './questionUIFuncs.js';
 import {
     getCurrentQuestion,
@@ -15,9 +16,6 @@ const createQuestion = ({
     questionType,
     questionStatement,
     options,
-    correctAnswer,
-    explanation,
-    reference,
     githubProfile,
     twitterProfile,
 }) => {
@@ -27,6 +25,8 @@ const createQuestion = ({
     if (code) {
         setQuestionCodeBlock(language, code);
     }
+
+    setQuestionAction(questionType);
 };
 
 export default createQuestion;

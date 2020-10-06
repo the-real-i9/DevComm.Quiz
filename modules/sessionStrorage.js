@@ -10,8 +10,8 @@ const setPreviousLangChoices = (choices) => {
 
 const getPreviousLangChoices = () => previousLangChoices;
 
-const saveAnswerSelected = (questionNumber, optionKey) => {
-    answersSelected.set(`question-${questionNumber}-answer`, optionKey);
+const saveAnswerSelected = (questionNumber, optionValue) => {
+    answersSelected.set(`question-${questionNumber}-answer`, optionValue);
 };
 
 const getAnswerSelected = (questionNumber) => {

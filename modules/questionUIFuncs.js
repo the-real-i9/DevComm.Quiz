@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { insertHtml, setProp, select } from './DOMFuncs.js';
-import { questionStatementHtml, codeBlockHtml } from './htmlBoilerplates.js';
+import { questionStatementHtml, codeBlockHtml, actionHtml, optionHtml } from './htmlBoilerplates.js';
 
 const formatTextForHtml = (text) => {
     const regexBold = /\*\*([^*]+)\*\*/gu;
@@ -42,8 +42,35 @@ const setQuestionCodeBlock = (language, code) => {
     hljs.highlightBlock(select('#code-block code'));
 };
 
+const setQuestionAction = (questionType) => {
+    if (questionType === 'single-answer') {
+        insertHtml(select('#question-section'), 'beforeend', actionHtml('Choose the correct answer'));
+        return;
+    }
+
+    if (questionType === 'mulltiple-answers') {
+        insertHtml(select('#question-section'), 'beforeend', actionHtml('Choose all correct answers'));
+        return;
+    }
+};
+
+const implementOptions = (questionType, options) => {
+    if (questionType === 'single-answer') {
+        options.forEach((v, i) => {
+            insertHtml(select('.options'), 'beforeend', optionHtml(i + 1, v));
+        });
+
+        return;
+    }
+
+    if (questionType === 'mulltiple-answers') {
+        return;
+    }
+};
+
 export {
     setCurrentQuestionNumber,
     setQuestionStatement,
     setQuestionCodeBlock,
+    setQuestionAction,
 };
