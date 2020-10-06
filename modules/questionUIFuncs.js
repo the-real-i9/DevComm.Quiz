@@ -1,6 +1,19 @@
 /* eslint-disable no-undef */
-import { insertHtml, setProp, select } from './DOMFuncs.js';
-import { questionStatementHtml, codeBlockHtml, actionHtml, optionHtml } from './htmlBoilerplates.js';
+import {
+    insertHtml,
+    setProp,
+    select,
+    selectAll,
+    event,
+    classAction,
+} from './DOMFuncs.js';
+import {
+    questionStatementHtml,
+    codeBlockHtml,
+    actionHtml,
+    optionHtml,
+} from './htmlBoilerplates.js';
+import { saveAnswerSelected } from './sessionStrorage.js';
 
 const formatTextForHtml = (text) => {
     const regexBold = /\*\*([^*]+)\*\*/gu;
@@ -8,10 +21,10 @@ const formatTextForHtml = (text) => {
     const regexUnderline = /__([^__]+)__/gu;
     const regexCode = /`([^`]+)`/gu;
     const formattedText = text
-    .replace(regexBold, '<b>$1</b>')
-    .replace(regexItalic, '<i>$1</i>')
-    .replace(regexUnderline, '<u>$1</u>')
-    .replace(regexCode, '<code>$1</code>');
+        .replace(regexBold, '<b>$1</b>')
+        .replace(regexItalic, '<i>$1</i>')
+        .replace(regexUnderline, '<u>$1</u>')
+        .replace(regexCode, '<code>$1</code>');
     return formattedText;
 };
 
@@ -20,8 +33,8 @@ const formatCodeForHtml = (code) => {
     const indentLength = /(\s+)(.+)\n/gu.exec(code)[1].length;
     const regex = new RegExp(`(\\s{1,${indentLength}})(.+)\n`, 'gu');
     const formattedCode = code
-    .replace(regex, '$2\n')
-    .trim();
+        .replace(regex, '$2\n')
+        .trim();
     return formattedCode;
 };
 
@@ -54,17 +67,23 @@ const setQuestionAction = (questionType) => {
     }
 };
 
-const implementOptions = (questionType, options) => {
-    if (questionType === 'single-answer') {
-        options.forEach((v, i) => {
-            insertHtml(select('.options'), 'beforeend', optionHtml(i + 1, v));
+const implementOptions = (questionType, options, questionNumber) => {
+    options.forEach((v, i) => {
+        insertHtml(select('.options'), 'beforeend', optionHtml(i + 1, v));
+    });
+    for (const option of selectAll('.option')) {
+        event(option, 'click', () => {
+            if (questionType === 'single-answer') {
+                for (const check of selectAll('.option div')) {
+                    classAction(check, 'remove', 'selected');
+                }
+                classAction(option.lastElementChild, 'add', 'selected');
+                saveAnswerSelected(questionNumber, option.firstElementChild.textContent);
+            } else if (questionType === 'mulltiple-answers') {
+                classAction(option.lastElementChild, 'toggle', 'selected');
+                saveAnswerSelected(questionNumber, [...selectAll('.selected')].map((v) => v.previousElementSibling.textContent));
+            }
         });
-
-        return;
-    }
-
-    if (questionType === 'mulltiple-answers') {
-        return;
     }
 };
 
@@ -73,4 +92,5 @@ export {
     setQuestionStatement,
     setQuestionCodeBlock,
     setQuestionAction,
+    implementOptions,
 };

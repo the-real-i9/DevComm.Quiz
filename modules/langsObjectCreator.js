@@ -79,7 +79,7 @@ class UserLangChoice {
         this.level = level;
         this.moduleNumber = moduleNumber;
         // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
-        this.question(2);
+        this.question(5);
     }
 
     question(questionNumber) {

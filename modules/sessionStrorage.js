@@ -12,6 +12,7 @@ const getPreviousLangChoices = () => previousLangChoices;
 
 const saveAnswerSelected = (questionNumber, optionValue) => {
     answersSelected.set(`question-${questionNumber}-answer`, optionValue);
+    console.log(answersSelected);
 };
 
 const getAnswerSelected = (questionNumber) => {
