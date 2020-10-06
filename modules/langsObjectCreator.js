@@ -17,8 +17,9 @@ import {
     setCurrentQuestion,
 } from './sessionStrorage.js';
 import {
-    grabEndPartFromText,
+    grabEndPartFromText, shuffle,
 } from './appEngineFuncs.js';
+import createQuestion from './questionCreator.js';
 
 
 class UserLangChoice {
@@ -66,17 +67,18 @@ class UserLangChoice {
     }
 
     questionPage(moduleNumber, level) {
-        const questionCount = organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`);
-        setTotalQuestion(questionCount.length);
+        const questions = organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`);
+        setTotalQuestion(questions.length);
         renderQuestionPage({
             language: this.language,
             level,
             moduleNumber,
-            totalQuestion: questionCount.length,
+            totalQuestion: questions.length,
         });
         startTimer();
         this.level = level;
         this.moduleNumber = moduleNumber;
+        organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
         this.question(1);
     }
 
@@ -84,6 +86,8 @@ class UserLangChoice {
         setCurrentQuestion(questionNumber);
         const questions = organizedQuestionsMap.get(this.language).get(this.level).get(`module-${this.moduleNumber}`);
         const currentQuestionObject = questions[questionNumber - 1];
+        currentQuestionObject.questionNumber = questionNumber;
+        createQuestion(currentQuestionObject);
     }
 }
 

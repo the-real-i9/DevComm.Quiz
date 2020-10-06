@@ -3,6 +3,7 @@ import { getCurrentQuestion, getTotalQuestion } from './sessionStrorage.js';
 
 const createQuestion = ({
     language,
+    code,
     questionNumber,
     questionType,
     options,

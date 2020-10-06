@@ -65,10 +65,23 @@ const formatLangTextDevFriendly = (langText) => {
 
 const grabEndPartFromText = (text) => text.slice(text.lastIndexOf('-') + 1);
 
+const shuffle = (array) => {
+    if (!Array.isArray(array)) throw new TypeError('Argument type is not an Array');
+    const arr = array.slice();
+    const newArr = [];
+    while (arr.length !== 0) {
+        const randChoice = arr[Math.trunc(Math.random() * arr.length)];
+        newArr.push(randChoice);
+        arr.splice(arr.indexOf(randChoice), 1);
+    }
+    return newArr;
+};
+
 
 export {
     organizeQuestions,
     formatLangTextDevFriendly,
     grabEndPartFromText,
     getAvailableLangs,
+    shuffle,
 };
