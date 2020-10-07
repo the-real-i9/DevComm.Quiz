@@ -68,6 +68,7 @@ div.quiz-question-page {
                     span:nth-child(2) {
                         display: inline-block;
                         transform: translate(1px, -2px) rotate(15deg);
+                        margin-right: 1px;
                     }
                 }
 
@@ -546,11 +547,18 @@ div.quiz-question-page {
 
         .bottom {
             margin: 10px 0;
+            p:empty {
+                width: 74.92px;
+            }
 
             p:not(:nth-child(2)) {
                 a {
                     margin-left: 2px;
                     font-size: 10px;
+                }
+                i {
+                    font-size: 23px;
+                    margin-bottom: 5px;
                 }
             }
 

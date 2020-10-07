@@ -12,7 +12,6 @@ const getPreviousLangChoices = () => previousLangChoices;
 
 const saveAnswerSelected = (questionNumber, optionValue) => {
     answersSelected.set(`question-${questionNumber}-answer`, optionValue);
-    console.log(answersSelected);
 };
 
 const getAnswerSelected = (questionNumber) => {
@@ -32,6 +31,10 @@ const setTotalQuestion = (totalQuestionCount) => {
 
 const getTotalQuestion = () => totalQuestion;
 
+const getAnswersSize = () => answersSelected.size;
+
+const deleteAnswerItem = (questionNumber) => answersSelected.has(`question-${questionNumber}-answer`) && answersSelected.delete(`question-${questionNumber}-answer`);
+
 const deleteAnswersData = () => answersSelected.clear();
 
 export {
@@ -45,4 +48,6 @@ export {
     setTotalQuestion,
     getTotalQuestion,
     deleteAnswersData,
+    getAnswersSize,
+    deleteAnswerItem,
 };

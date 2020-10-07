@@ -1,9 +1,13 @@
+/* eslint-disable import/no-cycle */
 import {
     setCurrentQuestionNumber,
     setQuestionStatement,
     setQuestionCodeBlock,
     setQuestionAction,
     implementOptions,
+    setSocialHandles,
+    retrieveAnswer,
+    eraseQuestionBoard,
 } from './questionUIFuncs.js';
 import {
     getCurrentQuestion,
@@ -21,6 +25,8 @@ const createQuestion = ({
     githubProfile,
     twitterProfile,
 }) => {
+    eraseQuestionBoard();
+
     setCurrentQuestionNumber(getCurrentQuestion(), getTotalQuestion());
     setQuestionStatement(code ? 'with-code' : 'without-code', questionStatement);
 
@@ -31,6 +37,10 @@ const createQuestion = ({
     setQuestionAction(questionType);
 
     implementOptions(questionType, shuffle(options), questionNumber);
+
+    setSocialHandles(githubProfile, twitterProfile);
+
+    retrieveAnswer(questionType, questionNumber);
 };
 
 export default createQuestion;

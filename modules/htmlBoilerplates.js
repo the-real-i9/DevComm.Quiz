@@ -136,9 +136,7 @@ const questionPageHtml = ({
         
     </div>
     <div class="bottom">
-        <p><i class='fab fa-twitter'></i><a href="" target="_blank">by <span id="twitter-link-nick"></span></a></p>
         <p id="submit-button">Submit</p>
-        <p><i class="fab fa-github"></i><a href="" target='_blank'>by <span id="github-link-nick"></span></a></p>
     </div>
 </div>
 `;
@@ -167,6 +165,9 @@ const optionHtml = (optionNumber, optionValue) => `
 </div>
 `;
 
+const socialHandlesHtml = (smName, linkAddress, linkName) => `
+    <p><i class="fab fa-${smName}"></i><a href="${linkAddress}" target='_blank'>by <span id="${smName}-link-nick">${linkName}</span></a></p>
+`;
 
 export {
     homePageHtml,
@@ -181,4 +182,5 @@ export {
     codeBlockHtml,
     actionHtml,
     optionHtml,
+    socialHandlesHtml,
 };

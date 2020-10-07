@@ -1367,6 +1367,7 @@ div.quiz-question-page .question-top .progress .progress-details div:first-child
   display: inline-block;
   -webkit-transform: translate(1px, -2px) rotate(15deg);
           transform: translate(1px, -2px) rotate(15deg);
+  margin-right: 1px;
 }
 
 div.quiz-question-page .question-top .progress .progress-details div:last-child {
@@ -1863,9 +1864,16 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page .bottom {
     margin: 10px 0;
   }
+  div.quiz-question-page .bottom p:empty {
+    width: 74.92px;
+  }
   div.quiz-question-page .bottom p:not(:nth-child(2)) a {
     margin-left: 2px;
     font-size: 10px;
+  }
+  div.quiz-question-page .bottom p:not(:nth-child(2)) i {
+    font-size: 23px;
+    margin-bottom: 5px;
   }
   div.quiz-question-page .bottom p:nth-child(2) {
     width: 100px;

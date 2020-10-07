@@ -53,7 +53,7 @@ const questions = {
         },
         {
             language: 'javascript',
-            questionType: 'mulltiple-answers',
+            questionType: 'multiple-answers',
             questionStatement: 'Choose from the following the **properties of the global object**',
             code: '',
             options: ['undefined', 'null', 'NaN', 'Infinity'],
@@ -70,7 +70,7 @@ const questions = {
             code: `
             console.log(NaN == NaN || 2 && '' || [] && null)
             `,
-            options: ['NaN', '2', '', 'null'],
+            options: ['NaN', '2', "''", 'null'],
             correctAnswer: 'null',
             explanation: 'The **||** logical operator selects the *truthy value* of its operands, while the **&&** logical operator selects the *falsy value* of its operands',
             reference: '',
@@ -82,14 +82,15 @@ const questions = {
             questionType: 'single-answer',
             questionStatement: 'What is the output of this code?',
             code: `
-            function func() {
+            function func(y) {
                 var x = 2 + 3;
+                return x && y;
             }
-            console.log(func());
+            console.log(func(23));
             `,
             options: ['undefined', '5', 'Error', '23'],
-            correctAnswer: 'undefined',
-            explanation: 'The value of a function defaults to **undefined** if it has no return value',
+            correctAnswer: '23',
+            explanation: 'If the left operand of the **&&** operator is a *truthy value*, it returns the right operand not considering whether it is truthy or falsy.',
             reference: '',
             githubProfile: '[https://github.com/Mckenney17](McKenney17)',
             twitterProfile: '[https://twitter.com/Oluwarinolasam2](McKenney)',

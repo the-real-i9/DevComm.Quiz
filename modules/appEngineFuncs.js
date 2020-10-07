@@ -77,7 +77,6 @@ const shuffle = (array) => {
     return newArr;
 };
 
-
 export {
     organizeQuestions,
     formatLangTextDevFriendly,

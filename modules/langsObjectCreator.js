@@ -15,11 +15,13 @@ import {
     organizedQuestionsMap,
     setTotalQuestion,
     setCurrentQuestion,
+    getTotalQuestion,
 } from './sessionStrorage.js';
 import {
     grabEndPartFromText, shuffle,
 } from './appEngineFuncs.js';
 import createQuestion from './questionCreator.js';
+import { navigateQuestion } from './questionUIFuncs.js';
 
 
 class UserLangChoice {
@@ -79,10 +81,12 @@ class UserLangChoice {
         this.level = level;
         this.moduleNumber = moduleNumber;
         // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
-        this.question(5);
+        this.question(1);
+        navigateQuestion(this.language);
     }
 
     question(questionNumber) {
+        if (questionNumber < 1 || questionNumber > getTotalQuestion()) return;
         setCurrentQuestion(questionNumber);
         const questions = organizedQuestionsMap.get(this.language).get(this.level).get(`module-${this.moduleNumber}`);
         const currentQuestionObject = questions[questionNumber - 1];
