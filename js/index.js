@@ -3,7 +3,6 @@ import {
     langsChosenOnSave,
     displayLangChoicesModal,
     toggleSelectLangChoice,
-    renderHomePage,
 } from '../modules/appUIFuncs.js';
 import {
     event,

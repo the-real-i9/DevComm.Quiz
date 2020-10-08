@@ -50,6 +50,17 @@ const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-ch
 
 const emptyPagesContainer = () => setProp(pagesContainer, 'innerHTML', '');
 
+const playMusic = (audio) => {
+    event(select('#sound'), 'click', (ev) => {
+        classAction(ev.target, 'toggle', 'music-on');
+        if (ev.target.classList.contains('music-on')) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+};
+
 const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
     for (const availLang of availLangsArray) {
@@ -176,4 +187,5 @@ export {
     renderModuleBoxes,
     renderQuestionPage,
     startTimer,
+    playMusic,
 };
