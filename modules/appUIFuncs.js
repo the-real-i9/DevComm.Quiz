@@ -44,6 +44,16 @@ const {
     availableLangsContainer,
 } = DOMElems;
 
+const hidePage = () => {
+    setStyle(select('.container'), 'display', 'none');
+    setStyle(select('#sound'), 'display', 'none');
+};
+
+const showPage = () => {
+    setStyle(select('.container'), 'display', 'block');
+    setStyle(select('#sound'), 'display', 'flex');
+};
+
 const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
 
 const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
@@ -173,16 +183,6 @@ const playMusic = (audio) => {
             audio.pause();
         }
     });
-};
-
-const hidePage = () => {
-    setStyle(select('.container'), 'display', 'none');
-    setStyle(select('#sound'), 'display', 'none');
-};
-
-const showPage = () => {
-    setStyle(select('.container'), 'display', 'block');
-    setStyle(select('#sound'), 'display', 'flex');
 };
 
 export {
