@@ -1721,6 +1721,7 @@ div.quiz-question-page .bottom p:nth-child(2) {
 @media (max-width: 599px) {
   div.quiz-question-page {
     overflow-y: auto;
+    position: relative;
   }
   div.quiz-question-page #big-lang-icon {
     right: 0;
@@ -1863,6 +1864,8 @@ div.quiz-question-page .bottom p:nth-child(2) {
   }
   div.quiz-question-page .bottom {
     margin: 10px 0;
+    position: absolute;
+    bottom: 0;
   }
   div.quiz-question-page .bottom p:empty {
     width: 74.92px;

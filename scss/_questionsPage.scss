@@ -387,6 +387,7 @@ div.quiz-question-page {
     /* Mobile */
     @include mobile {
         overflow-y: auto;
+        position: relative;
         #big-lang-icon {
             right: 0;
             top: 75px;
@@ -547,6 +548,8 @@ div.quiz-question-page {
 
         .bottom {
             margin: 10px 0;
+            position: absolute;
+            bottom: 0;
             p:empty {
                 width: 74.92px;
             }

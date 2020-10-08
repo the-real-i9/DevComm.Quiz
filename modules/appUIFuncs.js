@@ -50,17 +50,6 @@ const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-ch
 
 const emptyPagesContainer = () => setProp(pagesContainer, 'innerHTML', '');
 
-const playMusic = (audio) => {
-    event(select('#sound'), 'click', (ev) => {
-        classAction(ev.target, 'toggle', 'music-on');
-        if (ev.target.classList.contains('music-on')) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    });
-};
-
 const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
     for (const availLang of availLangsArray) {
@@ -175,6 +164,27 @@ const startTimer = () => {
     const timeCount = setInterval(timer, 1000);
 };
 
+const playMusic = (audio) => {
+    event(select('#sound'), 'click', (ev) => {
+        classAction(ev.target, 'toggle', 'music-on');
+        if (ev.target.classList.contains('music-on')) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+};
+
+const hidePage = () => {
+    setStyle(select('.container'), 'display', 'none');
+    setStyle(select('#sound'), 'display', 'none');
+};
+
+const showPage = () => {
+    setStyle(select('.container'), 'display', 'block');
+    setStyle(select('#sound'), 'display', 'flex');
+};
+
 export {
     renderHomePage,
     langsChosenOnSave,
@@ -188,4 +198,6 @@ export {
     renderQuestionPage,
     startTimer,
     playMusic,
+    hidePage,
+    showPage,
 };
