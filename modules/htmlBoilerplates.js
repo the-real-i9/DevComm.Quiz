@@ -166,7 +166,7 @@ const optionHtml = (optionNumber, optionValue) => `
 `;
 
 const socialHandlesHtml = (smName, linkAddress, linkName) => `
-    <p><i class="fab fa-${smName}"></i><a href="${linkAddress}" target='_blank'>by <span id="${smName}-link-nick">${linkName}</span></a></p>
+    <p><a href="${linkAddress}" target='_blank'><i class="fab fa-${smName}"></i></a><a href="${linkAddress}" target='_blank'>by <span id="${smName}-link-nick">${linkName}</span></a></p>
 `;
 
 export {

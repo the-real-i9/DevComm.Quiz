@@ -203,15 +203,14 @@ div.quiz-question-page {
 
         p:not(:nth-child(2)) {
             @include flex(center, center, column);
-            i {
-                color: $deep-orange;
-            }
             a {
-                text-decoration: underline;
                 font-weight: weight(medium);
                 &:link {
                     color: rgb(173, 173, 173);
                 }
+            }
+            i {
+                color: $deep-orange;
             }
         }
 
@@ -482,19 +481,19 @@ div.quiz-question-page {
 
             // .question-with-code, .question-without-code {
                 .question-statement-with-code {
-                    font-size: 16px;
+                    font-size: 17px;
 
-                    @media (min-height: 534px) {
-                        font-size: 17px;
-                    }
+                    // @media (min-height: 534px) {
+                    //     font-size: 17px;
+                    // }
                 }
 
                 .question-statement-without-code {
-                    font-size: 17px;
+                    font-size: 19px;
 
-                    @media (min-height: 534px) {
-                        font-size: 21px;
-                    }
+                    // @media (min-height: 534px) {
+                    //     font-size: 21px;
+                    // }
                 }
                 
                 #code-block {
@@ -547,11 +546,16 @@ div.quiz-question-page {
         }
 
         .bottom {
-            margin: 10px 0;
+            // margin: 10px 0;
             position: absolute;
-            bottom: 0;
-            p:empty {
+            bottom: 20px;
+            width: 100%;
+            p:empty:first-child {
                 width: 74.92px;
+            }
+
+            p:empty:last-child {
+                width: 64.08px;
             }
 
             p:not(:nth-child(2)) {

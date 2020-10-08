@@ -8,8 +8,6 @@ import {
     playMusic,
     hidePage,
     showPage,
-    showLoadingAnim,
-    hideLoadinganim,
 } from './appUIFuncs.js';
 import {
     getCurrentLangChoices,

@@ -17,6 +17,8 @@ import {
 import {
     setPreviousLangChoices,
     getPreviousLangChoices,
+    deleteAnswersData,
+    getCurrentQuestion,
 } from './sessionStrorage.js';
 import {
     homePageHtml,
@@ -31,6 +33,7 @@ import {
 import {
     grabEndPartFromText,
     organizeQuestions,
+    removeSessionData,
 } from './appEngineFuncs.js';
 import {
     createLangObject,
@@ -47,11 +50,13 @@ const {
 const hidePage = () => {
     setStyle(select('.container'), 'display', 'none');
     setStyle(select('#sound'), 'display', 'none');
+    setStyle(select('.load-anim#outer'), 'display', 'flex');
 };
 
 const showPage = () => {
     setStyle(select('.container'), 'display', 'block');
     setStyle(select('#sound'), 'display', 'flex');
+    setStyle(select('.load-anim#outer'), 'display', 'none');
 };
 
 const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
@@ -153,25 +158,39 @@ const renderQuestionPage = (detailsObject) => {
     setProp(pagesContainer, 'innerHTML', questionPageHtml(detailsObject));
     event(select('#back-to-modules'), 'click', () => {
         getLangObject(language).modulesPage(level);
+        removeSessionData();
+        document.removeEventListener('keyup', (ev) => {
+            if (ev.keyCode === 37) {
+                getLangObject(language).question(getCurrentQuestion() - 1);
+            } else if (ev.keyCode === 39) {
+                getLangObject(language).question(getCurrentQuestion() + 1);
+            }
+        });
     });
 };
 
-const startTimer = () => {
-    let min = 0;
-    let sec = 1;
-
-    const timer = () => {
-        if (Math.trunc(sec / 60) === 1) {
-            min++;
-            if (sec > 59) {
-                sec = 0;
-            }
+let min = 0;
+let sec = 1;
+let timeCount = null;
+const timerFunc = () => {
+    if (Math.trunc(sec / 60) === 1) {
+        min++;
+        if (sec > 59) {
+            sec = 0;
         }
-        setProp(select('#time-elapsed'), 'textContent', `${min}m ${sec}s`);
-        sec++;
-    };
+    }
+    setProp(select('#time-elapsed'), 'textContent', `${min}m ${sec}s`);
+    sec++;
+};
 
-    const timeCount = setInterval(timer, 1000);
+const timer = (action) => {
+    if (action === 'start') {
+        timeCount = setInterval(timerFunc, 1000);
+    } else if (action === 'stop') {
+        if (timeCount) clearInterval(timeCount);
+        min = 0;
+        sec = 1;
+    }
 };
 
 const playMusic = (audio) => {
@@ -196,7 +215,7 @@ export {
     renderModulesPage,
     renderModuleBoxes,
     renderQuestionPage,
-    startTimer,
+    timer,
     playMusic,
     hidePage,
     showPage,

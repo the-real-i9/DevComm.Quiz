@@ -1,5 +1,10 @@
 import questions from './questionsDatabase.js';
-import { organizedQuestionsMap } from './sessionStrorage.js';
+import {
+    organizedQuestionsMap,
+    setTotalQuestion,
+    setCurrentQuestion,
+    deleteAnswersData,
+} from './sessionStrorage.js';
 
 const chunkToTens = (array, langChoice) => {
     let i = 0;
@@ -12,7 +17,9 @@ const chunkToTens = (array, langChoice) => {
             acc[i].push(v);
         }
         return acc;
-    }, [[]]);
+    }, [
+        [],
+    ]);
     return chunksOfTen;
 };
 
@@ -24,14 +31,14 @@ const organizeQuestions = (langChoices) => {
 
         for (const level of Object.keys(questions)) {
             organizedQuestionsMap
-            .get(langChoice)
-            .set(level, new Map());
+                .get(langChoice)
+                .set(level, new Map());
             const questionsInTens = chunkToTens(questions[level], langChoice);
 
             for (let i = 0; i < questionsInTens.length; i++) {
                 const modules = organizedQuestionsMap
-                .get(langChoice)
-                .get(level);
+                    .get(langChoice)
+                    .get(level);
                 if (modules
                     .has(`module-${i < 9 ? '0' : ''}${i + 1}`) && modules
                     // eslint-disable-next-line no-continue
@@ -77,10 +84,17 @@ const shuffle = (array) => {
     return newArr;
 };
 
+const removeSessionData = () => {
+    setTotalQuestion(null);
+    setCurrentQuestion(null);
+    deleteAnswersData();
+};
+
 export {
     organizeQuestions,
     formatLangTextDevFriendly,
     grabEndPartFromText,
     getAvailableLangs,
     shuffle,
+    removeSessionData,
 };

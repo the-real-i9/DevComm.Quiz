@@ -9,7 +9,7 @@ import {
     renderModulesPage,
     renderModuleBoxes,
     renderQuestionPage,
-    startTimer,
+    timer,
 } from './appUIFuncs.js';
 import {
     organizedQuestionsMap,
@@ -66,6 +66,7 @@ class UserLangChoice {
                 });
             }
         }
+        timer('stop');
     }
 
     questionPage(moduleNumber, level) {
@@ -77,7 +78,7 @@ class UserLangChoice {
             moduleNumber,
             totalQuestion: questions.length,
         });
-        startTimer();
+        timer('start');
         this.level = level;
         this.moduleNumber = moduleNumber;
         // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));

@@ -162,12 +162,10 @@ const eraseQuestionBoard = () => {
 
 const navigateQuestion = (language) => {
     event(document, 'keyup', (ev) => {
-        if (select('.quiz-question-page')) {
-            if (ev.keyCode === 37) {
-                getLangObject(language).question(getCurrentQuestion() - 1);
-            } else if (ev.keyCode === 39) {
-                getLangObject(language).question(getCurrentQuestion() + 1);
-            }
+        if (ev.keyCode === 37) {
+            getLangObject(language).question(getCurrentQuestion() - 1);
+        } else if (ev.keyCode === 39) {
+            getLangObject(language).question(getCurrentQuestion() + 1);
         }
     });
 };

@@ -9,8 +9,13 @@ html, body {
   font-family: Raleway;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#FFF4E6), to(#FFF0DE));
-  background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
+}
+
+@media (min-width: 600px) {
+  html, body {
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#FFF4E6), to(#FFF0DE));
+    background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
+  }
 }
 
 button {
@@ -79,6 +84,7 @@ a:link:hover {
   z-index: 5;
   top: 45px;
   left: 600px;
+  display: none;
   background: rgba(235, 136, 68, 0.2);
 }
 
@@ -179,6 +185,74 @@ a:link:hover {
           transform: none;
   -webkit-animation: spread 1s linear infinite;
           animation: spread 1s linear infinite;
+}
+
+.container .load-anim#outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
+  width: 75px;
+  height: 75px;
+  border-top-color: transparent;
+  -webkit-animation: rotate 3s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+          animation: rotate 3s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+.container .load-anim#outer > :only-child {
+  width: 50px;
+  height: 50px;
+  border-color: #e1543c;
+  -webkit-animation: rotate 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+          animation: rotate 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+  border-top-color: transparent;
+}
+
+.container .load-anim#outer > :only-child > :only-child {
+  width: 25px;
+  height: 25px;
+  border-color: #f5d3ac;
+  border-top-color: transparent;
+  -webkit-animation: rotate 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite;
+          animation: rotate 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.container .load-anim {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid;
+  border-radius: 50%;
 }
 
 .container .name-set-modal {
@@ -1570,17 +1644,16 @@ div.quiz-question-page .bottom p:not(:nth-child(2)) {
           flex-direction: column;
 }
 
-div.quiz-question-page .bottom p:not(:nth-child(2)) i {
-  color: #e1543c;
-}
-
 div.quiz-question-page .bottom p:not(:nth-child(2)) a {
-  text-decoration: underline;
   font-weight: 500;
 }
 
 div.quiz-question-page .bottom p:not(:nth-child(2)) a:link {
   color: #adadad;
+}
+
+div.quiz-question-page .bottom p:not(:nth-child(2)) i {
+  color: #e1543c;
 }
 
 div.quiz-question-page .bottom p:nth-child(2) {
@@ -1794,29 +1867,11 @@ div.quiz-question-page .bottom p:nth-child(2) {
     padding: 0 7%;
   }
   div.quiz-question-page #question-section .question-statement-with-code {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section .question-statement-with-code {
     font-size: 17px;
   }
-}
-
-@media (max-width: 599px) {
   div.quiz-question-page #question-section .question-statement-without-code {
-    font-size: 17px;
+    font-size: 19px;
   }
-}
-
-@media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section .question-statement-without-code {
-    font-size: 21px;
-  }
-}
-
-@media (max-width: 599px) {
   div.quiz-question-page #question-section #code-block {
     font-size: 15px;
   }
@@ -1863,12 +1918,15 @@ div.quiz-question-page .bottom p:nth-child(2) {
             animation: checkAnim .5s ease 1;
   }
   div.quiz-question-page .bottom {
-    margin: 10px 0;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
+    width: 100%;
   }
-  div.quiz-question-page .bottom p:empty {
+  div.quiz-question-page .bottom p:empty:first-child {
     width: 74.92px;
+  }
+  div.quiz-question-page .bottom p:empty:last-child {
+    width: 64.08px;
   }
   div.quiz-question-page .bottom p:not(:nth-child(2)) a {
     margin-left: 2px;
