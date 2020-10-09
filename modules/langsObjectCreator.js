@@ -27,7 +27,7 @@ import createQuestion from './questionCreator.js';
 import { navigateQuestion } from './questionUIFuncs.js';
 import quotes from './quotes.js';
 import handleSolution from './solutionHandler.js';
-import { setNoResult } from './solutionUIFuncs.js';
+import { setNoResult, emptySolutionsContainer } from './solutionUIFuncs.js';
 
 
 class UserLangChoice {
@@ -107,14 +107,17 @@ class UserLangChoice {
         questions.forEach((q, i) => {
             const authorAnswer = q.correctAnswer;
             const userAnswer = getAnswerSelected(i + 1);
+
             if (!userAnswer) {
                 q.status = 'skipped';
+                q.userAnswer = '(Skipped)';
             } else if (typeof authorAnswer === 'string') {
                 if (authorAnswer === userAnswer) {
                     q.status = 'correct';
                 } else {
                     q.status = 'incorrect';
                 }
+                q.userAnswer = userAnswer;
             } else if (Array.isArray(authorAnswer)) {
                 if (authorAnswer.length === userAnswer.length) {
                     const checkEqual = authorAnswer.every((authorAns) => userAnswer.includes(authorAns));
@@ -126,6 +129,7 @@ class UserLangChoice {
                 } else {
                     q.status = 'incorrect';
                 }
+                q.userAnswer = userAnswer.join(' | ');
             }
         });
         this.correctAnswers = questions.filter((q) => q.status === 'correct');
@@ -149,10 +153,10 @@ class UserLangChoice {
     }
 
     getSolution(category) {
+        emptySolutionsContainer();
         const { questions } = this;
         switch (category) {
             case 'all':
-                // do something
                 for (const question of questions) {
                     handleSolution(question);
                 }

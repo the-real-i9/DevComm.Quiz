@@ -25,32 +25,15 @@ import {
     getTotalQuestion,
 } from './sessionStrorage.js';
 import {
+    formatCodeForHtml,
+    formatTextForHtml,
+    grabLinkAddress,
+    grabLinkName,
+} from './appEngineFuncs.js';
+import {
     getLangObject,
 } from './langsObjectManager.js';
 import SwipeJS from './swipeJS.min.js';
-
-const formatTextForHtml = (text) => {
-    const regexBold = /\*\*([^*]+)\*\*/gu;
-    const regexItalic = /\*([^*]+)\*/gu;
-    const regexUnderline = /__([^__]+)__/gu;
-    const regexCode = /`([^`]+)`/gu;
-    const formattedText = text
-        .replace(regexBold, '<b>$1</b>')
-        .replace(regexItalic, '<i>$1</i>')
-        .replace(regexUnderline, '<u>$1</u>')
-        .replace(regexCode, '<code>$1</code>');
-    return formattedText;
-};
-
-const formatCodeForHtml = (code) => {
-    // erase starting whitespaces caused by template string
-    const indentLength = /(\s+)(.+)\n/gu.exec(code)[1].length;
-    const regex = new RegExp(`(\\s{1,${indentLength}})(.+)\n`, 'gu');
-    const formattedCode = code
-        .replace(regex, '$2\n')
-        .trim();
-    return formattedCode;
-};
 
 const setCurrentQuestionNumber = (currentQuestionNumber, totalQuestion) => {
     const progress = 100 - ((currentQuestionNumber / totalQuestion) * 100);
@@ -117,8 +100,8 @@ const implementOptions = (questionType, options, questionNumber) => {
 };
 
 const setSocialHandles = (github, twitter) => {
-    const linkAddress = [github, twitter].map((str) => (str ? /\[(.+)\]/gu.exec(str)[1] : ''));
-    const linkName = [github, twitter].map((str) => (str ? /\((.+)\)/gu.exec(str)[1] : ''));
+    const linkAddress = [github, twitter].map((str) => (str ? grabLinkAddress(str) : ''));
+    const linkName = [github, twitter].map((str) => (str ? grabLinkName(str) : ''));
     if (github) {
         insertHtml(select('.bottom'), 'afterbegin', socialHandlesHtml('github', linkAddress[0], linkName[0]));
     } else {

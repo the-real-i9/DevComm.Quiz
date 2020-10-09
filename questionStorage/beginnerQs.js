@@ -5,7 +5,7 @@ const beginnerQs = () => ([
         questionStatement: 'What is the result of the expression `NaN === NaN`?',
         code: '',
         options: ['true', 'false', "I don't know", 'None of the Above'],
-        correctAnswer: 'true',
+        correctAnswer: 'false',
         explanation: 'NaN is never equal to any value even to itself? It is agreed that not all computations that leads to NaN are the same',
         reference: '[](JavaScript: The Definitive Guide by David Flanagan)',
         githubProfile: '[https://github.com/Mckenney17](McKenney17)',

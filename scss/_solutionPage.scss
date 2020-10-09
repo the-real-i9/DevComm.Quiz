@@ -35,7 +35,7 @@ div.quiz-solution-page {
             top: 0;
             z-index: 1;
             background: #fff;
-            padding: 0 7%;
+            padding: 0 6%;
             width: 100%;
             height: 70px;
             border-radius: 0 0 15px 15px;
@@ -55,7 +55,7 @@ div.quiz-solution-page {
                 width: 54%;
                 p:first-child {
                     font: {
-                        size: 17px;
+                        size: 16px;
                         weight: weight(bold);
                     }
                     span {
@@ -167,6 +167,12 @@ div.quiz-solution-page {
                 & > p {
                     font-weight: weight(semibold);
                 }
+                & > p.notification {
+                    text-align: center;
+                    font-size: 17px;
+                    color: rgb(209, 209, 209);
+                    margin: 15px 0;
+                }
                 .solution-box {
                     b {
                         font-weight: weight(semibold);
@@ -188,13 +194,13 @@ div.quiz-solution-page {
                             margin-bottom: 10px;
                         }
 
-                        #code-block {
+                        .code-block {
                             margin: 10px 0;
                             font-size: 17px;
 
                             code {
                                 border-radius: 7px;
-                                height: 97px;
+                                max-height: 97px;
                             }
                         }
 

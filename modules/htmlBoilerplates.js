@@ -184,7 +184,7 @@ const solutionPageHtml = ({
     quoteAuthorTwitterAddress,
     quoteAuthorTwitterUsername,
 }) => `
-<div style="display: none;" class="quiz-solution-page" id='lang-${language}-${level}-module-${moduleNumber}-solution'>
+<div class="quiz-solution-page" id='lang-${language}-${level}-module-${moduleNumber}-solution'>
     <div class="top">
         <div id="back-to-modules">Back</div>
         <div class="center-text">
@@ -196,10 +196,10 @@ const solutionPageHtml = ({
     <div class="solution-section">
         <div class="filter-div">
             <div class="filter-options">
-                <span class="selected" id='all'>All</span>
-                <span id='correct-answers'>Correct</span>
-                <span id='incorrect-answers'>Incorrect</span>
-                <span id='skipped-questions'>Skipped</span>
+                <span id='all'>All</span>
+                <span id='correct'>Correct</span>
+                <span id='incorrect'>Incorrect</span>
+                <span id='skipped'>Skipped</span>
             </div>
         </div>
         <div class="overview">
@@ -228,7 +228,6 @@ const solutionPageHtml = ({
             </div>
         </div>
         <div class="answer-solutions">
-            <p>Solutions</p>
             
         </div>
         <div class="quote-section">
@@ -254,14 +253,15 @@ const solutionBoxHtml = ({
     answerStatus,
     explanation,
     referenceAddress,
-    referenceText,
+    referenceName,
+    questionNumber,
 }) => `
-<div class="solution-box" id='${answerStatus !== 'skipped' ? `${answerStatus === 'incorrect' ? 'in' : ''}correct-answer-box` : 'skipped-question-box'}'>
+<div class="solution-box" id='solution-box-q${questionNumber}'>
     
     <p class='user-answer'><b>Answer:</b> <span>${userAnswer}</span>${answerStatus !== 'skipped' ? `${answerStatus === 'incorrect' ? "<i class='fas fa-times fa-fw incorrect-mark'></i>" : "<i class='fas fa-check fa-fw correct-mark'></i>"}` : '<i></i>'}</p>
     <p class='correct-answer'><b>Correct Answer:</b> <span>${authorAnswer}</span></p>
     <div class='explanation'><b><em>Explanation</em>:</b> ${explanation}</div>
-    <p class='links'><em>See:</em> <a href="${referenceAddress}" target="_blank">${referenceText}</a></p>
+    <p class='links'><em>See:</em> <a href="${referenceAddress}" target="_blank">${referenceName}</a></p>
 </div>
 `;
 
@@ -270,7 +270,7 @@ const solutionQuestionStatementHtml = ({ questionIdentity, questionNumber, quest
 `;
 
 const solutionCodeBlockHtml = (language, code) => `
-<div id="code-block">
+<div class="code-block">
     <pre><code class='${language}'>${code}</code></pre>
 </div>
 `;

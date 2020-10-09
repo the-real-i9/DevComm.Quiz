@@ -198,16 +198,27 @@ const renderQuestionPage = (detailsObject) => {
         getLangObject(language).modulesPage(level);
         removeSessionData();
     });
+    event(select('#submit-button'), 'click', () => {
+        getLangObject(language).solutionsPage();
+    });
 };
 
 const renderSolutionPage = (detailsObject) => {
     const { language, level } = detailsObject;
     emptyPagesContainer();
     setProp(pagesContainer, 'innerHTML', solutionPageHtml(detailsObject));
+    classAction(select('.filter-options #all'), 'add', 'selected');
     event(select('#back-to-modules'), 'click', () => {
         getLangObject(language).modulesPage(level);
         removeSessionData();
     });
+    for (const filterOption of selectAll('.filter-options span')) {
+        event(filterOption, 'click', () => {
+            [...selectAll('.filter-options span')].map((elem) => classAction(elem, 'remove', 'selected'));
+            classAction(filterOption, 'add', 'selected');
+            getLangObject(language).getSolution(filterOption.id);
+        });
+    }
 };
 
 
