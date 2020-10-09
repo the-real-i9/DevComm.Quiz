@@ -27,6 +27,7 @@ import {
 import {
     getLangObject,
 } from './langsObjectManager.js';
+import SwipeJS from './swipeJS.min.js';
 
 const formatTextForHtml = (text) => {
     const regexBold = /\*\*([^*]+)\*\*/gu;
@@ -161,12 +162,11 @@ const eraseQuestionBoard = () => {
 };
 
 const navigateQuestion = (language) => {
-    event(document, 'keyup', (ev) => {
-        if (ev.keyCode === 37) {
-            getLangObject(language).question(getCurrentQuestion() - 1);
-        } else if (ev.keyCode === 39) {
-            getLangObject(language).question(getCurrentQuestion() + 1);
-        }
+    SwipeJS(select('.quiz-question-page')).addSwipeListener('swipeleft', () => {
+        getLangObject(language).question(getCurrentQuestion() + 1);
+    });
+    SwipeJS(select('.quiz-question-page')).addSwipeListener('swiperight', () => {
+        getLangObject(language).question(getCurrentQuestion() - 1);
     });
 };
 

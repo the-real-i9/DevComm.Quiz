@@ -159,13 +159,6 @@ const renderQuestionPage = (detailsObject) => {
     event(select('#back-to-modules'), 'click', () => {
         getLangObject(language).modulesPage(level);
         removeSessionData();
-        document.removeEventListener('keyup', (ev) => {
-            if (ev.keyCode === 37) {
-                getLangObject(language).question(getCurrentQuestion() - 1);
-            } else if (ev.keyCode === 39) {
-                getLangObject(language).question(getCurrentQuestion() + 1);
-            }
-        });
     });
 };
 
