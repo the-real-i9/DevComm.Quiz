@@ -169,6 +169,112 @@ const socialHandlesHtml = (smName, linkAddress, linkName) => `
     <p><a href="${linkAddress}" target='_blank'><i class="fab fa-${smName}"></i></a><a href="${linkAddress}" target='_blank'>by <span id="${smName}-link-nick">${linkName}</span></a></p>
 `;
 
+const solutionPageHtml = ({
+    language,
+    level,
+    moduleNumber,
+    totalQuestion,
+    timeSpent,
+    correctAnswersCount,
+    incorrectAnswersCount,
+    skippedQuestionsCount,
+    quote,
+    quoteAuthorFirstName,
+    quoteAuthorLastName,
+    quoteAuthorTwitterAddress,
+    quoteAuthorTwitterUsername,
+}) => `
+<div style="display: none;" class="quiz-solution-page" id='lang-${language}-${level}-module-${moduleNumber}-solution'>
+    <div class="top">
+        <div id="back-to-modules">Back</div>
+        <div class="center-text">
+            <p id='lang-solution-title'>Solution <span>(${formatLangTextDevFriendly(language)})</span></p>
+            <p id='level-module'>${formatLangTextDevFriendly(level)}: Module ${moduleNumber}</p>
+        </div>
+        <div></div>
+    </div>
+    <div class="solution-section">
+        <div class="filter-div">
+            <div class="filter-options">
+                <span class="selected" id='all'>All</span>
+                <span id='correct-answers'>Correct</span>
+                <span id='incorrect-answers'>Incorrect</span>
+                <span id='skipped-questions'>Skipped</span>
+            </div>
+        </div>
+        <div class="overview">
+            <p>Overview</p>
+            <div class="overview-box">
+                <div>
+                    <p>Total Question</p>
+                    <p id="total-ques">${totalQuestion}</p>
+                </div>
+                <div>
+                    <p>Time Spent</p>
+                    <p id="time-spent">${timeSpent}</p>
+                </div>
+                <div>
+                    <p>Correct</p>
+                    <p id="correct-count">${correctAnswersCount}</p>
+                </div>
+                <div>
+                    <p>Incorrect</p>
+                    <p id="incorrect-count">${incorrectAnswersCount}</p>
+                </div>
+                <div>
+                    <p>Skipped</p>
+                    <p id="skipped-count">${skippedQuestionsCount}</p>
+                </div>
+            </div>
+        </div>
+        <div class="answer-solutions">
+            <p>Solutions</p>
+            
+        </div>
+        <div class="quote-section">
+            <p>Quote for you</p>
+            <div class="quote-block">
+                <p class='quote'>${quote}</p>
+                <div class="owner-info">
+                    <i class='devicon-twitter-plain'></i>
+                    <div class='info'>
+                        <p class='name'>- <span>${quoteAuthorFirstName}</span> <span>${quoteAuthorLastName}</span></p>
+                        <a class="twitter-handle" href="${quoteAuthorTwitterAddress}">@${quoteAuthorTwitterUsername}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
+const solutionBoxHtml = ({
+    userAnswer,
+    authorAnswer,
+    answerStatus,
+    explanation,
+    referenceAddress,
+    referenceText,
+}) => `
+<div class="solution-box" id='${answerStatus !== 'skipped' ? `${answerStatus === 'incorrect' ? 'in' : ''}correct-answer-box` : 'skipped-question-box'}'>
+    
+    <p class='user-answer'><b>Answer:</b> <span>${userAnswer}</span>${answerStatus !== 'skipped' ? `${answerStatus === 'incorrect' ? "<i class='fas fa-times fa-fw incorrect-mark'></i>" : "<i class='fas fa-check fa-fw correct-mark'></i>"}` : '<i></i>'}</p>
+    <p class='correct-answer'><b>Correct Answer:</b> <span>${authorAnswer}</span></p>
+    <div class='explanation'><b><em>Explanation</em>:</b> ${explanation}</div>
+    <p class='links'><em>See:</em> <a href="${referenceAddress}" target="_blank">${referenceText}</a></p>
+</div>
+`;
+
+const solutionQuestionStatementHtml = ({ questionIdentity, questionNumber, questionStatement }) => `
+<p class='question-statement-${questionIdentity}'><b>Q${questionNumber}: </b>${questionStatement}</p>
+`;
+
+const solutionCodeBlockHtml = (language, code) => `
+<div id="code-block">
+    <pre><code class='${language}'>${code}</code></pre>
+</div>
+`;
+
 export {
     homePageHtml,
     langBoxHtml,
@@ -183,4 +289,8 @@ export {
     actionHtml,
     optionHtml,
     socialHandlesHtml,
+    solutionPageHtml,
+    solutionBoxHtml,
+    solutionQuestionStatementHtml,
+    solutionCodeBlockHtml,
 };

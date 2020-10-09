@@ -179,7 +179,7 @@ div.quiz-solution-page {
                     border-radius: 15px;
                     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
 
-                    & > div:only-child {
+                    // & > div:only-child {
                         .question-statement-with-code {
                             font-size: 17px;
                         }
@@ -227,7 +227,7 @@ div.quiz-solution-page {
                                 text-decoration: underline;
                             }
                         }
-                    }
+                    // }
                 }
             }
         }

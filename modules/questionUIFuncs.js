@@ -163,10 +163,10 @@ const eraseQuestionBoard = () => {
 
 const navigateQuestion = (language) => {
     SwipeJS(select('.quiz-question-page')).addSwipeListener('swipeleft', () => {
-        getLangObject(language).question(getCurrentQuestion() + 1);
+        getLangObject(language).setQuestion(getCurrentQuestion() + 1);
     });
     SwipeJS(select('.quiz-question-page')).addSwipeListener('swiperight', () => {
-        getLangObject(language).question(getCurrentQuestion() - 1);
+        getLangObject(language).setQuestion(getCurrentQuestion() - 1);
     });
 };
 

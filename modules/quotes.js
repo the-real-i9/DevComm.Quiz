@@ -1,3 +1,11 @@
-// array shuffle
-// array choice
-// grab elements from the array in tens [firstTen, secondTen] (20 elements)
+const quotes = () => ([
+    {
+        quote: "Average habits, Average life. Great habits, Great life. It's that simple.",
+        quoteAuthorFirstName: 'Amelia',
+        quoteAuthorLastName: 'Warner',
+        quoteAuthorTwitterAddress: 'https://twitter.com/facetimeJS',
+        quoteAuthorTwitterUsername: 'facetimeJS',
+    },
+]);
+
+export default quotes;

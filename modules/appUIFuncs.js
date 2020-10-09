@@ -29,6 +29,7 @@ import {
     modulesPageHtml,
     moduleBoxHtml,
     questionPageHtml,
+    solutionPageHtml,
 } from './htmlBoilerplates.js';
 import {
     grabEndPartFromText,
@@ -64,6 +65,43 @@ const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'blo
 const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
 
 const emptyPagesContainer = () => setProp(pagesContainer, 'innerHTML', '');
+
+let min = 0;
+let sec = 1;
+let timeCount = null;
+const timerFunc = () => {
+    if (Math.trunc(sec / 60) === 1) {
+        min++;
+        if (sec > 59) {
+            sec = 0;
+        }
+    }
+    setProp(select('#time-elapsed'), 'textContent', `${min}m ${sec}s`);
+    sec++;
+};
+
+const timer = (action) => {
+    if (action === 'start') {
+        timeCount = setInterval(timerFunc, 1000);
+    } else if (action === 'stop') {
+        if (timeCount) clearInterval(timeCount);
+        min = 0;
+        sec = 1;
+    }
+};
+
+const getTimeSpent = () => `${min}m ${sec}s`;
+
+const playMusic = (audio) => {
+    event(select('#sound'), 'click', (ev) => {
+        classAction(ev.target, 'toggle', 'music-on');
+        if (ev.target.classList.contains('music-on')) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+};
 
 const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
@@ -162,54 +200,32 @@ const renderQuestionPage = (detailsObject) => {
     });
 };
 
-let min = 0;
-let sec = 1;
-let timeCount = null;
-const timerFunc = () => {
-    if (Math.trunc(sec / 60) === 1) {
-        min++;
-        if (sec > 59) {
-            sec = 0;
-        }
-    }
-    setProp(select('#time-elapsed'), 'textContent', `${min}m ${sec}s`);
-    sec++;
-};
-
-const timer = (action) => {
-    if (action === 'start') {
-        timeCount = setInterval(timerFunc, 1000);
-    } else if (action === 'stop') {
-        if (timeCount) clearInterval(timeCount);
-        min = 0;
-        sec = 1;
-    }
-};
-
-const playMusic = (audio) => {
-    event(select('#sound'), 'click', (ev) => {
-        classAction(ev.target, 'toggle', 'music-on');
-        if (ev.target.classList.contains('music-on')) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
+const renderSolutionPage = (detailsObject) => {
+    const { language, level } = detailsObject;
+    emptyPagesContainer();
+    setProp(pagesContainer, 'innerHTML', solutionPageHtml(detailsObject));
+    event(select('#back-to-modules'), 'click', () => {
+        getLangObject(language).modulesPage(level);
+        removeSessionData();
     });
 };
 
+
 export {
-    renderHomePage,
+    showPage,
+    hidePage,
+    timer,
+    playMusic,
     langsChosenOnSave,
-    displayLangChoicesModal,
     toggleSelectLangChoice,
+    displayLangChoicesModal,
     renderAvailableLangs,
+    renderHomePage,
     renderLevelsPage,
     renderLevelBoxes,
     renderModulesPage,
     renderModuleBoxes,
     renderQuestionPage,
-    timer,
-    playMusic,
-    hidePage,
-    showPage,
+    renderSolutionPage,
+    getTimeSpent,
 };
