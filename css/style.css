@@ -1323,7 +1323,7 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
   div.quiz-modules-page .modules-section .module-box .start-module-btn {
     width: 65px;
     height: 30px;
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 
@@ -2154,7 +2154,7 @@ div.quiz-solution-page .top .center-text p:last-child {
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box .code-block code {
     border-radius: 7px;
-    max-height: 97px;
+    max-height: 200px;
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box p[class*=answer] {
     font-weight: 400;

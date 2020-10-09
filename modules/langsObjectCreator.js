@@ -111,6 +111,7 @@ class UserLangChoice {
             if (!userAnswer) {
                 q.status = 'skipped';
                 q.userAnswer = '(Skipped)';
+                q.questionNumber = q.questionNumber || i + 1;
             } else if (typeof authorAnswer === 'string') {
                 if (authorAnswer === userAnswer) {
                     q.status = 'correct';

@@ -18,16 +18,6 @@ const intermediateQs = () => ([
         githubProfile: '[https://github.com/Mckenney17](McKenney17)',
         twitterProfile: '[https://twitter.com/Oluwarinolasam2](McKenney)',
     },
-    {
-        language: 'java',
-        questionStatement: 'A java intermediate question',
-
-    },
-    {
-        language: 'python',
-        questionStatement: 'A python intermediate question',
-
-    },
 ]);
 
 export default intermediateQs;
