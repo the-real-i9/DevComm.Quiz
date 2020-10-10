@@ -17,8 +17,6 @@ import {
 import {
     setPreviousLangChoices,
     getPreviousLangChoices,
-    deleteAnswersData,
-    getCurrentQuestion,
 } from './sessionStrorage.js';
 import {
     homePageHtml,
@@ -190,7 +188,8 @@ const renderModuleBoxes = (detailsObject) => {
     });
 };
 
-const renderQuestionPage = (detailsObject) => {
+
+const renderQuestionPage = async (detailsObject) => {
     const { language, level } = detailsObject;
     emptyPagesContainer();
     setProp(pagesContainer, 'innerHTML', questionPageHtml(detailsObject));

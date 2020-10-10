@@ -3,6 +3,12 @@ let previousLangChoices = [];
 const answersSelected = new Map();
 let currentQuestion = null;
 let totalQuestion = null;
+const quLinks = new Map();
+const pushLinks = (github, twitter, questionNumber) => {
+    quLinks.set(`question-${questionNumber}-links`, [github, twitter]);
+};
+
+const fetchLinks = (questionNumber) => quLinks.get(`question-${questionNumber}-links`);
 
 const setPreviousLangChoices = (choices) => {
     previousLangChoices = choices;
@@ -36,6 +42,7 @@ const getAnswersSize = () => answersSelected.size;
 const deleteAnswerItem = (questionNumber) => answersSelected.has(`question-${questionNumber}-answer`) && answersSelected.delete(`question-${questionNumber}-answer`);
 
 const deleteAnswersData = () => answersSelected.clear();
+const deleteLinksData = () => quLinks.clear();
 
 export {
     organizedQuestionsMap,
@@ -50,4 +57,7 @@ export {
     deleteAnswersData,
     getAnswersSize,
     deleteAnswerItem,
+    fetchLinks,
+    pushLinks,
+    deleteLinksData,
 };

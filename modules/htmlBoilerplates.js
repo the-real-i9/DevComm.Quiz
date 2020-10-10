@@ -101,6 +101,7 @@ const questionPageHtml = ({
     level,
     moduleNumber,
     totalQuestion,
+    questionNumber,
 }) => `
 <div class="quiz-question-page" id='lang-${language}-${level}-module-${moduleNumber}'>
     <i id='big-lang-icon' class='devicon-${language}-plain'></i>
@@ -132,12 +133,22 @@ const questionPageHtml = ({
             <p id='time-elapsed'>0m 0s</p>
         </div>
     </div>
-    <div id="question-section">
-        
+    <div class='swiper-container'>
+        <div class="question-section-container swiper-wrapper">
+            
+        </div>
     </div>
     <div class="bottom">
+        <p></p>
         <p id="submit-button">Submit</p>
+        <p></p>
     </div>
+</div>
+`;
+
+const questionSectionHtml = (questionNumber) => `
+<div class='swiper-slide' id="question-section-question-${questionNumber}">
+
 </div>
 `;
 
@@ -146,14 +157,14 @@ const questionStatementHtml = (questionIdentity, questionStatement) => `
 `;
 
 const codeBlockHtml = (language, code) => `
-<div id="code-block">
+<div class="code-block">
     <pre><code class='${language}'>${code}</code></pre>
 </div>
 `;
 
-const actionHtml = (questionAction) => `
-<p id='what-to-do'>${questionAction}</p>
-<div class="options">
+const actionHtml = (questionAction, questionNumber) => `
+<p class='what-to-do'>${questionAction}</p>
+<div class="options" id="options-question-${questionNumber}">
 
 </div>
 `;
@@ -293,4 +304,5 @@ export {
     solutionBoxHtml,
     solutionQuestionStatementHtml,
     solutionCodeBlockHtml,
+    questionSectionHtml,
 };

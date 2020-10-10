@@ -5,14 +5,7 @@ import {
     setQuestionCodeBlock,
     setQuestionAction,
     implementOptions,
-    setSocialHandles,
-    retrieveAnswer,
-    eraseQuestionBoard,
 } from './questionUIFuncs.js';
-import {
-    getCurrentQuestion,
-    getTotalQuestion,
-} from './sessionStrorage.js';
 import { shuffle } from './appEngineFuncs.js';
 
 const createQuestion = ({
@@ -22,25 +15,16 @@ const createQuestion = ({
     questionType,
     questionStatement,
     options,
-    githubProfile,
-    twitterProfile,
 }) => {
-    eraseQuestionBoard();
-
-    setCurrentQuestionNumber(getCurrentQuestion(), getTotalQuestion());
-    setQuestionStatement(code ? 'with-code' : 'without-code', questionStatement);
+    setQuestionStatement(code ? 'with-code' : 'without-code', questionStatement, questionNumber);
 
     if (code) {
-        setQuestionCodeBlock(language, code);
+        setQuestionCodeBlock(language, code, questionNumber);
     }
 
-    setQuestionAction(questionType);
+    setQuestionAction(questionType, questionNumber);
 
     implementOptions(questionType, shuffle(options), questionNumber);
-
-    setSocialHandles(githubProfile, twitterProfile);
-
-    retrieveAnswer(questionType, questionNumber);
 };
 
 export default createQuestion;

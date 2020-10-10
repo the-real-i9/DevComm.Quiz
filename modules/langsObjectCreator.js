@@ -16,18 +16,20 @@ import {
 import {
     organizedQuestionsMap,
     setTotalQuestion,
-    setCurrentQuestion,
     getTotalQuestion,
     getAnswerSelected,
+    fetchLinks,
+    pushLinks,
 } from './sessionStrorage.js';
 import {
     grabEndPartFromText, shuffle,
 } from './appEngineFuncs.js';
 import createQuestion from './questionCreator.js';
-import { navigateQuestion } from './questionUIFuncs.js';
+import { setQuestionSection, setCurrentQuestionNumber, setSocialHandles } from './questionUIFuncs.js';
 import quotes from './quotes.js';
 import handleSolution from './solutionHandler.js';
 import { setNoResult, emptySolutionsContainer } from './solutionUIFuncs.js';
+import Swipe from './swiper-bundle.esm.browser.min.js';
 
 
 class UserLangChoice {
@@ -75,7 +77,7 @@ class UserLangChoice {
         timer('stop');
     }
 
-    questionPage(moduleNumber, level) {
+    async questionPage(moduleNumber, level) {
         const questions = organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`);
         setTotalQuestion(questions.length);
         renderQuestionPage({
@@ -89,16 +91,29 @@ class UserLangChoice {
         this.level = level;
         this.moduleNumber = moduleNumber;
         // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
-        this.setQuestion(1);
-        navigateQuestion(this.language);
+        await questions.forEach((v, i) => {
+            setQuestionSection(i + 1);
+            this.setQuestion(i + 1);
+        });
+        // default
+        setCurrentQuestionNumber(1, getTotalQuestion());
+        setSocialHandles(fetchLinks(1)[0], fetchLinks(1)[1]);
+
+        // change on-swipe
+        const swiper = new Swipe('.swiper-container');
+        swiper.on('slideChange', function updateCurrentQuestion() {
+            setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestion());
+            setSocialHandles(fetchLinks(this.activeIndex + 1)[0], fetchLinks(this.activeIndex + 1)[1]);
+        });
     }
 
     setQuestion(questionNumber) {
         if (questionNumber < 1 || questionNumber > getTotalQuestion()) return;
-        setCurrentQuestion(questionNumber);
+        // setCurrentQuestion(questionNumber);
         const { questions } = this;
         const currentQuestionObject = questions[questionNumber - 1];
         currentQuestionObject.questionNumber = questionNumber;
+        pushLinks(currentQuestionObject.githubProfile, currentQuestionObject.twitterProfile, questionNumber);
         createQuestion(currentQuestionObject);
     }
 

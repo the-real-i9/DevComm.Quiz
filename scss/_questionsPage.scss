@@ -97,7 +97,7 @@ div.quiz-question-page {
         }
     }
 
-    #question-section {
+    div[id|='question-section'] {
         width: 100%;
 
         // .question-with-code, .question-without-code {
@@ -109,7 +109,7 @@ div.quiz-question-page {
                 margin-bottom: 13px;
             }
 
-            #code-block {
+            .code-block {
                 
                 code {
                     font-family: 'Ubuntu Mono', monospace;
@@ -121,7 +121,7 @@ div.quiz-question-page {
                 border-bottom: 1px dotted rgb(173, 173, 173);
             }
 
-            #what-to-do {
+            .what-to-do {
                 color: rgb(173, 173, 173);
                 margin: 3px 0;
             }
@@ -305,7 +305,7 @@ div.quiz-question-page {
             }
         }
 
-        #question-section {
+        div[id|='question-section'] {
             margin-top: 20px;
 
             // .question-with-code, .question-without-code {
@@ -313,7 +313,7 @@ div.quiz-question-page {
                     font-size: 19px;
                 }
                 
-                #code-block {
+                .code-block {
                     font-size: 19px;
                     
                     code {
@@ -321,7 +321,7 @@ div.quiz-question-page {
                     }
                 }
 
-                #what-to-do {
+                .what-to-do {
                     font-size: 15px;
                 }
 
@@ -476,10 +476,12 @@ div.quiz-question-page {
             }
         }
 
-        #question-section {
-            padding: 0 7%;
+        .swiper-container {
+            width: 100%;
+            div[id|='question-section'] {
+                padding: 0 7%;
+                width: 100% !important;
 
-            // .question-with-code, .question-without-code {
                 .question-statement-with-code {
                     font-size: 17px;
 
@@ -496,7 +498,7 @@ div.quiz-question-page {
                     // }
                 }
                 
-                #code-block {
+                .code-block {
                     font-size: 15px;
                     @media (min-height: 534px) {
                         font-size: 17px;
@@ -507,12 +509,12 @@ div.quiz-question-page {
                     }
                 }
 
-                #what-to-do {
+                .what-to-do {
                     font-size: 13px;
                 }
 
                 .options {
-                    width: 97%;
+                    width: 100%;
                     margin: 0 auto;
                     .option {
                         height: 40px;
@@ -542,7 +544,7 @@ div.quiz-question-page {
                         }
                     }
                 }
-            // }
+            }
         }
 
         .bottom {

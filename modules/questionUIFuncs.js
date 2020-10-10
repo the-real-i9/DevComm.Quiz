@@ -15,11 +15,10 @@ import {
     actionHtml,
     optionHtml,
     socialHandlesHtml,
+    questionSectionHtml,
 } from './htmlBoilerplates.js';
 import {
     saveAnswerSelected,
-    getAnswerSelected,
-    getCurrentQuestion,
     getAnswersSize,
     deleteAnswerItem,
     getTotalQuestion,
@@ -30,10 +29,10 @@ import {
     grabLinkAddress,
     grabLinkName,
 } from './appEngineFuncs.js';
-import {
-    getLangObject,
-} from './langsObjectManager.js';
-import SwipeJS from './swipeJS.min.js';
+
+const setQuestionSection = (questionNumber) => {
+    insertHtml(select('.question-section-container'), 'beforeend', questionSectionHtml(questionNumber));
+};
 
 const setCurrentQuestionNumber = (currentQuestionNumber, totalQuestion) => {
     const progress = 100 - ((currentQuestionNumber / totalQuestion) * 100);
@@ -41,46 +40,46 @@ const setCurrentQuestionNumber = (currentQuestionNumber, totalQuestion) => {
     select('.progress').style.setProperty('--progress', `${progress}%`);
 };
 
-const setQuestionStatement = (qId, questionStatement) => {
+const setQuestionStatement = (qId, questionStatement, questionNumber) => {
     const htmlText = formatTextForHtml(questionStatement);
-    insertHtml(select('#question-section'), 'beforeend', questionStatementHtml(qId, htmlText));
+    insertHtml(select(`#question-section-question-${questionNumber}`), 'beforeend', questionStatementHtml(qId, htmlText));
 };
 
-const setQuestionCodeBlock = (language, code) => {
+const setQuestionCodeBlock = (language, code, questionNumber) => {
     const codeText = formatCodeForHtml(code);
-    insertHtml(select('#question-section'), 'beforeend', codeBlockHtml(language, codeText));
-    hljs.highlightBlock(select('#code-block code'));
+    insertHtml(select(`#question-section-question-${questionNumber}`), 'beforeend', codeBlockHtml(language, codeText));
+    [...selectAll('.code-block code')].map((codeBlock) => hljs.highlightBlock(codeBlock));
 };
 
-const setQuestionAction = (questionType) => {
+const setQuestionAction = (questionType, questionNumber) => {
     if (questionType === 'single-answer') {
-        insertHtml(select('#question-section'), 'beforeend', actionHtml('Choose the correct answer'));
+        insertHtml(select(`#question-section-question-${questionNumber}`), 'beforeend', actionHtml('Choose the correct answer', questionNumber));
         return;
     }
 
     if (questionType === 'multiple-answers') {
-        insertHtml(select('#question-section'), 'beforeend', actionHtml('Choose all correct answers'));
+        insertHtml(select(`#question-section-question-${questionNumber}`), 'beforeend', actionHtml('Choose all correct answers', questionNumber));
         return;
     }
 };
 
 const implementOptions = (questionType, options, questionNumber) => {
     options.forEach((v, i) => {
-        insertHtml(select('.options'), 'beforeend', optionHtml(i + 1, v));
+        insertHtml(select(`#options-question-${questionNumber}`), 'beforeend', optionHtml(i + 1, v));
     });
-    for (const option of selectAll('.option')) {
+    for (const option of selectAll(`#options-question-${questionNumber} .option`)) {
         const firstChild = option.firstElementChild;
         const lastChild = option.lastElementChild;
         event(option, 'click', () => {
             if (questionType === 'single-answer') {
-                for (const check of selectAll('.option div')) {
+                for (const check of selectAll(`#options-question-${questionNumber} .option div`)) {
                     classAction(check, 'remove', 'selected');
                 }
                 classAction(lastChild, 'add', 'selected');
                 saveAnswerSelected(questionNumber, firstChild.textContent);
             } else if (questionType === 'multiple-answers') {
                 classAction(lastChild, 'toggle', 'selected');
-                const answersSelected = [...selectAll('.selected')].map((v) => v.previousElementSibling.textContent);
+                const answersSelected = [...selectAll(`#options-question-${questionNumber} .selected`)].map((v) => v.previousElementSibling.textContent);
                 if (answersSelected.length) {
                     saveAnswerSelected(questionNumber, answersSelected);
                 } else {
@@ -100,6 +99,11 @@ const implementOptions = (questionType, options, questionNumber) => {
 };
 
 const setSocialHandles = (github, twitter) => {
+    const bottomSection = select('.bottom');
+    if ([...bottomSection.children].length > 1) {
+        setProp(bottomSection.firstElementChild, 'outerHTML', '');
+        setProp(bottomSection.lastElementChild, 'outerHTML', '');
+    }
     const linkAddress = [github, twitter].map((str) => (str ? grabLinkAddress(str) : ''));
     const linkName = [github, twitter].map((str) => (str ? grabLinkName(str) : ''));
     if (github) {
@@ -115,43 +119,6 @@ const setSocialHandles = (github, twitter) => {
     }
 };
 
-const retrieveAnswer = (questionType, questionNumber) => {
-    const answer = getAnswerSelected(questionNumber);
-    if (!answer) return;
-
-    if (questionType === 'single-answer') {
-        const answerOwner = [...selectAll('.option')].find((elem) => elem.firstElementChild.textContent === answer).lastElementChild;
-        classAction(answerOwner, 'add', 'selected');
-        return;
-    }
-
-    if (questionType === 'multiple-answers') {
-        for (const oneAnswer of answer) {
-            const answerOwner = [...selectAll('.option')].find((elem) => elem.firstElementChild.textContent === oneAnswer).lastElementChild;
-            classAction(answerOwner, 'add', 'selected');
-        }
-        return;
-    }
-};
-
-const eraseQuestionBoard = () => {
-    setProp(select('#question-section'), 'innerHTML', '');
-
-    const bottomSection = select('.bottom');
-    if ([...bottomSection.children].length > 1) {
-        setProp(bottomSection.firstElementChild, 'outerHTML', '');
-        setProp(bottomSection.lastElementChild, 'outerHTML', '');
-    }
-};
-
-const navigateQuestion = (language) => {
-    SwipeJS(select('.quiz-question-page')).addSwipeListener('swipeleft', () => {
-        getLangObject(language).setQuestion(getCurrentQuestion() + 1);
-    });
-    SwipeJS(select('.quiz-question-page')).addSwipeListener('swiperight', () => {
-        getLangObject(language).setQuestion(getCurrentQuestion() - 1);
-    });
-};
 
 export {
     setCurrentQuestionNumber,
@@ -160,7 +127,5 @@ export {
     setQuestionAction,
     implementOptions,
     setSocialHandles,
-    retrieveAnswer,
-    navigateQuestion,
-    eraseQuestionBoard,
+    setQuestionSection,
 };

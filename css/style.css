@@ -1478,40 +1478,40 @@ div.quiz-question-page .question-top .timer p {
   color: #e1543c;
 }
 
-div.quiz-question-page #question-section {
+div.quiz-question-page div[id|='question-section'] {
   width: 100%;
 }
 
-div.quiz-question-page #question-section .question-statement-with-code {
+div.quiz-question-page div[id|='question-section'] .question-statement-with-code {
   margin-bottom: 4px;
 }
 
-div.quiz-question-page #question-section .question-statement-without-code {
+div.quiz-question-page div[id|='question-section'] .question-statement-without-code {
   margin-bottom: 13px;
 }
 
-div.quiz-question-page #question-section #code-block {
+div.quiz-question-page div[id|='question-section'] .code-block {
   border-top: 1px dotted #adadad;
   padding: 4px 0;
   border-bottom: 1px dotted #adadad;
 }
 
-div.quiz-question-page #question-section #code-block code {
+div.quiz-question-page div[id|='question-section'] .code-block code {
   font-family: 'Ubuntu Mono', monospace;
   border-radius: 5px;
   overscroll-behavior: none;
 }
 
-div.quiz-question-page #question-section #what-to-do {
+div.quiz-question-page div[id|='question-section'] .what-to-do {
   color: #adadad;
   margin: 3px 0;
 }
 
-div.quiz-question-page #question-section .options {
+div.quiz-question-page div[id|='question-section'] .options {
   --boxStyle: 50%;
 }
 
-div.quiz-question-page #question-section .options .option {
+div.quiz-question-page div[id|='question-section'] .options .option {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1524,19 +1524,19 @@ div.quiz-question-page #question-section .options .option {
   position: relative;
 }
 
-div.quiz-question-page #question-section .options .option p {
+div.quiz-question-page div[id|='question-section'] .options .option p {
   font-weight: 500;
   line-height: 20px;
 }
 
-div.quiz-question-page #question-section .options .option div {
+div.quiz-question-page div[id|='question-section'] .options .option div {
   position: absolute;
   border-radius: var(--boxStyle);
   margin: auto 0;
   border: 3px solid #f5d3ac;
 }
 
-div.quiz-question-page #question-section .options .option div.selected::after {
+div.quiz-question-page div[id|='question-section'] .options .option div.selected::after {
   position: absolute;
   font-family: 'Font Awesome 5 Free';
   content: '\f00c';
@@ -1559,7 +1559,7 @@ div.quiz-question-page #question-section .options .option div.selected::after {
   border-radius: var(--boxStyle);
 }
 
-div.quiz-question-page #question-section .options .option div.selected::before {
+div.quiz-question-page div[id|='question-section'] .options .option div.selected::before {
   position: absolute;
   content: '';
   top: 0;
@@ -1722,22 +1722,22 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page .question-top .timer p {
     font-size: 17px;
   }
-  div.quiz-question-page #question-section {
+  div.quiz-question-page div[id|='question-section'] {
     margin-top: 20px;
   }
-  div.quiz-question-page #question-section .question-statement-with-code, div.quiz-question-page #question-section .question-statement-without-code {
+  div.quiz-question-page div[id|='question-section'] .question-statement-with-code, div.quiz-question-page div[id|='question-section'] .question-statement-without-code {
     font-size: 19px;
   }
-  div.quiz-question-page #question-section #code-block {
+  div.quiz-question-page div[id|='question-section'] .code-block {
     font-size: 19px;
   }
-  div.quiz-question-page #question-section #code-block code {
+  div.quiz-question-page div[id|='question-section'] .code-block code {
     max-height: 125px;
   }
-  div.quiz-question-page #question-section #what-to-do {
+  div.quiz-question-page div[id|='question-section'] .what-to-do {
     font-size: 15px;
   }
-  div.quiz-question-page #question-section .options {
+  div.quiz-question-page div[id|='question-section'] .options {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1750,26 +1750,26 @@ div.quiz-question-page .bottom p:nth-child(2) {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  div.quiz-question-page #question-section .options .option {
+  div.quiz-question-page div[id|='question-section'] .options .option {
     width: 240px;
     height: 45px;
     margin: 5px 0;
   }
-  div.quiz-question-page #question-section .options .option p {
+  div.quiz-question-page div[id|='question-section'] .options .option p {
     margin-left: 23px;
     font-size: 20px;
   }
-  div.quiz-question-page #question-section .options .option div {
+  div.quiz-question-page div[id|='question-section'] .options .option div {
     top: 15%;
     bottom: 15%;
     right: 3%;
     height: 28px;
     width: 28px;
   }
-  div.quiz-question-page #question-section .options .option div.selected::after {
+  div.quiz-question-page div[id|='question-section'] .options .option div.selected::after {
     font-size: 12px;
   }
-  div.quiz-question-page #question-section .options .option div.selected::before {
+  div.quiz-question-page div[id|='question-section'] .options .option div.selected::before {
     -webkit-animation: checkAnim .7s ease 1;
             animation: checkAnim .7s ease 1;
   }
@@ -1863,57 +1863,61 @@ div.quiz-question-page .bottom p:nth-child(2) {
   div.quiz-question-page .question-top .timer p {
     font-size: 13px;
   }
-  div.quiz-question-page #question-section {
-    padding: 0 7%;
+  div.quiz-question-page .swiper-container {
+    width: 100%;
   }
-  div.quiz-question-page #question-section .question-statement-with-code {
+  div.quiz-question-page .swiper-container div[id|='question-section'] {
+    padding: 0 7%;
+    width: 100% !important;
+  }
+  div.quiz-question-page .swiper-container div[id|='question-section'] .question-statement-with-code {
     font-size: 17px;
   }
-  div.quiz-question-page #question-section .question-statement-without-code {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .question-statement-without-code {
     font-size: 19px;
   }
-  div.quiz-question-page #question-section #code-block {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .code-block {
     font-size: 15px;
   }
 }
 
 @media (max-width: 599px) and (min-height: 534px) {
-  div.quiz-question-page #question-section #code-block {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .code-block {
     font-size: 17px;
   }
 }
 
 @media (max-width: 599px) {
-  div.quiz-question-page #question-section #code-block code {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .code-block code {
     max-height: 100px;
   }
-  div.quiz-question-page #question-section #what-to-do {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .what-to-do {
     font-size: 13px;
   }
-  div.quiz-question-page #question-section .options {
-    width: 97%;
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options {
+    width: 100%;
     margin: 0 auto;
   }
-  div.quiz-question-page #question-section .options .option {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option {
     height: 40px;
   }
-  div.quiz-question-page #question-section .options .option:not(:last-child) {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option:not(:last-child) {
     margin: 5px 0;
   }
-  div.quiz-question-page #question-section .options .option p {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option p {
     margin-left: 20px;
     font-size: 17px;
   }
-  div.quiz-question-page #question-section .options .option div {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option div {
     top: 5px;
     bottom: 5px;
     right: 7px;
     width: 24px;
   }
-  div.quiz-question-page #question-section .options .option div.selected::after {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option div.selected::after {
     font-size: 10px;
   }
-  div.quiz-question-page #question-section .options .option div.selected::before {
+  div.quiz-question-page .swiper-container div[id|='question-section'] .options .option div.selected::before {
     -webkit-animation: checkAnim .5s ease 1;
             animation: checkAnim .5s ease 1;
   }

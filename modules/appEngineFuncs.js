@@ -4,6 +4,7 @@ import {
     setTotalQuestion,
     setCurrentQuestion,
     deleteAnswersData,
+    deleteLinksData,
 } from './sessionStrorage.js';
 
 const chunkToTens = (array, langChoice) => {
@@ -88,6 +89,7 @@ const removeSessionData = () => {
     setTotalQuestion(null);
     setCurrentQuestion(null);
     deleteAnswersData();
+    deleteLinksData();
 };
 
 const formatTextForHtml = (text) => {
