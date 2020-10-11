@@ -1321,11 +1321,13 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   div.quiz-modules-page .modules-section .module-box {
     width: 135px;
     padding: 10px 0 12px 15px;
-    margin: 0 10px 15px 0;
+    margin: 0 0px 15px 0;
   }
   div.quiz-modules-page .modules-section .module-box .module-num {
     font-size: 18px;
@@ -1339,6 +1341,9 @@ div.quiz-modules-page .modules-section .module-box.excel .module-score {
     width: 65px;
     height: 30px;
     font-size: 13px;
+  }
+  div.quiz-modules-page .modules-section .module-box:empty {
+    opacity: 0;
   }
 }
 
@@ -2035,7 +2040,7 @@ div.quiz-solution-page .top .center-text p:last-child {
     min-width: 50px;
   }
   div.quiz-solution-page .top .center-text p:first-child {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
   }
   div.quiz-solution-page .top .center-text p:first-child span {

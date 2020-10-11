@@ -180,12 +180,12 @@ div.quiz-modules-page {
             padding: 0 5%;
             width: 100%;
             margin-top: 90px;
-            @include flex();
+            @include flex(space-around);
 
             .module-box {
                 width: 135px;
                 padding: 10px 0 12px 15px;
-                margin: 0 10px 15px 0;
+                margin: 0 0px 15px 0;
 
                 .module-num {
                     font: {
@@ -205,6 +205,10 @@ div.quiz-modules-page {
                     width: 65px;
                     height: 30px;
                     font-size: 13px;
+                }
+
+                &:empty {
+                    opacity: 0;
                 }
             }
         }

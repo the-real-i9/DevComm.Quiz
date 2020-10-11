@@ -191,7 +191,7 @@ const renderModuleBoxes = (detailsObject) => {
         level,
         moduleNumber,
     } = detailsObject;
-    insertHtml(select('.modules-section'), 'beforeend', moduleBoxHtml(detailsObject));
+    insertHtml(select('.modules-section > div:empty'), 'beforebegin', moduleBoxHtml(detailsObject));
     event(select(`#module-${moduleNumber}-start`), 'click', () => {
         getLangObject(language).questionPage(moduleNumber, level);
     });

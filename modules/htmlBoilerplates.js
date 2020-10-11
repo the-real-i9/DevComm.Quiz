@@ -78,6 +78,7 @@ const modulesPageHtml = (language, level) => `
     </div>
     <div class="modules-section">
         
+        <div class='module-box'></div>
     </div>
 </div>
 `;

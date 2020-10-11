@@ -32,9 +32,9 @@ const setLevelCompletion = ({
 	localStorage.setItem('level-completions', serialized);
 };
 
-const getLevelCompletion = (language, level) => (levelCompletion.get(language)
-		&& levelCompletion.get(language).get(level))
-	|| 0;
+const getLevelCompletion = (language, level) => (levelCompletion.get(language) &&
+		levelCompletion.get(language).get(level)) ||
+	0;
 
 const setModuleScore = ({
 	language,
@@ -57,14 +57,11 @@ const setModuleScore = ({
 };
 
 const getModuleScore = ({
-		language,
-		level,
-		module,
-	}) => {
-	if (moduleScore.get(language)) {
-		return moduleScore.get(language).get(level).get(module);
-	}
-	return 0;
+	language,
+	level,
+	module,
+}) => {
+	return moduleScore?.get(language)?.get(level)?.get(module) || 0;
 };
 
 const getCurrentLangChoices = () => languageChoices;
