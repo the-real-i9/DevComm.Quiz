@@ -22,6 +22,7 @@ import {
     getAnswersSize,
     deleteAnswerItem,
     getTotalQuestion,
+    fetchLinks,
 } from './sessionStrorage.js';
 import {
     formatCodeForHtml,
@@ -29,6 +30,7 @@ import {
     grabLinkAddress,
     grabLinkName,
 } from './appEngineFuncs.js';
+import Swipe from './swiper-bundle.esm.browser.min.js';
 
 const setQuestionSection = (questionNumber) => {
     insertHtml(select('.question-section-container'), 'beforeend', questionSectionHtml(questionNumber));
@@ -119,6 +121,15 @@ const setSocialHandles = (github, twitter) => {
     }
 };
 
+const initSwipe = () => {
+// change on-swipe
+    const swiper = new Swipe('.swiper-container');
+    swiper.on('slideChange', function updateCurrentQuestion() {
+        setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestion());
+        setSocialHandles(fetchLinks(this.activeIndex + 1)[0], fetchLinks(this.activeIndex + 1)[1]);
+    });
+};
+
 
 export {
     setCurrentQuestionNumber,
@@ -128,4 +139,5 @@ export {
     implementOptions,
     setSocialHandles,
     setQuestionSection,
+    initSwipe,
 };

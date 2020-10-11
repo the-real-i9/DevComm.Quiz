@@ -69,7 +69,6 @@ div.home {
     }
 
     div.langs-section {
-        padding: 0 1%;
         margin-top: 40px;
         padding-bottom: 10px;
         width: 100%;
@@ -96,16 +95,21 @@ div.home {
             margin-bottom: 10px;
                         
             @include mobile {
-                width: 94%;
-                height: 170px;
+                width: 97%;
+                height: 190px;
                 border-radius: 14px;
                 margin: 0 auto;
                 margin-bottom: 10px;
             }
             
             
-            
-            background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+            @include laptop {
+                background: $cream url(../img/deep-orange.svg) no-repeat top -30px right -30px/100px;
+            }
+
+            @include mobile {
+                background-image: radial-gradient(120px 120px at top center, $deep-orange, $deep-orange 100px, 100px, #fff 105px, 105px, $cream);
+            }
 
 
             &:active {
@@ -114,8 +118,8 @@ div.home {
             }
             
             @include mobile {
-                background-position: center -50px;
-                background-size: 155px;
+                // background-position: center -50px;
+                // background-size: 155px;
             }
             @include laptop {
                 &:hover {

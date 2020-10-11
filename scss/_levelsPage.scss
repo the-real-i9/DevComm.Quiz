@@ -34,13 +34,12 @@ div.quiz-levels-page {
                         transform .15s linear;
 
             
-            background: $cream url(../img/deep-orange.svg) no-repeat center -55px;
-
-            &:active {
-                transform: translateY(4px);
-                box-shadow: 0 0px 4px rgba(#000, 0.17);
+                        
+                        &:active {
+                            transform: translateY(4px);
+                            box-shadow: 0 0px 4px rgba(#000, 0.17);
             }
-
+            
             .level-bottom-text {
                 p:first-child {
                     border-top: 1px solid #000;
@@ -49,17 +48,17 @@ div.quiz-levels-page {
             }
         }
     }
-
-
+    
+    
     @include laptop {
         .top {
             height: 150px;
-
+            
             #back-to-home {
                 width: 17%;
                 height: 50px;
                 border-radius: 32px;
-    
+                
             }
             div:empty {
                 width: 17%;
@@ -82,24 +81,25 @@ div.quiz-levels-page {
                 }
             }
         }
-
+        
         .levels-section {
             padding: 0 2%;
             margin-top: 50px;
             width: 100%;
-
+            
             .level-box {
                 width: 225px;
                 height: 140px;
                 border-radius: 27px;
                 margin-bottom: 20px;
                 @include flex(space-between, null, column);
-
+                
                 &:nth-child(n) {
                     background-position: top -30px right -30px;
                     background-size: 100px;
                 }
-
+                background: $cream url(../img/deep-orange.svg) no-repeat center -55px;
+                
                 &:hover {
                     background-size: 200px;
                 }
@@ -178,15 +178,17 @@ div.quiz-levels-page {
             margin-top: 50px;
 
             .level-box {
-                width: 94%;
-                height: 185px;
+                width: 97%;
+                height: 190px;
                 border-radius: 14px;
                 margin: 0 auto;
                 margin-bottom: 10px;
                 @include flex(space-between, center, column);
-                background-size: 155px;
+                // background-size: 155px;
 
-
+                @include mobile {
+                    background-image: radial-gradient(110px 110px at top center, $deep-orange, $deep-orange 100px, 100px, #fff 105px, 105px, $cream);
+                }
                 .comp-div {
                     width: 60px;
                     height: 60px;

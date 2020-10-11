@@ -53,7 +53,7 @@ const levelBoxHtml = ({
 const levelsPageHtml = (language) => `
     <div class="quiz-levels-page" id='lang-${language}'>
     <div class="top">
-        <div id="back-to-home">Back</div>
+        <div class='back-page-btn' id="back-to-home">Back</div>
         <div class="center-text">
             <p id='quiz-title'>${formatLangTextDevFriendly(language)} Quiz</p>
             <p>Select Level</p>
@@ -69,7 +69,7 @@ const levelsPageHtml = (language) => `
 const modulesPageHtml = (language, level) => `
 <div class='quiz-modules-page' id='lang-${language}-${level}'>
     <div class="top">
-        <div id="back-to-levels">Back</div>
+        <div class='back-page-btn' id="back-to-levels">Back</div>
         <div class="center-text">
             <p id='quiz-title'>${formatLangTextDevFriendly(language)} Quiz</p>
             <p id='level'>${formatLangTextDevFriendly(level)}</p>
@@ -106,7 +106,7 @@ const questionPageHtml = ({
 <div class="quiz-question-page" id='lang-${language}-${level}-module-${moduleNumber}'>
     <i id='big-lang-icon' class='devicon-${language}-plain'></i>
     <div class="top">
-        <div id="back-to-modules">Back</div>
+        <div class='back-page-btn' id="back-to-modules">Back</div>
         <div class="center-text">
             <p id='level'>${formatLangTextDevFriendly(level)}</p>
             <p id='module'>Module ${moduleNumber}</p>
@@ -197,10 +197,10 @@ const solutionPageHtml = ({
 }) => `
 <div class="quiz-solution-page" id='lang-${language}-${level}-module-${moduleNumber}-solution'>
     <div class="top">
-        <div id="back-to-modules">Back</div>
+        <div class='back-page-btn' id="back-to-modules">Back</div>
         <div class="center-text">
             <p id='lang-solution-title'>Solution <span>(${formatLangTextDevFriendly(language)})</span></p>
-            <p id='level-module'>${formatLangTextDevFriendly(level)}<br>Module ${moduleNumber}</p>
+            <p id='level-module'>${formatLangTextDevFriendly(level)}: Module ${moduleNumber}</p>
         </div>
         <div></div>
     </div>

@@ -22,14 +22,22 @@ import {
     pushLinks,
 } from './sessionStrorage.js';
 import {
-    grabEndPartFromText, shuffle,
+    grabEndPartFromText,
+    shuffle,
 } from './appEngineFuncs.js';
 import createQuestion from './questionCreator.js';
-import { setQuestionSection, setCurrentQuestionNumber, setSocialHandles } from './questionUIFuncs.js';
+import {
+    setQuestionSection,
+    setCurrentQuestionNumber,
+    setSocialHandles,
+    initSwipe,
+} from './questionUIFuncs.js';
 import quotes from './quotes.js';
 import handleSolution from './solutionHandler.js';
-import { setNoResult, emptySolutionsContainer } from './solutionUIFuncs.js';
-import Swipe from './swiper-bundle.esm.browser.min.js';
+import {
+    setNoResult,
+    emptySolutionsContainer,
+} from './solutionUIFuncs.js';
 
 
 class UserLangChoice {
@@ -95,22 +103,17 @@ class UserLangChoice {
             setQuestionSection(i + 1);
             this.setQuestion(i + 1);
         });
-        // default
         setCurrentQuestionNumber(1, getTotalQuestion());
         setSocialHandles(fetchLinks(1)[0], fetchLinks(1)[1]);
-
-        // change on-swipe
-        const swiper = new Swipe('.swiper-container');
-        swiper.on('slideChange', function updateCurrentQuestion() {
-            setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestion());
-            setSocialHandles(fetchLinks(this.activeIndex + 1)[0], fetchLinks(this.activeIndex + 1)[1]);
-        });
+        initSwipe();
     }
 
     setQuestion(questionNumber) {
         if (questionNumber < 1 || questionNumber > getTotalQuestion()) return;
         // setCurrentQuestion(questionNumber);
-        const { questions } = this;
+        const {
+            questions,
+        } = this;
         const currentQuestionObject = questions[questionNumber - 1];
         currentQuestionObject.questionNumber = questionNumber;
         pushLinks(currentQuestionObject.githubProfile, currentQuestionObject.twitterProfile, questionNumber);
@@ -118,7 +121,9 @@ class UserLangChoice {
     }
 
     solutionsPage() {
-        const { questions } = this;
+        const {
+            questions,
+        } = this;
         questions.forEach((q, i) => {
             const authorAnswer = q.correctAnswer;
             const userAnswer = getAnswerSelected(i + 1);
@@ -170,7 +175,9 @@ class UserLangChoice {
 
     getSolution(category) {
         emptySolutionsContainer();
-        const { questions } = this;
+        const {
+            questions,
+        } = this;
         switch (category) {
             case 'all':
                 for (const question of questions) {
