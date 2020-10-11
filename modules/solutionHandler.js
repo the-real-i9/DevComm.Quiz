@@ -1,5 +1,11 @@
-import { emptySolutionsContainer, renderSolutionBox } from './solutionUIFuncs.js';
-import { formatTextForHtml, grabLinkAddress, grabLinkName } from './appEngineFuncs.js';
+import {
+    renderSolutionBox,
+} from './solutionUIFuncs.js';
+import {
+    formatTextForHtml,
+    grabLinkAddress,
+    grabLinkName,
+} from './appEngineFuncs.js';
 
 const handleSolution = ({
     language,

@@ -87,7 +87,7 @@ class UserLangChoice {
     }
 
     async questionPage(moduleNumber, level) {
-        const questions = organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`);
+        const questions = shuffle(organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`));
         setTotalQuestion(questions.length);
         renderQuestionPage({
             language: this.language,
@@ -99,7 +99,6 @@ class UserLangChoice {
         this.questions = questions;
         this.level = level;
         this.moduleNumber = moduleNumber;
-        // organizedQuestionsMap.get(this.language).get(level).set(`module-${moduleNumber}`, shuffle(questions));
         await questions.forEach((v, i) => {
             setQuestionSection(i + 1);
             this.setQuestion(i + 1);

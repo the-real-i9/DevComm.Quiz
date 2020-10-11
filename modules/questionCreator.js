@@ -1,6 +1,5 @@
 /* eslint-disable import/no-cycle */
 import {
-    setCurrentQuestionNumber,
     setQuestionStatement,
     setQuestionCodeBlock,
     setQuestionAction,

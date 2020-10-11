@@ -13,7 +13,6 @@ import {
     getCurrentLangChoices,
     getUsername,
     setCurrentLangChoices,
-    setModuleScore,
 } from './localStorage.js';
 import {
     setPreviousLangChoices,
