@@ -60,8 +60,10 @@ const getModuleScore = ({
 	language,
 	level,
 	module,
+	totalQuestion,
 }) => {
-	return moduleScore?.get(language)?.get(level)?.get(module) || 0;
+	const value = moduleScore?.get(language)?.get(level)?.get(module);
+	return value ? Math.round((value / totalQuestion) * 100) : 0;
 };
 
 const getCurrentLangChoices = () => languageChoices;

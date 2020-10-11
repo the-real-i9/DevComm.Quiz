@@ -67,7 +67,8 @@ class UserLangChoice {
 
     modulesPage(level) {
         const modules = organizedQuestionsMap.get(this.language).get(level);
-        if (modules.get('module-01').length) {
+        const totalQuestion = modules.get('module-01').length;
+        if (totalQuestion) {
             renderModulesPage(this.language, level);
 
             for (const [moduleKey, moduleValue] of modules) {
@@ -79,6 +80,7 @@ class UserLangChoice {
                         language: this.language,
                         level,
                         module: moduleKey,
+                        totalQuestion,
                     }),
                 });
             }
@@ -174,7 +176,7 @@ class UserLangChoice {
             language: this.language,
             level: this.level,
             moduleNumber: this.moduleNumber,
-            moduleScoreValue: Math.round((this.correctAnswers.length / getTotalQuestion()) * 100),
+            moduleScoreValue: this.correctAnswers.length,
         });
         this.getSolution('all');
     }
