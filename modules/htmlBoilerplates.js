@@ -83,8 +83,6 @@ const modulesPageHtml = (language, level) => `
 `;
 
 const moduleBoxHtml = ({
-    language,
-    level,
     moduleNumber,
     moduleScore,
 }) => `

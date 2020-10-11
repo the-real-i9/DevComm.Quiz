@@ -13,6 +13,7 @@ import {
     getCurrentLangChoices,
     getUsername,
     setCurrentLangChoices,
+    setModuleScore,
 } from './localStorage.js';
 import {
     setPreviousLangChoices,
@@ -162,7 +163,11 @@ const renderLevelsPage = (language) => {
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = async (detailsObject) => {
-    const { completion, level, language } = detailsObject;
+    const {
+        completion,
+        level,
+        language,
+    } = detailsObject;
     insertHtml(select('.levels-section'), 'beforeend', levelBoxHtml(detailsObject));
     await new Promise((resolve) => setTimeout(resolve, 0));
     setStyle(select(`#comp-div-${level} circle:last-child`), 'stroke-dashoffset', `calc(160 - (160 * ${completion}) / 100)`);
@@ -181,7 +186,11 @@ const renderModulesPage = (language, level) => {
 };
 
 const renderModuleBoxes = (detailsObject) => {
-    const { language, level, moduleNumber } = detailsObject;
+    const {
+        language,
+        level,
+        moduleNumber,
+    } = detailsObject;
     insertHtml(select('.modules-section'), 'beforeend', moduleBoxHtml(detailsObject));
     event(select(`#module-${moduleNumber}-start`), 'click', () => {
         getLangObject(language).questionPage(moduleNumber, level);
@@ -190,7 +199,10 @@ const renderModuleBoxes = (detailsObject) => {
 
 
 const renderQuestionPage = async (detailsObject) => {
-    const { language, level } = detailsObject;
+    const {
+        language,
+        level,
+    } = detailsObject;
     emptyPagesContainer();
     setProp(pagesContainer, 'innerHTML', questionPageHtml(detailsObject));
     event(select('#back-to-modules'), 'click', () => {
@@ -203,7 +215,10 @@ const renderQuestionPage = async (detailsObject) => {
 };
 
 const renderSolutionPage = (detailsObject) => {
-    const { language, level } = detailsObject;
+    const {
+        language,
+        level,
+    } = detailsObject;
     emptyPagesContainer();
     setProp(pagesContainer, 'innerHTML', solutionPageHtml(detailsObject));
     classAction(select('.filter-options #all'), 'add', 'selected');

@@ -2016,7 +2016,7 @@ div.quiz-solution-page .top .center-text p:last-child {
     background: #fff;
     padding: 0 6%;
     width: 100%;
-    height: 80px;
+    height: 70px;
     border-radius: 0 0 15px 15px;
     -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -2032,6 +2032,7 @@ div.quiz-solution-page .top .center-text p:last-child {
   }
   div.quiz-solution-page .top .center-text {
     width: 54%;
+    min-width: 50px;
   }
   div.quiz-solution-page .top .center-text p:first-child {
     font-size: 17px;

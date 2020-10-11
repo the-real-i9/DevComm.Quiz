@@ -2,6 +2,7 @@
 import {
     getLevelCompletion,
     getModuleScore,
+    setModuleScore,
 } from './localStorage.js';
 import {
     renderLevelsPage,
@@ -77,7 +78,7 @@ class UserLangChoice {
                     moduleScore: getModuleScore({
                         language: this.language,
                         level,
-                        moduleKey,
+                        module: moduleKey,
                     }),
                 });
             }
@@ -169,6 +170,12 @@ class UserLangChoice {
             incorrectAnswersCount: this.incorrectAnswers.length,
             skippedQuestionsCount: this.skippedQuestions.length,
             ...randomQuote,
+        });
+        setModuleScore({
+            language: this.language,
+            level: this.level,
+            moduleNumber: this.moduleNumber,
+            moduleScoreValue: Math.round((this.correctAnswers.length / getTotalQuestion()) * 100),
         });
         this.getSolution('all');
     }

@@ -39,12 +39,12 @@ const getLevelCompletion = (language, level) => (levelCompletion.get(language)
 const setModuleScore = ({
 	language,
 	level,
-	module,
+	moduleNumber,
 	moduleScoreValue,
 }) => {
 	if (!moduleScore.has(language)) moduleScore.set(language, new Map());
 	moduleScore.get(language).set(level, new Map());
-	moduleScore.get(language).get(level).set(module, moduleScoreValue);
+	moduleScore.get(language).get(level).set(`module-${moduleNumber}`, moduleScoreValue);
 
 	const serialized = JSON.stringify(
 		[...moduleScore],
@@ -60,9 +60,12 @@ const getModuleScore = ({
 		language,
 		level,
 		module,
-	}) => (moduleScore.get(language)
-		&& moduleScore.get(language).get(level).get(module))
-	|| 0;
+	}) => {
+	if (moduleScore.get(language)) {
+		return moduleScore.get(language).get(level).get(module);
+	}
+	return 0;
+};
 
 const getCurrentLangChoices = () => languageChoices;
 
