@@ -1,8 +1,8 @@
 /* eslint-disable import/no-cycle */
 import {
-    getLevelCompletion,
     getModuleScore,
     setModuleScore,
+    getTotalLevelCorrectAnswers,
 } from './localStorage.js';
 import {
     renderLevelsPage,
@@ -16,8 +16,8 @@ import {
 } from './appUIFuncs.js';
 import {
     organizedQuestionsMap,
-    setTotalQuestion,
-    getTotalQuestion,
+    setTotalQuestionInModule,
+    getTotalQuestionInModule,
     getAnswerSelected,
     fetchLinks,
     pushLinks,
@@ -50,25 +50,23 @@ class UserLangChoice {
         renderLevelsPage(this.language);
 
         for (const [levelKey, levelValue] of organizedQuestionsMap.get(this.language)) {
-            let questionsCount = 0;
+            let totalQuestionsInLevel = 0;
 
             for (const [moduleKey, moduleValue] of levelValue) {
-                questionsCount += moduleValue.length;
+                totalQuestionsInLevel += moduleValue.length;
             }
-
             renderLevelBoxes({
                 language: this.language,
                 level: levelKey,
-                completion: getLevelCompletion(this.language, levelKey),
-                questionsCount,
+                completion: totalQuestionsInLevel ? Math.round((getTotalLevelCorrectAnswers(this.language, levelKey) / totalQuestionsInLevel) * 100) : 0,
+                totalQuestionsInLevel,
             });
         }
     }
 
     modulesPage(level) {
         const modules = organizedQuestionsMap.get(this.language).get(level);
-        const totalQuestion = modules.get('module-01').length;
-        if (totalQuestion) {
+        if (modules.get('module-01').length) {
             renderModulesPage(this.language, level);
 
             for (const [moduleKey, moduleValue] of modules) {
@@ -80,7 +78,7 @@ class UserLangChoice {
                         language: this.language,
                         level,
                         module: moduleKey,
-                        totalQuestion,
+                        totalQuestionInModule: moduleValue.length,
                     }),
                 });
             }
@@ -90,7 +88,7 @@ class UserLangChoice {
 
     async questionPage(moduleNumber, level) {
         const questions = shuffle(organizedQuestionsMap.get(this.language).get(level).get(`module-${moduleNumber}`));
-        setTotalQuestion(questions.length);
+        setTotalQuestionInModule(questions.length);
         renderQuestionPage({
             language: this.language,
             level,
@@ -105,13 +103,13 @@ class UserLangChoice {
             setQuestionSection(i + 1);
             this.setQuestion(i + 1);
         });
-        setCurrentQuestionNumber(1, getTotalQuestion());
+        setCurrentQuestionNumber(1, getTotalQuestionInModule());
         setSocialHandles(fetchLinks(1)[0], fetchLinks(1)[1]);
         initSwipe();
     }
 
     setQuestion(questionNumber) {
-        if (questionNumber < 1 || questionNumber > getTotalQuestion()) return;
+        if (questionNumber < 1 || questionNumber > getTotalQuestionInModule()) return;
         // setCurrentQuestion(questionNumber);
         const {
             questions,
@@ -165,7 +163,7 @@ class UserLangChoice {
             language: this.language,
             level: this.level,
             moduleNumber: this.moduleNumber,
-            totalQuestion: getTotalQuestion(),
+            totalQuestion: getTotalQuestionInModule(),
             timeSpent: getTimeSpent(),
             correctAnswersCount: this.correctAnswers.length,
             incorrectAnswersCount: this.incorrectAnswers.length,

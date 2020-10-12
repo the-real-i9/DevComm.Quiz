@@ -1,7 +1,7 @@
 import questions from './questionsDatabase.js';
 import {
     organizedQuestionsMap,
-    setTotalQuestion,
+    setTotalQuestionInModule,
     setCurrentQuestion,
     deleteAnswersData,
     deleteLinksData,
@@ -35,6 +35,7 @@ const organizeQuestions = (langChoices) => {
                 .get(langChoice)
                 .set(level, new Map());
             const questionsInTens = chunkToTens(questions[level], langChoice);
+
 
             for (let i = 0; i < questionsInTens.length; i++) {
                 const modules = organizedQuestionsMap
@@ -86,7 +87,7 @@ const shuffle = (array) => {
 };
 
 const removeSessionData = () => {
-    setTotalQuestion(null);
+    setTotalQuestionInModule(null);
     setCurrentQuestion(null);
     deleteAnswersData();
     deleteLinksData();

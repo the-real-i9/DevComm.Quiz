@@ -1,6 +1,5 @@
 let languageChoices = [];
 let username = 'Dev';
-const levelCompletion = new Map();
 const moduleScore = new Map();
 
 const setCurrentLangChoices = (langChoices) => {
@@ -14,27 +13,6 @@ const setUsername = (name) => {
 	localStorage.setItem('dev-name', name);
 };
 
-const setLevelCompletion = ({
-	language,
-	level,
-	compValue,
-}) => {
-	if (!levelCompletion.has(language)) levelCompletion.set(language, new Map());
-	levelCompletion.get(language).set(level, compValue);
-
-	const serialized = JSON.stringify(
-		[...levelCompletion],
-		(key, value) => {
-			if ({}.toString.call(value) === '[object Map]') return [...value];
-			return value;
-		},
-	);
-	localStorage.setItem('level-completions', serialized);
-};
-
-const getLevelCompletion = (language, level) => (levelCompletion.get(language) &&
-		levelCompletion.get(language).get(level)) ||
-	0;
 
 const setModuleScore = ({
 	language,
@@ -60,10 +38,19 @@ const getModuleScore = ({
 	language,
 	level,
 	module,
-	totalQuestion,
+	totalQuestionInModule,
 }) => {
 	const value = moduleScore?.get(language)?.get(level)?.get(module);
-	return value ? Math.round((value / totalQuestion) * 100) : 0;
+	return value ? Math.round((value / totalQuestionInModule) * 100) : 0;
+};
+
+const getTotalLevelCorrectAnswers = (language, level) => {
+	const moduleKey_correctAnswerLength = moduleScore?.get(language)?.get(level);
+	if (moduleKey_correctAnswerLength) {
+		const total = [...moduleKey_correctAnswerLength.values()].reduce((a, b) => a + b);
+		return total;
+	}
+	return 0;
 };
 
 const getCurrentLangChoices = () => languageChoices;
@@ -79,4 +66,5 @@ export {
 	getLevelCompletion,
 	setModuleScore,
 	getModuleScore,
+	getTotalLevelCorrectAnswers,
 };

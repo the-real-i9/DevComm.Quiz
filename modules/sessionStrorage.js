@@ -2,8 +2,9 @@ const organizedQuestionsMap = new Map();
 let previousLangChoices = [];
 const answersSelected = new Map();
 let currentQuestion = null;
-let totalQuestion = null;
+let totalQuestionInModule = null;
 const quLinks = new Map();
+
 const pushLinks = (github, twitter, questionNumber) => {
     quLinks.set(`question-${questionNumber}-links`, [github, twitter]);
 };
@@ -31,11 +32,11 @@ const setCurrentQuestion = (currentQuestionNumber) => {
 
 const getCurrentQuestion = () => currentQuestion;
 
-const setTotalQuestion = (totalQuestionCount) => {
-    totalQuestion = totalQuestionCount;
+const setTotalQuestionInModule = (totalQuestionCountInModule) => {
+    totalQuestionInModule = totalQuestionCountInModule;
 };
 
-const getTotalQuestion = () => totalQuestion;
+const getTotalQuestionInModule = () => totalQuestionInModule;
 
 const getAnswersSize = () => answersSelected.size;
 
@@ -52,8 +53,8 @@ export {
     getAnswerSelected,
     setCurrentQuestion,
     getCurrentQuestion,
-    setTotalQuestion,
-    getTotalQuestion,
+    setTotalQuestionInModule,
+    getTotalQuestionInModule,
     deleteAnswersData,
     getAnswersSize,
     deleteAnswerItem,

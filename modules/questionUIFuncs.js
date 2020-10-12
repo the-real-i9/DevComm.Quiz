@@ -21,7 +21,7 @@ import {
     saveAnswerSelected,
     getAnswersSize,
     deleteAnswerItem,
-    getTotalQuestion,
+    getTotalQuestionInModule,
     fetchLinks,
 } from './sessionStrorage.js';
 import {
@@ -89,7 +89,7 @@ const implementOptions = (questionType, options, questionNumber) => {
                 }
             }
             setProp(select('#ans-count'), 'textContent', getAnswersSize());
-            setProp(select('#rem-count'), 'textContent', getTotalQuestion() - getAnswersSize());
+            setProp(select('#rem-count'), 'textContent', getTotalQuestionInModule() - getAnswersSize());
         });
         const optionBoxWidth = option.getBoundingClientRect().width;
         const optionTextWidth = firstChild.getBoundingClientRect().width;
@@ -125,7 +125,7 @@ const initSwipe = () => {
 // change on-swipe
     const swiper = new Swipe('.swiper-container');
     swiper.on('slideChange', function updateCurrentQuestion() {
-        setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestion());
+        setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestionInModule());
         setSocialHandles(fetchLinks(this.activeIndex + 1)[0], fetchLinks(this.activeIndex + 1)[1]);
     });
 };
