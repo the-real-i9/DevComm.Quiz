@@ -13,6 +13,7 @@ import {
     getCurrentLangChoices,
     getUsername,
     setCurrentLangChoices,
+    setUsername,
 } from './localStorage.js';
 import {
     setPreviousLangChoices,
@@ -44,6 +45,9 @@ const {
     pagesContainer,
     langChoicesModal,
     availableLangsContainer,
+    nameSetModal,
+    nameInput,
+    setNameBtn,
 } = DOMElems;
 
 const hidePage = () => {
@@ -140,10 +144,45 @@ const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
     // after rendering, set the previous LC to currentLC
 };
 
+const showNameChangeModal = async () => {
+    nameInput.value = getUsername();
+    await setStyle(nameSetModal, 'display', 'flex');
+    setTimeout(() => {
+        classAction(nameSetModal, 'add', 'drop');
+    }, 2);
+};
+
+const adjustDevNameSize = () => {
+    const devNameElem = select('#dev-name');
+    const nameWidth = devNameElem.getBoundingClientRect().width;
+    if (nameWidth > 160) {
+        setStyle(devNameElem, 'fontSize', `${32 / 1.4}px`);
+        devNameElem.style.setProperty('--stroke-width', '1px');
+    } else {
+        setStyle(devNameElem, 'fontSize', '32px');
+        devNameElem.style.setProperty('--stroke-width', '1.5px');
+    }
+};
+
+const setDevName = () => {
+    const devName = nameInput.value;
+    if (!devName) return;
+    setUsername(devName);
+    setProp(select('#dev-name'), 'textContent', devName);
+    classAction(nameSetModal, 'remove', 'drop');
+    adjustDevNameSize();
+    setTimeout(() => {
+        setStyle(nameSetModal, 'display', 'none');
+    }, 150);
+};
+
 const renderHomePage = () => {
     setProp(pagesContainer, 'innerHTML', homePageHtml(getUsername()));
     renderLanguageChoices(getCurrentLangChoices(), getPreviousLangChoices());
     event(select('#add-lang-btn'), 'click', displayLangChoicesModal);
+    event(select('#edit-nickname'), 'click', showNameChangeModal);
+    event(setNameBtn, 'click', setDevName);
+    adjustDevNameSize();
 };
 
 const langsChosenOnSave = () => {

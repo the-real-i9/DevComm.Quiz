@@ -39,7 +39,7 @@ a:link:hover {
     text-decoration: underline;
 }
 
-*:not(a) {
+*:not(a):not(input) {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -175,13 +175,14 @@ a:link:hover {
         z-index: 1;
         left: 0;
         right: 0;
-        top: 15%;
+        top: 5%;
         margin: 0 auto;
         width: 200px;
         background: #fff;
         border-radius: 10px;
         box-shadow: 0px 0px 4px rgba(#000, 0.17);
         padding: 7px 10px 10px;
+        transition: top .15s linear;
         @include flex(null, null, column);
         display: none;
 
@@ -239,6 +240,9 @@ a:link:hover {
             color: #fff;
             border-radius: 3px;
         }
+    }
+    .name-set-modal.drop {
+        top: 10%;
     }
 
     .languages-modal {

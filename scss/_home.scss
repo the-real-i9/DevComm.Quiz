@@ -39,11 +39,12 @@ div.home {
             font-weight: weight(regular);
             font-size: 30px;
         }
-        span#firstname {
-            color: $deep-orange;
-            -webkit-text-stroke: 1.5px;
-            -webkit-text-stroke-color: #000;
+        span#dev-name {
+            --stroke-width: 1.5px;
             font-size: 32px;
+            color: $deep-orange;
+            -webkit-text-stroke: var(--stroke-width);
+            -webkit-text-stroke-color: #000;
         }
         i#edit-nickname {
             cursor: pointer;

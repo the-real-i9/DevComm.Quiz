@@ -43,7 +43,7 @@ a:link:hover {
   text-decoration: underline;
 }
 
-*:not(a) {
+*:not(a):not(input) {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -264,7 +264,7 @@ a:link:hover {
   z-index: 1;
   left: 0;
   right: 0;
-  top: 15%;
+  top: 5%;
   margin: 0 auto;
   width: 200px;
   background: #fff;
@@ -272,6 +272,8 @@ a:link:hover {
   -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
   padding: 7px 10px 10px;
+  -webkit-transition: top .15s linear;
+  transition: top .15s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,6 +340,10 @@ a:link:hover {
   font-weight: 500;
   color: #fff;
   border-radius: 3px;
+}
+
+.container .name-set-modal.drop {
+  top: 10%;
 }
 
 .container .languages-modal {
@@ -517,11 +523,12 @@ div.home #greet span:first-child {
   font-size: 30px;
 }
 
-div.home #greet span#firstname {
-  color: #e1543c;
-  -webkit-text-stroke: 1.5px;
-  -webkit-text-stroke-color: #000;
+div.home #greet span#dev-name {
+  --stroke-width: 1.5px;
   font-size: 32px;
+  color: #e1543c;
+  -webkit-text-stroke: var(--stroke-width);
+  -webkit-text-stroke-color: #000;
 }
 
 div.home #greet i#edit-nickname {
