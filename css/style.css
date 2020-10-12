@@ -1094,8 +1094,8 @@ div.quiz-levels-page .levels-section .level-box .level-bottom-text p:first-child
     stroke: #f5d3ac;
     stroke-dasharray: 160;
     stroke-dashoffset: 160;
-    -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.23, 1, 0.32, 1);
-    transition: stroke-dashoffset 1s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: stroke-dashoffset 1.25s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: stroke-dashoffset 1.25s cubic-bezier(0.23, 1, 0.32, 1);
   }
   div.quiz-levels-page .levels-section .level-box:nth-child(1) .comp-div circle:last-child {
     stroke-dashoffset: calc(160 - (160 * 0) / 100);
@@ -1209,15 +1209,403 @@ div.quiz-modules-page .modules-section .module-box .start-module-btn {
   font-weight: 600;
 }
 
-div.quiz-modules-page .modules-section .module-box.pass .module-score {
-  color: #d3a507;
-}
-
-div.quiz-modules-page .modules-section .module-box.fail .module-score {
+div.quiz-modules-page .modules-section .module-score.score-1 {
   color: #f11010;
 }
 
-div.quiz-modules-page .modules-section .module-box.excel .module-score {
+div.quiz-modules-page .modules-section .module-score.score-2 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-3 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-4 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-5 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-6 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-7 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-8 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-9 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-10 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-11 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-12 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-13 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-14 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-15 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-16 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-17 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-18 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-19 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-20 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-21 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-22 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-23 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-24 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-25 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-26 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-27 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-28 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-29 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-30 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-31 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-32 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-33 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-34 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-35 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-36 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-37 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-38 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-39 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-40 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-41 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-42 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-43 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-44 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-45 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-46 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-47 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-48 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-49 {
+  color: #f11010;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-50 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-51 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-52 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-53 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-54 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-55 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-56 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-57 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-58 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-59 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-60 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-61 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-62 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-63 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-64 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-65 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-66 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-67 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-68 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-69 {
+  color: #d3a507;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-70 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-71 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-72 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-73 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-74 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-75 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-76 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-77 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-78 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-79 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-80 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-81 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-82 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-83 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-84 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-85 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-86 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-87 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-88 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-89 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-90 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-91 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-92 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-93 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-94 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-95 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-96 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-97 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-98 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-99 {
+  color: #2e996d;
+}
+
+div.quiz-modules-page .modules-section .module-score.score-100 {
   color: #2e996d;
 }
 

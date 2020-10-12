@@ -62,8 +62,6 @@ export {
 	getCurrentLangChoices,
 	setUsername,
 	getUsername,
-	setLevelCompletion,
-	getLevelCompletion,
 	setModuleScore,
 	getModuleScore,
 	getTotalLevelCorrectAnswers,

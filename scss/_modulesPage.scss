@@ -46,18 +46,18 @@ div.quiz-modules-page {
                     font-weight: weight(semibold);
             }
         }
-        .module-box.pass {
-            .module-score {
-                color: #d3a507;
-            }
-        }
-        .module-box.fail {
-            .module-score {
+        @for $i from 1 through 49 {
+            .module-score.score-#{$i} {
                 color: #f11010;
             }
         }
-        .module-box.excel {
-            .module-score {
+        @for $i from 50 through 69 {
+            .module-score.score-#{$i} {
+                color: #d3a507;
+            }
+        }
+        @for $i from 70 through 100 {
+            .module-score.score-#{$i} {
                 color: $green;
             }
         }

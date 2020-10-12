@@ -89,7 +89,7 @@ const moduleBoxHtml = ({
 }) => `
 <div class="module-box" id='module-${moduleNumber}-box'>
     <p class='module-num'>Module ${moduleNumber}</p>
-    <p class='module-score' id='module-${moduleNumber}-score'>Score: ${moduleScore}%</p>
+    <p class='module-score score-${moduleScore}' id='module-${moduleNumber}-score'>Score: ${moduleScore}%</p>
     <button class='start-module-btn' id='module-${moduleNumber}-start'>Start</button>
 </div>
 `;
@@ -100,7 +100,6 @@ const questionPageHtml = ({
     level,
     moduleNumber,
     totalQuestion,
-    questionNumber,
 }) => `
 <div class="quiz-question-page" id='lang-${language}-${level}-module-${moduleNumber}'>
     <i id='big-lang-icon' class='devicon-${language}-plain'></i>
@@ -199,7 +198,7 @@ const solutionPageHtml = ({
         <div class='back-page-btn' id="back-to-modules">Back</div>
         <div class="center-text">
             <p id='lang-solution-title'>Solution <span>(${formatLangTextDevFriendly(language)})</span></p>
-            <p id='level-module'>${formatLangTextDevFriendly(level)}: Module ${moduleNumber}</p>
+            <p id='level-module'>${formatLangTextDevFriendly(level === 'intermediate' ? 'intermed' : level)}: Module ${moduleNumber}</p>
         </div>
         <div></div>
     </div>
