@@ -14,9 +14,9 @@ import {
 } from './localStorage.js';
 import restoreApp from './restore.js';
 
-const audio = new Audio('../audio/MBB - Happy (Vlog No Copyright Music).mp3');
+const audio = new Audio('../audio/music.mp3');
 audio.loop = true;
-audio.volume = 0.2;
+audio.volume = 1;
 const startApp = () => {
     restoreApp();
     renderAvailableLangs(getAvailableLangs());
