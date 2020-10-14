@@ -51,7 +51,6 @@ const organizeQuestions = (langChoices) => {
         }
     }
 
-    console.log(organizedQuestionsMap);
 };
 
 const getAvailableLangs = () => {

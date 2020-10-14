@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 // /* eslint-disable no-undef */
+import Swipe from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js';
 import {
     insertHtml,
     setProp,
@@ -30,7 +31,6 @@ import {
     grabLinkAddress,
     grabLinkName,
 } from './appEngineFuncs.js';
-import Swipe from './swiper-bundle.esm.browser.min.js';
 
 const setQuestionSection = (questionNumber) => {
     insertHtml(select('.question-section-container'), 'beforeend', questionSectionHtml(questionNumber));

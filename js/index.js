@@ -23,3 +23,15 @@ event(select('#add-lang-btn'), 'click', displayLangChoicesModal);
 }));
 
 event(saveChoicesBtn, 'click', langsChosenOnSave);
+
+window.addEventListener('load', () => {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../sw.js')
+        .then((sw) => {
+            console.log('SW Registration Success');
+        })
+        .catch((err) => {
+            console.log('SW Registration Failed');
+        });
+    }
+});
