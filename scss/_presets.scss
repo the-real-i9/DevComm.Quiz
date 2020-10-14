@@ -9,10 +9,38 @@ html, body {
     width: 100%;
     height: 100%;
     @include laptop {
-        background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
+        // background-image: linear-gradient(to top right, #FFF4E6, #FFF0DE);
+        position: relative;
+        
+        .sorry-notif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            @include flex(center, center, column);
+            font-size: 40px;
+            font-weight: weight(light);
+            p {
+                max-width: 60%;
+                text-align: center;
+                color: $deep-orange;
+            }
+        }
     }
-
+    @include mobile {
+        .sorry-notif {
+            display: none;
+        }
+    }
 }
+@include laptop {
+    #container {
+        display: none !important;
+    }
+}
+
 
 .back-page-btn {
     max-width: 70px;
@@ -168,6 +196,34 @@ a:link:hover {
         @include flex(center, center);
         border: 2px solid;
         border-radius: 50%;
+    }
+
+    #install-app-btn {
+        position: fixed;
+        bottom: -42px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 5px 5px 0 0;
+        @include flex(null, center);
+        border: none;
+        outline: none;
+        padding: 3px 10px;
+        width: 90%;
+        img {
+            width: 35px;
+            height: 35px;
+        }
+        p {
+            font-size: 13px;
+            margin-left: 10px;
+        }
+        background: rgb(235, 235, 235);
+        transition: bottom .15s linear;
+        display: none;
+        &.show {
+            bottom: 0;
+        }
     }
 
     .name-set-modal {

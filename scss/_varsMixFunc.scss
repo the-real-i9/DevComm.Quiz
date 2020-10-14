@@ -6,13 +6,13 @@ $cream: #f5d3ac;
 $green: #2e996d;
 $colBoxFontColor: #faf4ed;
 @mixin laptop {
-    @media (min-width: 600px) {
+    @media (min-width: 769px) {
         @content;
     }
 }
 
 @mixin mobile {
-    @media (max-width: 599px) {
+    @media (max-width: 768px) {
         @content;
     }
 }

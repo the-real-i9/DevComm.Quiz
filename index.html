@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+    <title>DevComm. Quiz</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gradient-light.min.css">
@@ -14,13 +14,21 @@
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="sorry-notif">
+        <img src="./img/img-192.png" alt="">
+        <p>Sorry...&#x1f62d; Coming Soon for Large Devices</p>
+    </div>
+    <div id='container' class="container">
         <i id='sound' class="fas fa-music"></i>
         <div class="load-anim" id="outer">
             <div class="load-anim" id="middle">
                 <div class="load-anim" id="inner"></div>
             </div>
         </div>
+        <button id='install-app-btn'>
+            <img src="./img/img-192.png" alt="">
+            <p>Add to HomeScreen</p>
+        </button>
         <div class="name-set-modal">
             <p>Name</p>
             <input type="text" id="name-input">

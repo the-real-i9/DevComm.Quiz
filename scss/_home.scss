@@ -1,31 +1,11 @@
 div.home {
     width: 100%;
-        .logo {
-            margin-top: 37px;
-            font: {
-                size: 50px;
-                weight: weight(bold);
-            }
-            @include mobile {
-                font-size: 33px;
-                margin-top: 13px;
-            }
-            span {
-                text-shadow: 0 2px 0 black;
-            }
-            span:first-child {
-                color: $deep-orange;
-            }
-            span:last-child {
-                color: $cream;
-            }
-        }
     #greet {
         margin-top: 25px;
         line-height: 34px;
         @include mobile {
             line-height: 27px;
-            margin-top: 13px;
+            margin-top: 60px;
         }
         font: {
             weight: weight(bold);
@@ -37,11 +17,11 @@ div.home {
         }
         span:first-child {
             font-weight: weight(regular);
-            font-size: 30px;
+            font-size: 35px;
         }
         span#dev-name {
             --stroke-width: 1.5px;
-            font-size: 32px;
+            font-size: 35px;
             color: $deep-orange;
             -webkit-text-stroke: var(--stroke-width);
             -webkit-text-stroke-color: #000;
@@ -60,7 +40,7 @@ div.home {
         }
     }
 
-    & > p {
+    #greet + p {
         margin-top: 10px;
         font-weight: weight(semibold);
 

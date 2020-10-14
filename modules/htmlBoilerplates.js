@@ -3,9 +3,8 @@ import {
 } from './appEngineFuncs.js';
 
 const homePageHtml = (name) => `
-<div style="display: nne;" class="home">
-    <p class="logo"><span><</span>?<span>></span></p>
-    <p id='greet'><span id="greeting">Hi,</span><br><span id="dev-name">${name}</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
+<div class="home">
+    <p id='greet'><span id="greeting">Hi,&#x1f44b;</span><br><span id="dev-name">${name}</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
     <p>Choose a Language</p>
 
     <div class='langs-section'>
@@ -175,7 +174,7 @@ const optionHtml = (optionNumber, optionValue) => `
 `;
 
 const socialHandlesHtml = (smName, linkAddress, linkName) => `
-    <p><a href="${linkAddress}" target='_blank'><i class="fab fa-${smName}"></i></a><a href="${linkAddress}" target='_blank'>by <span id="${smName}-link-nick">${linkName}</span></a></p>
+    <p><a href="${linkAddress}" target='_blank'><i class="fab fa-${smName}"></i></a><a href="${linkAddress}" target='_blank'><span id="${smName}-link-nick">${linkName}</span></a></p>
 `;
 
 const solutionPageHtml = ({

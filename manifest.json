@@ -1,6 +1,6 @@
 {
-    "name": "Dev Comm. Quiz",
-    "short_name": "Dev Quiz",
+    "name": "DevComm. Quiz",
+    "short_name": "DevComm. Quiz",
     "start_url": "./index.html?from=homescreen",
     "display": "standalone",
     "background_color": "#fff",

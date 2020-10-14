@@ -48,6 +48,7 @@ const {
     nameSetModal,
     nameInput,
     setNameBtn,
+    a2hBtn,
 } = DOMElems;
 
 const hidePage = () => {
@@ -67,6 +68,21 @@ const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'blo
 const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
 
 const emptyPagesContainer = () => setProp(pagesContainer, 'innerHTML', '');
+
+const showA2HBtn = () => {
+    setStyle(a2hBtn, 'display', 'flex');
+    setTimeout(() => {
+        classAction(a2hBtn, 'add', 'show');
+    }, 2);
+};
+
+const hideA2HBtn = () => {
+    classAction(a2hBtn, 'remove', 'show');
+    setTimeout(() => {
+        setStyle(a2hBtn, 'display', 'none');
+    }, 150);
+};
+
 
 let min = 0;
 let sec = 1;
@@ -156,10 +172,10 @@ const adjustDevNameSize = () => {
     const devNameElem = select('#dev-name');
     const nameWidth = devNameElem.getBoundingClientRect().width;
     if (nameWidth > 160) {
-        setStyle(devNameElem, 'fontSize', `${32 / 1.4}px`);
+        setStyle(devNameElem, 'fontSize', `${35 / 1.4}px`);
         devNameElem.style.setProperty('--stroke-width', '1px');
     } else {
-        setStyle(devNameElem, 'fontSize', '32px');
+        setStyle(devNameElem, 'fontSize', '35px');
         devNameElem.style.setProperty('--stroke-width', '1.5px');
     }
 };
@@ -291,4 +307,6 @@ export {
     renderQuestionPage,
     renderSolutionPage,
     getTimeSpent,
+    showA2HBtn,
+    hideA2HBtn,
 };

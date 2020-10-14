@@ -7,6 +7,7 @@ const DOMElems = {
     nameSetModal: select('.name-set-modal'),
     nameInput: select('#name-input'),
     setNameBtn: select('#set-name'),
+    a2hBtn: select('#install-app-btn'),
 };
 
 export default DOMElems;

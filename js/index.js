@@ -10,6 +10,7 @@ import {
     selectAll,
 } from '../modules/DOMFuncs.js';
 import DOMElems from '../modules/DOMElems.js';
+import askIntall from '../modules/A2HS.js';
 
 const {
     saveChoicesBtn,
@@ -35,3 +36,5 @@ window.addEventListener('load', () => {
         });
     }
 });
+
+askIntall();
