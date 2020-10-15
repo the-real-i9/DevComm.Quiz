@@ -33,6 +33,7 @@ html, body {
         .sorry-notif {
             display: none;
         }
+        overflow: hidden;
     }
 }
 @include laptop {
@@ -228,7 +229,7 @@ a:link:hover {
 
     .name-set-modal {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         left: 0;
         right: 0;
         top: 5%;
@@ -245,11 +246,10 @@ a:link:hover {
         div:empty {
             z-index: -1;
             position: absolute;
-            top: -100%;
-            right: -30%;
-            bottom: -400%;
-            left: -100%;
-            // background:red;
+            top: -100vh;
+            right: -100vw;
+            bottom: -100vh;
+            left: -100vw;
         }
 
         &::before {
@@ -260,7 +260,6 @@ a:link:hover {
             background: #fff;
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
             bottom: 100.5%;
-            left: 25px;
         }
         &::after {
             position: absolute;

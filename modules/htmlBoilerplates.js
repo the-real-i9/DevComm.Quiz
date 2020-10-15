@@ -4,7 +4,7 @@ import {
 
 const homePageHtml = (name) => `
 <div class="home">
-    <p id='greet'><span id="greeting">Hi,&#x1f44b;</span><br><span id="dev-name">${name}</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
+    <p id='greet'><span id="greeting">Hi,<span id='handwave'>&#x1f44b;</span></span><br><span id="dev-name">${name}</span><i id='edit-nickname' class="fas fa-paint-brush fa-fw"></i></p>
     <p>Choose a Language</p>
 
     <div class='langs-section'>

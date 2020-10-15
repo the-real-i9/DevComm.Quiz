@@ -18,6 +18,12 @@ div.home {
         span:first-child {
             font-weight: weight(regular);
             font-size: 35px;
+            // font-stretch: extra-condensed;
+
+            #handwave {
+                font-size: 27px;
+                vertical-align: 4px;
+            }
         }
         span#dev-name {
             --stroke-width: 1.5px;
