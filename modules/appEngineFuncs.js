@@ -116,12 +116,12 @@ const formatCodeForHtml = (code) => {
 };
 
 const grabLinkAddress = (str) => {
-    const address = /\[(.+)\]/gu.exec(str) ? /\[(.+)\]/gu.exec(str)[1] : null;
+    const address = /\((.+)\)/gu.exec(str) ? /\((.+)\)/gu.exec(str)[1] : null;
     return address;
 };
 
 const grabLinkName = (str) => {
-    const name = /\((.+)\)/gu.exec(str) ? /\((.+)\)/gu.exec(str)[1] : null;
+    const name = /\[(.+)\]/gu.exec(str) ? /\[(.+)\]/gu.exec(str)[1] : null;
     return name;
 };
 
