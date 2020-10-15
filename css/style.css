@@ -360,6 +360,15 @@ a:link:hover {
   display: none;
 }
 
+.container .name-set-modal div:empty {
+  z-index: -1;
+  position: absolute;
+  top: -100%;
+  right: -30%;
+  bottom: -400%;
+  left: -100%;
+}
+
 .container .name-set-modal::before {
   position: absolute;
   content: '';

@@ -242,6 +242,16 @@ a:link:hover {
         @include flex(null, null, column);
         display: none;
 
+        div:empty {
+            z-index: -1;
+            position: absolute;
+            top: -100%;
+            right: -30%;
+            bottom: -400%;
+            left: -100%;
+            // background:red;
+        }
+
         &::before {
             position: absolute;
             content: '';

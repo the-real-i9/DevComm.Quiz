@@ -160,9 +160,9 @@ const renderLanguageChoices = (currentLangChoices, previousLangChoices) => {
     // after rendering, set the previous LC to currentLC
 };
 
-const showNameChangeModal = async () => {
+const showNameChangeModal = () => {
     nameInput.value = getUsername();
-    await setStyle(nameSetModal, 'display', 'flex');
+    setStyle(nameSetModal, 'display', 'flex');
     setTimeout(() => {
         classAction(nameSetModal, 'add', 'drop');
     }, 2);
@@ -180,17 +180,23 @@ const adjustDevNameSize = () => {
     }
 };
 
+const hideNameSetModal = () => {
+    classAction(nameSetModal, 'remove', 'drop');
+    setTimeout(() => {
+        setStyle(nameSetModal, 'display', 'none');
+    }, 150);
+};
+
 const setDevName = () => {
     const devName = nameInput.value;
     if (!devName) return;
     setUsername(devName);
     setProp(select('#dev-name'), 'textContent', devName);
-    classAction(nameSetModal, 'remove', 'drop');
     adjustDevNameSize();
-    setTimeout(() => {
-        setStyle(nameSetModal, 'display', 'none');
-    }, 150);
+    hideNameSetModal();
 };
+
+event(select('.name-set-modal div:empty'), 'click', hideNameSetModal);
 
 const renderHomePage = () => {
     setProp(pagesContainer, 'innerHTML', homePageHtml(getUsername()));
@@ -214,6 +220,7 @@ const renderLevelsPage = (language) => {
     setProp(pagesContainer, 'innerHTML', levelsPageHtml(language));
     event(select('#back-to-home'), 'click', renderHomePage);
     setPreviousLangChoices([]);
+    hideA2HBtn();
 };
 // language, levelTitle, completion, questionsCount === details format
 const renderLevelBoxes = async (detailsObject) => {
