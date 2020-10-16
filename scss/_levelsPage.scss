@@ -7,10 +7,10 @@ div.quiz-levels-page {
             @include flex(center, center);
             color: $deep-orange;
             font-weight: weight(semibold);
-            margin-right: 15px;
             cursor: pointer;
         }
         .center-text {
+            flex: 3;
             text-align: center;
             p:first-child {
                 text-transform: capitalize;
@@ -152,7 +152,8 @@ div.quiz-levels-page {
     
             }
             div:empty {
-                width: 23%;
+                // width: 23%;
+                flex: 1;
             }
             
             .center-text {
@@ -179,7 +180,7 @@ div.quiz-levels-page {
 
             .level-box {
                 width: 97%;
-                height: 190px;
+                height: 200px;
                 border-radius: 14px;
                 margin: 0 auto;
                 margin-bottom: 10px;
@@ -187,7 +188,7 @@ div.quiz-levels-page {
                 // background-size: 155px;
 
                 @include mobile {
-                    background-image: radial-gradient(110px 110px at top center, $deep-orange, $deep-orange 100px, 100px, #fff 105px, 105px, $cream);
+                    background-image: radial-gradient(110px 110px at top center, $deep-orange, $deep-orange calc(100px - 1px), transparent 100px, #fff calc(105px - 1px), $cream 105px);
                 }
                 .comp-div {
                     width: 60px;

@@ -44,7 +44,7 @@ html, body {
 
 
 .back-page-btn {
-    max-width: 70px;
+    max-width: 65px;
 }
 
 button {
@@ -260,6 +260,7 @@ a:link:hover {
             background: #fff;
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
             bottom: 100.5%;
+            left: 25px;
         }
         &::after {
             position: absolute;
@@ -399,14 +400,18 @@ a:link:hover {
             @include flex(null, null, column);
         }
         & > :not(.quiz-question-page):not(.quiz-solution-page) {
-            background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px,
-            url(../img/cream.svg) no-repeat 150% 155%/350px,
-            url(../img/orange.svg) no-repeat -50px 125%/350px;
+            // background: url(../img/deep-orange.svg) no-repeat 60% 165%/350px,
+            // url(../img/cream.svg) no-repeat 150% 155%/350px,
+            // url(../img/orange.svg) no-repeat -50px 125%/350px;
             
             @include mobile {
-                background: url(../img/deep-orange.svg) no-repeat 15vw 90vh/230px,
-                url(../img/cream.svg) no-repeat 50vw 92vh/250px,
-                url(../img/orange.svg) no-repeat -30vw 80vh/250px;
+                // background: url(../img/deep-orange.svg) no-repeat 15vw 90vh/230px,
+                // url(../img/cream.svg) no-repeat 50vw 92vh/250px,
+                // url(../img/orange.svg) no-repeat -30vw 80vh/250px;
+                background: radial-gradient(100px, $deep-orange, $deep-orange calc(100px - 1px), transparent 100px) center 55vh,
+                radial-gradient(100px, #000, #000 calc(100px - 1px), transparent 100px) -30vw 45vh,
+                radial-gradient(100px, $cream, $cream calc(100px - 1px), transparent 100px) 37vw 57vh;
+                background-repeat: no-repeat;
             }
         }
     }

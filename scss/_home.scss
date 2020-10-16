@@ -35,6 +35,7 @@ div.home {
         i#edit-nickname {
             cursor: pointer;
             color: $cream;
+            vertical-align: 3px;
             @include laptop {
                 color: silver;
                 &:hover {
@@ -65,8 +66,7 @@ div.home {
         
         @include mobile {
             margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            @include flex();
         }
 
 
@@ -82,11 +82,11 @@ div.home {
             margin-bottom: 10px;
                         
             @include mobile {
-                width: 97%;
-                height: 190px;
+                max-width: 49%;
+                height: 200px;
                 border-radius: 14px;
-                margin: 0 auto;
                 margin-bottom: 10px;
+                flex: 1;
             }
             
             
@@ -95,7 +95,7 @@ div.home {
             }
 
             @include mobile {
-                background-image: radial-gradient(120px 120px at top center, $deep-orange, $deep-orange 100px, 100px, #fff 105px, 105px, $cream);
+                background-image: radial-gradient(120px 120px at top center, $deep-orange, $deep-orange calc(100px - 1px), transparent 100px, #fff calc(105px - 1px), $cream 105px);
             }
 
 

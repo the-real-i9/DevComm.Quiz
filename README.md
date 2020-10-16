@@ -1,8 +1,6 @@
 # DevComm. Quiz
 
-A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Goto [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.*
-
-The App is a PWA which you can install on your device.
+A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Goto [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
 
 *This App launched on*
 
@@ -39,8 +37,18 @@ The App is a PWA which you can install on your device.
 
 2. Click on **start** to proceed to take the quiz.
 
+3. Click on **RESET** to reset progress.
+
 **Quiz Page**
 ---
 1. You can relate with this, the only part I have to guide you is that, *you pay attention to what the question asks you to do.* It can either tell you to **choose an answer** or **choose all answers**. In the former case, you can only select a single answer, while in the latter you can select multiple answers.
 
 2. Click on the **Submit** button to proceed to the **Solution Page** 
+
+Visit [CONTRIBUTING.md](./CONTRIBUTING.md) to contribute question.
+
+*Note: There are various ways to contribute to this App, you'll see in the contributing page*
+
+Follow on [Twitter](https://twitter.com/Oluwarinolasam2)
+
+*Thanks!*

@@ -8,9 +8,9 @@ div.quiz-modules-page {
             @include flex(center, center);
             color: $deep-orange;
             font-weight: weight(semibold);
-            margin-right: 17px;
         }
         .center-text {
+            flex: 3;
             text-align: center;
             p:first-child {
                 text-transform: capitalize;
@@ -156,7 +156,8 @@ div.quiz-modules-page {
     
             }
             div:empty {
-                width: 23%;
+                // width: 23%;
+                flex: 1;
             }
             .center-text {
                 width: 54%;

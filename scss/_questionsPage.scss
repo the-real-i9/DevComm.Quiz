@@ -12,10 +12,11 @@ div.quiz-question-page {
             @include flex(center, center);
             color: $deep-orange;
             font-weight: weight(semibold);
-            margin-right: 15px;
+            // margin-right: 15px;
             cursor: pointer;
         }
         .center-text {
+            flex: 3;
             text-align: center;
             p:first-child {
                 text-transform: capitalize;
@@ -215,11 +216,34 @@ div.quiz-question-page {
         }
 
         p:nth-child(2) {
-            background: url(../img/deep-orange.svg) no-repeat 5px -40px/50px,
-                        $cream url(../img/deep-orange.svg) no-repeat right 5px bottom -40px/50px;
+            position: relative;
+            background: $cream;
             font-weight: weight(bold);
             color: #000;
             cursor: pointer;
+            overflow: hidden;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                left: 5px;
+                top: -40px;
+                background: $deep-orange;
+                
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                right: 5px;
+                bottom: -40px;
+                background: $deep-orange;
+                
+            }
         }
     }
 
@@ -411,7 +435,7 @@ div.quiz-question-page {
                 font-size: 13px;
             }
             div:empty {
-                width: 23%;
+                flex: 1;
             }
             
             .center-text {
@@ -553,11 +577,11 @@ div.quiz-question-page {
             bottom: 20px;
             width: 100%;
             p:empty:first-child {
-                width: 74.92px;
+                flex: 1;
             }
 
             p:empty:last-child {
-                width: 64.08px;
+                flex: 1;
             }
 
             p:not(:nth-child(2)) {
