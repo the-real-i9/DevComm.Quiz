@@ -176,11 +176,30 @@ div.quiz-modules-page {
             }
         }
 
+        #reset-level-progress {
+            margin: 80px auto 0;
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 3px;
+            height: 35px;
+            @include flex(center, center);
+            color: #fff;
+            background: $deep-orange;
+            box-shadow: 0 2px 4px rgba(#000, 0.17);
+            transition: all .15s linear;
+            
+            &:active {
+                box-shadow: 0 0 4px rgba(#000, 0.17);
+                transform: translateY(2.5px);
+            }
+        }
+
         .modules-section {
+            margin-top: 15px;
             padding: 0 5%;
             width: 100%;
-            margin-top: 90px;
-            @include flex(space-around);
+            @include flex(space-between);
 
             .module-box {
                 width: 135px;
@@ -209,6 +228,7 @@ div.quiz-modules-page {
 
                 &:empty {
                     opacity: 0;
+                    flex: 1;
                 }
             }
         }

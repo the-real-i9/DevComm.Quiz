@@ -75,6 +75,7 @@ const modulesPageHtml = (language, level) => `
         </div>
         <div></div>
     </div>
+    <div id="reset-level-progress">RESET MY PROGRESS</div>
     <div class="modules-section">
         
         <div class='module-box'></div>

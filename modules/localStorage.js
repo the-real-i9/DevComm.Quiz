@@ -13,6 +13,17 @@ const setUsername = (name) => {
 	localStorage.setItem('dev-name', name);
 };
 
+const storeScoreLocally = () => {
+	const serialized = JSON.stringify(
+		[...moduleScore],
+		(key, value) => {
+			if ({}.toString.call(value) === '[object Map]') return [...value];
+			return value;
+		},
+	);
+	localStorage.setItem('module-scores', serialized);
+};
+
 
 const setModuleScore = ({
 	language,
@@ -24,14 +35,7 @@ const setModuleScore = ({
 	moduleScore.get(language).set(level, new Map());
 	moduleScore.get(language).get(level).set(`module-${moduleNumber}`, moduleScoreValue);
 
-	const serialized = JSON.stringify(
-		[...moduleScore],
-		(key, value) => {
-			if ({}.toString.call(value) === '[object Map]') return [...value];
-			return value;
-		},
-	);
-	localStorage.setItem('module-scores', serialized);
+	storeScoreLocally();
 };
 
 const getModuleScore = ({
@@ -44,10 +48,15 @@ const getModuleScore = ({
 	return value ? Math.round((value / totalQuestionInModule) * 100) : 0;
 };
 
+const resetLevel = (language, level) => {
+	moduleScore?.get(language)?.get(level)?.clear();
+	storeScoreLocally();
+};
+
 const getTotalLevelCorrectAnswers = (language, level) => {
 	const moduleKey_correctAnswerLength = moduleScore?.get(language)?.get(level);
 	if (moduleKey_correctAnswerLength) {
-		const total = [...moduleKey_correctAnswerLength.values()].reduce((a, b) => a + b);
+		const total = [...moduleKey_correctAnswerLength.values()].reduce((a, b) => a + b, 0);
 		return total;
 	}
 	return 0;
@@ -65,4 +74,5 @@ export {
 	setModuleScore,
 	getModuleScore,
 	getTotalLevelCorrectAnswers,
+	resetLevel,
 };

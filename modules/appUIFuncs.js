@@ -12,6 +12,7 @@ import {
 import {
     getCurrentLangChoices,
     getUsername,
+    resetLevel,
     setCurrentLangChoices,
     setUsername,
 } from './localStorage.js';
@@ -243,6 +244,10 @@ const renderModulesPage = (language, level) => {
     setProp(pagesContainer, 'innerHTML', modulesPageHtml(language, level));
     event(select('#back-to-levels'), 'click', () => {
         getLangObject(language).levelsPage();
+    });
+    event(select('#reset-level-progress'), 'click', () => {
+        resetLevel(language, level);
+        getLangObject(language).modulesPage(level);
     });
 };
 
