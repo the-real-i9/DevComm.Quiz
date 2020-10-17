@@ -18,17 +18,14 @@ const handleSolution = ({
     questionStatement,
     code,
 }) => {
-    let referenceAddress = null;
-    let referenceName = null;
+    let referenceAddress = 'https://www.google.com/';
+    let referenceName = 'Google Search';
     if (reference) {
         referenceAddress = grabLinkAddress(reference);
         referenceName = grabLinkName(reference);
         if (!referenceAddress) {
             referenceAddress = `https://www.google.com/search?q=${referenceName.split(' ').join('+')}`;
         }
-    } else {
-        referenceAddress = 'https://www.google.com/';
-        referenceName = 'Google Search';
     }
 
     const authorAnswer = typeof correctAnswer === 'string' ? correctAnswer : correctAnswer.join(' | ');

@@ -2,8 +2,7 @@
 
 A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Goto [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
 
-*This App launched on*
-
+> *This App launched on **17th October, 2020*** 
 
 ## App Usage
 ---
@@ -45,10 +44,16 @@ A **Quiz App**, packed with questions from different languages contributed by de
 
 2. Click on the **Submit** button to proceed to the **Solution Page** 
 
-Visit [CONTRIBUTING.md](./CONTRIBUTING.md) to contribute question.
+Visit [CONTRIBUTING.md](./CONTRIBUTING.md) to contribute your question.
 
-*Note: There are various ways to contribute to this App, you'll see in the contributing page*
+> *Note: There are various ways to contribute to this App, you'll see in the contributing page.*
+---
+> Final Words:\
+I developed this App with the developer community in mind, it came from the idea that, what if as we learn day-by-day, we set quizzes from what we've learnt and share it to others, and also gain from others by solving their own quizzes too. And so I decided to create this. **We own this App together**, I'm just opportuned to be the creator, so lets nuture this baby together. I believe this App will solve some problems posed to the developer community, MOST ESPECIALLY FOR BEGINNERS.\
+The highest good remark you could give to me or this App is:
+> * Spreading the news about the App.
+> * Contibuting to the App: Adding Questions, Fixing Bugs and more...
 
-Follow on [Twitter](https://twitter.com/Oluwarinolasam2)
+*I love you, I love the DEV Community. Thanks!*
 
-*Thanks!*
+Follow on [Twitter](https://twitter.com/Oluwarinolasam2)# Mckenney17.github.io
