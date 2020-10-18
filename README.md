@@ -4,7 +4,7 @@ A **Quiz App**, packed with questions from different languages contributed by de
 
 > *This App launched on **17th October, 2020*** 
 
-## App UsageThats 
+## App Usage
 ---
 **Home Page**
 ---
