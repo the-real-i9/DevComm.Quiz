@@ -19,14 +19,11 @@ const startApp = () => {
     organizeQuestions(getCurrentLangChoices());
     renderHomePage();
     hidePage();
-<<<<<<< HEAD
     showPage();
-=======
     audio.addEventListener('loadeddata', () => {
         showPage();
         playMusic(audio);
     });
->>>>>>> parent of 9d90109... bug fix
 };
 
 export default startApp;
