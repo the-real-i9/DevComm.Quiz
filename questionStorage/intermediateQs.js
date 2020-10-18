@@ -31,7 +31,7 @@ const intermediateQs = () => ([
         `,
         options: ['Both myAge and printAge()', 'Nothing', 'Just myAge', 'Just printAge()'],
         correctAnswer: 'Both myAge and printAge()',
-        explanation: 'A function, when declared like this, will always get hoisted. Because the variable is declared with let, the variable is hoisted but NOT initialized. Meaning, that it cannot be used until it has been declared.',
+        explanation: 'A function declaration will always get hoisted. Because the variable is declared with let, the variable is hoisted but NOT initialized. Meaning, that it cannot be used until it has been declared.',
         reference: '[W3 Schools: JavaScript Hoisting](https://www.w3schools.com/js/js_hoisting.asp)',
         githubProfile: '[IcedTeaTech](https://github.com/IcedTeaTech)',
         twitterProfile: '[icedteatech](https://twitter.com/icedteatech)',
