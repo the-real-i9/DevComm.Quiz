@@ -73,7 +73,7 @@ const beginnerQs = () => ([
 
 This property takes the language string on which you're setting the question.
 
-> Important Note: Provide the full abbreviation name of the language in **lowercase letters** For example, **cpluslplus**, **NOT** **C++**, **cs**(for csharp) **NOT** **C#**, **c**, **javascript**, **python**, **ruby**, **html5**, **css3**.
+> Important Note: Provide the full abbreviation name of the language in **lowercase letters** For example, **cplusplus**, **NOT** **C++**, **cs**(for csharp) **NOT** **C#**, **c**, **javascript**, **python**, **ruby**, **html5**, **css3**.
 ```js
 {
     language: 'python',
