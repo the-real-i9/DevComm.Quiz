@@ -23,12 +23,10 @@ const startApp = () => {
     organizeQuestions(getCurrentLangChoices());
     renderHomePage();
     hidePage();
-    showPage();
     audio.addEventListener('loadeddata', () => {
         showPage();
         playMusic(audio);
     });
-    playMusic(audio);
 };
 
 export default startApp;
