@@ -8,7 +8,7 @@ const beginnerQs = () => ([
         correctAnswer: 'false',
         explanation: 'NaN is never equal to any value even to itself. It is agreed that not all computations that results to NaN are the same',
         reference: '[JavaScript: The Definitive Guide by David Flanagan]()',
-        githubProfile: '[McKenney17](https://github.com/Mckenney17)',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {
@@ -23,8 +23,8 @@ const beginnerQs = () => ([
         correctAnswer: '55, 10',
         explanation: 'If either or both operands of the **+ operator** is *a string*, it performs **concatenation**',
         reference: '[JavaScript: The Definitive Guide by David Flanagan]()',
-        githubProfile: '',
-        twitterProfile: '',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {
         language: 'javascript',
@@ -35,8 +35,8 @@ const beginnerQs = () => ([
         correctAnswer: 'String, Number, undefined',
         explanation: '**Primitive Types** in JavaScript are: Number, String, undefined, null, Symbol, BigInt',
         reference: '[MDN: Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)',
-        githubProfile: '',
-        twitterProfile: '',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {
         language: 'javascript',
@@ -47,8 +47,8 @@ const beginnerQs = () => ([
         correctAnswer: 'in',
         explanation: 'The **in** operator is used to test, if left operand(property) is present in the right operand(object)',
         reference: '',
-        githubProfile: '',
-        twitterProfile: '',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {
         language: 'javascript',
@@ -59,8 +59,8 @@ const beginnerQs = () => ([
         correctAnswer: ['undefined', 'NaN', 'Infinity'],
         explanation: '**undefined, NaN, Infinity** are properties of the **Window Object**',
         reference: '',
-        githubProfile: '',
-        twitterProfile: '',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {
         language: 'javascript',
@@ -91,7 +91,7 @@ const beginnerQs = () => ([
         correctAnswer: '23',
         explanation: 'If the left operand of the **&&** operator is a *truthy value*, it returns the right operand not considering whether it is truthy or falsy.',
         reference: '',
-        githubProfile: '[McKenney17](https://github.com/Mckenney17)',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
 ]);

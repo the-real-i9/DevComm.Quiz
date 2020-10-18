@@ -195,9 +195,14 @@ div.quiz-question-page {
         // }
     }
 
-    .bottom {
+    .nav-btns {
         padding: 0 7%;
         @include flex(space-between);
+    }
+
+    .bottom {
+        padding: 0 7%;
+        @include flex(space-between, center);
         p {
             @include flex(center, center);
         }
@@ -502,7 +507,9 @@ div.quiz-question-page {
 
         .swiper-container {
             width: 100%;
+            flex: 1;
             div[id|='question-section'] {
+                overflow-y: auto;
                 padding: 0 7%;
                 width: 100% !important;
 
@@ -571,10 +578,27 @@ div.quiz-question-page {
             }
         }
 
+        .nav-btns {
+            width: 100%;
+
+            button {
+                margin: 7px 0;
+                padding: 0 15px;
+                font-size: 13px;
+                font-weight: 500;
+                border-radius: 3px;
+                height: 35px;
+                @include flex(center, center);
+                color: #fff;
+                background: $deep-orange;
+                box-shadow: 0 2px 4px rgba(#000, 0.17);
+                outline: none;
+                border: none;
+            }
+        }
+
         .bottom {
-            // margin: 10px 0;
-            position: absolute;
-            bottom: 20px;
+            height: 80px;
             width: 100%;
             p:empty:first-child {
                 flex: 1;

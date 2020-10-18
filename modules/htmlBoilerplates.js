@@ -136,6 +136,10 @@ const questionPageHtml = ({
             
         </div>
     </div>
+    <div class="nav-btns">
+        <button id="prevq-btn">PREV</button>
+        <button id="nextq-btn">NEXT</button>
+    </div>
     <div class="bottom">
         <p></p>
         <p id="submit-button">Submit</p>

@@ -123,7 +123,15 @@ const setSocialHandles = (github, twitter) => {
 
 const initSwipe = () => {
 // change on-swipe
-    const swiper = new Swipe('.swiper-container');
+    const swiper = new Swipe('.swiper-container', {
+        allowTouchMove: false,
+    });
+    event(select('#prevq-btn'), 'click', () => {
+        swiper.slidePrev();
+    });
+    event(select('#nextq-btn'), 'click', () => {
+        swiper.slideNext();
+    });
     swiper.on('slideChange', function updateCurrentQuestion() {
         setCurrentQuestionNumber(this.activeIndex + 1, getTotalQuestionInModule());
         setSocialHandles(fetchLinks(this.activeIndex + 1)[0], fetchLinks(this.activeIndex + 1)[1]);
