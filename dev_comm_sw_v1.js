@@ -1,4 +1,4 @@
-const cacheName = 'cache_quiz_v1';
+const cacheName = 'cache_dev_comm_quiz_v1';
 
 const files = [
     './',

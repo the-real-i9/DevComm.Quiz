@@ -27,7 +27,7 @@ event(saveChoicesBtn, 'click', langsChosenOnSave);
 
 window.addEventListener('load', () => {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('../sw.js')
+        navigator.serviceWorker.register('../dev_comm_sw_v1.js')
         .then((sw) => {
             console.log('SW Registration Success');
         })
