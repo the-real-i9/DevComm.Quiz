@@ -52,18 +52,6 @@ const {
     a2hBtn,
 } = DOMElems;
 
-const hidePage = () => {
-    setStyle(select('.container'), 'display', 'none');
-    setStyle(select('#sound'), 'display', 'none');
-    setStyle(select('.load-anim#outer'), 'display', 'flex');
-};
-
-const showPage = () => {
-    setStyle(select('.container'), 'display', 'block');
-    setStyle(select('#sound'), 'display', 'flex');
-    setStyle(select('.load-anim#outer'), 'display', 'none');
-};
-
 const displayLangChoicesModal = () => setStyle(langChoicesModal, 'display', 'block');
 
 const toggleSelectLangChoice = (ev) => classAction(ev.target, 'toggle', 'lang-chosen');
@@ -110,17 +98,6 @@ const timer = (action) => {
 };
 
 const getTimeSpent = () => `${min}m ${sec}s`;
-
-const playMusic = (audio) => {
-    event(select('#sound'), 'click', (ev) => {
-        classAction(ev.target, 'toggle', 'music-on');
-        if (ev.target.classList.contains('music-on')) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    });
-};
 
 const renderAvailableLangs = async (availLangsArray) => {
     let htmlString = '';
@@ -303,10 +280,7 @@ const renderSolutionPage = (detailsObject) => {
 
 
 export {
-    showPage,
-    hidePage,
     timer,
-    playMusic,
     langsChosenOnSave,
     toggleSelectLangChoice,
     displayLangChoicesModal,
