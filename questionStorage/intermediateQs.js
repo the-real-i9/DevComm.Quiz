@@ -35,7 +35,7 @@ const intermediateQs = () => ([
         reference: '[W3 Schools: JavaScript Hoisting](https://www.w3schools.com/js/js_hoisting.asp)',
         githubProfile: '[IcedTeaTech](https://github.com/IcedTeaTech)',
         twitterProfile: '[icedteatech](https://twitter.com/icedteatech)',
-    }
+    },
 ]);
 
 export default intermediateQs;
