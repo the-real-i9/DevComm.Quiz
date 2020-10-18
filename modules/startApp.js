@@ -5,6 +5,7 @@ import {
 import {
     renderHomePage,
     renderAvailableLangs,
+    playMusic,
     hidePage,
     showPage,
 } from './appUIFuncs.js';
@@ -13,6 +14,9 @@ import {
 } from './localStorage.js';
 import restoreApp from './restore.js';
 
+const audio = new Audio('../audio/music.mp3');
+audio.loop = true;
+audio.volume = 1;
 const startApp = () => {
     restoreApp();
     renderAvailableLangs(getAvailableLangs());
@@ -24,6 +28,7 @@ const startApp = () => {
         showPage();
         playMusic(audio);
     });
+    playMusic(audio);
 };
 
 export default startApp;
