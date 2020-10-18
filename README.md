@@ -1,6 +1,6 @@
 # DevComm. Quiz
 
-A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Goto [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
+A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Go to [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
 
 > *This App launched on **17th October, 2020*** 
 
