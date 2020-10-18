@@ -15,7 +15,7 @@ const intermediateQs = () => ([
         correctAnswer: 'Error',
         explanation: 'Arrow functions are not used as Constructors',
         reference: '',
-        githubProfile: '[McKenney17](https://github.com/Mckenney17)',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
     {

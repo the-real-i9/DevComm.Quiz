@@ -197,7 +197,7 @@ div.quiz-question-page {
 
     .nav-btns {
         padding: 0 7%;
-        @include flex(space-between);
+        @include flex(space-around);
     }
 
     .bottom {
