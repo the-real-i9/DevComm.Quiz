@@ -5,8 +5,6 @@ import {
 import {
     renderHomePage,
     renderAvailableLangs,
-    hidePage,
-    showPage,
 } from './appUIFuncs.js';
 import {
     getCurrentLangChoices,
@@ -18,8 +16,6 @@ const startApp = () => {
     renderAvailableLangs(getAvailableLangs());
     organizeQuestions(getCurrentLangChoices());
     renderHomePage();
-    hidePage();
-    showPage();
 };
 
 export default startApp;
