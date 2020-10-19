@@ -118,6 +118,8 @@ This property takes the question statement. For example, *What is the output of 
 * If the question has **no code snippet**, the value would be an **empty string** ('').
 * If the question has a code snippet, the value will be a code snippet **single-line** or **multi-line**, cleanly indented in **Double Backtics**(a.k.a. Template String).
 
+> Tip: To create an empty blank line, use the newline escape character **\n**
+
 Case 1: No Code snippet included
 ```js
 {
@@ -137,6 +139,7 @@ Case 2: Code snippet included
     def add(a, b):
         sum = a + b
         return sum
+    \n
     print(add(5, 6))
     `,
 }
@@ -146,7 +149,7 @@ Case 2: Code snippet included
 ---
 > Value Type: \<String\>Array 
 
-This property takes an Array that contains a list of **4 options**, all list items(options) must be wrapped in quotes, i.e. it must be a **string data type**.
+This property takes an Array that contains a list of **4 options**, all list items(options) must be wrapped in quotes, i.e. it must be a **string data type**. *Try as much as possible to make your options compact.*
 
 > Note: If array item includes an empty string, **wrap around the empty string an alternate quote** e.g. `"''"`. This is because JavaScript will read it as a JavaScript empty string and not a normal string as you have wanted it to be. An empty string to JavaScript is nothing.\
 > *Bonus Tip: An empty string in JavaScript is a **falsy string**. Because String Data Types are truthy values and empty ones are falsy.*
@@ -281,6 +284,10 @@ Even though this is Optional, I bet 90% developers will include this, *(smiles)*
 ```
 
 Okay!!! Oh! Oh!  I know this is long, but it's not complex, I just had to be detailed. You don't want a pull request rejected due to things you aren't aware of right?
+
+Check the question you just added at: [DevComm. Quiz](https://mckenney17.github.io)
+
+![A typical question](./img/quiz-page.png)
 
 ---
 # More ways to contribute

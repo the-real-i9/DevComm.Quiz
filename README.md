@@ -4,6 +4,8 @@ A **Quiz App**, packed with questions from different languages contributed by de
 
 > *This App launched on **17th October, 2020*** 
 
+Access app [DevComm. Quiz](https://mckenney17.github.io)
+
 ## App Usage
 ---
 **Home Page**
@@ -40,7 +42,8 @@ A **Quiz App**, packed with questions from different languages contributed by de
 
 **Quiz Page**
 ---
-1. You can relate with this, the only part I have to guide you is that, *you pay attention to what the question asks you to do.* It can either tell you to **choose an answer** or **choose all answers**. In the former case, you can only select a single answer, while in the latter you can select multiple answers.
+1. You can relate with this, the only part I have to guide you is that, *you pay attention to what the question asks you to do.* It can either tell you to **choose the correct answer** or **choose all correct answers**. In the former case, you can only select a single answer, while in the latter you can select multiple answers.
+![Quiz Page](./img/quiz-page.png)
 
 2. Click on the **Submit** button to proceed to the **Solution Page** 
 
@@ -56,4 +59,4 @@ The highest good remark you could give to me or this App is:
 
 *I love you, I love the DEV Community. Thanks!*
 
-Follow on [Twitter](https://twitter.com/Oluwarinolasam2)# Mckenney17.github.io
+Follow on [Twitter](https://twitter.com/Oluwarinolasam2)

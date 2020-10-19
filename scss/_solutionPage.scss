@@ -218,7 +218,8 @@ div.quiz-solution-page {
                             .incorrect-mark {
                                 color: red;
                             }
-
+                            overflow-x: auto;
+                            white-space: nowrap;
                         }
 
                         div.explanation {

@@ -31,10 +31,26 @@ const intermediateQs = () => ([
         `,
         options: ['Both myAge and printAge()', 'Nothing', 'Just myAge', 'Just printAge()'],
         correctAnswer: 'Just printAge()',
-        explanation: 'Variable hoisting will only happen with variables declared with *var*. Functions will be hoisted either when declared or when assigned to a *var*. However, in case of assigning a function to a *var*, only the declaration will be hoisted, not the function body',
+        explanation: 'Variable hoisting will only happen with variables declared with `var`. Functions will be hoisted either when declared or when assigned to a `var`. However, in case of assigning a function to a `var`, only the declaration will be hoisted, not the function body',
         reference: '[W3 Schools: JavaScript Hoisting](https://www.w3schools.com/js/js_hoisting.asp)',
         githubProfile: '[IcedTeaTech](https://github.com/IcedTeaTech)',
         twitterProfile: '[icedteatech](https://twitter.com/icedteatech)',
+    },
+    {
+        language: 'python',
+        questionType: 'single-answer',
+        questionStatement: 'What will be the output of the code?',
+        code: `
+        my_string = "foo ba"
+        k = [(i.upper(), len(i)) for i in my_string]
+        print(k)
+        `,
+        options: ["[('FOO', 3), ('BA', 2)]", "[('F', 1), ('O', 1), ('O', 1), ('', 1), ('B', 1), ('A', 1)]", "[('FOO BA', 1)]", 'None of the Options'],
+        correctAnswer: "[('F', 1), ('O', 1), ('O', 1), (' ', 1), ('B', 1), ('A', 1)]",
+        explanation: 'This is a **list comprehension** that returns a list of Tuples. Since **Strings are Iterable**, each character is looped through, and for each character, a tuple containing, __the character in uppercase__ and the __length of the character__',
+        reference: '[Learning Python]()',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
 ]);
 

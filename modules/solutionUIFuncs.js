@@ -4,6 +4,7 @@ import {
     insertHtml,
     classAction,
     selectAll,
+    setStyle,
 } from './DOMFuncs.js';
 import {
     solutionBoxHtml,

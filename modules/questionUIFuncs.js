@@ -91,12 +91,6 @@ const implementOptions = (questionType, options, questionNumber) => {
             setProp(select('#ans-count'), 'textContent', getAnswersSize());
             setProp(select('#rem-count'), 'textContent', getTotalQuestionInModule() - getAnswersSize());
         });
-        const optionBoxWidth = option.getBoundingClientRect().width;
-        const optionTextWidth = firstChild.getBoundingClientRect().width;
-
-        if (optionTextWidth > (optionBoxWidth * (77 / 100))) {
-            setStyle(firstChild, 'fontSize', `${16 / 1.1}px`);
-        }
     }
 };
 

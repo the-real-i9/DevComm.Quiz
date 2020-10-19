@@ -556,6 +556,10 @@ div.quiz-question-page {
                         p {
                             margin-left: 20px;
                             font-size: 17px;
+                            width: 77%;
+                            height: 20px;
+                            overflow-x: auto;
+                            white-space: nowrap;
                         }
 
                         div {
@@ -592,8 +596,14 @@ div.quiz-question-page {
                 color: #fff;
                 background: $deep-orange;
                 box-shadow: 0 2px 4px rgba(#000, 0.17);
+                transition: all .1s linear;
                 outline: none;
                 border: none;
+                
+                &:active {
+                    box-shadow: 0 0 4px rgba(#000, 0.17);
+                    transform: translateY(2px);
+                }
             }
         }
 

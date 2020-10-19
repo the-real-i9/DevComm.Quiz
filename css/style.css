@@ -643,6 +643,8 @@ div.home div.langs-section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -676,9 +678,6 @@ div.home div.langs-section .lang-box {
     height: 200px;
     border-radius: 14px;
     margin-bottom: 10px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
   }
 }
 
@@ -2474,6 +2473,10 @@ div.quiz-question-page .bottom p:nth-child(2)::after {
   div.quiz-question-page .swiper-container div[id|='question-section'] .options .option p {
     margin-left: 20px;
     font-size: 17px;
+    width: 77%;
+    height: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   div.quiz-question-page .swiper-container div[id|='question-section'] .options .option div {
     top: 5px;
@@ -2511,8 +2514,16 @@ div.quiz-question-page .bottom p:nth-child(2)::after {
     background: #e1543c;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
     outline: none;
     border: none;
+  }
+  div.quiz-question-page .nav-btns button:active {
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
   }
   div.quiz-question-page .bottom {
     height: 80px;
@@ -2764,6 +2775,8 @@ div.quiz-solution-page .top .center-text p:last-child {
   div.quiz-solution-page .solution-section .answer-solutions .solution-box p[class*=answer] {
     font-weight: 400;
     font-size: 17px;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   div.quiz-solution-page .solution-section .answer-solutions .solution-box p[class*=answer] .correct-mark {
     color: green;
