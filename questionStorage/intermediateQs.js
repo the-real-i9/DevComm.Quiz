@@ -45,7 +45,7 @@ const intermediateQs = () => ([
         k = [(i.upper(), len(i)) for i in my_string]
         print(k)
         `,
-        options: ["[('FOO', 3), ('BA', 2)]", "[('F', 1), ('O', 1), ('O', 1), ('', 1), ('B', 1), ('A', 1)]", "[('FOO BA', 1)]", 'None of the Options'],
+        options: ["[('FOO', 3), ('BA', 2)]", "[('F', 1), ('O', 1), ('O', 1), (' ', 1), ('B', 1), ('A', 1)]", "[('FOO BA', 1)]", 'None of the Options'],
         correctAnswer: "[('F', 1), ('O', 1), ('O', 1), (' ', 1), ('B', 1), ('A', 1)]",
         explanation: 'This is a **list comprehension** that returns a list of Tuples. Since **Strings are Iterable**, each character is looped through, and for each character, a tuple containing, __the character in uppercase__ and the __length of the character__',
         reference: '[Learning Python]()',
