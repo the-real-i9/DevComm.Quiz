@@ -94,6 +94,29 @@ const beginnerQs = () => ([
         githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: '[McKenney17](https://twitter.com/Oluwarinolasam2)',
     },
+    {
+        language: 'javascript',
+        questionType: 'single-answer',
+        questionStatement: 'What is the result of the below code?',
+        code: `
+        let myArray = ['one', 2, 'seven'];
+        /n
+        myArray.unshift('fumble');
+        /n
+        return myArray;
+        `,
+        options: [
+        "'one', 2, 'seven', 'fumble'", 
+        "'fumble', 'one', 2, 'seven'",
+        "'one', 2",
+        "2, 'seven'",
+        ],
+        correctAnswer: "'fumble', 'one', 2, 'seven'",
+        explanation: 'The unshift() function adds an element to the beginning of an array',
+        reference: '[freeCodeCamp]("https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-unshift")',
+        githubProfile: '[SamSaias](https://github.com/SamSaias)',
+        twitterProfile: '[WebDevPrin](https://twitter.com/WebDevPrin)',
+    },
 ]);
 
 export default beginnerQs;
