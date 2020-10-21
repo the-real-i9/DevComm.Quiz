@@ -100,13 +100,13 @@ const beginnerQs = () => ([
         questionStatement: 'What is the result of the below code?',
         code: `
         let myArray = ['one', 2, 'seven'];
-        /n
+        \n
         myArray.unshift('fumble');
-        /n
-        return myArray;
+        \n
+        console.log(myArray);
         `,
         options: [
-        "['one', 2, 'seven', 'fumble']", 
+        "['one', 2, 'seven', 'fumble']",
         "['fumble', 'one', 2, 'seven']",
         "['one', 2]",
         "[2, 'seven']",
