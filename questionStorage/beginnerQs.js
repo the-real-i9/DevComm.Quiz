@@ -97,7 +97,7 @@ const beginnerQs = () => ([
     {
         language: 'javascript',
         questionType: 'single-answer',
-        questionStatement: 'What is the result of the below code?',
+        questionStatement: 'What is the result of the code below?',
         code: `
         let myArray = ['one', 2, 'seven'];
         \n
