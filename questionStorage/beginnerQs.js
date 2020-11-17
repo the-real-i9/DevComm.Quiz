@@ -129,6 +129,33 @@ const beginnerQs = () => ([
         githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: "[McKenney'20](https://twitter.com/Oluwarinolasam2)",
     },
+    {
+        language: 'python',
+        questionType: 'single-answer',
+        questionStatement: 'What is the output of this code?',
+        code: `
+        items = { 1, 2, 3, 4 }
+        print(items[2])
+        `,
+        options: ['4', '2', 'Error', 'None'],
+        correctAnswer: 'Error',
+        explanation: '`items` references a *Set* object type, Sets are not Sequence Types, therefore don\'t support indexing',
+        reference: '[Learning Python by Mark Lutz: Sequence Types]()',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: "[McKenney'20](https://twitter.com/Oluwarinolasam2)",
+    },
+    {
+        language: 'python',
+        questionType: 'single-answer',
+        questionStatement: 'Python is *dynamically typed* means?',
+        code: '',
+        options: ['You don\'t need to declare variables', 'You don\'t need to assign variables on declaration', 'Variables are declared on assignment', 'None'],
+        correctAnswer: 'You don\'t need to declare variables',
+        explanation: 'You don\'t need to declare variables in Python means Python is dynamically typed',
+        reference: '[Learning Python by Mark Lutz: Python is dynamically typed]()',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: "[McKenney'20](https://twitter.com/Oluwarinolasam2)",
+    },
 ]);
 
 export default beginnerQs;
