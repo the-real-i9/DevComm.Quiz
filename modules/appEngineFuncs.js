@@ -50,7 +50,6 @@ const organizeQuestions = (langChoices) => {
             }
         }
     }
-
 };
 
 const getAvailableLangs = () => {
