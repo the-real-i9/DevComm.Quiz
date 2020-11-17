@@ -285,7 +285,7 @@ Even though this is Optional, I bet 90% developers will include this, *(smiles)*
 
 Okay!!! Oh! Oh!  I know this is long, but it's not complex, I just had to be detailed. You don't want a pull request rejected due to things you aren't aware of right?
 
-Check the question you just added at: [DevComm. Quiz](https://mckenney17.github.io)
+Check the question you just added at: [DevComm. Quiz](https://devcomm-quiz.hostman.site/)
 
 ![A typical question](./img/quiz-page.png)
 

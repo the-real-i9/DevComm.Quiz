@@ -4,7 +4,7 @@ A **Quiz App**, packed with questions from different languages contributed by de
 
 > *This App launched on **17th October, 2020*** 
 
-Access app [DevComm. Quiz](https://mckenney17.github.io)
+Access app [DevComm. Quiz](https://devcomm-quiz.hostman.site/)
 
 ## App Usage
 ---
