@@ -156,6 +156,18 @@ const beginnerQs = () => ([
         githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
         twitterProfile: "[McKenney'20](https://twitter.com/Oluwarinolasam2)",
     },
+    {
+        language: 'python',
+        questionType: 'multiple-answers',
+        questionStatement: 'Select all *Numeber Types* in Python from the below options',
+        code: '',
+        options: ['Decimals', 'Complex Numbers', 'Sets', 'Rationals'],
+        correctAnswer: ['Decimals', 'Complex Numbers', 'Sets', 'Rationals'],
+        explanation: 'Number Types in Python are *integers, floating-point, complex numbers, decimals, rationals, sets*. _Boolean is a subclass of the Number Type_',
+        reference: '[Learning Python by Mark Lutz: Number Types]()',
+        githubProfile: '[Mckenney17](https://github.com/Mckenney17)',
+        twitterProfile: "[McKenney'20](https://twitter.com/Oluwarinolasam2)",
+    },
 ]);
 
 export default beginnerQs;
