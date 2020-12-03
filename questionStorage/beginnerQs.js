@@ -1,4 +1,16 @@
 const beginnerQs = () => ([
+     {
+        language: 'javascript',
+        questionType: 'single-answer',
+        questionStatement: 'What would be the result of 3+2+”7″?',
+        code: '',
+        options: ['327', '57', "12", 'None of the Above'],
+        correctAnswer: '57',
+        explanation: 'Since 3 and 2 are integers, they will be added numerically. And since 7 is a string, its concatenation will be done. So the result would be 57.',
+        reference: '[freeCodeCamp](https://www.freecodecamp.org/news/javascript-arithmetic-math-operators-explained/)',
+        githubProfile: '[NathanielDaniels](https://github.com/NathanielDaniels)',
+        twitterProfile: "[NathanielDaniels](https://twitter.com/NathanDDaniels)",
+    },
     {
         language: 'javascript',
         questionType: 'single-answer',
