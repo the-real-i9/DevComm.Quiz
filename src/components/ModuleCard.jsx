@@ -1,4 +1,3 @@
-import React from 'react'
 import QuizEngine from '../utils/quizEngine';
 
 function ModuleCard({ setLocation, setModule, language, level, moduleKey }) {

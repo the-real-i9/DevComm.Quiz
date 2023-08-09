@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaPaintBrush } from 'react-icons/fa'
 import { formatLangText } from '../utils/quick-funcs'
 import QuizLanguagesPanel from './QuizLanguagesPanel'

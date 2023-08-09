@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { formatLangText } from '../utils/quick-funcs'
 import QuizEngine from '../utils/quizEngine'
 

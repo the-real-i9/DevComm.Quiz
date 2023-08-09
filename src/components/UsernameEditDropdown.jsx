@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function UsernameEditDropdown({ usernameEditDropdownVisible, setUsernameEditDropdownVisible, setUsername, username }) {
     const [nameInputValue, setNameInputValue] = useState(username)
@@ -6,7 +6,7 @@ function UsernameEditDropdown({ usernameEditDropdownVisible, setUsernameEditDrop
     const handleInputChange = (ev) => {
         setNameInputValue(ev.currentTarget.value)
     }
-    const handleOKBtnClick = (ev) => {
+    const handleOKBtnClick = () => {
         setUsername(nameInputValue)
         setUsernameEditDropdownVisible(false)
     }

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaCheck } from 'react-icons/fa'
 
 function Option({ questionNumber, optionNumber, optionValue, checkedOptions, setCheckedOptions }) {

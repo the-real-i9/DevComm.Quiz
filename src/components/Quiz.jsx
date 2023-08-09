@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import ReactHtmlParser from 'react-html-parser';
+import { useEffect, useRef, useState } from 'react'
+import ReactHtmlParser from 'html-react-parser';
 import { FaClock, FaGithub, FaTwitter } from 'react-icons/fa'
 import { formatLangText, markdownFormat, unpackLink } from '../utils/quick-funcs'
 import QuizEngine from '../utils/quizEngine'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { formatLangText } from '../utils/quick-funcs'
 import QuizEngine from '../utils/quizEngine'
 import ModuleCard from './ModuleCard';

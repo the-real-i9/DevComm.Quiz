@@ -1,4 +1,3 @@
-import React from 'react'
 import AudioFile from '../utils/cool_music.mp3'
 
 function Audio() {

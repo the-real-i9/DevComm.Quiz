@@ -1,4 +1,3 @@
-import React from 'react'
 import { formatLangText } from '../utils/quick-funcs'
 import LevelCard from './LevelCard';
 
