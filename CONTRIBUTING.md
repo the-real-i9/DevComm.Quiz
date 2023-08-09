@@ -9,285 +9,246 @@ I'll take a full **question example** to walk you through the steps.
 ---
 ## Step 1
 ---
-Open the folder named [questionStorage](./questionStorage/), there you'll see four files:
-* beginnerQs.js
-* intermediateQs.js
-* advancedQs.js
-* ninjaQs.js
+Open the folder named [question](/src/utils/question), there you'll see three files:
+* beginner.json
+* intermediate.json
+* advance.json
 
-In each of the files(**e.g. beginnerQs.js**), you'll see this code snippet(provided we have no beginner question yet)
+In any of these files, you'll add a new JSON question object,
 
-```js
-const beginnerQs = () => ([
-
-]);
-```
-The `Array` the arrow function returns, takes a **list** of objects known as the **Question Objects**.
-
-> Important Note: If you're not familiar with JavaScript:
-> * **Arrays** have syntax similar to the `List` data structure in Python. Like this: `[]`.
-> * ***Object* Literals** have syntax similar to the `Dictionary` data structure in Python. Like this: `{}`
-> ```js
-> // javascript object literal syntax
-> {
->   propertyName: propertyValue, 
-> }
-> ```
-> *Pretty Easy!!!* **In Python**, the propertyName will be wrapped in quotes(string), it's also string in JS but you don't have to, unless you're accessing it like this: `object['propertyName']`
----
-To add a question, go into the `Array` and include an **Object Literal** at the end of the array *provided one or more question object was initially present*. Now you'll have a snippet that looks like this:
-
-```js
-const beginnerQs = () => ([
-    /* a question object */
+Here is the JSON question object format, **the values are explained in the steps that follow**.
+```json
+[
     {
-
-    },
-    /* another question object */
-    {
-
-    },
-]);
-```
-Now you want to fill the question object with these properties, **the values are explained in the steps that follow**.
-```js
-const beginnerQs = () => ([
-    {
-        language: /* value */,
-        questionType: /* value */,
-        questionStatement: /* value */,
-        code: /* value */,
-        options: /* value */,
-        correctAnswer: /* value */,
-        explanation: /* value */,
-        reference: /* value */,
-        githubProfile: /* value */,
-        twitterProfile: /* value */,
-    },
-]);
+        "language": /* value */,
+        "questionType": /* value */,
+        "questionStatement": /* value */,
+        "code": /* value */,
+        "options": /* value */,
+        "correctAnswer": /* value */,
+        "explanation": /* value */,
+        "reference": /* value */,
+        "githubHandle": /* value */,
+        "twitterHandle": /* value */,
+    }
+]
 ```
 ---
-## Step 2 (`language` property) (Mandatory)
+## Step 2 (`language` property) (*)
 ---
-> Value Type: String
+> Type: String
 
 This property takes the language string on which you're setting the question.
 
 > Important Note: Provide the full abbreviation name of the language in **lowercase letters** For example, **cplusplus**, **NOT** **C++**, **cs**(for csharp) **NOT** **C#**, **c**, **javascript**, **python**, **ruby**, **html5**, **css3**.
-```js
+```json
 {
-    language: 'python',
+    "language": "python"
 }
 ```
 ---
-## Step 3 (`questionType` property) (Mandatory)
+## Step 3 (`questionType` property) (*)
 ---
-> Value Type: String
+> Type: String
 
 This property can take either of the two values: `single-answer` or `multiple-answers`.
 * single-answer: If the question requires the user to select only one answer from the options given.
 * multiple-answers: If the question requires the user to select more than one answer from the options given.
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
+    "language": "python",
+    "questionType": "single-answer"
 }
 ```
 ---
-## Step 4 (`questionStatement` property) (Mandatory)
+## Step 4 (`questionStatement` property) (*)
 ---
-> Value Type: String
+> Type: String
 
 This property takes the question statement. For example, *What is the output of this code?*, *How many Object Types are there in Python?*
-> Tip: You can use text formatting style to format the sentence like these:
+> Tip: You can use markdown text formatting style to format the sentence like these:
 > * **Bold** (\*\*bold text\*\*)
 > * *Italic* (\*italized text\*)
 > * Underline (\_\_underlined text\_\_)
 > * `Code` ( \`code snippet\` )
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?"
 }
 ```
 ---
 ## Step 5 (`code` property) (Optional)
 ---
-> Value Type: Empty String('') or Template String(\`code snippet/block\`)
-* If the question has **no code snippet**, the value would be an **empty string** ('').
-* If the question has a code snippet, the value will be a code snippet **single-line** or **multi-line**, cleanly indented in **Double Backtics**(a.k.a. Template String).
+> Type: Empty JSON String("") or Sring of code text with explicit special characters
+* If the question has **no code snippet**, the value would be an **empty string** ("").
+* If the question has a code snippet, the value will be a **single-line** code snippet, with explicit special characters. `(\n, \t, (Space Character))`
 
-> Tip: To create an empty blank line, use the newline escape character **\n**
+> **Caution**: I advice *you should not use the "Tab character (\t)"*. This is due to the fact that it results in too much spacing. I prefer **Four Spaces** for my Tab, so I insert space **(  )** four times.
 
 Case 1: No Code snippet included
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": ""
 }
 ```
 Case 2: Code snippet included
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'What is the output of this code?',
-    code: `
-    def add(a, b):
-        sum = a + b
-        return sum
-    \n
-    print(add(5, 6))
-    `,
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "What is the output of this code?",
+    "code": "def add(a, b):\n    sum = a + b\n    return sum\nprint(add(5, 6))"
 }
 ```
 ---
-## Step 6 (`options` property) (Mandatory)
+## Step 6 (`options` property) (*)
 ---
-> Value Type: \<String\>Array 
+> Type: \<String\> Array 
 
-This property takes an Array that contains a list of **4 options**, all list items(options) must be wrapped in quotes, i.e. it must be a **string data type**. *Try as much as possible to make your options compact.*
+This property takes an Array that contains a list of **4 options**, all list items(options) must be wrapped in double-quotes (**""**), i.e. it must be a **JSON string**. *Try as much as possible to make your options compact.*
 
-> Note: If array item includes an empty string, **wrap around the empty string an alternate quote** e.g. `"''"`. This is because JavaScript will read it as a JavaScript empty string and not a normal string as you have wanted it to be. An empty string to JavaScript is nothing.\
+> Note: If array item includes an empty string, **use a single-quote wrapped by a double-quote** e.g. `"''"`,  or escape the double-quote inside e.g. `"\"\""`. This is because JavaScript will read it as a JavaScript empty string and not a normal string as you have wanted it to be. An empty string to JavaScript is nothing.\
 > *Bonus Tip: An empty string in JavaScript is a **falsy string**. Because String Data Types are truthy values and empty ones are falsy.*
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"]
 }
 ```
 ---
-## Step 7 (`correctAnswer` property) (Mandatory)
+## Step 7 (`correctAnswer` property) (*)
 ---
-> Value Type: String or \<String\>Array
+> Type: String or \<String\> Array
 The value of this property is in **two cases**.
 * Case 1: If your `questionType` value is **single-answer**, the `correctAnswer` value as you might have guessed will be a **string** that is the **correct answer** amongst the options given in the `options` property.
 * Case 2: If your `questionType` value is **multiple-answers**, then the `correctAnswer` value will be an Array of Strings that includes the **correct answers** amongst the options given in the `options` property.
 
 Case 1:
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: 'Dictionary',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": "Dictionary"
 }
 ```
 Case 2:
-```js
+```json
 {
-    language: 'python',
-    questionType: 'multiple-answers',
-    questionStatement: 'Select all Sequence Types in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: ['List', 'Tuple', 'String'],
+    "language": "python",
+    "questionType": "multiple-answers",
+    "questionStatement": "Select all Sequence Types in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": ["List", "Tuple", "String"]
 }
 ```
 > Note: Read the note on the previous step.
 ---
-## Step 8 (`explanation` property) (Mandatory)
+## Step 8 (`explanation` property) (*)
 ---
-Value Type: String\
+Type: String\
 Give your explanation, you can also use text formatting syntax here:
 > * **Bold** (\*\*bold text\*\*)
 > * *Italic* (\*italized text\*)
 > * Underline (\_\_underlined text\_\_)
 > * `Code` ( \`code snippet\` )
-```js
+```json
 {
-    language: 'python',
-    questionType: 'multiple-answers',
-    questionStatement: 'Select all Sequence Types in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: ['List', 'Tuple', 'String'],
-    explanation: '**Sequence Types** in Python are __String, List and Tuple__',
+    "language": "python",
+    "questionType": "multiple-answers",
+    "questionStatement": "Select all Sequence Types in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": ["List", "Tuple", "String"],
+    "explanation": "**Sequence Types** in Python are __String, List and Tuple__",
 }
 ```
 ---
 ## Step 9 (`reference` property) (Optional)
 ---
-Value Type: '' (empty string) or \<Markdown hyperlink syntax\>String
+Type: "" (empty string) or \<Markdown hyperlink syntax\>String
 * Case 1: **No reference**\
 Value is an empty string.
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: 'Dictionary',
-    explanation: '**Sequence Types** in Python are __String, List and Tuple__',
-    reference: '',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": "Dictionary",
+    "explanation": "**Sequence Types** in Python are __String, List and Tuple__",
+    "reference": "",
 }
 ```
 * Case 2: **link text, but no link address**\
-Value is this string syntax '\[linkText\]\(\)'\
+Value is this string syntax "\[linkText\]\(\)"\
 When you do this, you have an program that converts the link text into a **search query** for google.
-```js
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: 'Dictionary',
-    explanation: '**Sequence Types** in Python are __String, List and Tuple__',
-    reference: '[Learning Python]()',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": "Dictionary",
+    "explanation": "**Sequence Types** in Python are __String, List and Tuple__",
+    "reference": "[Learning Python]()",
 }
 ```
 * Case 3: **link text, link address**\
-Value is this string syntax '\[linkName\]\(linkAddress\)'
-```js
+Value is this string syntax "\[linkName\]\(linkAddress\)"
+```json
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: 'Dictionary',
-    explanation: '**Sequence Types** in Python are __String, List and Tuple__',
-    reference: '[Learning Python](https://www.learningpython.com)',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": "Dictionary",
+    "explanation": "**Sequence Types** in Python are __String, List and Tuple__",
+    "reference": "[Learning Python](https://www.learningpython.com)",
 }
 ```
 ---
-## Step 10/11 (`githubProfile/twitterProfile` property) (Optional)
+## Step 10/11 (`githubHandle/twitterHandle` property) (Optional)
 ---
-> Value Type: '' (empty string) or \<Markdown hyperlink syntax\>String
+> Type: "" (empty string) or \<Markdown hyperlink syntax\>String
 
 Even though this is Optional, I bet 90% developers will include this, *(smiles)*. As you'd have guessed, the value is a **hyperlink to your profile**, the guide for **Step 9** applies equally for these two steps.
-> Warning: **Case 2 for Step 9** doesn't apply, You must have a username and a profile address. I guess you know that. Also your **link text** is your **username**, while your **link address** is a link to your **respective profiles**.
-```js
+> Warning: **Case 2 for Step 9** doesn't apply, You must have a username and a profile address. I guess you know that. Also your **link name** is your **username**, while your **link address** is a link to your **respective handles**.
+```json
 /* a complete question object */
 {
-    language: 'python',
-    questionType: 'single-answer',
-    questionStatement: 'Which of these is **not** a Sequence Type in Python?',
-    code: '',
-    options: ['List', 'Tuple', 'String', 'Dictionary'],
-    correctAnswer: 'Dictionary',
-    explanation: '**Sequence Types** in Python are __String, List and Tuple__',
-    reference: '[Learning Python](https://www.learningpython.com)',
-    githubProfile: '[Mckenney17](https://www.github.com/Mckenney17)',
-    twitterProfile: '[Mckenney17](https://www.twitter.com/Oluwarinolasam2)',
+    "language": "python",
+    "questionType": "single-answer",
+    "questionStatement": "Which of these is **not** a Sequence Type in Python?",
+    "code": "",
+    "options": ["List", "Tuple", "String", "Dictionary"],
+    "correctAnswer": "Dictionary",
+    "explanation": "**Sequence Types** in Python are __String, List and Tuple__",
+    "reference": "[Learning Python](https://www.learningpython.com)",
+    "githubProfile": "[Mckenney17](https://www.github.com/Mckenney17)",
+    "twitterProfile": "[Mckenney17](https://www.twitter.com/Oluwarinolasam2)",
 }
 ```
 
 Okay!!! Oh! Oh!  I know this is long, but it's not complex, I just had to be detailed. You don't want a pull request rejected due to things you aren't aware of right?
 
-Check the question you just added at: [DevComm. Quiz](https://devcomm-quiz.hostman.site/)
+Check the question you just added at: [DevComm. Quiz](https://devcomm-quiz.netlify.app/)
 
-![A typical question](./img/quiz-page.png)
+![A typical question](quiz-page.png)
 
 ---
 # More ways to contribute

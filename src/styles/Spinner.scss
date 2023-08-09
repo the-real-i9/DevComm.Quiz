@@ -1,0 +1,46 @@
+@import 'varsMixFuncs';
+
+.load-anim {
+    @include flex(center, center);
+    border: 2px solid;
+    border-radius: 50%;
+  
+    &#outer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 75px;
+      height: 75px;
+      border-top-color: transparent;
+      animation: rotate 3s cubic-bezier(0.23, 1, 0.320, 1) infinite;
+  
+      &> :only-child {
+        width: 50px;
+        height: 50px;
+        border-color: $deep-orange;
+        animation: rotate 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+        border-top-color: transparent;
+  
+        &> :only-child {
+          width: 25px;
+          height: 25px;
+          border-color: $cream;
+          border-top-color: transparent;
+          animation: rotate 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite;
+        }
+      }
+  
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+  
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }

@@ -1,0 +1,410 @@
+div.quiz-question-page {
+    position: relative;
+    overflow-y: auto;
+
+    #big-lang-icon {
+        position: absolute;
+        color: rgba($deep-orange, .1);
+        right: 0;
+        top: 75px;
+        font-size: 125px;
+    }
+
+    .top {
+        @include flex(space-evenly, center);
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        background: #fff;
+        padding: 0 6%;
+        width: 100%;
+        height: 70px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 2px 2px rgba(#000, .25);
+
+        #back-to-modules {
+            background: rgba($orange, .3);
+            @include flex(center, center);
+            color: $deep-orange;
+            font-weight: weight(semibold);
+            cursor: pointer;
+            width: 23%;
+            height: 40px;
+            border-radius: 32px;
+            font-size: 13px;
+        }
+
+        div:empty {
+            flex: 1;
+        }
+
+        .center-text {
+            width: 54%;
+            flex: 3;
+            text-align: center;
+
+            p:first-child {
+                text-transform: capitalize;
+
+                font: {
+                    size: 20px;
+                    weight: weight(bold);
+                }
+            }
+
+            p:last-child {
+                border-top: 1px dotted #000;
+                border-bottom: 1px dotted #000;
+                display: inline-block;
+
+                font: {
+                    size: 13px;
+                    weight: weight(semibold);
+                }
+
+                margin-top: 3px;
+            }
+        }
+    }
+
+    .question-top {
+        @include flex(space-between, center);
+        padding: 0 6%;
+        height: 50px;
+        margin-top: 75px;
+
+        .progress {
+            width: 80%;
+
+            .progress-bar {
+                width: 100%;
+                height: 6px;
+                background: $cream;
+                border-radius: 15px;
+                position: relative;
+                overflow: hidden;
+
+                .progress-tracker-bar {
+                    position: absolute;
+                    border-radius: 15px;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    // this will be changed by jS
+                    right: var(--progress);
+                    background: $deep-orange;
+                    transition: right .5s ease;
+                }
+            }
+
+            .progress-details {
+                @include flex(space-between);
+                margin-top: -2px;
+
+                div:first-child {
+                    font-feature-settings: "lnum"1;
+                    font-weight: weight(semibold);
+
+                    span:nth-child(1) {
+                        font-size: 23px;
+                        color: $deep-orange;
+                    }
+
+                    span:nth-child(2) {
+                        display: inline-block;
+                        transform: translate(1px, -2px) rotate(15deg);
+                        margin-right: 1px;
+                        font-size: 21px;
+                    }
+
+                    span:nth-child(3) {
+                        font-size: 15px;
+                    }
+                }
+
+                div:last-child {
+                    font-weight: weight(semibold);
+                    font-size: 12px;
+
+                    span:first-child {
+                        color: $deep-orange;
+
+                        &+span {
+                            color: $deep-orange;
+                        }
+                    }
+
+                    .count {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .timer {
+            width: 20%;
+            @include flex(center, center, column);
+
+            i {
+                font-size: 25px;
+                max-height: 25px;
+            }
+
+            p {
+                font-weight: weight(semibold);
+                color: $deep-orange;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .question-section-container {
+        width: 100%;
+        flex: 1;
+
+        .question-section {
+            width: 100%;
+            @include flex;
+            overflow-x: hidden;
+        }
+
+        .question-components-container {
+            overflow-y: auto;
+            padding: 0 7%;
+            min-width: 100%;
+            transform: translateX(var(--slide));
+            transition: transform .25s ease-in-out;
+
+            .question-statement-with-code {
+                margin-bottom: 4px;
+                font-size: 17px;
+            }
+
+            .question-statement-without-code {
+                margin-bottom: 13px;
+                font-size: 19px;
+            }
+
+            .code-block-container {
+                &.hide {
+                    display: none;
+                }
+                font-size: 13px;
+
+                @media (min-height: 534px) {
+                    font-size: 15px;
+                }
+
+                code {
+                    font-family: 'Ubuntu Mono', monospace;
+                    border-radius: 5px;
+                    overscroll-behavior: none;
+                }
+
+                border-top: 1px dotted rgb(173, 173, 173);
+                padding: 4px 0;
+                border-bottom: 1px dotted rgb(173, 173, 173);
+            }
+
+            .what-to-do {
+                color: rgb(173, 173, 173);
+                margin: 3px 0;
+                font-size: 13px;
+            }
+
+            .options-container {
+                --boxStyle: 50%;
+                width: 100%;
+                margin: 0 auto;
+
+                .option {
+                    height: 40px;
+                    cursor: pointer;
+                    @include flex(null, center);
+                    border: 3px solid $cream;
+                    border-radius: 32px;
+                    position: relative;
+
+                    &:not(:last-child) {
+                        margin: 5px 0;
+                    }
+
+                    p {
+                        font-weight: weight(medium);
+                        line-height: 20px;
+                        margin-left: 20px;
+                        font-size: 17px;
+                        width: 77%;
+                        height: 20px;
+                        overflow-x: auto;
+                        overflow-y: hidden;
+                        @include flex(null, center);
+                        white-space: nowrap;
+                    }
+
+                    div {
+                        position: absolute;
+                        border-radius: var(--boxStyle);
+                        margin: auto 0;
+                        border: 3px solid $cream;
+                        top: 5px;
+                        bottom: 5px;
+                        right: 7px;
+                        width: 24px;
+                        i { display: none; }
+                    }
+
+                    div.checked {
+                        i {
+                            @include flex(center, center);
+                            position: absolute;
+                            color: #fff;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: $deep-orange;
+                            border-radius: var(--boxStyle);
+                            font-size: 10px;
+                            font-weight: 900;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: rgba($orange, .5);
+                            border-radius: var(--boxStyle);
+                            animation: checkAnim .5s ease 1;
+
+                            @keyframes checkAnim {
+                                0% {
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                }
+
+                                50% {
+                                    top: -7px;
+                                    left: -7px;
+                                    right: -7px;
+                                    bottom: -7px;
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-btns {
+        width: 100%;
+        padding: 0 7%;
+        @include flex(space-around);
+
+        button {
+            margin: 7px 0;
+            padding: 0 15px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 3px;
+            height: 35px;
+            @include flex(center, center);
+            color: #fff;
+            background: $deep-orange;
+            box-shadow: 0 2px 4px rgba(#000, 0.17);
+            transition: all .1s linear;
+            outline: none;
+            border: none;
+
+            &:active {
+                box-shadow: 0 0 4px rgba(#000, 0.17);
+                transform: translateY(2px);
+            }
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        height: 80px;
+        padding: 0 7%;
+        @include flex(space-between, center);
+
+        > * {
+            @include flex(center, center);
+        }
+
+        > span:empty {
+            &:first-child, &:last-child {
+                display: block;
+                flex: 1;
+            }
+        }
+
+        a {
+            @include flex(center, center, column);
+            color: $deep-orange;
+            span {
+                color: rgb(173, 173, 173);
+                font-weight: weight(medium);
+                margin-left: 2px;
+                font-size: 10px;
+                
+            }
+            &:hover span {
+                color: $deep-orange;
+            }
+
+            i {
+                font-size: 23px;
+                max-height: 23px;
+                margin-bottom: 5px;
+            }
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            border-radius: 32px;
+            position: relative;
+            background: $cream;
+            font-weight: weight(bold);
+            color: #000;
+            cursor: pointer;
+            overflow: hidden;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                left: 5px;
+                top: -40px;
+                background: $deep-orange;
+
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                right: 5px;
+                bottom: -40px;
+                background: $deep-orange;
+
+            }
+        }
+    }
+}

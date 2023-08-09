@@ -1,0 +1,78 @@
+div.home {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    #greet {
+            line-height: 27px;
+            margin-top: 60px;
+        font: {
+            weight: weight(bold);
+            size: 23px;
+        }
+        span:first-child {
+            font-weight: weight(regular);
+            font-size: 35px;
+            // font-stretch: extra-condensed;
+
+            #handwave {
+                font-size: 27px;
+                vertical-align: 4px;
+            }
+        }
+        span#dev-name {
+            --stroke-width: 1.5px;
+            font-size: 35px;
+            color: $deep-orange;
+            -webkit-text-stroke: var(--stroke-width);
+            -webkit-text-stroke-color: #000;
+        }
+        i#edit-nickname {
+            cursor: pointer;
+            color: $cream;
+            vertical-align: 3px;
+        }
+    }
+
+    #greet + p {
+        margin-top: 10px;
+        font-weight: weight(semibold);
+        font-size: 13px;
+    }
+
+    div.langs-section {
+        padding-bottom: 10px;
+        width: 100%;
+        @include flex(space-between);
+        flex-wrap: wrap;
+        overflow-y: auto;
+        margin-top: 40px;
+        
+        .add-lang-btn {
+            background: #fff;
+            box-shadow: none;
+            border: 1px solid $deep-orange;
+            @include flex(center, center, column);
+
+            span {
+                color: #fff;
+                font: {
+                    size: 50px;
+                    weight: weight(light);
+                }
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                @include flex(center, center);
+                background: #000;
+                transition: transform .15s linear;
+            }
+
+            p {
+                margin: 0 auto;
+                font-weight: weight(medium);
+                    font-size: 13px;
+            }
+        }
+    }
+
+}

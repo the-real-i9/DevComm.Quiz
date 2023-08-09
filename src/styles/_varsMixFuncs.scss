@@ -1,0 +1,27 @@
+$quotePaneBg: #faf4ed;
+$quoteBlockBg: #f7ebdd;
+$orange: #eb8844;
+$deep-orange: #e1543c;
+$cream: #f5d3ac;
+$green: #2e996d;
+$colBoxFontColor: #faf4ed;
+
+$font-weight: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800
+);
+
+@function weight($size) {
+    @return map-get($font-weight, $size);
+}
+
+@mixin flex($jc: null, $ai: null, $dir: null) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dir;
+}

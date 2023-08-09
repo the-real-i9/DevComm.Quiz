@@ -1,0 +1,55 @@
+div.quiz-levels-page {
+    @include flex(center, null, column);
+    .top {
+        @include flex(space-evenly, center);
+        background: #fff;
+        padding: 0 6%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: 70px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 2px 2px rgba(#000, .25);
+
+        #back-to-home {
+            background: rgba($orange, .3);
+            @include flex(center, center);
+            color: $deep-orange;
+            font-weight: weight(semibold);
+            cursor: pointer;
+            width: 23%;
+            height: 40px;
+            border-radius: 32px;
+            font-size: 13px;
+        }
+
+        div:empty {
+            flex: 1;
+        }
+
+        .center-text {
+            flex: 3;
+            text-align: center;
+            width: 54%;
+            font-size: 16px;
+            p:first-child {
+                text-transform: capitalize;
+                font: {
+                    size: 18px;
+                    weight: weight(bold);
+                }
+            }
+        }
+    }
+    .levels-section {
+        --beginnerComp: 0;
+        --intermediateComp: 0;
+        --advanceComp: 0;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+        padding: 0 6%;
+        margin-top: 50px;
+    }
+}

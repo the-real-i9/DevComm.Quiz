@@ -1,0 +1,95 @@
+.level-box {
+    width: 97%;
+    height: 200px;
+    border-radius: 14px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    @include flex(space-between, center, column);
+    background-image: radial-gradient(110px 110px at top center, $deep-orange, $deep-orange calc(100px - 1px), transparent 100px, #fff calc(105px - 1px), $cream 105px);
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(#000, 0.17);
+    cursor: pointer;
+    transition: background .5s ease,
+                transform .15s linear;            
+    &:active {
+        transform: translateY(4px);
+        box-shadow: 0 0px 4px rgba(#000, 0.17);
+    }
+
+    .comp-div {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        margin-top: 15px;
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            font-size: 15px;
+            font-weight: weight(bold);
+            @include flex(center, center);
+        } 
+        svg {
+            width: 100%;
+            height: 100%;
+
+            circle {
+                stroke: $deep-orange;
+                stroke-width: 7px;
+                stroke-linecap: round;
+                // fill: none;
+                
+                &:last-child {
+                    stroke: $cream;
+                    stroke-dasharray: 160;
+                    stroke-dashoffset: 160;
+                    transition: stroke-dashoffset 1.25s cubic-bezier(0.23, 1, 0.320, 1);
+                }
+            }
+        }
+    }
+    
+    &:nth-child(1) {
+        .comp-div circle:last-child {
+            // Javascript will work hehe
+            stroke-dashoffset: calc(160 - (160 * var(--beginnerComp)) / 100);
+            // stroke-dashoffset: calc(160 - (160 * 0) / 100);
+            
+        }
+    }
+    
+    &:nth-child(2) {
+        .comp-div circle:last-child {
+            stroke-dashoffset: calc(160 - (160 * var(--intermediateComp)) / 100);
+            // stroke-dashoffset: calc(160 - (160 * 0) / 100);
+        }
+    }
+    
+    &:nth-child(3) {
+        .comp-div circle:last-child {
+            stroke-dashoffset: calc(160 - (160 * var(--advanceComp)) / 100);
+            // stroke-dashoffset: calc(160 - (160 * 0) / 100);
+        }
+    }
+    
+    .level-bottom-text {
+        text-align: center;
+        margin-bottom: 17px;
+
+        p {
+            font: {
+                weight: weight(medium);
+                size: 14px;
+            }
+        }
+
+        p:first-child {
+            font-size: 18px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+    }
+}

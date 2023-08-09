@@ -1,0 +1,41 @@
+div.lang-box {
+    @include flex(space-between, null, column);
+    box-shadow: 0 2px 4px rgba(#000, 0.17);
+    cursor: pointer;
+    transition: background .5s ease,
+                transform .15s linear;            
+    max-width: 49%;
+    min-width: 49%;
+    height: 200px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    
+
+    background-image: radial-gradient(120px 120px at top center, $deep-orange, $deep-orange calc(100px - 1px), transparent 100px, #fff calc(105px - 1px), $cream 105px);
+
+    &:active {
+        transform: translateY(4px);
+        box-shadow: 0 0px 4px rgba(#000, 0.17);
+    }
+    
+    i {
+        color: #000;
+        font-size: 35px;
+        align-self: center;
+        margin-right: 0;
+        margin-top: 20px;
+        border: 2px solid #000;
+        padding: 10px;
+        border-radius: 50%;
+    }
+    p {
+        font-weight: weight(bold);
+        letter-spacing: .5px;
+        color: #000;
+        align-self: center;
+        margin-left: 0;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+}

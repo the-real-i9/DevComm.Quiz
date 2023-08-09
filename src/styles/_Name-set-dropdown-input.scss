@@ -1,0 +1,88 @@
+#username-edit-dropdown {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(#000, 0.17);
+    padding: 7px 10px 10px;
+    @include flex(null, null, column);
+    transition: all .2s linear;
+
+    &.hidden {
+        top: -20%;
+        opacity: 0;
+    }
+
+    &.visible {
+        top: 5%;
+        opacity: 1;
+    }
+
+    div:empty {
+        z-index: -1;
+        position: absolute;
+        top: -100vh;
+        right: -100vw;
+        bottom: -100vh;
+        left: -100vw;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 150px;
+        background: #fff;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+        bottom: 100.5%;
+        left: 25px;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 150px;
+        background: #fff;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.17);
+        bottom: 100.5%;
+        right: 25px;
+    }
+
+    p {
+        font-weight: weight(semibold);
+        color: rgb(209, 209, 209);
+        margin-bottom: 5px;
+    }
+
+    input {
+        font-family: inherit;
+        width: 100%;
+        outline: none;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 3px;
+        height: 25px;
+        font-size: 16px;
+        color: #000;
+        padding-left: 7px;
+
+        &:focus {
+            border-color: $deep-orange;
+        }
+    }
+
+    button {
+        outline: none;
+        border: none;
+        background: $deep-orange;
+        width: 50px;
+        height: 25px;
+        margin: 5px auto 0;
+        font-weight: weight(medium);
+        color: #fff;
+        border-radius: 3px;
+    }
+}

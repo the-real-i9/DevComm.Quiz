@@ -1,18 +1,18 @@
 # DevComm. Quiz
 
-A **Quiz App**, packed with questions from different languages contributed by developers around the globe. Go to [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
+A **Developer Quiz App**, packed with questions from different languages contributed by developers around the globe. Go to [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to contribute. *It's pretty simple.* The App is a PWA which you can add to your device home screen for ease of access.
 
-> *This App launched on **17th October, 2020*** 
+> *This App first launched on **17th October, 2020**. Just **VanillaJS**, No React*
 
-Access app [DevComm. Quiz](https://devcomm-quiz.hostman.site/)
+> *This App launched recently on . Now written in **React**.*
+
+Access app [DevComm. Quiz](https://devcomm-quiz.netlify.app/)
 
 ## App Usage
 ---
 **Home Page**
 ---
-*On the first launch of this App in your Browser... You'll be asked of you want to add the App to your HomeScreen.*
-
-1. You have a music icon at the top right corner. If music helps your brain while learning, you can toggle on that.
+1. You have a music icon at the top right corner. If music helps your brain while learning, you can toggle that.
 
 2. Set your name by clicking the brush icon, a dropdown to edit your name will appear from there you can change your name. By default you have a name *Dev*.
 
@@ -43,11 +43,11 @@ Access app [DevComm. Quiz](https://devcomm-quiz.hostman.site/)
 **Quiz Page**
 ---
 1. You can relate with this, the only part I have to guide you is that, *you pay attention to what the question asks you to do.* It can either tell you to **choose the correct answer** or **choose all correct answers**. In the former case, you can only select a single answer, while in the latter you can select multiple answers.
-![Quiz Page](./img/quiz-page.png)
+![Quiz Page](/quiz-page.png)
 
 2. Click on the **Submit** button to proceed to the **Solution Page** 
 
-Visit [CONTRIBUTING.md](./CONTRIBUTING.md) to contribute your question.
+Visit [CONTRIBUTING.md](/CONTRIBUTING.md) to contribute your question.
 
 > *Note: There are various ways to contribute to this App, you'll see in the contributing page.*
 ---

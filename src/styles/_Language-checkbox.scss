@@ -1,0 +1,14 @@
+.all-quiz-languages > span {
+    margin: 2px 1px;
+    padding: 5px 7px;
+    border-radius: 32px;
+    font-size: 13px;
+    font-weight: weight(semibold);
+    border: 1px solid $deep-orange;
+    cursor: pointer;
+
+    &.lang-chosen {
+        background: $deep-orange;
+        color: #fff;
+    }
+}

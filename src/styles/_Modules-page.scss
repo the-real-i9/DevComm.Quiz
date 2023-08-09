@@ -1,0 +1,150 @@
+div.quiz-modules-page {
+    overflow-y: auto;
+
+    .top {
+        @include flex(space-between, center);
+        position: absolute;
+        top: 0;
+        background: #fff;
+        padding: 0 6%;
+        width: 100%;
+        height: 70px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 2px 2px rgba(#000, .25);
+
+
+        #back-to-levels {
+            cursor: pointer;
+            background: rgba($orange, .3);
+            @include flex(center, center);
+            color: $deep-orange;
+            font-weight: weight(semibold);
+            width: 23%;
+            height: 40px;
+            border-radius: 32px;
+            font-size: 13px;
+        }
+
+        div:empty {
+            flex: 1;
+        }
+
+        .center-text {
+            flex: 3;
+            text-align: center;
+            width: 54%;
+
+            p:first-child {
+                text-transform: capitalize;
+
+                font: {
+                    size: 18px;
+                    weight: weight(bold);
+                }
+            }
+
+            p:last-child {
+                border-top: 1px dotted #000;
+                border-bottom: 1px dotted #000;
+                display: inline-block;
+
+                font: {
+                    size: 14px;
+                    weight: weight(semibold);
+                }
+
+                margin-top: 3px;
+            }
+        }
+    }
+
+    #reset-level-progress {
+        margin: 80px auto 0;
+        padding: 0 10px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 3px;
+        height: 35px;
+        @include flex(center, center);
+        color: #fff;
+        background: $deep-orange;
+        box-shadow: 0 2px 4px rgba(#000, 0.17);
+        transition: all .15s linear;
+
+        &:active {
+            box-shadow: 0 0 4px rgba(#000, 0.17);
+            transform: translateY(2.5px);
+        }
+    }
+
+    .modules-section {
+        margin-top: 15px;
+        padding: 0 5%;
+        width: 100%;
+        @include flex(space-between);
+        flex-wrap: wrap;
+
+        .module-box {
+            @include flex(center, null, column);
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 17px;
+            box-shadow: 0px 0px 4px rgba(#000, 0.17);
+            width: 135px;
+            padding: 10px 0 12px 15px;
+            margin: 0 0px 15px 0;
+
+            .module-num {
+                font: {
+                    size: 18px;
+                    weight: weight(bold);
+                }
+            }
+
+            .module-score {
+                margin-bottom: 5px;
+
+                font: {
+                    size: 17px;
+                    weight: weight(medium);
+                }
+            }
+
+
+            .start-quiz-btn {
+                @include flex(center, center);
+                background: $deep-orange;
+                border: none;
+                border-radius: 3px;
+                color: #fff;
+                width: 65px;
+                height: 30px;
+                font-size: 13px;
+                font-weight: weight(semibold);
+            }
+
+            &:empty {
+                opacity: 0;
+                flex: 1;
+            }
+        }
+
+        @for $i from 1 through 49 {
+            .module-score.score-#{$i} {
+                color: #f11010;
+            }
+        }
+
+        @for $i from 50 through 69 {
+            .module-score.score-#{$i} {
+                color: #d3a507;
+            }
+        }
+
+        @for $i from 70 through 100 {
+            .module-score.score-#{$i} {
+                color: $green;
+            }
+        }
+    }
+}
